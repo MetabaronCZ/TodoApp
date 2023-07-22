@@ -11,7 +11,7 @@ const StyledParagraph = styled(Paragraph)`
 `;
 
 const meta: Meta<typeof Grid> = {
-  title: 'Common',
+  title: 'Grid',
   component: Grid,
 };
 

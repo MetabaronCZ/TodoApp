@@ -21,7 +21,7 @@ const preview: Preview = {
     },
     options: {
       storySort: {
-        order: ['Common', 'Forms'],
+        order: ['Colors', 'Typography', 'Common', 'Grid', 'Forms', 'Layout'],
       },
     },
   },
