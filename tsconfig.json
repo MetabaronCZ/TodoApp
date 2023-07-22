@@ -1,0 +1,21 @@
+{
+  "compilerOptions": {
+    "lib": ["esnext", "dom"],
+    "target": "ES5",
+    "module": "ESNext",
+    "moduleResolution": "Node",
+    "jsx": "react",
+    "importHelpers": true, // importing helper functions from tslib
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
+    "removeComments": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "noImplicitReturns": true,
+    "noUnusedLocals": true,
+    "sourceMap": true,
+    "baseUrl": "./src/scripts"
+  },
+  "compileOnSave": false,
+  "exclude": ["node_modules", "build"]
+}
