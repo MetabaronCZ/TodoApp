@@ -27,6 +27,7 @@ const ListItem = styled.li<StyledProps>`
   flex-direction: row;
   align-items: center;
   gap: ${toVU(0.5)};
+  line-height: 1;
   height: ${toVU(2)};
   padding-right: ${toVU(0.5)};
   border: 1px solid ${({ $color }) => $color};
