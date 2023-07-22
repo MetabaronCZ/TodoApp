@@ -14,6 +14,7 @@ export const mockedDb: DbMock = {
       id: '0',
       title: 'Test todo item',
       description: 'Test test test.',
+      folder: null,
       isDone: false,
       created: Date.now(),
     },
@@ -22,7 +23,6 @@ export const mockedDb: DbMock = {
     {
       id: '0',
       title: 'Test folder',
-      items: [],
     },
   ],
   settings: {

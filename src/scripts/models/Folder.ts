@@ -4,5 +4,4 @@ export type FolderData = {
 
 export interface Folder extends FolderData {
   readonly id: string;
-  readonly items: string[];
 }

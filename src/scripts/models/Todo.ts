@@ -1,6 +1,7 @@
 export type TodoData = {
   readonly title: string;
   readonly description: string;
+  readonly folder: string | null;
   readonly isDone: boolean;
 };
 

@@ -28,29 +28,11 @@ export const apiTodos = {
       });
     });
   },
-  move: (id: string, folderId: string): Promise<void> => {
-    return mockApiRequest(() => {
-      mockedDb.folders = mockedDb.folders.map((folder) => {
-        if (folderId === folder.id && !folder.items.includes(id)) {
-          return {
-            ...folder,
-            items: [...folder.items, id],
-          };
-        }
-        return folder;
-      });
-    });
-  },
   delete: (ids: string[]): Promise<void> => {
     return mockApiRequest(() => {
       mockedDb.todos = mockedDb.todos.filter((item) => {
         return !ids.includes(item.id);
       });
-
-      mockedDb.folders = mockedDb.folders.map((folder) => ({
-        ...folder,
-        items: folder.items.filter((item) => !ids.includes(item)),
-      }));
     });
   },
 };

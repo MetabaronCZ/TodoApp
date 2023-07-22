@@ -6,7 +6,7 @@ export const client: Client = {
     get: api.todos.get,
     create: api.todos.create,
     edit: api.todos.edit,
-    move: api.todos.move,
+    move: (id, folder) => api.todos.edit(id, { folder }),
     delete: api.todos.delete,
   },
   folder: {

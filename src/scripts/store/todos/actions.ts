@@ -32,7 +32,7 @@ export const editTodo = createAppAsyncThunk<void, EditTodoPayload>(
   async (payload, { dispatch }) => {
     const { id, data } = payload;
     await client.todo.edit(id, data);
-    await dispatch(fetchTodos());
+    await dispatch(fetchFolders());
   },
 );
 

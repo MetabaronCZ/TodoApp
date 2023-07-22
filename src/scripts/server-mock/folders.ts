@@ -31,6 +31,13 @@ export const apiFolders = {
       mockedDb.folders = mockedDb.folders.filter((item) => {
         return !ids.includes(item.id);
       });
+
+      mockedDb.todos = mockedDb.todos.filter((item) => {
+        if (item.folder && ids.includes(item.folder)) {
+          return { ...item, folder: null };
+        }
+        return item;
+      });
     });
   },
 };
