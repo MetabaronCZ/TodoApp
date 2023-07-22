@@ -17,6 +17,7 @@ interface Props extends PropsWithChildren {
   readonly size?: number;
 }
 
-export const Grid: React.FC<Props> = ({ size = 2, children }) => (
-  <Container $gap={size}>{children}</Container>
-);
+export const Grid: React.FC<Props> = ({ size = 2, children }) => {
+  size = Math.max(0, size);
+  return <Container $gap={size}>{children}</Container>;
+};

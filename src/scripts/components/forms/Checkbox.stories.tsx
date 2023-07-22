@@ -2,7 +2,7 @@ import React from 'react';
 import { action } from '@storybook/addon-actions';
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { Grid } from 'components/grid/Grid';
+import { Grid } from 'components/common/Grid';
 import { Checkbox } from 'components/forms/Checkbox';
 
 const meta: Meta<typeof Checkbox> = {

@@ -1,9 +1,14 @@
 import React from 'react';
-import type { Preview } from '@storybook/react';
+import { MemoryRouter } from 'react-router-dom';
 import { ThemeProvider } from 'styled-components';
+
+import type { Preview } from '@storybook/react';
 
 import { theme } from '../src/scripts/modules/theme';
 import { GlobalStyles } from '../src/scripts/components/GlobalStyles';
+
+// init localization
+import '../src/scripts/localization';
 
 const preview: Preview = {
   parameters: {
@@ -24,7 +29,9 @@ const preview: Preview = {
     (Story) => (
       <ThemeProvider theme={theme}>
         <GlobalStyles />
-        <Story />
+        <MemoryRouter>
+          <Story />
+        </MemoryRouter>
       </ThemeProvider>
     ),
   ],
