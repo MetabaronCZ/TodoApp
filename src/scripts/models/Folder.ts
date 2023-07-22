@@ -1,8 +1,8 @@
-export type TodoFolderData = {
+export type FolderData = {
   readonly title: string;
 };
 
-export interface TodoFolder extends TodoFolderData {
+export interface Folder extends FolderData {
   readonly id: string;
   readonly items: string[];
 }

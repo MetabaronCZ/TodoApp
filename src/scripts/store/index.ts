@@ -1,16 +1,16 @@
 import { configureStore } from '@reduxjs/toolkit';
 
-import { TodoList } from 'models/TodoList';
+import { Todos } from 'models/Todos';
 import { Settings } from 'models/Settings';
-import { TodoFolders } from 'models/TodoFolders';
+import { Folders } from 'models/Folders';
 
-import { todoListSlice } from 'store/list';
+import { todoListSlice } from 'store/todos';
 import { settingsSlice } from 'store/settings';
 import { todoFoldersSlice } from 'store/folders';
 
-interface AppState {
-  readonly todo: TodoList;
-  readonly folder: TodoFolders;
+export interface AppState {
+  readonly todo: Todos;
+  readonly folder: Folders;
   readonly settings: Settings;
 }
 

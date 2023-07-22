@@ -1,27 +1,24 @@
-import { Settings } from 'models/Settings';
 import { Todo, TodoData } from 'models/Todo';
-import { FetchTodoFoldersResponse } from 'models/TodoFolders';
-import { TodoFolder, TodoFolderData } from 'models/TodoFolder';
-import { FetchTodoListConfig, FetchTodoListResponse } from 'models/TodoList';
+import { SettingsData } from 'models/Settings';
+import { Folder, FolderData } from 'models/Folder';
+import { TodoFilter, FetchTodosResponse } from 'models/Todos';
 
 export interface Client {
   readonly todo: {
-    readonly get: (
-      config: FetchTodoListConfig,
-    ) => Promise<FetchTodoListResponse>;
+    readonly get: (config?: TodoFilter) => Promise<FetchTodosResponse>;
     readonly create: (data: TodoData) => Promise<Todo>;
     readonly edit: (id: string, data: Partial<TodoData>) => Promise<void>;
     readonly move: (id: string, folder: string) => Promise<void>;
     readonly delete: (ids: string[]) => Promise<void>;
   };
   readonly folder: {
-    readonly get: () => Promise<FetchTodoFoldersResponse>;
-    readonly create: (data: TodoFolderData) => Promise<TodoFolder>;
-    readonly edit: (id: string, data: Partial<TodoFolderData>) => Promise<void>;
-    readonly delete: (ids: string[], withItems?: boolean) => Promise<void>;
+    readonly get: () => Promise<Folder[]>;
+    readonly create: (data: FolderData) => Promise<Folder>;
+    readonly edit: (id: string, data: Partial<FolderData>) => Promise<void>;
+    readonly delete: (ids: string[]) => Promise<void>;
   };
   readonly settings: {
-    readonly get: () => Promise<Settings>;
-    readonly set: (data: Partial<Settings>) => Promise<void>;
+    readonly get: () => Promise<SettingsData>;
+    readonly set: (data: Partial<SettingsData>) => Promise<void>;
   };
 }
