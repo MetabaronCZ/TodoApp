@@ -13,8 +13,20 @@ declare module 'styled-components' {
     readonly lineHeight: {
       readonly default: string;
     };
+    readonly border: {
+      readonly default: string;
+      readonly forms: string;
+      readonly formsInvalid: string;
+      readonly formsDisabled: string;
+    };
+    readonly outline: {
+      readonly default: string;
+      readonly action: string;
+      readonly invalid: string;
+    };
     readonly dimension: {
       readonly pageMinWidth: string;
+      readonly pageMaxWidth: string;
     };
   }
 }

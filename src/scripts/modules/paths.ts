@@ -1,4 +1,5 @@
 export const pathImages = '/images';
+export const pathFonts = '/fonts';
 
 export const paths = {
   HOME: '/',

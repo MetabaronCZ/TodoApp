@@ -1,4 +1,6 @@
 {
+  "appName": "TODOLIST",
   "homepage": "Homepage",
-  "error404": "404 - Page not found"
+  "error404": "404 - Page not found",
+  "copyright": "Copyright © {{year}} MetabaronCZ (<authorLink>{{author}}</authorLink>). All Rights Reserved."
 }

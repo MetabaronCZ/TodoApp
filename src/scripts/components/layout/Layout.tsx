@@ -1,21 +1,21 @@
 import React, { PropsWithChildren } from 'react';
 import styled from 'styled-components';
 
-import { Header } from './Header';
-import { Footer } from './Footer';
 import { Content } from './Content';
+import { Header } from './header/Header';
+import { Footer } from './footer/Footer';
 
 import { toVU } from 'modules/theme';
 
 const Container = styled.div`
   display: flex;
   flex-direction: column;
-  gap: ${toVU(2)};
-  width: 100%;
   min-width: ${({ theme }) => theme.dimension.pageMinWidth};
+  max-width: ${({ theme }) => theme.dimension.pageMaxWidth};
   min-height: 100vh;
-  padding: ${toVU(2)};
-  background: ${({ theme }) => theme.color.background};
+  width: 100%;
+  padding: 0 ${toVU(2)};
+  margin: 0 auto;
 `;
 
 export const Layout: React.FC<PropsWithChildren> = ({ children }) => (
