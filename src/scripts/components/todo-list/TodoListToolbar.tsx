@@ -87,6 +87,7 @@ export const TodoListToolbar: React.FC<Props> = ({
         <Dropdown
           value={sort}
           items={sortDropdownItems}
+          align="right"
           disabled={disabled}
           onSelect={sortItems}
         />

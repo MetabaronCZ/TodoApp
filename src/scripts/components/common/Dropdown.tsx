@@ -2,18 +2,25 @@ import React, { useEffect, useRef, useState } from 'react';
 import styled from 'styled-components';
 
 import { Button } from 'components/button/Button';
-
 import { toVU } from 'modules/theme';
+
+type DropdownAlign = 'left' | 'right';
 
 const Container = styled.div`
   position: relative;
+  display: inline-block;
 `;
 
-const List = styled.ul`
+interface StyledProps {
+  readonly $align: DropdownAlign;
+}
+
+const List = styled.ul<StyledProps>`
   list-style-type: none;
   position: absolute;
   top: 100%;
-  right: 0;
+  left: ${({ $align }) => ('left' === $align ? 0 : '')};
+  right: ${({ $align }) => ('right' === $align ? 0 : '')};
   min-width: ${toVU(16)};
   border: ${({ theme }) => theme.border.light};
   background: ${({ theme }) => theme.color.background};
@@ -38,6 +45,7 @@ export interface DropdownItem<T> {
 interface Props<T> {
   readonly items: DropdownItem<T>[];
   readonly value: T;
+  readonly align?: DropdownAlign;
   readonly disabled?: boolean;
   readonly onSelect: (value: T) => void;
 }
@@ -45,6 +53,7 @@ interface Props<T> {
 export const Dropdown = <T,>({
   items,
   value,
+  align = 'left',
   disabled = false,
   onSelect,
 }: Props<T>): React.ReactNode => {
@@ -108,7 +117,7 @@ export const Dropdown = <T,>({
         onClick={() => setOpened(!opened)}
       />
       {opened && (
-        <List>
+        <List $align={align}>
           {items.map((item) => (
             <ListItem key={item.id}>
               <StyledButton

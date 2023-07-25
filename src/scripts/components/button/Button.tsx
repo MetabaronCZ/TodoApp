@@ -18,6 +18,7 @@ const SharedStyles = css<StyledProps>`
   flex-direction: row;
   align-items: center;
   gap: ${toVU(0.5)};
+  width: auto;
   padding: ${toVU(0.5)} ${toVU(1)};
 
   &:hover {
