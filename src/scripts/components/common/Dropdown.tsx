@@ -32,6 +32,7 @@ const ListItem = styled.li`
 `;
 
 const StyledButton = styled(Button)`
+  width: 100%;
   text-align: left;
   white-space: nowrap;
 `;

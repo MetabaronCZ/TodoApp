@@ -3,6 +3,9 @@
   "homepage": "Homepage",
   "error404": "404 - Page not found",
   "copyright": "Copyright © {{year}} MetabaronCZ (<authorLink>{{author}}</authorLink>). All Rights Reserved.",
+  "create": "Vytvořit",
+  "edit": "Upravit",
+  "delete": "Smazat",
   "folder": {
     "allTodos": "Všechny úkoly"
   },
@@ -22,8 +25,6 @@
   },
   "todo": {
     "done": "Hotovo",
-    "edit": "Upravit",
-    "delete": "Smazat",
     "deleteConfirm": "Opravdu chcete úkol smazat?"
   }
 }

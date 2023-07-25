@@ -8,44 +8,36 @@ import { ButtonRaw } from 'components/button/ButtonRaw';
 import { toVU } from 'modules/theme';
 import { OnClick } from 'modules/event';
 
-interface StyledProps {
-  readonly $disabled: boolean;
-}
-
-const SharedStyles = css<StyledProps>`
+const SharedStyles = css`
   ${Text.Base};
-  display: flex;
+  display: inline-flex;
   flex-direction: row;
   align-items: center;
   gap: ${toVU(0.5)};
   width: auto;
   padding: ${toVU(0.5)} ${toVU(1)};
+  background: ${({ theme }) => theme.color.background};
 
-  &:hover {
-    background-color: ${({ theme, $disabled }) =>
-      $disabled ? '' : theme.color.hover};
+  &:hover:not(:disabled) {
+    background-color: ${({ theme }) => theme.color.hover};
   }
 
   &:focus {
     outline: ${({ theme }) => theme.outline.default};
   }
-`;
-
-const StyledButton = styled(ButtonRaw)`
-  ${SharedStyles};
 
   &:disabled {
     color: ${({ theme }) => theme.color.disabled};
   }
 `;
 
+const StyledButton = styled(ButtonRaw)`
+  ${SharedStyles};
+`;
+
 const StyledLink = styled(Link)`
   ${SharedStyles};
   text-decoration: none;
-
-  &[href=''] {
-    color: ${({ theme }) => theme.color.disabled};
-  }
 `;
 
 const ButtonIco = styled.span`
@@ -88,10 +80,9 @@ export const Button: React.FC<Props> = ({
   );
   const sharedProps = {
     className,
-    $disabled: disabled,
   };
-  return href ? (
-    <StyledLink {...sharedProps} to={!disabled ? href : ''}>
+  return href && !disabled ? (
+    <StyledLink {...sharedProps} to={href}>
       {content}
     </StyledLink>
   ) : (

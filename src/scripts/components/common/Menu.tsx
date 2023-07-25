@@ -1,11 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import { Text } from 'components/common/Typography';
-import { ButtonRaw } from 'components/button/ButtonRaw';
-import { TextOverflow } from 'components/common/TextOverflow';
+import { Button } from 'components/button/Button';
 
-import { toVU } from 'modules/theme';
 import { OnClick } from 'modules/event';
 
 interface StyledProps {
@@ -19,24 +16,17 @@ const List = styled.ul`
 `;
 
 const ListItem = styled.li`
-  list-style-type: none;
+  border-bottom: ${({ theme }) => theme.border.light};
 `;
 
-const MenuButton = styled(ButtonRaw)<StyledProps>`
-  ${Text.Base};
-  ${TextOverflow};
-  padding: ${toVU(0.5)};
-  border-bottom: ${({ theme }) => theme.border.light};
+const StyledButton = styled(Button)<StyledProps>`
+  width: 100%;
   background: ${({ theme, $active }) => ($active ? theme.color.active : '')};
   text-align: left;
 
   &:hover {
     background-color: ${({ theme, $active }) =>
-      $active ? '' : theme.color.hover};
-  }
-
-  &:focus {
-    outline: ${({ theme }) => theme.outline.default};
+      $active ? theme.color.active : ''};
   }
 `;
 
@@ -58,10 +48,13 @@ export const Menu: React.FC<Props> = ({ items }) => {
   return (
     <List>
       {items.map((item) => (
-        <ListItem key={item.id}>
-          <MenuButton $active={!!item.active} onClick={item.onClick}>
-            ★ {item.title}
-          </MenuButton>
+        <ListItem key={item.id + 33}>
+          <StyledButton
+            ico="★"
+            text={item.title}
+            $active={!!item.active}
+            onClick={item.onClick}
+          />
         </ListItem>
       ))}
     </List>

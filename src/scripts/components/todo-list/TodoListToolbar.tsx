@@ -12,6 +12,7 @@ import { OnChange, OnClick } from 'modules/event';
 
 import { sortTodos } from 'store/todos/actions';
 import { useAppDispatch, useAppSelector } from 'store/utils';
+import { paths } from 'modules/paths';
 
 const Container = styled.div`
   display: flex;
@@ -76,6 +77,10 @@ export const TodoListToolbar: React.FC<Props> = ({
       </ItemSelect>
 
       <Filler />
+
+      <ItemAction>
+        <Button ico="+" text={t('create')} href={paths.CREATE} />
+      </ItemAction>
 
       {!disabled && selected && (
         <ItemAction>

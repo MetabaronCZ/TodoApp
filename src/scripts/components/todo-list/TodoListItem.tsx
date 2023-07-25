@@ -70,11 +70,11 @@ export const TodoListItem: React.FC<Props> = ({
       </ItemState>
 
       <ItemAction>
-        <Button ico="✎" text={t('todo.edit')} href={paths.DETAIL(item.id)} />
+        <Button ico="✎" text={t('edit')} href={paths.DETAIL(item.id)} />
       </ItemAction>
 
       <ItemAction>
-        <Button ico="✖" text={t('todo.delete')} onClick={onDelete} />
+        <Button ico="✖" text={t('delete')} onClick={onDelete} />
       </ItemAction>
     </Container>
   );
