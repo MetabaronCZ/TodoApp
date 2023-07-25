@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import { Text } from 'components/Typography';
+import { Text } from 'components/common/Typography';
 import { Copyright } from 'components/layout/footer/Copyright';
 
 import { toVU } from 'modules/theme';

@@ -2,7 +2,7 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 import styled from 'styled-components';
 
-import { Text } from 'components/Typography';
+import { Text } from 'components/common/Typography';
 
 import { toVU } from 'modules/theme';
 import { paths } from 'modules/paths';

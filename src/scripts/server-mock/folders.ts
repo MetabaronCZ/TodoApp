@@ -5,9 +5,7 @@ import { mockApiRequest, mockCreatedId } from 'server-mock/utils';
 
 export const apiFolders = {
   get: (): Promise<Folder[]> => {
-    return mockApiRequest(() => ({
-      ...mockedDb.folders,
-    }));
+    return mockApiRequest(() => [...mockedDb.folders]);
   },
   create: (data: FolderData): Promise<Folder> => {
     return mockApiRequest(() => ({

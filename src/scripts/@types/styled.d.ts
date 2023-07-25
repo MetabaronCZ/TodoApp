@@ -15,6 +15,7 @@ declare module 'styled-components' {
     };
     readonly border: {
       readonly default: string;
+      readonly light: string;
       readonly forms: string;
       readonly formsInvalid: string;
       readonly formsDisabled: string;
@@ -27,6 +28,10 @@ declare module 'styled-components' {
     readonly dimension: {
       readonly pageMinWidth: string;
       readonly pageMaxWidth: string;
+      readonly menuColumnWidth: string;
+    };
+    readonly zIndex: {
+      readonly dropdown: number;
     };
   }
 }

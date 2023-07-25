@@ -3,6 +3,7 @@ export const pathFonts = '/fonts';
 
 export const paths = {
   HOME: '/',
+  DETAIL: (id: string) => `/detail/${id}`,
   ERROR404: '*',
 };
 

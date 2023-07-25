@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import type { StoryObj } from '@storybook/react';
 
-import { Text } from 'components/Typography';
+import { Text } from 'components/common/Typography';
 
 import { toVU } from 'modules/theme';
 import { colors } from 'modules/colors';

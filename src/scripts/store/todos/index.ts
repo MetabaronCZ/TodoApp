@@ -7,6 +7,7 @@ import {
   deleteTodos,
   editTodo,
   fetchTodos,
+  filterTodos,
 } from 'store/todos/actions';
 
 const initialState: Todos = {
@@ -35,6 +36,13 @@ export const todoListSlice = createSlice({
     builder.addCase(fetchTodos.fulfilled, (state, { payload }) => {
       state.items = payload.items;
       state.count = payload.count;
+    });
+
+    builder.addCase(filterTodos.fulfilled, (state, { payload }) => {
+      const { filter } = state;
+      const { folder, query } = payload;
+      filter.folder = 'undefined' !== typeof folder ? folder : filter.folder;
+      filter.query = 'undefined' !== typeof query ? query : filter.query;
     });
 
     // general fetch start

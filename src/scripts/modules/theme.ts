@@ -17,6 +17,7 @@ export const theme: DefaultTheme = {
   },
   border: {
     default: `1px solid ${colors.base}`,
+    light: `1px solid ${colors.active}`,
     forms: `2px solid ${colors.base}`,
     formsInvalid: `2px solid ${colors.error}`,
     formsDisabled: `2px solid ${colors.disabled}`,
@@ -29,5 +30,9 @@ export const theme: DefaultTheme = {
   dimension: {
     pageMinWidth: '320px',
     pageMaxWidth: '980px',
+    menuColumnWidth: '240px',
+  },
+  zIndex: {
+    dropdown: 1000,
   },
 };

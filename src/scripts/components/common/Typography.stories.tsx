@@ -3,8 +3,8 @@ import styled, { DefaultTheme, StyledComponent } from 'styled-components';
 
 import type { StoryObj } from '@storybook/react';
 
-import { Text } from 'components/Typography';
 import { Grid } from 'components/common/Grid';
+import { Text } from 'components/common/Typography';
 import { Paragraph } from 'components/common/Paragraph';
 
 type ExampleComponent = StyledComponent<'div', DefaultTheme>;

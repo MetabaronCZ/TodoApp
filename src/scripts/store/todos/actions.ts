@@ -1,6 +1,6 @@
 import { TodoData } from 'models/Todo';
 import { client } from 'modules/client';
-import { TodoFilter, FetchTodosResponse } from 'models/Todos';
+import { TodoFilter, FetchTodosResponse, TodoSort } from 'models/Todos';
 
 import { createAppAsyncThunk } from 'store/utils';
 import { fetchFolders } from 'store/folders/actions';
@@ -10,14 +10,34 @@ interface EditTodoPayload {
   readonly data: Partial<TodoData>;
 }
 
+interface FilterTodosPalyoad {
+  readonly query?: string;
+  readonly folder?: string | null;
+}
+
 export const fetchTodos = createAppAsyncThunk<
   FetchTodosResponse,
-  TodoFilter | undefined
+  Partial<TodoFilter> | void
 >('todos/fetch', async (config, { getState }) => {
   const { filter } = getState().todo;
   const fetchConfig: TodoFilter = { ...filter, ...config };
   return await client.todo.get(fetchConfig);
 });
+
+export const filterTodos = createAppAsyncThunk<
+  FilterTodosPalyoad,
+  FilterTodosPalyoad
+>('todos/filter', async (data, { dispatch }) => {
+  await dispatch(fetchTodos(data));
+  return data;
+});
+
+export const sortTodos = createAppAsyncThunk<void, TodoSort>(
+  'todos/sort',
+  async (sort, { dispatch }) => {
+    await dispatch(fetchTodos({ sort }));
+  },
+);
 
 export const createTodo = createAppAsyncThunk<void, TodoData>(
   'todos/create',

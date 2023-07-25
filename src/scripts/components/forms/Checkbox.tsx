@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import { Text } from 'components/Typography';
+import { Text } from 'components/common/Typography';
 
 import { toVU } from 'modules/theme';
 import { OnChange, check } from 'modules/event';

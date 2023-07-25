@@ -7,7 +7,7 @@ interface StyledProps {
   readonly $gap: number;
 }
 
-export const Container = styled.div<StyledProps>`
+const Container = styled.div<StyledProps>`
   display: flex;
   flex-direction: row;
   gap: ${({ $gap }) => toVU($gap)};

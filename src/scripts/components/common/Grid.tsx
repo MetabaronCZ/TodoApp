@@ -7,17 +7,22 @@ interface StyledProps {
   readonly $gap: number;
 }
 
-export const Container = styled.div<StyledProps>`
+const Container = styled.div<StyledProps>`
   display: flex;
   flex-direction: column;
   gap: ${({ $gap }) => toVU($gap)};
 `;
 
 interface Props extends PropsWithChildren {
+  readonly className?: string;
   readonly size?: number;
 }
 
-export const Grid: React.FC<Props> = ({ size = 2, children }) => {
+export const Grid: React.FC<Props> = ({ className, size = 2, children }) => {
   size = Math.max(0, size);
-  return <Container $gap={size}>{children}</Container>;
+  return (
+    <Container className={className} $gap={size}>
+      {children}
+    </Container>
+  );
 };

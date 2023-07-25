@@ -2,5 +2,28 @@
   "appName": "TODOLIST",
   "homepage": "Homepage",
   "error404": "404 - Page not found",
-  "copyright": "Copyright © {{year}} MetabaronCZ (<authorLink>{{author}}</authorLink>). All Rights Reserved."
+  "copyright": "Copyright © {{year}} MetabaronCZ (<authorLink>{{author}}</authorLink>). All Rights Reserved.",
+  "folder": {
+    "allTodos": "Všechny úkoly"
+  },
+  "todoList": {
+    "selectAll": "Vybrat vše",
+    "deleteAll": "Smazat",
+    "deleteAllConfirm": "Opravdu chcete vybrané úkoly smazat?",
+    "empty": "Nebyly nalezeny žádné úkoly.",
+    "sort": {
+      "TITLE_ASC": "Abecedně (A-Z)",
+      "TITLE_DESC": "Abecedně (Z-A)",
+      "DONE_0": "Nedokončené",
+      "DONE_1": "Hotové",
+      "CREATED_ASC": "Nejstarší",
+      "CREATED_DESC": "Nejnovější"
+    }
+  },
+  "todo": {
+    "done": "Hotovo",
+    "edit": "Upravit",
+    "delete": "Smazat",
+    "deleteConfirm": "Opravdu chcete úkol smazat?"
+  }
 }

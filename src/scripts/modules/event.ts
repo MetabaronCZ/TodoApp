@@ -6,9 +6,11 @@ export type OnChange<T> = (value: T) => void;
 
 type Changable = HTMLInputElement | HTMLTextAreaElement;
 
-export const click = (cb: OnClick) => (e: MouseEvent) => {
-  e.preventDefault();
-  cb();
+export const click = (cb?: OnClick) => (e: MouseEvent) => {
+  if (cb) {
+    e.preventDefault();
+    cb();
+  }
 };
 
 export const change = (cb: OnChange<string>) => (e: ChangeEvent<Changable>) => {
