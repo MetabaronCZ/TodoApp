@@ -1,0 +1,91 @@
+import { useState } from 'react';
+
+type FormData = Record<string, unknown>;
+
+export interface FormValidation<T> {
+  readonly message: string;
+  readonly test: (value: T) => boolean;
+}
+
+type FormValidations<T extends FormData> = {
+  readonly [field in keyof T]?: FormValidation<T[field]>[];
+};
+
+interface FormConfig<T extends FormData> {
+  readonly initialValues: T;
+  readonly validations?: FormValidations<T>;
+  readonly onSubmit?: (data: T) => void;
+}
+
+export type FormErrors<T extends FormData> = Partial<
+  Record<keyof T, string | null>
+>;
+
+interface UseForm<T extends FormData> {
+  readonly fields: T;
+  readonly errors: FormErrors<T>;
+  readonly setValue: <U extends keyof T>(field: U, value: T[U]) => void;
+  readonly submit: () => void;
+}
+
+export const useForm = <T extends FormData>(
+  config: FormConfig<T>,
+): UseForm<T> => {
+  const {
+    initialValues,
+    validations = {} as FormValidations<T>,
+    onSubmit,
+  } = config;
+
+  const [fields, setFields] = useState<T>(initialValues);
+  const [errors, setErrors] = useState<FormErrors<T>>({});
+
+  const validateField = <U extends keyof T>(
+    field: U,
+    value: T[U],
+  ): string | null => {
+    const fieldValidations = validations[field] ?? [];
+    let error: string | null = null;
+
+    for (const { message, test } of fieldValidations) {
+      if (!test(value)) {
+        error = message;
+        break;
+      }
+    }
+    setErrors((state) => ({
+      ...state,
+      [field]: error,
+    }));
+
+    return error;
+  };
+
+  return {
+    fields,
+    errors,
+    setValue: (field, value) => {
+      validateField(field, value);
+
+      setFields((state) => ({
+        ...state,
+        [field]: value,
+      }));
+    },
+    submit: () => {
+      let hasErrors = false;
+
+      for (const item of Object.entries(fields)) {
+        const field = item[0] as keyof T;
+        const value = item[1] as T[typeof field];
+
+        if (null !== validateField(field, value)) {
+          hasErrors = true;
+        }
+      }
+      if (!hasErrors && onSubmit) {
+        onSubmit(fields);
+      }
+    },
+  };
+};

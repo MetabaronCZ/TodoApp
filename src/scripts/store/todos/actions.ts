@@ -1,4 +1,4 @@
-import { TodoData } from 'models/Todo';
+import { Todo, TodoData } from 'models/Todo';
 import { client } from 'modules/client';
 import { TodoFilter, FetchTodosResponse, TodoSort } from 'models/Todos';
 
@@ -23,6 +23,13 @@ export const fetchTodos = createAppAsyncThunk<
   const fetchConfig: TodoFilter = { ...filter, ...config };
   return await client.todo.get(fetchConfig);
 });
+
+export const fetchTodoDetail = createAppAsyncThunk<Todo | null, string>(
+  'todos/fetchDetail',
+  async (id) => {
+    return await client.todo.getDetail(id);
+  },
+);
 
 export const filterTodos = createAppAsyncThunk<
   FilterTodosPalyoad,

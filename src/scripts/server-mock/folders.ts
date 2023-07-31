@@ -8,11 +8,14 @@ export const apiFolders = {
     return mockApiRequest(() => [...mockedDb.folders]);
   },
   create: (data: FolderData): Promise<Folder> => {
-    return mockApiRequest(() => ({
-      ...data,
-      id: mockCreatedId('FOLDER'),
-      items: [],
-    }));
+    return mockApiRequest(() => {
+      const folder: Folder = {
+        ...data,
+        id: mockCreatedId('FOLDER'),
+      };
+      mockedDb.folders = [...mockedDb.folders, folder];
+      return folder;
+    });
   },
   edit: (id: string, data: Partial<FolderData>): Promise<void> => {
     return mockApiRequest(() => {

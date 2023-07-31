@@ -4,6 +4,7 @@ import { api } from 'server-mock/api';
 export const client: Client = {
   todo: {
     get: api.todos.get,
+    getDetail: api.todos.getDetail,
     create: api.todos.create,
     edit: api.todos.edit,
     move: (id, folder) => api.todos.edit(id, { folder }),

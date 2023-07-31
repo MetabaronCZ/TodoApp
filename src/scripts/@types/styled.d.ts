@@ -31,6 +31,7 @@ declare module 'styled-components' {
       readonly menuColumnWidth: string;
     };
     readonly zIndex: {
+      readonly toolbar: number;
       readonly dropdown: number;
     };
   }

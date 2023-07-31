@@ -63,12 +63,21 @@ export const apiTodos = {
       };
     });
   },
+  getDetail: (id: string): Promise<Todo | null> => {
+    return mockApiRequest(() => {
+      return mockedDb.todos.find((item) => id === item.id) || null;
+    });
+  },
   create: (data: TodoData): Promise<Todo> => {
-    return mockApiRequest(() => ({
-      ...data,
-      id: mockCreatedId('TODO'),
-      created: Date.now(),
-    }));
+    return mockApiRequest(() => {
+      const todo: Todo = {
+        ...data,
+        id: mockCreatedId('TODO'),
+        created: Date.now(),
+      };
+      mockedDb.todos = [...mockedDb.todos, todo];
+      return todo;
+    });
   },
   edit: (id: string, data: Partial<TodoData>): Promise<void> => {
     return mockApiRequest(() => {

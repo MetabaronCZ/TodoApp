@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import styled from 'styled-components';
 
+import { ItemList } from 'components/common/ItemList';
 import { Paragraph } from 'components/common/Paragraph';
 import { TodoListItem } from 'components/todo-list/TodoListItem';
 import { UpdatedContent } from 'components/common/UpdatedContent';
@@ -19,19 +20,8 @@ const Container = styled.div<StyledProps>`
   ${UpdatedContent};
 `;
 
-const List = styled.ul`
-  list-style-type: none;
-  display: flex;
-  flex-direction: column;
-`;
-
-const ListItem = styled.li`
-  padding-left: ${toVU(0.5)};
-  border-bottom: ${({ theme }) => theme.border.light};
-`;
-
 const StyledParagraph = styled(Paragraph)`
-  padding: ${toVU(1)} 0 0 ${toVU(0.5)};
+  padding-top: ${toVU(1)};
 `;
 
 export const TodoList: React.FC = () => {
@@ -98,18 +88,17 @@ export const TodoList: React.FC = () => {
       {0 === items.length ? (
         <StyledParagraph>{t('todoList.empty')}</StyledParagraph>
       ) : (
-        <List>
+        <ItemList>
           {items.map((item) => (
-            <ListItem key={item.id}>
-              <TodoListItem
-                item={item}
-                selected={selected.includes(item.id)}
-                onDelete={() => onDeleteItem(item.id)}
-                onSelect={(value) => onSelectItem(item.id, value)}
-              />
-            </ListItem>
+            <TodoListItem
+              item={item}
+              selected={selected.includes(item.id)}
+              onDelete={() => onDeleteItem(item.id)}
+              onSelect={(value) => onSelectItem(item.id, value)}
+              key={item.id}
+            />
           ))}
-        </List>
+        </ItemList>
       )}
     </Container>
   );

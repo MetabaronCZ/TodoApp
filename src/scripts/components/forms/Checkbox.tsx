@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
+import { Label } from 'components/forms/Label';
 import { Text } from 'components/common/Typography';
 
 import { toVU } from 'modules/theme';
@@ -10,7 +11,6 @@ const checkboxSize = toVU(2);
 let idCounter = 0; // checkbox identificator counter
 
 interface StyledProps {
-  readonly $invalid: boolean;
   readonly $disabled: boolean;
 }
 
@@ -19,21 +19,7 @@ const Container = styled.div`
   flex-direction: row;
   align-items: center;
   gap: ${toVU(1)};
-`;
-
-const Label = styled.label<StyledProps>`
-  ${Text.Base};
-  flex: 1;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  gap: ${toVU(1)};
-  color: ${({ theme, $invalid, $disabled }) =>
-    $disabled
-      ? theme.color.disabled
-      : $invalid
-      ? theme.color.error
-      : theme.color.base};
+  height: ${toVU(3)};
 `;
 
 const CheckMark = styled.label<StyledProps>`
@@ -46,25 +32,17 @@ const CheckMark = styled.label<StyledProps>`
   line-height: 1;
   width: ${checkboxSize};
   height: ${checkboxSize};
-  border: ${({ theme, $invalid, $disabled }) =>
-    $disabled
-      ? theme.border.formsDisabled
-      : $invalid
-      ? theme.border.formsInvalid
-      : theme.border.forms};
-  color: ${({ theme, $invalid, $disabled }) =>
-    $disabled
-      ? theme.color.disabled
-      : $invalid
-      ? theme.color.error
-      : theme.color.base};
-  background: ${({ theme }) => theme.color.background};
+  border: ${({ theme, $disabled }) =>
+    $disabled ? theme.border.formsDisabled : theme.border.forms};
+  color: ${({ theme, $disabled }) =>
+    $disabled ? theme.color.disabled : theme.color.base};
+  background: ${({ theme }) => theme.color.field};
   user-select: none;
   cursor: pointer;
 
   &:focus-within {
-    outline: ${({ theme, $invalid, $disabled }) =>
-      !$disabled && ($invalid ? theme.outline.invalid : theme.outline.default)};
+    outline: ${({ theme, $disabled }) =>
+      $disabled ? '' : theme.outline.default};
   }
 `;
 
@@ -82,7 +60,6 @@ interface Props {
   readonly id?: string;
   readonly label?: string;
   readonly checked?: boolean;
-  readonly invalid?: boolean;
   readonly disabled?: boolean;
   readonly onChange?: OnChange<boolean>;
 }
@@ -91,14 +68,13 @@ export const Checkbox: React.FC<Props> = ({
   id,
   label,
   checked = false,
-  invalid = false,
   disabled = false,
   onChange,
 }) => {
   id = id ?? `checkbox-${idCounter++}`;
   return (
     <Container>
-      <CheckMark htmlFor={id} $invalid={invalid} $disabled={disabled}>
+      <CheckMark htmlFor={id} $disabled={disabled}>
         {checked ? '✔' : ''}
         <StyledInput
           id={id}
@@ -109,11 +85,7 @@ export const Checkbox: React.FC<Props> = ({
         />
       </CheckMark>
 
-      {!!label && (
-        <Label htmlFor={id} $invalid={invalid} $disabled={disabled}>
-          {label}
-        </Label>
-      )}
+      {!!label && <Label htmlFor={id} text={label} disabled={disabled} />}
     </Container>
   );
 };

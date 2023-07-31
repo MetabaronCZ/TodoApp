@@ -12,18 +12,21 @@ const StyledButton = styled.button`
 `;
 
 interface Props extends PropsWithChildren {
+  readonly id?: string;
   readonly className?: string;
   readonly disabled?: boolean;
   readonly onClick?: OnClick;
 }
 
 export const ButtonRaw: React.FC<Props> = ({
+  id,
   className,
   disabled = false,
   children,
   onClick,
 }) => (
   <StyledButton
+    id={id}
     className={className}
     type="button"
     disabled={disabled}

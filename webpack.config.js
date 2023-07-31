@@ -9,8 +9,8 @@ const pathSrc = './src/scripts';
 const pathStatic = './src/static';
 const pathTemplates = './src/templates';
 
-const pathBuild = path.resolve(__dirname, './build');
-const pathPublic = './scripts/';
+const pathBuild = path.resolve(__dirname, 'build');
+const pathPublic = '/scripts';
 const pathModules = './node_modules';
 
 module.exports = {
@@ -55,6 +55,7 @@ module.exports = {
     new HtmlWebPackPlugin({
       template: `${pathTemplates}/index.html`,
       filename: `${pathBuild}/index.html`,
+      publicPath: pathPublic,
     }),
     new ESLintPlugin({
       extensions: ['ts', 'tsx', 'js'],

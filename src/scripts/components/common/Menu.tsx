@@ -2,22 +2,13 @@ import React from 'react';
 import styled from 'styled-components';
 
 import { Button } from 'components/button/Button';
+import { ItemList } from 'components/common/ItemList';
 
 import { OnClick } from 'modules/event';
 
 interface StyledProps {
   readonly $active: boolean;
 }
-
-const List = styled.ul`
-  list-style-type: none;
-  display: flex;
-  flex-direction: column;
-`;
-
-const ListItem = styled.li`
-  border-bottom: ${({ theme }) => theme.border.light};
-`;
 
 const StyledButton = styled(Button)<StyledProps>`
   width: 100%;
@@ -34,7 +25,8 @@ export interface MenuItem {
   readonly id: string;
   readonly title: string;
   readonly active?: boolean;
-  readonly onClick: OnClick;
+  readonly href?: string;
+  readonly onClick?: OnClick;
 }
 
 interface Props {
@@ -46,17 +38,17 @@ export const Menu: React.FC<Props> = ({ items }) => {
     return null;
   }
   return (
-    <List>
+    <ItemList>
       {items.map((item) => (
-        <ListItem key={item.id + 33}>
-          <StyledButton
-            ico="★"
-            text={item.title}
-            $active={!!item.active}
-            onClick={item.onClick}
-          />
-        </ListItem>
+        <StyledButton
+          ico="★"
+          text={item.title}
+          $active={!!item.active}
+          href={item.href}
+          onClick={item.onClick}
+          key={item.id}
+        />
       ))}
-    </List>
+    </ItemList>
   );
 };

@@ -1,40 +1,17 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import styled from 'styled-components';
 
 import { Button } from 'components/button/Button';
+import { Toolbar } from 'components/common/Toolbar';
 import { Checkbox } from 'components/forms/Checkbox';
-import { Dropdown, DropdownItem } from 'components/common/Dropdown';
+import { Dropdown, DropdownItem } from 'components/forms/Dropdown';
 
-import { toVU } from 'modules/theme';
-import { TodoSort, todoSort } from 'models/Todos';
+import { paths } from 'modules/paths';
 import { OnChange, OnClick } from 'modules/event';
+import { TodoSort, todoSort } from 'models/Todos';
 
 import { sortTodos } from 'store/todos/actions';
 import { useAppDispatch, useAppSelector } from 'store/utils';
-import { paths } from 'modules/paths';
-
-const Container = styled.div`
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  gap: ${toVU(1)};
-  height: calc(${toVU(3)} + 1px);
-  padding-left: ${toVU(0.5)};
-  border-bottom: ${({ theme }) => theme.border.light};
-`;
-
-const ItemSelect = styled.div`
-  /* */
-`;
-
-const Filler = styled.div`
-  flex: 1;
-`;
-
-const ItemAction = styled.div`
-  /* */
-`;
 
 interface Props {
   readonly selected: boolean;
@@ -66,37 +43,34 @@ export const TodoListToolbar: React.FC<Props> = ({
   );
 
   return (
-    <Container>
-      <ItemSelect>
+    <Toolbar
+      items={[
         <Checkbox
           label={t('todoList.selectAll')}
           checked={!disabled && selected}
           disabled={disabled}
           onChange={onSelect}
-        />
-      </ItemSelect>
-
-      <Filler />
-
-      <ItemAction>
-        <Button ico="+" text={t('create')} href={paths.CREATE} />
-      </ItemAction>
-
-      {!disabled && selected && (
-        <ItemAction>
-          <Button ico="✖" text={t('todoList.deleteAll')} onClick={onDelete} />
-        </ItemAction>
-      )}
-
-      <ItemAction>
+          key="select"
+        />,
+        'filler',
+        <Button ico="+" text={t('create')} href={paths.CREATE} key="create" />,
+        !disabled && selected ? (
+          <Button
+            ico="✖"
+            text={t('todoList.deleteAll')}
+            onClick={onDelete}
+            key="delete"
+          />
+        ) : null,
         <Dropdown
           value={sort}
           items={sortDropdownItems}
           align="right"
           disabled={disabled}
           onSelect={sortItems}
-        />
-      </ItemAction>
-    </Container>
+          key="sort"
+        />,
+      ]}
+    />
   );
 };

@@ -7,8 +7,8 @@ import { Menu } from 'components/common/Menu';
 import { MenuItem } from 'components/common/Menu';
 
 import { toVU } from 'modules/theme';
-import { filterTodos } from 'store/todos/actions';
-import { useAppDispatch, useAppSelector } from 'store/utils';
+import { paths } from 'modules/paths';
+import { useAppSelector } from 'store/utils';
 
 const Container = styled.div`
   display: flex;
@@ -27,20 +27,15 @@ const ContentColumn = styled(Grid)`
 
 export const MenuContent: React.FC<PropsWithChildren> = ({ children }) => {
   const { t } = useTranslation();
-  const dispatch = useAppDispatch();
   const filter = useAppSelector((state) => state.todo.filter);
   const folders = useAppSelector((state) => state.folder.items);
-
-  const changeFolder = (id: string | null): void => {
-    dispatch(filterTodos({ folder: id }));
-  };
 
   // user folders menu items
   const menuItems: MenuItem[] = folders.map((folder) => ({
     id: folder.id,
     title: folder.title,
     active: folder.id === filter.folder,
-    onClick: () => changeFolder(folder.id),
+    href: paths.FOLDER(folder.id),
   }));
 
   // all todos menu item
@@ -48,7 +43,7 @@ export const MenuContent: React.FC<PropsWithChildren> = ({ children }) => {
     id: '',
     title: t('folder.allTodos'),
     active: null === filter.folder,
-    onClick: () => changeFolder(null),
+    href: paths.FOLDER(''),
   });
 
   return (

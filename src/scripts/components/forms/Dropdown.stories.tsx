@@ -5,8 +5,8 @@ import { action } from '@storybook/addon-actions';
 import type { Meta, StoryObj } from '@storybook/react';
 
 import { Grid } from 'components/common/Grid';
-import { Dropdown, DropdownItem } from 'components/common/Dropdown';
 import { Paragraph } from 'components/common/Paragraph';
+import { Dropdown, DropdownItem } from 'components/forms/Dropdown';
 
 const testItems: DropdownItem<number>[] = [
   { id: '1', title: 'Item 1', value: 1 },
@@ -21,7 +21,7 @@ const Container = styled(Grid)`
 `;
 
 const meta: Meta<typeof Dropdown> = {
-  title: 'Common',
+  title: 'Forms',
   component: Dropdown,
 };
 

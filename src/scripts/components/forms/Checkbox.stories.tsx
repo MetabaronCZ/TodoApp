@@ -18,26 +18,20 @@ export const CheckboxStory: Story = {
   name: 'Checkbox',
   render: () => (
     <Grid size={1}>
-      <Checkbox onChange={action('Changed!')} />
-
-      <Checkbox label="Checked" checked onChange={action('Changed!')} />
-
-      <Checkbox label="Invalid" checked invalid onChange={action('Changed!')} />
-
-      <Checkbox
-        label="Disabled"
-        checked
-        disabled
-        onChange={action('Changed!')}
-      />
-
-      <Checkbox
-        label="Invalid + disabled"
-        checked
-        invalid
-        disabled
-        onChange={action('Changed!')}
-      />
+      <div>
+        <Checkbox onChange={action('Changed!')} />
+      </div>
+      <div>
+        <Checkbox label="Checked" checked onChange={action('Changed!')} />
+      </div>
+      <div>
+        <Checkbox
+          label="Disabled"
+          checked
+          disabled
+          onChange={action('Changed!')}
+        />
+      </div>
     </Grid>
   ),
 };

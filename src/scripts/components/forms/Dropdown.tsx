@@ -44,6 +44,7 @@ export interface DropdownItem<T> {
 }
 
 interface Props<T> {
+  readonly id?: string;
   readonly items: DropdownItem<T>[];
   readonly value: T;
   readonly align?: DropdownAlign;
@@ -52,6 +53,7 @@ interface Props<T> {
 }
 
 export const Dropdown = <T,>({
+  id,
   items,
   value,
   align = 'left',
@@ -112,6 +114,7 @@ export const Dropdown = <T,>({
   return (
     <Container ref={containerElement}>
       <Button
+        id={id}
         icoAfter={opened ? '˄' : '˅'}
         text={selected.title}
         disabled={disabled}

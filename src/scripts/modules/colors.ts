@@ -2,6 +2,7 @@ export const colors = {
   base: '#222',
   background: '#f0f0f0',
   action: '#22f',
+  field: '#fff',
   error: '#f22',
   success: '#2f2',
   hover: '#e0e0e0',

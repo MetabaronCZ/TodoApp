@@ -24,6 +24,7 @@ const SharedStyles = css`
 
   &:focus {
     outline: ${({ theme }) => theme.outline.default};
+    outline-offset: -1px;
   }
 
   &:disabled {
@@ -49,6 +50,7 @@ const ButtonText = styled.span`
 `;
 
 interface Props {
+  readonly id?: string;
   readonly className?: string;
   readonly text: string;
   readonly ico?: string;
@@ -60,6 +62,7 @@ interface Props {
 }
 
 export const Button: React.FC<Props> = ({
+  id,
   className,
   text,
   ico,
@@ -78,9 +81,8 @@ export const Button: React.FC<Props> = ({
       {!!icoAfter && <ButtonIco>{icoAfter}</ButtonIco>}
     </>
   );
-  const sharedProps = {
-    className,
-  };
+  const sharedProps = { id, className };
+
   return href && !disabled ? (
     <StyledLink {...sharedProps} to={href}>
       {content}

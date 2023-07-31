@@ -6,6 +6,7 @@ import { TodoFilter, FetchTodosResponse } from 'models/Todos';
 export interface Client {
   readonly todo: {
     readonly get: (config?: TodoFilter) => Promise<FetchTodosResponse>;
+    readonly getDetail: (id: string) => Promise<Todo | null>;
     readonly create: (data: TodoData) => Promise<Todo>;
     readonly edit: (id: string, data: Partial<TodoData>) => Promise<void>;
     readonly move: (id: string, folder: string) => Promise<void>;

@@ -19,6 +19,7 @@ const Container = styled.a`
 
   &:focus {
     outline: ${({ theme }) => theme.outline.default};
+    outline-offset: -1px;
   }
 `;
 

@@ -33,6 +33,7 @@ export const theme: DefaultTheme = {
     menuColumnWidth: '240px',
   },
   zIndex: {
-    dropdown: 1000,
+    toolbar: 1000,
+    dropdown: 10000,
   },
 };

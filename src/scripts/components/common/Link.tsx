@@ -15,6 +15,7 @@ const Container = styled(RouterLink)`
 
   &:focus {
     outline: ${({ theme }) => theme.outline.action};
+    outline-offset: -1px;
   }
 `;
 
