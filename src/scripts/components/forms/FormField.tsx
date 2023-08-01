@@ -9,7 +9,7 @@ import { Dropdown, DropdownItem } from 'components/forms/Dropdown';
 import { toVU } from 'modules/theme';
 import { OnChange } from 'modules/event';
 
-let idCounter = 0; // Todo field identificator counter
+let idCounter = 0; // form field identificator counter
 
 interface BooleanField {
   readonly type: 'checkbox';
@@ -31,7 +31,7 @@ interface DropdownField<T> {
   readonly options: DropdownItem<T>[];
   readonly onChange: OnChange<T>;
 }
-type TodoFieldValue<T> = BooleanField | TextField | DropdownField<T>;
+type FormFieldValue<T> = BooleanField | TextField | DropdownField<T>;
 
 interface StyledProps {
   readonly $vertical: boolean;
@@ -60,17 +60,17 @@ const FieldColumn = styled.div`
 interface Props<T> {
   readonly label: string;
   readonly error?: string | null;
-  readonly field: TodoFieldValue<T>;
+  readonly field: FormFieldValue<T>;
   readonly vertical?: boolean;
 }
 
-export const TodoField = <T,>({
+export const FormField = <T,>({
   label,
   field,
   error = null,
   vertical = false,
 }: Props<T>): React.ReactNode => {
-  const id = `todo-field-${idCounter++}`;
+  const id = `form-field-${idCounter++}`;
   return (
     <Container $vertical={vertical}>
       <LabelColumn>

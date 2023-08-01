@@ -2,8 +2,10 @@ import React from 'react';
 
 import { HomePage } from 'components/pages/HomePage';
 import { ErrorPage } from 'components/pages/ErrorPage';
-import { CreatePage } from 'components/pages/CreatePage';
-import { DetailPage } from 'components/pages/DetailPage';
+import { NoteCreatePage } from 'components/pages/NoteCreatePage';
+import { NoteDetailPage } from 'components/pages/NoteDetailPage';
+import { FolderCreatePage } from 'components/pages/FolderCreatePage';
+import { FolderDetailPage } from 'components/pages/FolderDetailPage';
 
 import { paths } from './paths';
 
@@ -20,14 +22,24 @@ export const routes: Route[] = [
     component: <HomePage />,
   },
   {
-    id: 'create',
-    path: paths.CREATE,
-    component: <CreatePage />,
+    id: 'note-create',
+    path: paths.NOTE_CREATE,
+    component: <NoteCreatePage />,
   },
   {
-    id: 'detail',
-    path: paths.DETAIL(':id'),
-    component: <DetailPage />,
+    id: 'note-detail',
+    path: paths.NOTE_DETAIL(':id'),
+    component: <NoteDetailPage />,
+  },
+  {
+    id: 'folder-create',
+    path: paths.FOLDER_CREATE,
+    component: <FolderCreatePage />,
+  },
+  {
+    id: 'folder-detail',
+    path: paths.FOLDER_DETAIL(':id'),
+    component: <FolderDetailPage />,
   },
   {
     id: 'error404',

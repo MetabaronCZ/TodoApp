@@ -5,10 +5,10 @@ import { Page } from 'components/Page';
 import { MenuContent } from 'components/MenuContent';
 import { TodoDetail } from 'components/todo-detail/TodoDetail';
 
-export const CreatePage: React.FC = () => {
+export const NoteCreatePage: React.FC = () => {
   const { t } = useTranslation();
   return (
-    <Page title={t('createPage')}>
+    <Page title={t('page.noteCreate')}>
       <MenuContent>
         <TodoDetail />
       </MenuContent>

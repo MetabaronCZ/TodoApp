@@ -64,14 +64,14 @@ export const TodoListItem: React.FC<Props> = ({
         <Checkbox checked={selected} onChange={onSelect} />
       </ItemSelect>
 
-      <ItemTitle to={paths.DETAIL(item.id)}>{item.title}</ItemTitle>
+      <ItemTitle to={paths.NOTE_DETAIL(item.id)}>{item.title}</ItemTitle>
 
       <ItemState title={item.isDone ? t('todo.done') : ''}>
         <Ico ico={item.isDone ? 'success' : 'minus'} />
       </ItemState>
 
       <ItemAction>
-        <Button ico="edit" text={t('edit')} href={paths.DETAIL(item.id)} />
+        <Button ico="edit" text={t('edit')} href={paths.NOTE_DETAIL(item.id)} />
       </ItemAction>
 
       <ItemAction>

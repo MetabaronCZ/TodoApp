@@ -2,8 +2,8 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 
 import { ItemList } from 'components/common/ItemList';
+import { FormField } from 'components/forms/FormField';
 import { DropdownItem } from 'components/forms/Dropdown';
-import { TodoField } from 'components/todo-detail/TodoField';
 
 import { TodoData } from 'models/Todo';
 import { FormErrors } from 'hooks/useForm';
@@ -42,7 +42,7 @@ export const TodoFields: React.FC<Props> = ({
 
   return (
     <ItemList loading={loading}>
-      <TodoField
+      <FormField
         label={t('todo.title')}
         error={errors.title}
         field={{
@@ -52,7 +52,7 @@ export const TodoFields: React.FC<Props> = ({
           onChange: (value) => onChange('title', value),
         }}
       />
-      <TodoField
+      <FormField
         label={t('todo.folder')}
         error={errors.folder}
         field={{
@@ -62,7 +62,7 @@ export const TodoFields: React.FC<Props> = ({
           onChange: (value) => onChange('folder', value),
         }}
       />
-      <TodoField
+      <FormField
         label={t('todo.done')}
         error={errors.isDone}
         field={{
@@ -71,7 +71,7 @@ export const TodoFields: React.FC<Props> = ({
           onChange: (value) => onChange('isDone', value),
         }}
       />
-      <TodoField
+      <FormField
         label={t('todo.description')}
         error={errors.description}
         field={{

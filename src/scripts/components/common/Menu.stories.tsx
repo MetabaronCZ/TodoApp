@@ -10,6 +10,7 @@ const testItems: MenuItem[] = Array(5)
   .fill(0)
   .map((_, i) => ({
     id: `${i}`,
+    ico: 0 === i % 2 ? 'plus' : 'minus',
     title: `Item ${i + 1}`,
     active: 0 === i,
     onClick: action(`Menu item ${i + 1} clicked!`),

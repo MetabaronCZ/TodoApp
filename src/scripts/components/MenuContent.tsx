@@ -33,6 +33,7 @@ export const MenuContent: React.FC<PropsWithChildren> = ({ children }) => {
   // user folders menu items
   const menuItems: MenuItem[] = folders.map((folder) => ({
     id: folder.id,
+    ico: 'star',
     title: folder.title,
     active: folder.id === filter.folder,
     href: paths.FOLDER(folder.id),
@@ -41,9 +42,18 @@ export const MenuContent: React.FC<PropsWithChildren> = ({ children }) => {
   // all todos menu item
   menuItems.unshift({
     id: '',
+    ico: 'star',
     title: t('folder.allTodos'),
     active: null === filter.folder,
     href: paths.FOLDER(''),
+  });
+
+  // create folder button
+  menuItems.push({
+    id: 'create',
+    ico: 'plus',
+    title: t('folder.create'),
+    href: paths.FOLDER_CREATE,
   });
 
   return (

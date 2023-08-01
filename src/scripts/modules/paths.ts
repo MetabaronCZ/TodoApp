@@ -10,8 +10,10 @@ export const paths = {
     search.append(folderSearchParamId, folder);
     return `/?${search.toString()}`;
   },
-  CREATE: '/create',
-  DETAIL: (id: string) => `/detail/${id}`,
+  NOTE_CREATE: '/note/create',
+  NOTE_DETAIL: (id: string) => `/note/${id}`,
+  FOLDER_CREATE: '/folder/create',
+  FOLDER_DETAIL: (id: string) => `/folder/${id}`,
   ERROR404: '*',
 };
 

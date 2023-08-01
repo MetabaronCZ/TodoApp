@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
+import { IcoId } from 'components/common/Ico';
 import { Button } from 'components/button/Button';
 import { ItemList } from 'components/common/ItemList';
 
@@ -23,6 +24,7 @@ const StyledButton = styled(Button)<StyledProps>`
 
 export interface MenuItem {
   readonly id: string;
+  readonly ico?: IcoId;
   readonly title: string;
   readonly active?: boolean;
   readonly href?: string;
@@ -41,7 +43,7 @@ export const Menu: React.FC<Props> = ({ items }) => {
     <ItemList>
       {items.map((item) => (
         <StyledButton
-          ico="star"
+          ico={item.ico}
           text={item.title}
           $active={!!item.active}
           href={item.href}

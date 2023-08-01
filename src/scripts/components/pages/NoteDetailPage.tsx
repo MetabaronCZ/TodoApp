@@ -16,7 +16,7 @@ type SearchParams = {
   readonly id?: string;
 };
 
-export const DetailPage: React.FC = () => {
+export const NoteDetailPage: React.FC = () => {
   const { t } = useTranslation();
   const dispatch = useAppDispatch();
   const { id } = useParams<SearchParams>();
@@ -43,7 +43,7 @@ export const DetailPage: React.FC = () => {
   }, [dispatch, id]);
 
   return (
-    <Page title={id ? t('detailPage') : t('createPage')}>
+    <Page title={t('page.noteDetail')}>
       <MenuContent>
         {loading ? (
           <Loader />

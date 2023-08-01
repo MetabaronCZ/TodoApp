@@ -6,7 +6,7 @@ import { Paragraph } from 'components/common/Paragraph';
 
 export const ErrorPage: React.FC = () => {
   const { t } = useTranslation();
-  const title = t('error404');
+  const title = t('page.error404');
   return (
     <Page title={title}>
       <Paragraph>{title}</Paragraph>
