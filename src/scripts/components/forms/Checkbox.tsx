@@ -40,6 +40,11 @@ const CheckMark = styled.label<StyledProps>`
   user-select: none;
   cursor: pointer;
 
+  &:hover {
+    background-color: ${({ theme, $disabled }) =>
+      $disabled ? '' : theme.color.hoverLight};
+  }
+
   &:focus-within {
     outline: ${({ theme, $disabled }) =>
       $disabled ? '' : theme.outline.default};

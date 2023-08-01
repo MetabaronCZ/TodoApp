@@ -32,6 +32,19 @@ const preview: Preview = {
         ],
       },
     },
+    backgrounds: {
+      default: 'default',
+      values: [
+        {
+          name: 'default',
+          value: '#fff',
+        },
+        {
+          name: 'web',
+          value: '#f0f0f0',
+        },
+      ],
+    },
   },
   decorators: [
     (Story) => (

@@ -25,6 +25,10 @@ const SharedStyles = css<StyledProps>`
   border: none;
   outline: none;
 
+  &:hover:not(:disabled) {
+    background-color: ${({ theme }) => theme.color.hoverLight};
+  }
+
   &:focus {
     outline: ${({ theme }) => theme.outline.default};
     outline-offset: -1px;
@@ -48,7 +52,9 @@ const StyledTextarea = styled.textarea`
 const Error = styled.div`
   ${Text.Base};
   display: block;
-  color: ${({ theme }) => theme.color.error};
+  padding: 0 ${toVU(1)};
+  color: ${({ theme }) => theme.color.field};
+  background: ${({ theme }) => theme.color.error};
 `;
 
 interface Props {

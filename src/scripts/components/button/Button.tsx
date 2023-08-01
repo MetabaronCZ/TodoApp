@@ -26,7 +26,7 @@ const SharedStyles = css<StyledProps>`
   background: ${({ theme }) => theme.color.background};
 
   &:hover:not(:disabled) {
-    background-color: ${({ theme }) => theme.color.hover};
+    background-color: ${({ theme }) => theme.color.hoverDark};
   }
 
   &:focus {

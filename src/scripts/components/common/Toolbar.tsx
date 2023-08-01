@@ -25,7 +25,7 @@ const Filler = styled.div`
 `;
 
 interface Props {
-  readonly items: Array<JSX.Element | FillerType | null>;
+  readonly items: Array<React.ReactNode | FillerType | null>;
 }
 
 export const Toolbar: React.FC<Props> = ({ items }) => {

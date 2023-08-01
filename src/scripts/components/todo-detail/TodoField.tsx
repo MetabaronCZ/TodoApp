@@ -74,7 +74,7 @@ export const TodoField = <T,>({
   return (
     <Container $vertical={vertical}>
       <LabelColumn>
-        <Label text={`${label}:`} htmlFor={id} invalid={!!error} />
+        <Label text={`${label}:`} htmlFor={id} />
       </LabelColumn>
 
       <FieldColumn>
