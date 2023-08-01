@@ -4,8 +4,10 @@
     "home": "Úkoly",
     "todoCreate": "Nový úkol",
     "todoDetail": "Detail úkolu",
+    "folderList": "Složky",
     "folderCreate": "Nová složka",
     "folderDetail": "Detail složky",
+    "settings": "Nastavení",
     "error404": "404 - Page not found"
   },
   "copyright": "Copyright © {{year}} MetabaronCZ (<authorLink>{{author}}</authorLink>). All Rights Reserved.",
@@ -13,14 +15,8 @@
   "edit": "Upravit",
   "delete": "Smazat",
   "back": "Zpět",
-  "folder": {
-    "title": "Název složky",
-    "create": "Vytvořit složku",
-    "allTodos": "Všechny úkoly"
-  },
+  "selectAll": "Vybrat vše",
   "todoList": {
-    "selectAll": "Vybrat vše",
-    "deleteAll": "Smazat",
     "deleteAllConfirm": "Opravdu chcete vybrané úkoly smazat?",
     "empty": "Nebyly nalezeny žádné úkoly.",
     "sort": {
@@ -32,6 +28,14 @@
       "CREATED_DESC": "Nejnovější"
     }
   },
+  "folderList": {
+    "deleteAllConfirm": "Opravdu chcete vybrané složky smazat?",
+    "empty": "Nebyly nalezeny žádné složky.",
+    "sort": {
+      "TITLE_ASC": "Abecedně (A-Z)",
+      "TITLE_DESC": "Abecedně (Z-A)"
+    }
+  },
   "todo": {
     "title": "Název úkolu",
     "description": "Popis úkolu",
@@ -39,6 +43,12 @@
     "done": "Hotovo",
     "folderSelect": "-Vyberte složku-",
     "deleteConfirm": "Opravdu chcete úkol smazat?"
+  },
+  "folder": {
+    "title": "Název složky",
+    "create": "Vytvořit složku",
+    "allTodos": "Všechny úkoly",
+    "deleteConfirm": "Opravdu chcete složku smazat?"
   },
   "error": {
     "detailLoading": "Data se nepodařilo načíst. Zkuste to prosím později."

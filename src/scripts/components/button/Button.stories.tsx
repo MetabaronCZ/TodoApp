@@ -46,6 +46,10 @@ export const ButtonStory: Story = {
           onClick={action('Clicked')}
         />
       </div>
+
+      <div>
+        <Button ico="star" title="Ico button" onClick={action('Clicked')} />
+      </div>
     </Grid>
   ),
 };

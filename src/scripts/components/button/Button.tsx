@@ -55,7 +55,8 @@ const ButtonText = styled.span`
 interface Props {
   readonly id?: string;
   readonly className?: string;
-  readonly text: string;
+  readonly title?: string;
+  readonly text?: string;
   readonly ico?: IcoId;
   readonly icoBefore?: IcoId;
   readonly icoAfter?: IcoId;
@@ -67,6 +68,7 @@ interface Props {
 export const Button: React.FC<Props> = ({
   id,
   className,
+  title,
   text,
   ico,
   icoBefore,
@@ -80,9 +82,7 @@ export const Button: React.FC<Props> = ({
   const content = (
     <>
       {!!ico && <Ico ico={ico} color={disabled ? 'disabled' : null} />}
-
-      <ButtonText>{text}</ButtonText>
-
+      {!!text && <ButtonText>{text}</ButtonText>}
       {!!icoAfter && (
         <Ico ico={icoAfter} color={disabled ? 'disabled' : null} />
       )}
@@ -91,8 +91,9 @@ export const Button: React.FC<Props> = ({
   const sharedProps = {
     id,
     className,
-    $withIcoBefore: !!ico,
-    $withIcoAfter: !!icoAfter,
+    title,
+    $withIcoBefore: !text || !!ico,
+    $withIcoAfter: !text || !!icoAfter,
   };
 
   return href && !disabled ? (

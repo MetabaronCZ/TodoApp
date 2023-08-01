@@ -14,6 +14,7 @@ const StyledButton = styled.button`
 interface Props extends PropsWithChildren {
   readonly id?: string;
   readonly className?: string;
+  readonly title?: string;
   readonly disabled?: boolean;
   readonly onClick?: OnClick;
 }
@@ -21,6 +22,7 @@ interface Props extends PropsWithChildren {
 export const ButtonRaw: React.FC<Props> = ({
   id,
   className,
+  title,
   disabled = false,
   children,
   onClick,
@@ -29,6 +31,7 @@ export const ButtonRaw: React.FC<Props> = ({
     id={id}
     className={className}
     type="button"
+    title={title}
     disabled={disabled}
     onClick={click(onClick)}
   >

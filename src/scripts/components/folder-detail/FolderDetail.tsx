@@ -56,7 +56,7 @@ export const FolderDetail: React.FC<Props> = ({ data, fetchError = false }) => {
 
       submitAction
         .then(() => {
-          navigate(paths.HOME);
+          navigate(paths.FOLDER_LIST);
         })
         .finally(() => {
           setLoading(false);

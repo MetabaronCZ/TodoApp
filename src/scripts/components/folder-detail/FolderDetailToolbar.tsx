@@ -18,7 +18,7 @@ export const FolderDetailToolbar: React.FC<Props> = ({ disabled = false }) => {
         <Button
           ico="arrowLeft"
           text={t('back')}
-          href={paths.HOME}
+          href={paths.FOLDER_LIST}
           disabled={disabled}
           key="back"
         />,

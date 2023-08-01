@@ -2,8 +2,10 @@ import React from 'react';
 
 import { HomePage } from 'components/pages/HomePage';
 import { ErrorPage } from 'components/pages/ErrorPage';
+import { SettingsPage } from 'components/pages/SettingsPage';
 import { TodoCreatePage } from 'components/pages/TodoCreatePage';
 import { TodoDetailPage } from 'components/pages/TodoDetailPage';
+import { FolderListPage } from 'components/pages/FolderListPage';
 import { FolderCreatePage } from 'components/pages/FolderCreatePage';
 import { FolderDetailPage } from 'components/pages/FolderDetailPage';
 
@@ -32,6 +34,11 @@ export const routes: Route[] = [
     component: <TodoDetailPage />,
   },
   {
+    id: 'folder-list',
+    path: paths.FOLDER_LIST,
+    component: <FolderListPage />,
+  },
+  {
     id: 'folder-create',
     path: paths.FOLDER_CREATE,
     component: <FolderCreatePage />,
@@ -40,6 +47,11 @@ export const routes: Route[] = [
     id: 'folder-detail',
     path: paths.FOLDER_DETAIL(':id'),
     component: <FolderDetailPage />,
+  },
+  {
+    id: 'settings',
+    path: paths.SETTINGS,
+    component: <SettingsPage />,
   },
   {
     id: 'error404',

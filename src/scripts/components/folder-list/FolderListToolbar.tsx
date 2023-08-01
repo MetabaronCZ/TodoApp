@@ -8,36 +8,31 @@ import { Dropdown, DropdownItem } from 'components/forms/Dropdown';
 
 import { paths } from 'modules/paths';
 import { OnChange, OnClick } from 'modules/event';
-import { TodoSort, todoSort } from 'models/Todos';
-
-import { sortTodos } from 'store/todos/actions';
-import { useAppDispatch, useAppSelector } from 'store/utils';
+import { FolderSort, folderSort } from 'models/Folders';
 
 interface Props {
+  readonly sort: FolderSort;
   readonly selected: boolean;
   readonly disabled?: boolean;
+  readonly onSort: (sort: FolderSort) => void;
   readonly onSelect: OnChange<boolean>;
   readonly onDelete: OnClick;
 }
 
-export const TodoListToolbar: React.FC<Props> = ({
+export const FolderListToolbar: React.FC<Props> = ({
+  sort,
   selected,
   disabled = false,
+  onSort,
   onSelect,
   onDelete,
 }) => {
   const { t } = useTranslation();
-  const dispatch = useAppDispatch();
-  const sort = useAppSelector((state) => state.todo.filter.sort);
 
-  const sortItems = (newSort: TodoSort): void => {
-    dispatch(sortTodos(newSort));
-  };
-
-  const sortDropdownItems: DropdownItem<TodoSort>[] = todoSort.map(
+  const sortDropdownItems: DropdownItem<FolderSort>[] = folderSort.map(
     (sortId) => ({
       id: sortId,
-      title: t(`todoList.sort.${sortId}`),
+      title: t(`folderList.sort.${sortId}`),
       value: sortId,
     }),
   );
@@ -56,7 +51,7 @@ export const TodoListToolbar: React.FC<Props> = ({
         <Button
           ico="plus"
           text={t('create')}
-          href={paths.TODO_CREATE}
+          href={paths.FOLDER_CREATE}
           key="create"
         />,
         !disabled && selected ? (
@@ -72,7 +67,7 @@ export const TodoListToolbar: React.FC<Props> = ({
           items={sortDropdownItems}
           align="right"
           disabled={disabled}
-          onSelect={sortItems}
+          onSelect={onSort}
           key="sort"
         />,
       ]}

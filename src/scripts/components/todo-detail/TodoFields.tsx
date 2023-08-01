@@ -57,9 +57,9 @@ export const TodoFields: React.FC<Props> = ({
         error={errors.folder}
         field={{
           type: 'dropdown',
-          value: fields.folder,
+          value: fields.folder || '',
           options: folderOptions,
-          onChange: (value) => onChange('folder', value),
+          onChange: (value) => onChange('folder', value || null),
         }}
       />
       <FormField

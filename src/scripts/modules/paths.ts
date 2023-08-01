@@ -12,8 +12,10 @@ export const paths = {
   },
   TODO_CREATE: '/todo/create',
   TODO_DETAIL: (id: string) => `/todo/${id}`,
+  FOLDER_LIST: '/folder/list',
   FOLDER_CREATE: '/folder/create',
   FOLDER_DETAIL: (id: string) => `/folder/${id}`,
+  SETTINGS: '/settings',
   ERROR404: '*',
 };
 

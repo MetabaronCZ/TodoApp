@@ -30,10 +30,8 @@ export const HomePage: React.FC = () => {
     }
   }, [dispatch, folder]);
 
-  const title = t('page.home');
-
   return (
-    <Page title={title}>
+    <Page title={t('page.home')}>
       <MenuContent>
         <TodoList />
       </MenuContent>

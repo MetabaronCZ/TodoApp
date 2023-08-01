@@ -30,12 +30,12 @@ export const MenuMain: React.FC = () => {
     href: paths.FOLDER(''),
   });
 
-  // create folder button
+  // folder list link
   menuItems.push({
     id: 'create',
-    ico: 'plus',
-    title: t('folder.create'),
-    href: paths.FOLDER_CREATE,
+    ico: 'edit',
+    title: t('page.folderList'),
+    href: paths.FOLDER_LIST,
   });
 
   return <Menu items={menuItems} />;

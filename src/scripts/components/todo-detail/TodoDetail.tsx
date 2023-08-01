@@ -15,7 +15,7 @@ import { useForm } from 'hooks/useForm';
 import { Todo, TodoData } from 'models/Todo';
 import { getValidations } from 'modules/validations';
 
-import { useAppDispatch } from 'store/utils';
+import { useAppDispatch, useAppSelector } from 'store/utils';
 import { createTodo, editTodo } from 'store/todos/actions';
 
 const StyledParagraph = styled(Paragraph)`
@@ -34,13 +34,14 @@ export const TodoDetail: React.FC<Props> = ({ data, fetchError = false }) => {
   const navigate = useNavigate();
   const dispatch = useAppDispatch();
   const [loading, setLoading] = useState(false);
+  const folder = useAppSelector((state) => state.todo.filter.folder);
 
   const validations = getValidations(t);
 
   const { fields, errors, setValue, submit } = useForm<FormFields>({
     initialValues: {
       title: data?.title ?? '',
-      folder: data?.folder ?? '',
+      folder: data ? data.folder : folder,
       isDone: data?.isDone ?? false,
       description: data?.description ?? '',
     },
