@@ -56,7 +56,7 @@ export const TodoListToolbar: React.FC<Props> = ({
         <Button
           ico="plus"
           text={t('create')}
-          href={paths.NOTE_CREATE}
+          href={paths.TODO_CREATE}
           key="create"
         />,
         !disabled && selected ? (

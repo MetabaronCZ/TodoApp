@@ -4,7 +4,6 @@ import { useTranslation } from 'react-i18next';
 
 import { Page } from 'components/Page';
 import { MenuContent } from 'components/MenuContent';
-import { Paragraph } from 'components/common/Paragraph';
 import { FolderDetail } from 'components/folder-detail/FolderDetail';
 
 import { useAppSelector } from 'store/utils';
@@ -23,11 +22,7 @@ export const FolderDetailPage: React.FC = () => {
   return (
     <Page title={t('page.folderDetail')}>
       <MenuContent>
-        {!folder ? (
-          <Paragraph>{t('error.detailLoading')}</Paragraph>
-        ) : (
-          <FolderDetail data={folder} />
-        )}
+        <FolderDetail data={folder} fetchError={!folder} />
       </MenuContent>
     </Page>
   );

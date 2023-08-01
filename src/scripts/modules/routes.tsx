@@ -2,8 +2,8 @@ import React from 'react';
 
 import { HomePage } from 'components/pages/HomePage';
 import { ErrorPage } from 'components/pages/ErrorPage';
-import { NoteCreatePage } from 'components/pages/NoteCreatePage';
-import { NoteDetailPage } from 'components/pages/NoteDetailPage';
+import { TodoCreatePage } from 'components/pages/TodoCreatePage';
+import { TodoDetailPage } from 'components/pages/TodoDetailPage';
 import { FolderCreatePage } from 'components/pages/FolderCreatePage';
 import { FolderDetailPage } from 'components/pages/FolderDetailPage';
 
@@ -22,14 +22,14 @@ export const routes: Route[] = [
     component: <HomePage />,
   },
   {
-    id: 'note-create',
-    path: paths.NOTE_CREATE,
-    component: <NoteCreatePage />,
+    id: 'todo-create',
+    path: paths.TODO_CREATE,
+    component: <TodoCreatePage />,
   },
   {
-    id: 'note-detail',
-    path: paths.NOTE_DETAIL(':id'),
-    component: <NoteDetailPage />,
+    id: 'todo-detail',
+    path: paths.TODO_DETAIL(':id'),
+    component: <TodoDetailPage />,
   },
   {
     id: 'folder-create',

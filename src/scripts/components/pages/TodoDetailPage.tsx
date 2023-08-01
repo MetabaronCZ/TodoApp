@@ -5,7 +5,6 @@ import { useParams } from 'react-router-dom';
 import { Page } from 'components/Page';
 import { Loader } from 'components/common/Loader';
 import { MenuContent } from 'components/MenuContent';
-import { Paragraph } from 'components/common/Paragraph';
 import { TodoDetail } from 'components/todo-detail/TodoDetail';
 
 import { Todo } from 'models/Todo';
@@ -16,7 +15,7 @@ type SearchParams = {
   readonly id?: string;
 };
 
-export const NoteDetailPage: React.FC = () => {
+export const TodoDetailPage: React.FC = () => {
   const { t } = useTranslation();
   const dispatch = useAppDispatch();
   const { id } = useParams<SearchParams>();
@@ -43,15 +42,9 @@ export const NoteDetailPage: React.FC = () => {
   }, [dispatch, id]);
 
   return (
-    <Page title={t('page.noteDetail')}>
+    <Page title={t('page.todoDetail')}>
       <MenuContent>
-        {loading ? (
-          <Loader />
-        ) : error ? (
-          <Paragraph>{t('error.detailLoading')}</Paragraph>
-        ) : (
-          <TodoDetail data={data} />
-        )}
+        {loading ? <Loader /> : <TodoDetail data={data} fetchError={error} />}
       </MenuContent>
     </Page>
   );

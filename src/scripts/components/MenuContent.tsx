@@ -1,14 +1,10 @@
 import React, { PropsWithChildren } from 'react';
-import { useTranslation } from 'react-i18next';
 import styled from 'styled-components';
 
 import { Grid } from 'components/common/Grid';
-import { Menu } from 'components/common/Menu';
-import { MenuItem } from 'components/common/Menu';
+import { MenuMain } from 'components/MenuMain';
 
 import { toVU } from 'modules/theme';
-import { paths } from 'modules/paths';
-import { useAppSelector } from 'store/utils';
 
 const Container = styled.div`
   display: flex;
@@ -25,44 +21,12 @@ const ContentColumn = styled(Grid)`
   min-width: 0;
 `;
 
-export const MenuContent: React.FC<PropsWithChildren> = ({ children }) => {
-  const { t } = useTranslation();
-  const filter = useAppSelector((state) => state.todo.filter);
-  const folders = useAppSelector((state) => state.folder.items);
+export const MenuContent: React.FC<PropsWithChildren> = ({ children }) => (
+  <Container>
+    <MenuColumn>
+      <MenuMain />
+    </MenuColumn>
 
-  // user folders menu items
-  const menuItems: MenuItem[] = folders.map((folder) => ({
-    id: folder.id,
-    ico: 'star',
-    title: folder.title,
-    active: folder.id === filter.folder,
-    href: paths.FOLDER(folder.id),
-  }));
-
-  // all todos menu item
-  menuItems.unshift({
-    id: '',
-    ico: 'star',
-    title: t('folder.allTodos'),
-    active: null === filter.folder,
-    href: paths.FOLDER(''),
-  });
-
-  // create folder button
-  menuItems.push({
-    id: 'create',
-    ico: 'plus',
-    title: t('folder.create'),
-    href: paths.FOLDER_CREATE,
-  });
-
-  return (
-    <Container>
-      <MenuColumn>
-        <Menu items={menuItems} />
-      </MenuColumn>
-
-      <ContentColumn>{children}</ContentColumn>
-    </Container>
-  );
-};
+    <ContentColumn>{children}</ContentColumn>
+  </Container>
+);

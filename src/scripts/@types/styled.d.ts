@@ -9,9 +9,13 @@ declare module 'styled-components' {
     };
     readonly fontSize: {
       readonly default: string;
+      readonly small: string;
+      readonly large: string;
     };
     readonly lineHeight: {
       readonly default: string;
+      readonly small: string;
+      readonly large: string;
     };
     readonly border: {
       readonly default: string;

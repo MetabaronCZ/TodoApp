@@ -1,9 +1,9 @@
 {
   "appName": "TODOLIST",
   "page": {
-    "home": "Výpis úkolů",
-    "noteCreate": "Nový úkol",
-    "noteDetail": "Detail úkolu",
+    "home": "Úkoly",
+    "todoCreate": "Nový úkol",
+    "todoDetail": "Detail úkolu",
     "folderCreate": "Nová složka",
     "folderDetail": "Detail složky",
     "error404": "404 - Page not found"

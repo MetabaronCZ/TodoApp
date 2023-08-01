@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import styled from 'styled-components';
 
+import { Heading } from 'components/common/Heading';
 import { ItemList } from 'components/common/ItemList';
 import { Paragraph } from 'components/common/Paragraph';
 import { TodoListItem } from 'components/todo-list/TodoListItem';
@@ -18,6 +19,10 @@ interface StyledProps {
 
 const Container = styled.div<StyledProps>`
   ${UpdatedContent};
+`;
+
+const StyledHeading = styled(Heading)`
+  margin-bottom: 1px;
 `;
 
 const StyledParagraph = styled(Paragraph)`
@@ -79,6 +84,8 @@ export const TodoList: React.FC = () => {
 
   return (
     <Container $loading={loading}>
+      <StyledHeading>{t('page.home')}</StyledHeading>
+
       <TodoListToolbar
         selected={selectionChecked}
         disabled={0 === items.length}

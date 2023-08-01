@@ -11,9 +11,13 @@ export const theme: DefaultTheme = {
   },
   fontSize: {
     default: '14px',
+    small: '12px',
+    large: '18px',
   },
   lineHeight: {
     default: toVU(2),
+    small: toVU(2),
+    large: toVU(3),
   },
   border: {
     default: `1px solid ${colors.base}`,

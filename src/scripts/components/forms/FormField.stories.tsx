@@ -25,13 +25,13 @@ export const FormFieldStory: Story = {
     <Grid size={1}>
       <FormField
         label="Text input"
-        field={{ type: 'text', value: '', onChange: action('Change!') }}
+        field={{ type: 'text', value: 'Example', onChange: action('Change!') }}
       />
       <FormField
         label="Textarea"
         field={{
           type: 'text',
-          value: '',
+          value: 'Example',
           textarea: true,
           onChange: action('Change!'),
         }}
@@ -56,11 +56,11 @@ export const FormFieldStory: Story = {
       <FormField
         label="Invalid"
         error="Form field error message!"
-        field={{ type: 'text', value: '', onChange: action('Change!') }}
+        field={{ type: 'text', value: 'Example', onChange: action('Change!') }}
       />
       <FormField
         label="Vertical"
-        field={{ type: 'text', value: '', onChange: action('Change!') }}
+        field={{ type: 'text', value: 'Example', onChange: action('Change!') }}
         vertical
       />
     </Grid>
