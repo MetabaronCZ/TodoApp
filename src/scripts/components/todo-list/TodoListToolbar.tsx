@@ -10,29 +10,24 @@ import { paths } from 'modules/paths';
 import { OnChange, OnClick } from 'modules/event';
 import { TodoSort, todoSort } from 'models/Todos';
 
-import { sortTodos } from 'store/todos/actions';
-import { useAppDispatch, useAppSelector } from 'store/utils';
-
 interface Props {
+  readonly sort: TodoSort;
   readonly selected: boolean;
   readonly disabled?: boolean;
   readonly onSelect: OnChange<boolean>;
+  readonly onSort: (sort: TodoSort) => void;
   readonly onDelete: OnClick;
 }
 
 export const TodoListToolbar: React.FC<Props> = ({
+  sort,
   selected,
   disabled = false,
   onSelect,
+  onSort,
   onDelete,
 }) => {
   const { t } = useTranslation();
-  const dispatch = useAppDispatch();
-  const sort = useAppSelector((state) => state.todo.filter.sort);
-
-  const sortItems = (newSort: TodoSort): void => {
-    dispatch(sortTodos(newSort));
-  };
 
   const sortDropdownItems: DropdownItem<TodoSort>[] = todoSort.map(
     (sortId) => ({
@@ -72,7 +67,7 @@ export const TodoListToolbar: React.FC<Props> = ({
           items={sortDropdownItems}
           align="right"
           disabled={disabled}
-          onSelect={sortItems}
+          onSelect={onSort}
           key="sort"
         />,
       ]}

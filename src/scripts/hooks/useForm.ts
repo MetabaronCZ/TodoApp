@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 type FormData = Record<string, unknown>;
 
@@ -14,12 +14,50 @@ type FormValidations<T extends FormData> = {
 interface FormConfig<T extends FormData> {
   readonly initialValues: T;
   readonly validations?: FormValidations<T>;
+  readonly autoSubmit?: boolean;
   readonly onSubmit?: (data: T) => void;
 }
 
 export type FormErrors<T extends FormData> = Partial<
   Record<keyof T, string | null>
 >;
+
+const validateField = <T extends FormData, U extends keyof T>(
+  validations: FormValidations<T>,
+  field: U,
+  value: T[U],
+): string | null => {
+  const fieldValidations = validations[field] ?? [];
+  let error: string | null = null;
+
+  for (const { message, test } of fieldValidations) {
+    if (!test(value)) {
+      error = message;
+      break;
+    }
+  }
+  return error;
+};
+
+const submit = <T extends FormData>(
+  fields: T,
+  validations: FormValidations<T>,
+  onSubmit?: (data: T) => void,
+): void => {
+  let hasErrors = false;
+
+  for (const item of Object.entries(fields)) {
+    const field = item[0] as keyof T;
+    const value = item[1] as T[typeof field];
+
+    if (null !== validateField(validations, field, value)) {
+      hasErrors = true;
+    }
+  }
+  if (!hasErrors && onSubmit) {
+    onSubmit(fields);
+  }
+};
 
 interface UseForm<T extends FormData> {
   readonly fields: T;
@@ -33,59 +71,45 @@ export const useForm = <T extends FormData>(
 ): UseForm<T> => {
   const {
     initialValues,
+    autoSubmit = false,
     validations = {} as FormValidations<T>,
     onSubmit,
   } = config;
 
   const [fields, setFields] = useState<T>(initialValues);
   const [errors, setErrors] = useState<FormErrors<T>>({});
+  const [submitRequest, setSubmitRequest] = useState(false);
 
-  const validateField = <U extends keyof T>(
-    field: U,
-    value: T[U],
-  ): string | null => {
-    const fieldValidations = validations[field] ?? [];
-    let error: string | null = null;
-
-    for (const { message, test } of fieldValidations) {
-      if (!test(value)) {
-        error = message;
-        break;
-      }
+  // validate on form submit request
+  useEffect(() => {
+    if (submitRequest) {
+      submit(fields, validations, onSubmit);
+      setSubmitRequest(false);
     }
-    setErrors((state) => ({
-      ...state,
-      [field]: error,
-    }));
-
-    return error;
-  };
+  }, [fields, onSubmit, submitRequest, validations]);
 
   return {
     fields,
     errors,
     setValue: (field, value) => {
-      validateField(field, value);
+      const error = validateField(validations, field, value);
+
+      setErrors((state) => ({
+        ...state,
+        [field]: error,
+      }));
 
       setFields((state) => ({
         ...state,
         [field]: value,
       }));
+
+      if (autoSubmit) {
+        setSubmitRequest(true);
+      }
     },
     submit: () => {
-      let hasErrors = false;
-
-      for (const item of Object.entries(fields)) {
-        const field = item[0] as keyof T;
-        const value = item[1] as T[typeof field];
-
-        if (null !== validateField(field, value)) {
-          hasErrors = true;
-        }
-      }
-      if (!hasErrors && onSubmit) {
-        onSubmit(fields);
-      }
+      setSubmitRequest(true);
     },
   };
 };

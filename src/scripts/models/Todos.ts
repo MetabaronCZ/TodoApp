@@ -1,5 +1,4 @@
 import { Todo } from 'models/Todo';
-import { TodoPerPage } from 'models/Settings';
 
 export interface Todos {
   readonly filter: TodoFilter;
@@ -26,9 +25,12 @@ export const todoSort = [
 export type TodoSort = (typeof todoSort)[number];
 
 export interface TodoFilter {
-  readonly page: number;
-  readonly perPage: TodoPerPage;
   readonly sort: TodoSort;
+  readonly page: number;
   readonly query: string;
   readonly folder: string | null;
+}
+
+export interface FetchTodoFilter extends TodoFilter {
+  readonly perPage: number;
 }

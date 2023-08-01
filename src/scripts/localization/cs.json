@@ -16,6 +16,8 @@
   "delete": "Smazat",
   "back": "Zpět",
   "selectAll": "Vybrat vše",
+  "prev": "Předchozí",
+  "next": "Další",
   "todoList": {
     "deleteAllConfirm": "Opravdu chcete vybrané úkoly smazat?",
     "empty": "Nebyly nalezeny žádné úkoly.",
@@ -49,6 +51,9 @@
     "create": "Vytvořit složku",
     "allTodos": "Všechny úkoly",
     "deleteConfirm": "Opravdu chcete složku smazat?"
+  },
+  "settings": {
+    "perPage": "Stránkování"
   },
   "error": {
     "detailLoading": "Data se nepodařilo načíst. Zkuste to prosím později."

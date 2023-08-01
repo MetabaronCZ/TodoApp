@@ -1,4 +1,4 @@
-export const perPages = [25, 30, 50] as const;
+export const perPages = [20, 30, 50] as const;
 export type TodoPerPage = (typeof perPages)[number];
 
 export type SettingsData = {

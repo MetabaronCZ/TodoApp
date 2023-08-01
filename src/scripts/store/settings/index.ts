@@ -7,7 +7,7 @@ const initialState: Settings = {
   loading: false,
   error: null,
   data: {
-    perPage: 25,
+    perPage: 20,
   },
 };
 

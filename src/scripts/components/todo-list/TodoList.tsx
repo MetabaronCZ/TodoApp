@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import styled from 'styled-components';
 
+import { Paging } from 'components/common/Paging';
 import { Heading } from 'components/common/Heading';
 import { ItemList } from 'components/common/ItemList';
 import { Paragraph } from 'components/common/Paragraph';
@@ -10,8 +11,10 @@ import { UpdatedContent } from 'components/common/UpdatedContent';
 import { TodoListToolbar } from 'components/todo-list/TodoListToolbar';
 
 import { toVU } from 'modules/theme';
-import { deleteTodos } from 'store/todos/actions';
+import { TodoSort } from 'models/Todos';
+
 import { useAppDispatch, useAppSelector } from 'store/utils';
+import { deleteTodos, fetchTodos, sortTodos } from 'store/todos/actions';
 
 interface StyledProps {
   readonly $loading?: boolean;
@@ -32,9 +35,11 @@ const StyledParagraph = styled(Paragraph)`
 export const TodoList: React.FC = () => {
   const { t } = useTranslation();
   const dispatch = useAppDispatch();
+  const data = useAppSelector((state) => state.todo);
   const [selected, setSelected] = useState<string[]>([]);
-  const { items, loading } = useAppSelector((state) => state.todo);
+  const { perPage } = useAppSelector((state) => state.settings.data);
 
+  const { items, loading, count, filter } = data;
   const idSnapshot = items.map((item) => item.id).join('|');
 
   useEffect(() => {
@@ -65,6 +70,14 @@ export const TodoList: React.FC = () => {
     }
   };
 
+  const sortItems = (newSort: TodoSort): void => {
+    dispatch(sortTodos(newSort));
+  };
+
+  const changePage = (nr: number): void => {
+    dispatch(fetchTodos({ page: nr }));
+  };
+
   const onDeleteItem = (id: string): void => {
     if (window.confirm(t('todo.deleteConfirm'))) {
       dispatch(deleteTodos([id]));
@@ -87,25 +100,38 @@ export const TodoList: React.FC = () => {
       <StyledHeading>{t('page.home')}</StyledHeading>
 
       <TodoListToolbar
+        sort={filter.sort}
         selected={selectionChecked}
         disabled={0 === items.length}
         onSelect={onSelectAll}
+        onSort={sortItems}
         onDelete={onDeleteAll}
       />
       {0 === items.length ? (
         <StyledParagraph>{t('todoList.empty')}</StyledParagraph>
       ) : (
-        <ItemList>
-          {items.map((item) => (
-            <TodoListItem
-              item={item}
-              selected={selected.includes(item.id)}
-              onDelete={() => onDeleteItem(item.id)}
-              onSelect={(value) => onSelectItem(item.id, value)}
-              key={item.id}
+        <>
+          <ItemList>
+            {items.map((item) => (
+              <TodoListItem
+                item={item}
+                selected={selected.includes(item.id)}
+                onDelete={() => onDeleteItem(item.id)}
+                onSelect={(value) => onSelectItem(item.id, value)}
+                key={item.id}
+              />
+            ))}
+          </ItemList>
+
+          {count > perPage && (
+            <Paging
+              page={filter.page}
+              count={count}
+              perPage={perPage}
+              onChange={changePage}
             />
-          ))}
-        </ItemList>
+          )}
+        </>
       )}
     </Container>
   );

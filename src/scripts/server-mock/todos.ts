@@ -1,19 +1,21 @@
 import { Todo, TodoData } from 'models/Todo';
-import { FetchTodosResponse, TodoFilter } from 'models/Todos';
+import { FetchTodoFilter, FetchTodosResponse } from 'models/Todos';
 
 import { mockedDb } from 'server-mock/db';
 import { mockApiRequest, mockCreatedId } from 'server-mock/utils';
 
-const defaultConfig: TodoFilter = {
+const defaultConfig: FetchTodoFilter = {
   page: 0,
-  perPage: 25,
+  perPage: 20,
   folder: null,
   query: '',
   sort: 'CREATED_DESC',
 };
 
 export const apiTodos = {
-  get: (config: TodoFilter = defaultConfig): Promise<FetchTodosResponse> => {
+  get: (
+    config: FetchTodoFilter = defaultConfig,
+  ): Promise<FetchTodosResponse> => {
     const { page, perPage, query, folder, sort } = config;
 
     return mockApiRequest(() => {

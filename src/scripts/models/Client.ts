@@ -1,11 +1,11 @@
 import { Todo, TodoData } from 'models/Todo';
 import { SettingsData } from 'models/Settings';
 import { Folder, FolderData } from 'models/Folder';
-import { TodoFilter, FetchTodosResponse } from 'models/Todos';
+import { FetchTodoFilter, FetchTodosResponse } from 'models/Todos';
 
 export interface Client {
   readonly todo: {
-    readonly get: (config?: TodoFilter) => Promise<FetchTodosResponse>;
+    readonly get: (config?: FetchTodoFilter) => Promise<FetchTodosResponse>;
     readonly getDetail: (id: string) => Promise<Todo | null>;
     readonly create: (data: TodoData) => Promise<Todo>;
     readonly edit: (id: string, data: Partial<TodoData>) => Promise<void>;
