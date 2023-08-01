@@ -36,13 +36,13 @@ export const ButtonStory: Story = {
       </div>
 
       <div>
-        <Button text="With ico before" ico="+" onClick={action('Clicked')} />
+        <Button text="With ico before" ico="plus" onClick={action('Clicked')} />
       </div>
 
       <div>
         <Button
           text="With ico after"
-          icoAfter="+"
+          icoAfter="plus"
           onClick={action('Clicked')}
         />
       </div>

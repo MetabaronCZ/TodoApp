@@ -16,7 +16,7 @@ export const TodoDetailToolbar: React.FC<Props> = ({ disabled = false }) => {
     <Toolbar
       items={[
         <Button
-          ico="❮"
+          ico="arrowLeft"
           text={t('back')}
           href={paths.HOME}
           disabled={disabled}

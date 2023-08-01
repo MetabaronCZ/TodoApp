@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 
+import { Ico } from 'components/common/Ico';
 import { Button } from 'components/button/Button';
 import { Text } from 'components/common/Typography';
 import { Checkbox } from 'components/forms/Checkbox';
@@ -66,15 +67,15 @@ export const TodoListItem: React.FC<Props> = ({
       <ItemTitle to={paths.DETAIL(item.id)}>{item.title}</ItemTitle>
 
       <ItemState title={item.isDone ? t('todo.done') : ''}>
-        {item.isDone ? '✔' : '-'}
+        <Ico ico={item.isDone ? 'success' : 'minus'} />
       </ItemState>
 
       <ItemAction>
-        <Button ico="✎" text={t('edit')} href={paths.DETAIL(item.id)} />
+        <Button ico="edit" text={t('edit')} href={paths.DETAIL(item.id)} />
       </ItemAction>
 
       <ItemAction>
-        <Button ico="✖" text={t('delete')} onClick={onDelete} />
+        <Button ico="close" text={t('delete')} onClick={onDelete} />
       </ItemAction>
     </Container>
   );

@@ -115,7 +115,7 @@ export const Dropdown = <T,>({
     <Container ref={containerElement}>
       <Button
         id={id}
-        icoAfter={opened ? '˄' : '˅'}
+        icoAfter={opened ? 'arrowUp' : 'arrowDown'}
         text={selected.title}
         disabled={disabled}
         onClick={() => setOpened(!opened)}

@@ -71,7 +71,7 @@ export const TodoDetail: React.FC<Props> = ({ data }) => {
 
       <div>
         <Button
-          ico={data ? '✎' : '+'}
+          ico={data ? 'edit' : 'plus'}
           text={data ? t('edit') : t('create')}
           disabled={loading}
           onClick={submit}

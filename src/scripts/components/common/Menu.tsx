@@ -41,7 +41,7 @@ export const Menu: React.FC<Props> = ({ items }) => {
     <ItemList>
       {items.map((item) => (
         <StyledButton
-          ico="★"
+          ico="star"
           text={item.title}
           $active={!!item.active}
           href={item.href}

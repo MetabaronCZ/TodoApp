@@ -53,10 +53,15 @@ export const TodoListToolbar: React.FC<Props> = ({
           key="select"
         />,
         'filler',
-        <Button ico="+" text={t('create')} href={paths.CREATE} key="create" />,
+        <Button
+          ico="plus"
+          text={t('create')}
+          href={paths.CREATE}
+          key="create"
+        />,
         !disabled && selected ? (
           <Button
-            ico="✖"
+            ico="close"
             text={t('todoList.deleteAll')}
             onClick={onDelete}
             key="delete"
