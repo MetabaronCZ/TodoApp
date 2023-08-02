@@ -40,6 +40,11 @@ const ItemState = styled.div`
   user-select: none;
 `;
 
+const ItemCreated = styled.div`
+  ${Text.Base};
+  white-space: nowrap;
+`;
+
 const ItemAction = styled.div`
   /* */
 `;
@@ -58,6 +63,7 @@ export const TodoListItem: React.FC<Props> = ({
   onSelect,
 }) => {
   const { t } = useTranslation();
+  const createDate = new Date(item.created);
   return (
     <Container>
       <ItemSelect>
@@ -65,6 +71,8 @@ export const TodoListItem: React.FC<Props> = ({
       </ItemSelect>
 
       <ItemTitle to={paths.TODO_DETAIL(item.id)}>{item.title}</ItemTitle>
+
+      <ItemCreated>{createDate.toLocaleDateString()}</ItemCreated>
 
       <ItemState title={item.isDone ? t('todo.done') : ''}>
         <Ico ico={item.isDone ? 'success' : 'minus'} />

@@ -22,6 +22,10 @@ const StyledParagraph = styled(Paragraph)`
   margin-top: ${toVU(1)};
 `;
 
+const ButtonList = styled.div`
+  border-top: ${({ theme }) => theme.border.light};
+`;
+
 type FormFields = FolderData;
 
 interface Props {
@@ -66,11 +70,11 @@ export const FolderDetail: React.FC<Props> = ({ data, fetchError = false }) => {
 
   return (
     <div>
-      <FolderDetailToolbar disabled={loading} />
-
       <Heading>
         {data || fetchError ? t('page.folderDetail') : t('page.folderCreate')}
       </Heading>
+
+      <FolderDetailToolbar disabled={loading} />
 
       {fetchError ? (
         <StyledParagraph>{t('error.detailLoading')}</StyledParagraph>
@@ -83,14 +87,14 @@ export const FolderDetail: React.FC<Props> = ({ data, fetchError = false }) => {
             onChange={setValue}
           />
 
-          <div>
+          <ButtonList>
             <Button
               ico={data ? 'edit' : 'plus'}
               text={data ? t('edit') : t('create')}
               disabled={loading}
               onClick={submit}
             />
-          </div>
+          </ButtonList>
         </>
       )}
     </div>

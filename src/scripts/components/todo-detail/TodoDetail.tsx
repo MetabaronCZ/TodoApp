@@ -15,11 +15,15 @@ import { useForm } from 'hooks/useForm';
 import { Todo, TodoData } from 'models/Todo';
 import { getValidations } from 'modules/validations';
 
-import { useAppDispatch, useAppSelector } from 'store/utils';
 import { createTodo, editTodo } from 'store/todos/actions';
+import { useAppDispatch, useAppSelector } from 'store/utils';
 
 const StyledParagraph = styled(Paragraph)`
   margin-top: ${toVU(1)};
+`;
+
+const ButtonList = styled.div`
+  border-top: ${({ theme }) => theme.border.light};
 `;
 
 type FormFields = TodoData;
@@ -70,11 +74,11 @@ export const TodoDetail: React.FC<Props> = ({ data, fetchError = false }) => {
 
   return (
     <div>
-      <TodoDetailToolbar disabled={loading} />
-
       <Heading>
         {data || fetchError ? t('page.todoDetail') : t('page.todoCreate')}
       </Heading>
+
+      <TodoDetailToolbar disabled={loading} />
 
       {fetchError ? (
         <StyledParagraph>{t('error.detailLoading')}</StyledParagraph>
@@ -87,14 +91,14 @@ export const TodoDetail: React.FC<Props> = ({ data, fetchError = false }) => {
             onChange={setValue}
           />
 
-          <div>
+          <ButtonList>
             <Button
               ico={data ? 'edit' : 'plus'}
               text={data ? t('edit') : t('create')}
               disabled={loading}
               onClick={submit}
             />
-          </div>
+          </ButtonList>
         </>
       )}
     </div>

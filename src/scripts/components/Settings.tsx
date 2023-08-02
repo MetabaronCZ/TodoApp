@@ -1,25 +1,16 @@
 import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import styled from 'styled-components';
 
 import { Heading } from 'components/common/Heading';
+import { ItemList } from 'components/common/ItemList';
 import { FormField } from 'components/forms/FormField';
 import { DropdownItem } from 'components/forms/Dropdown';
-import { UpdatedContent } from 'components/common/UpdatedContent';
 
 import { useForm } from 'hooks/useForm';
 import { SettingsData, TodoPerPage, perPages } from 'models/Settings';
 
 import { updateSettings } from 'store/settings/actions';
 import { useAppDispatch, useAppSelector } from 'store/utils';
-
-interface StyledProps {
-  readonly $loading?: boolean;
-}
-
-const Container = styled.div<StyledProps>`
-  ${UpdatedContent};
-`;
 
 export const Settings: React.FC = () => {
   const { t } = useTranslation();
@@ -54,7 +45,7 @@ export const Settings: React.FC = () => {
     <div>
       <Heading>{t('page.settings')}</Heading>
 
-      <Container $loading={loading}>
+      <ItemList loading={loading}>
         <FormField
           label={t('settings.perPage')}
           field={{
@@ -64,7 +55,7 @@ export const Settings: React.FC = () => {
             onChange: (value) => setValue('perPage', value as TodoPerPage),
           }}
         />
-      </Container>
+      </ItemList>
     </div>
   );
 };
