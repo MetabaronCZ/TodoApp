@@ -1,0 +1,10 @@
+{
+  "moduleDirectories": ["node_modules", "<rootDir>"],
+  "moduleFileExtensions": ["ts", "tsx", "js"],
+  "testMatch": ["**/*.test.ts?(x)"],
+  "rootDir": "./src/scripts",
+  "testEnvironment": "jsdom",
+  "coverageProvider": "v8",
+  "coverageDirectory": "<rootDir>/../../coverage",
+  "clearMocks": true
+}
