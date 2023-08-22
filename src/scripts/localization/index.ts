@@ -1,7 +1,7 @@
 import i18next from 'i18next';
 import { initReactI18next } from 'react-i18next';
 
-import { ENV } from 'modules/env';
+import { Env } from 'modules/env';
 import csTranslation from 'localization/cs.json';
 
 export const i18n = i18next.use(initReactI18next).init({
@@ -18,5 +18,5 @@ export const i18n = i18next.use(initReactI18next).init({
   react: {
     useSuspense: false,
   },
-  debug: ENV.isDev,
+  debug: Env.isDev(),
 });

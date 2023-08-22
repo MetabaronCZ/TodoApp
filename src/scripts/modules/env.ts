@@ -1,3 +1,3 @@
-export const ENV = {
-  isDev: process.env.NODE_ENV === 'development',
+export const Env = {
+  isDev: () => process.env.NODE_ENV === 'development',
 };
