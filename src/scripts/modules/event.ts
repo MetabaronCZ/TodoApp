@@ -13,18 +13,23 @@ export const click = (cb?: OnClick) => (e: MouseEvent) => {
   }
 };
 
-export const change = (cb: OnChange<string>) => (e: ChangeEvent<Changable>) => {
-  cb(e.currentTarget.value);
-};
+export const change =
+  (cb?: OnChange<string>) => (e: ChangeEvent<Changable>) => {
+    if (cb) {
+      cb(e.target.value);
+    }
+  };
 
 export const check =
   (cb?: OnChange<boolean>) => (e: ChangeEvent<HTMLInputElement>) => {
     if (cb) {
-      cb(e.currentTarget.checked);
+      cb(e.target.checked);
     }
   };
 
-export const submit = (cb: OnSubmit) => (e: FormEvent) => {
-  e.preventDefault();
-  cb();
+export const submit = (cb?: OnSubmit) => (e: FormEvent) => {
+  if (cb) {
+    e.preventDefault();
+    cb();
+  }
 };
