@@ -1,56 +1,20 @@
-import React, { FormEvent } from 'react';
+import { cleanup } from '@testing-library/react';
 import { describe, expect, it, jest } from '@jest/globals';
-import { cleanup, fireEvent, render, screen } from '@testing-library/react';
 
 import { change, check, click, submit } from 'modules/event';
+import {
+  mockChangeEvent,
+  mockCheckEvent,
+  mockClickEvent,
+  mockSubmitEvent,
+} from 'test/event';
 
-// utility functions
-const createClickEvent = (): Promise<React.MouseEvent> => {
-  return new Promise((resolve) => {
-    render(<div data-testid="test" onClick={resolve} />);
-    fireEvent.click(screen.getByTestId('test'));
-  });
-};
-
-const createChangeEvent = (
-  value: string,
-): Promise<React.ChangeEvent<HTMLInputElement>> => {
-  return new Promise((resolve) => {
-    render(<input data-testid="test" onChange={resolve} />);
-    fireEvent.change(screen.getByTestId('test'), { target: { value } });
-  });
-};
-
-const createCheckEvent = (
-  checked = false,
-): Promise<React.ChangeEvent<HTMLInputElement>> => {
-  return new Promise((resolve) => {
-    render(
-      <input
-        type="checkbox"
-        checked={!checked}
-        data-testid="test"
-        onChange={resolve}
-      />,
-    );
-    fireEvent.click(screen.getByTestId('test'));
-  });
-};
-
-const createSubmitEvent = (): Promise<FormEvent> => {
-  return new Promise((resolve) => {
-    render(<form data-testid="test" onSubmit={resolve} />);
-    fireEvent.submit(screen.getByTestId('test'));
-  });
-};
-
-// tests
 describe('modules/event', () => {
   describe('click()', () => {
     it('should not prevent event default when no callback provided', async () => {
       const fn = click();
 
-      const evt = await createClickEvent();
+      const evt = await mockClickEvent();
       expect(evt.defaultPrevented).toEqual(false);
 
       fn(evt);
@@ -61,7 +25,7 @@ describe('modules/event', () => {
       const cb = jest.fn();
       const fn = click(cb);
 
-      const evt = await createClickEvent();
+      const evt = await mockClickEvent();
       expect(cb.mock.calls.length).toEqual(0);
       expect(evt.defaultPrevented).toEqual(false);
 
@@ -78,7 +42,7 @@ describe('modules/event', () => {
       const cb = jest.fn();
       const fn = change(cb);
 
-      const evt = await createChangeEvent('test');
+      const evt = await mockChangeEvent('test');
       expect(cb.mock.calls.length).toEqual(0);
 
       fn(evt);
@@ -93,7 +57,7 @@ describe('modules/event', () => {
       let cb = jest.fn();
       let fn = check(cb);
 
-      let evt = await createCheckEvent();
+      let evt = await mockCheckEvent();
       expect(cb.mock.calls.length).toEqual(0);
 
       fn(evt);
@@ -106,7 +70,7 @@ describe('modules/event', () => {
       cb = jest.fn();
       fn = check(cb);
 
-      evt = await createCheckEvent(true);
+      evt = await mockCheckEvent(true);
       expect(cb.mock.calls.length).toEqual(0);
 
       fn(evt);
@@ -119,7 +83,7 @@ describe('modules/event', () => {
     it('should not prevent event default when no callback provided', async () => {
       const fn = submit();
 
-      const evt = await createSubmitEvent();
+      const evt = await mockSubmitEvent();
       expect(evt.defaultPrevented).toEqual(false);
 
       fn(evt);
@@ -130,7 +94,7 @@ describe('modules/event', () => {
       const cb = jest.fn();
       const fn = submit(cb);
 
-      const evt = await createSubmitEvent();
+      const evt = await mockSubmitEvent();
       expect(cb.mock.calls.length).toEqual(0);
       expect(evt.defaultPrevented).toEqual(false);
 
