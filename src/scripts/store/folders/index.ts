@@ -69,7 +69,7 @@ export const todoFoldersSlice = createSlice({
       ),
       (state, action) => {
         state.loading = false;
-        state.error = action.payload?.message ?? null;
+        state.error = action.error.message ?? null;
       },
     );
 

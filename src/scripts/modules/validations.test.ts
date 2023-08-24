@@ -8,7 +8,7 @@ const { REQUIRED } = getValidations(t);
 describe('modules/validations', () => {
   describe('getValidations()', () => {
     describe('REQUIRED', () => {
-      it('should return true for correct values', async () => {
+      it('should return true for correct values', () => {
         expect(REQUIRED.test('OK')).toBe(true);
         expect(REQUIRED.test('OK OK OK')).toBe(true);
         expect(REQUIRED.test(' ')).toBe(true);
@@ -18,7 +18,7 @@ describe('modules/validations', () => {
         expect(REQUIRED.test('false')).toBe(true);
       });
 
-      it('should return false for incorrect values', async () => {
+      it('should return false for incorrect values', () => {
         expect(REQUIRED.test('')).toBe(false);
       });
     });

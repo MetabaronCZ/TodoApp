@@ -42,7 +42,7 @@ export const settingsSlice = createSlice({
       isAnyOf(fetchSettings.rejected, updateSettings.rejected),
       (state, action) => {
         state.loading = false;
-        state.error = action.payload?.message ?? null;
+        state.error = action.error.message ?? null;
       },
     );
 

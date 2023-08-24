@@ -3,7 +3,7 @@ import { toVU } from 'modules/theme';
 
 describe('modules/theme', () => {
   describe('toVU()', () => {
-    it('should convert vertical unit count to CSS pixel value', async () => {
+    it('should convert vertical unit count to CSS pixel value', () => {
       expect(toVU(0)).toEqual('0px');
       expect(toVU(0.5)).toEqual('5px');
       expect(toVU(1)).toEqual('10px');
