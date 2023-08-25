@@ -1,31 +1,13 @@
 import { describe, expect, it, jest } from '@jest/globals';
-import { ToolkitStore } from '@reduxjs/toolkit/dist/configureStore';
-import { AnyAction, ThunkMiddleware, configureStore } from '@reduxjs/toolkit';
 
 import { client } from 'modules/client';
 import { SettingsData } from 'models/Settings';
 
-import { AppState } from 'store';
-import { todoListSlice } from 'store/todos';
 import { settingsSlice } from 'store/settings';
-import { todoFoldersSlice } from 'store/folders';
 import { fetchSettings, updateSettings } from 'store/settings/actions';
+import { mockStore } from 'test/store';
 
 const { setSettings } = settingsSlice.actions;
-
-const mockStore = (): ToolkitStore<
-  AppState,
-  AnyAction,
-  [ThunkMiddleware<AppState, AnyAction>]
-> => {
-  return configureStore<AppState>({
-    reducer: {
-      todo: todoListSlice.reducer,
-      folder: todoFoldersSlice.reducer,
-      settings: settingsSlice.reducer,
-    },
-  });
-};
 
 describe('store/settings', () => {
   describe('setSettings()', () => {
