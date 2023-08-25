@@ -25,7 +25,7 @@ describe('store/folders', () => {
 
       const store = mockStore();
       let state = store.getState();
-      expect(testData).not.toEqual(state.folder.items);
+      expect(state.folder.items).toEqual([]);
 
       store.dispatch(setFolders(testData));
       state = store.getState();

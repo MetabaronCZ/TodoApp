@@ -1,3 +1,4 @@
+import { TodoPerPage } from 'models/Settings';
 import { Todo } from 'models/Todo';
 
 export interface Todos {
@@ -32,5 +33,5 @@ export interface TodoFilter {
 }
 
 export interface FetchTodoFilter extends TodoFilter {
-  readonly perPage: number;
+  readonly perPage: TodoPerPage;
 }
