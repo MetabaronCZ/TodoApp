@@ -15,7 +15,7 @@ interface EditTodoPayload {
   readonly data: Partial<TodoData>;
 }
 
-interface FilterTodosPalyoad {
+export interface FilterTodosPalyoad {
   readonly query?: string;
   readonly folder?: string | null;
 }
@@ -47,8 +47,12 @@ export const fetchTodos = createAppAsyncThunk<
 
 export const fetchTodoDetail = createAppAsyncThunk<Todo | null, string>(
   'todos/fetchDetail',
-  async (id) => {
-    return await client.todo.getDetail(id);
+  async (id, { rejectWithValue }) => {
+    try {
+      return await client.todo.getDetail(id);
+    } catch (error) {
+      return rejectWithValue(error as Error);
+    }
   },
 );
 
@@ -70,15 +74,16 @@ export const sortTodos = createAppAsyncThunk<void, TodoSort>(
   },
 );
 
-export const createTodo = createAppAsyncThunk<void, TodoData>(
+export const createTodo = createAppAsyncThunk<Todo, TodoData>(
   'todos/create',
   async (data, { dispatch }) => {
-    await client.todo.create(data);
+    const todo = await client.todo.create(data);
     await dispatch(fetchTodos({ page: 0 }));
+    return todo;
   },
 );
 
-export const editTodo = createAppAsyncThunk<void, EditTodoPayload>(
+export const editTodo = createAppAsyncThunk<EditTodoPayload, EditTodoPayload>(
   'todos/edit',
   async (payload, { dispatch }) => {
     const { id, data } = payload;
@@ -87,10 +92,11 @@ export const editTodo = createAppAsyncThunk<void, EditTodoPayload>(
       dispatch(fetchTodos({ page: 0 })),
       dispatch(fetchFolders()),
     ]);
+    return payload;
   },
 );
 
-export const deleteTodos = createAppAsyncThunk<void, string[]>(
+export const deleteTodos = createAppAsyncThunk<string[], string[]>(
   'todos/delete',
   async (ids, { dispatch }) => {
     await client.todo.delete(ids);
@@ -98,5 +104,6 @@ export const deleteTodos = createAppAsyncThunk<void, string[]>(
       dispatch(fetchTodos({ page: 0 })),
       dispatch(fetchFolders()),
     ]);
+    return ids;
   },
 );
