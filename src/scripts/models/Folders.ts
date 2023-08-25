@@ -9,15 +9,13 @@ export interface Folders {
 export const folderSort = ['TITLE_ASC', 'TITLE_DESC'] as const;
 export type FolderSort = (typeof folderSort)[number];
 
+type SortFn = (a: Folder, b: Folder) => number;
+
+const sortFn: Record<FolderSort, SortFn> = {
+  TITLE_ASC: (a, b) => a.title.localeCompare(b.title),
+  TITLE_DESC: (a, b) => b.title.localeCompare(a.title),
+};
+
 export const sortFolders = (folders: Folder[], sort: FolderSort): Folder[] => {
-  return [...folders].sort((a, b) => {
-    switch (sort) {
-      case 'TITLE_ASC':
-        return a.title.localeCompare(b.title);
-      case 'TITLE_DESC':
-        return b.title.localeCompare(a.title);
-      default:
-        return 0;
-    }
-  });
+  return [...folders].sort(sortFn[sort]);
 };
