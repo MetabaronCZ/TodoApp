@@ -1,0 +1,36 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`components/layout/Logo should render correctly 1`] = `
+.c0 {
+  font-family: Open Sans,Arial,sans-serif;
+  color: #222;
+  font-size: 14px;
+  line-height: 20px;
+  display: block;
+  padding: 0 10px;
+  font-size: 20px;
+  line-height: 40px;
+  font-weight: bold;
+  -webkit-letter-spacing: 2px;
+  -moz-letter-spacing: 2px;
+  -ms-letter-spacing: 2px;
+  letter-spacing: 2px;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
+.c0:focus {
+  outline: 1px dotted #222;
+  outline-offset: -1px;
+}
+
+<div>
+  <a
+    class="c0"
+    href="/"
+  >
+    ☑ 
+    TODOLIST
+  </a>
+</div>
+`;
