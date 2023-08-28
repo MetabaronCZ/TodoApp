@@ -7,7 +7,7 @@ import { Text } from 'components/common/Typography';
 import { ButtonRaw } from 'components/button/ButtonRaw';
 
 import { toVU } from 'modules/theme';
-import { OnClick } from 'modules/event';
+import { OnClick, click } from 'modules/event';
 
 interface StyledProps {
   readonly $withIcoBefore: boolean;
@@ -97,7 +97,7 @@ export const Button: React.FC<Props> = ({
   };
 
   return href && !disabled ? (
-    <StyledLink {...sharedProps} to={href}>
+    <StyledLink {...sharedProps} to={href} onClick={click(onClick)}>
       {content}
     </StyledLink>
   ) : (

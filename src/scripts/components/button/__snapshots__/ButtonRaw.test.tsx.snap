@@ -1,0 +1,76 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`components/button/ButtonRaw should render children 1`] = `
+.c0 {
+  display: block;
+  width: 100%;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+<div>
+  <button
+    class="c0"
+    type="button"
+  >
+    <span>
+      Test button
+    </span>
+  </button>
+</div>
+`;
+
+exports[`components/button/ButtonRaw should render correctly 1`] = `
+.c0 {
+  display: block;
+  width: 100%;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+<div>
+  <button
+    class="c0"
+    type="button"
+  />
+</div>
+`;
+
+exports[`components/button/ButtonRaw should render disabled state 1`] = `
+.c0 {
+  display: block;
+  width: 100%;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+<div>
+  <button
+    class="c0"
+    disabled=""
+    type="button"
+  />
+</div>
+`;
+
+exports[`components/button/ButtonRaw should render props 1`] = `
+.c0 {
+  display: block;
+  width: 100%;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+<div>
+  <button
+    class="c0 test-class"
+    id="test-id"
+    title="Test button"
+    type="button"
+  />
+</div>
+`;

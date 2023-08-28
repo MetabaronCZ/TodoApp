@@ -1,0 +1,661 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`components/button/Button should prefer link Button when href and onClick defined 1`] = `
+.c0 {
+  font-family: Open Sans,Arial,sans-serif;
+  color: #222;
+  font-size: 14px;
+  line-height: 20px;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: auto;
+  padding: 5px 10px;
+  padding-left: 5px;
+  padding-right: 5px;
+  background: #f0f0f0;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
+.c0:hover:not(:disabled) {
+  background-color: #e0e0e0;
+}
+
+.c0:focus {
+  outline: 1px dotted #222;
+  outline-offset: -1px;
+}
+
+.c0:disabled {
+  color: #c0c0c0;
+}
+
+<div>
+  <a
+    class="c0"
+    href="/test"
+  />
+</div>
+`;
+
+exports[`components/button/Button should render <button> Button by default 1`] = `
+.c0 {
+  display: block;
+  width: 100%;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.c1 {
+  font-family: Open Sans,Arial,sans-serif;
+  color: #222;
+  font-size: 14px;
+  line-height: 20px;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: auto;
+  padding: 5px 10px;
+  padding-left: 5px;
+  padding-right: 5px;
+  background: #f0f0f0;
+}
+
+.c1:hover:not(:disabled) {
+  background-color: #e0e0e0;
+}
+
+.c1:focus {
+  outline: 1px dotted #222;
+  outline-offset: -1px;
+}
+
+.c1:disabled {
+  color: #c0c0c0;
+}
+
+<div>
+  <button
+    class="c0 c1"
+    type="button"
+  />
+</div>
+`;
+
+exports[`components/button/Button should render both icos 1`] = `
+.c2 {
+  font-family: Open Sans,Arial,sans-serif;
+  color: #222;
+  font-size: 14px;
+  line-height: 20px;
+  display: block;
+  width: 20px;
+  height: 20px;
+  line-height: 20px;
+  font-style: normal;
+  text-align: center;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.c0 {
+  display: block;
+  width: 100%;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.c1 {
+  font-family: Open Sans,Arial,sans-serif;
+  color: #222;
+  font-size: 14px;
+  line-height: 20px;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: auto;
+  padding: 5px 10px;
+  padding-left: 5px;
+  padding-right: 5px;
+  background: #f0f0f0;
+}
+
+.c1:hover:not(:disabled) {
+  background-color: #e0e0e0;
+}
+
+.c1:focus {
+  outline: 1px dotted #222;
+  outline-offset: -1px;
+}
+
+.c1:disabled {
+  color: #c0c0c0;
+}
+
+.c3 {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+}
+
+<div>
+  <button
+    class="c0 c1"
+    type="button"
+  >
+    <i
+      class="c2"
+    >
+      ❮
+    </i>
+    <span
+      class="c3"
+    >
+      Button
+    </span>
+    <i
+      class="c2"
+    >
+      ❯
+    </i>
+  </button>
+</div>
+`;
+
+exports[`components/button/Button should render disabled state when href defined 1`] = `
+.c0 {
+  display: block;
+  width: 100%;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.c1 {
+  font-family: Open Sans,Arial,sans-serif;
+  color: #222;
+  font-size: 14px;
+  line-height: 20px;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: auto;
+  padding: 5px 10px;
+  padding-left: 5px;
+  padding-right: 5px;
+  background: #f0f0f0;
+}
+
+.c1:hover:not(:disabled) {
+  background-color: #e0e0e0;
+}
+
+.c1:focus {
+  outline: 1px dotted #222;
+  outline-offset: -1px;
+}
+
+.c1:disabled {
+  color: #c0c0c0;
+}
+
+<div>
+  <button
+    class="c0 c1"
+    disabled=""
+    type="button"
+  />
+</div>
+`;
+
+exports[`components/button/Button should render disabled state when onClick defined 1`] = `
+.c0 {
+  display: block;
+  width: 100%;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.c1 {
+  font-family: Open Sans,Arial,sans-serif;
+  color: #222;
+  font-size: 14px;
+  line-height: 20px;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: auto;
+  padding: 5px 10px;
+  padding-left: 5px;
+  padding-right: 5px;
+  background: #f0f0f0;
+}
+
+.c1:hover:not(:disabled) {
+  background-color: #e0e0e0;
+}
+
+.c1:focus {
+  outline: 1px dotted #222;
+  outline-offset: -1px;
+}
+
+.c1:disabled {
+  color: #c0c0c0;
+}
+
+<div>
+  <button
+    class="c0 c1"
+    disabled=""
+    type="button"
+  />
+</div>
+`;
+
+exports[`components/button/Button should render ico after 1`] = `
+.c3 {
+  font-family: Open Sans,Arial,sans-serif;
+  color: #222;
+  font-size: 14px;
+  line-height: 20px;
+  display: block;
+  width: 20px;
+  height: 20px;
+  line-height: 20px;
+  font-style: normal;
+  text-align: center;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.c0 {
+  display: block;
+  width: 100%;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.c1 {
+  font-family: Open Sans,Arial,sans-serif;
+  color: #222;
+  font-size: 14px;
+  line-height: 20px;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: auto;
+  padding: 5px 10px;
+  padding-right: 5px;
+  background: #f0f0f0;
+}
+
+.c1:hover:not(:disabled) {
+  background-color: #e0e0e0;
+}
+
+.c1:focus {
+  outline: 1px dotted #222;
+  outline-offset: -1px;
+}
+
+.c1:disabled {
+  color: #c0c0c0;
+}
+
+.c2 {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+}
+
+<div>
+  <button
+    class="c0 c1"
+    type="button"
+  >
+    <span
+      class="c2"
+    >
+      Button
+    </span>
+    <i
+      class="c3"
+    >
+      ✖
+    </i>
+  </button>
+</div>
+`;
+
+exports[`components/button/Button should render ico before 1`] = `
+.c2 {
+  font-family: Open Sans,Arial,sans-serif;
+  color: #222;
+  font-size: 14px;
+  line-height: 20px;
+  display: block;
+  width: 20px;
+  height: 20px;
+  line-height: 20px;
+  font-style: normal;
+  text-align: center;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.c0 {
+  display: block;
+  width: 100%;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.c1 {
+  font-family: Open Sans,Arial,sans-serif;
+  color: #222;
+  font-size: 14px;
+  line-height: 20px;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: auto;
+  padding: 5px 10px;
+  padding-left: 5px;
+  background: #f0f0f0;
+}
+
+.c1:hover:not(:disabled) {
+  background-color: #e0e0e0;
+}
+
+.c1:focus {
+  outline: 1px dotted #222;
+  outline-offset: -1px;
+}
+
+.c1:disabled {
+  color: #c0c0c0;
+}
+
+.c3 {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+}
+
+<div>
+  <button
+    class="c0 c1"
+    type="button"
+  >
+    <i
+      class="c2"
+    >
+      ✖
+    </i>
+    <span
+      class="c3"
+    >
+      Button
+    </span>
+  </button>
+</div>
+`;
+
+exports[`components/button/Button should render ico button 1`] = `
+.c2 {
+  font-family: Open Sans,Arial,sans-serif;
+  color: #222;
+  font-size: 14px;
+  line-height: 20px;
+  display: block;
+  width: 20px;
+  height: 20px;
+  line-height: 20px;
+  font-style: normal;
+  text-align: center;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.c0 {
+  display: block;
+  width: 100%;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.c1 {
+  font-family: Open Sans,Arial,sans-serif;
+  color: #222;
+  font-size: 14px;
+  line-height: 20px;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: auto;
+  padding: 5px 10px;
+  padding-left: 5px;
+  padding-right: 5px;
+  background: #f0f0f0;
+}
+
+.c1:hover:not(:disabled) {
+  background-color: #e0e0e0;
+}
+
+.c1:focus {
+  outline: 1px dotted #222;
+  outline-offset: -1px;
+}
+
+.c1:disabled {
+  color: #c0c0c0;
+}
+
+<div>
+  <button
+    class="c0 c1"
+    type="button"
+  >
+    <i
+      class="c2"
+    >
+      ✖
+    </i>
+  </button>
+</div>
+`;
+
+exports[`components/button/Button should render link Button when href defined 1`] = `
+.c0 {
+  font-family: Open Sans,Arial,sans-serif;
+  color: #222;
+  font-size: 14px;
+  line-height: 20px;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: auto;
+  padding: 5px 10px;
+  padding-left: 5px;
+  padding-right: 5px;
+  background: #f0f0f0;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
+.c0:hover:not(:disabled) {
+  background-color: #e0e0e0;
+}
+
+.c0:focus {
+  outline: 1px dotted #222;
+  outline-offset: -1px;
+}
+
+.c0:disabled {
+  color: #c0c0c0;
+}
+
+<div>
+  <a
+    class="c0"
+    href="/test"
+  />
+</div>
+`;
+
+exports[`components/button/Button should render props 1`] = `
+.c0 {
+  display: block;
+  width: 100%;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.c1 {
+  font-family: Open Sans,Arial,sans-serif;
+  color: #222;
+  font-size: 14px;
+  line-height: 20px;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: auto;
+  padding: 5px 10px;
+  background: #f0f0f0;
+}
+
+.c1:hover:not(:disabled) {
+  background-color: #e0e0e0;
+}
+
+.c1:focus {
+  outline: 1px dotted #222;
+  outline-offset: -1px;
+}
+
+.c1:disabled {
+  color: #c0c0c0;
+}
+
+.c2 {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+}
+
+<div>
+  <button
+    class="c0 c1 test-class"
+    id="test-id"
+    title="Test button"
+    type="button"
+  >
+    <span
+      class="c2"
+    >
+      Button text
+    </span>
+  </button>
+</div>
+`;
