@@ -1,0 +1,38 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`components/layout/Copyright should render correctly 1`] = `
+.c0 {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  color: #22c;
+}
+
+.c0:hover {
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+.c0:focus {
+  outline: 1px dotted #22c;
+  outline-offset: -1px;
+}
+
+<div>
+  <div
+    class=""
+  >
+    Copyright © 2023 MetabaronCZ (
+    <a
+      class="c0"
+      href="https://github.com/MetabaronCZ"
+      target="_blank"
+    >
+      https://github.com/MetabaronCZ
+    </a>
+    ). All Rights Reserved.
+  </div>
+</div>
+`;

@@ -1,6 +1,7 @@
 {
   "moduleDirectories": ["node_modules", "<rootDir>"],
   "moduleFileExtensions": ["ts", "tsx", "js"],
+  "setupFilesAfterEnv": ["<rootDir>/test/setup.tsx"],
   "testMatch": ["**/*.test.ts?(x)"],
   "rootDir": "./src/scripts",
   "testEnvironment": "jsdom",

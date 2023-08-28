@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`components/layout/Content should render correctly 1`] = `
+.c0 {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  padding: 10px 0;
+}
+
+<div>
+  <main
+    class="c0"
+  />
+</div>
+`;
+
+exports[`components/layout/Content should render with children 1`] = `
+.c0 {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  padding: 10px 0;
+}
+
+<div>
+  <main
+    class="c0"
+  >
+    <label>
+      child
+    </label>
+  </main>
+</div>
+`;
