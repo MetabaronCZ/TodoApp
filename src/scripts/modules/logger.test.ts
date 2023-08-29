@@ -5,7 +5,6 @@ import { Logger } from 'modules/logger';
 
 // mock Env module
 jest.mock('modules/env');
-const isDev = jest.mocked(Env.isDev);
 
 describe('modules/logger', () => {
   describe('log()', () => {
@@ -14,6 +13,7 @@ describe('modules/logger', () => {
       log.mockImplementation(() => null);
       expect(log.mock.calls.length).toEqual(0);
 
+      const isDev = jest.mocked(Env.isDev);
       isDev.mockReturnValue(false);
       Logger.log('test');
       expect(log.mock.calls.length).toEqual(0);
@@ -24,6 +24,7 @@ describe('modules/logger', () => {
       log.mockImplementation(() => null);
       expect(log.mock.calls.length).toEqual(0);
 
+      const isDev = jest.mocked(Env.isDev);
       isDev.mockReturnValue(true);
       Logger.log('test', 3, true);
       expect(log.mock.calls.length).toEqual(1);
@@ -37,6 +38,7 @@ describe('modules/logger', () => {
       error.mockImplementation(() => null);
       expect(error.mock.calls.length).toEqual(0);
 
+      const isDev = jest.mocked(Env.isDev);
       isDev.mockReturnValue(false);
       Logger.error('test');
       expect(error.mock.calls.length).toEqual(0);
@@ -47,6 +49,7 @@ describe('modules/logger', () => {
       error.mockImplementation(() => null);
       expect(error.mock.calls.length).toEqual(0);
 
+      const isDev = jest.mocked(Env.isDev);
       isDev.mockReturnValue(true);
       Logger.error('test', 3, true);
       expect(error.mock.calls.length).toEqual(1);
