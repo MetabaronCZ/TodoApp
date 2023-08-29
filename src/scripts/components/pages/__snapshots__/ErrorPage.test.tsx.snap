@@ -1,0 +1,258 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`components/pages/ErrorPage should render correctly 1`] = `
+.c8 {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  padding: 10px 0;
+}
+
+.c7 {
+  font-family: Open Sans,Arial,sans-serif;
+  color: #222;
+  font-size: 14px;
+  line-height: 20px;
+  display: block;
+  width: 20px;
+  height: 20px;
+  line-height: 20px;
+  font-style: normal;
+  text-align: center;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.c6 {
+  font-family: Open Sans,Arial,sans-serif;
+  color: #222;
+  font-size: 14px;
+  line-height: 20px;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: auto;
+  padding: 5px 10px;
+  padding-left: 5px;
+  padding-right: 5px;
+  background: #f0f0f0;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
+.c6:hover:not(:disabled) {
+  background-color: #e0e0e0;
+}
+
+.c6:focus {
+  outline: 1px dotted #222;
+  outline-offset: -1px;
+}
+
+.c6:disabled {
+  color: #c0c0c0;
+}
+
+.c3 {
+  font-family: Open Sans,Arial,sans-serif;
+  color: #222;
+  font-size: 14px;
+  line-height: 20px;
+  display: block;
+  padding: 0 10px;
+  font-size: 20px;
+  line-height: 40px;
+  font-weight: bold;
+  -webkit-letter-spacing: 2px;
+  -moz-letter-spacing: 2px;
+  -ms-letter-spacing: 2px;
+  letter-spacing: 2px;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
+.c3:focus {
+  outline: 1px dotted #222;
+  outline-offset: -1px;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding: 10px 0;
+}
+
+.c4 {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+}
+
+.c5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.c11 {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  color: #22c;
+}
+
+.c11:hover {
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+.c11:focus {
+  outline: 1px dotted #22c;
+  outline-offset: -1px;
+}
+
+.c10 {
+  font-family: Open Sans,Arial,sans-serif;
+  color: #222;
+  font-size: 14px;
+  line-height: 20px;
+  padding: 20px 0;
+  text-align: center;
+}
+
+.c0 {
+  min-height: 100vh;
+  width: 100%;
+  padding: 0 20px;
+  background: #f0f0f0;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  min-width: 320px;
+  max-width: 980px;
+  min-height: 100vh;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.c9 {
+  font-family: Open Sans,Arial,sans-serif;
+  color: #222;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+<div>
+  <div
+    class="c0"
+  >
+    <div
+      class="c1"
+    >
+      <header
+        class="c2"
+      >
+        <a
+          class="c3"
+          href="/"
+        >
+          ☑ 
+          TODOLIST
+        </a>
+        <div
+          class="c4"
+        />
+        <div
+          class="c5"
+        >
+          <a
+            class="c6"
+            href="/folder/list"
+            title="Složky"
+          >
+            <i
+              class="c7"
+            >
+              ★
+            </i>
+          </a>
+          <a
+            class="c6"
+            href="/settings"
+            title="Nastavení"
+          >
+            <i
+              class="c7"
+            >
+              ✎
+            </i>
+          </a>
+        </div>
+      </header>
+      <main
+        class="c8"
+      >
+        <p
+          class="c9"
+        >
+          404 - Page not found
+        </p>
+      </main>
+      <footer
+        class="c10"
+      >
+        <div
+          class=""
+        >
+          Copyright © 2023 MetabaronCZ (
+          <a
+            class="c11"
+            href="https://github.com/MetabaronCZ"
+            target="_blank"
+          >
+            https://github.com/MetabaronCZ
+          </a>
+          ). All Rights Reserved.
+        </div>
+      </footer>
+    </div>
+  </div>
+</div>
+`;

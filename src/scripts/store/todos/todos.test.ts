@@ -144,7 +144,7 @@ describe('store/todos', () => {
       const store = mockStore();
       const response = await store.dispatch(fetchTodoDetail('INVALID'));
       expect(api.mock.calls.length).toEqual(1);
-      expect(response.payload).toEqual(errorMessage);
+      expect(response.meta.requestStatus).toEqual('rejected');
     });
   });
 

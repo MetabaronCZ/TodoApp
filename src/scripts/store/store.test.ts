@@ -5,11 +5,11 @@ import { AppState } from 'store';
 import { useAppSelector } from 'store/utils';
 
 jest.mock('react-redux');
-const mocked = jest.mocked(useSelector);
 
 describe('store', () => {
   describe('useAppSelector()', () => {
     it('should be an alias for useSelector', () => {
+      const mocked = jest.mocked(useSelector);
       expect(mocked.mock.calls.length).toEqual(0);
 
       const cb = (state: AppState): boolean => state.settings.loading;

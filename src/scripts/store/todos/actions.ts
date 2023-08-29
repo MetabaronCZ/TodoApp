@@ -47,12 +47,8 @@ export const fetchTodos = createAppAsyncThunk<
 
 export const fetchTodoDetail = createAppAsyncThunk<Todo | null, string>(
   'todos/fetchDetail',
-  async (id, { rejectWithValue }) => {
-    try {
-      return await client.todo.getDetail(id);
-    } catch (error) {
-      return rejectWithValue(error as Error);
-    }
+  async (id) => {
+    return await client.todo.getDetail(id);
   },
 );
 
