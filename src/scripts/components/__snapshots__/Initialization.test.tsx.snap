@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`components/Initialization should render children 1`] = `
+<div>
+  <div>
+    CONTENT
+  </div>
+</div>
+`;
+
+exports[`components/Initialization should render correctly 1`] = `<div />`;

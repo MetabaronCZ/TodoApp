@@ -1,0 +1,375 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`components/MenuContent should render children 1`] = `
+.c9 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.c6 {
+  font-family: Open Sans,Arial,sans-serif;
+  color: #222;
+  font-size: 14px;
+  line-height: 20px;
+  display: block;
+  width: 20px;
+  height: 20px;
+  line-height: 20px;
+  font-style: normal;
+  text-align: center;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.c4 {
+  font-family: Open Sans,Arial,sans-serif;
+  color: #222;
+  font-size: 14px;
+  line-height: 20px;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: auto;
+  padding: 5px 10px;
+  padding-left: 5px;
+  background: #f0f0f0;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
+.c4:hover:not(:disabled) {
+  background-color: #e0e0e0;
+}
+
+.c4:focus {
+  outline: 1px dotted #222;
+  outline-offset: -1px;
+}
+
+.c4:disabled {
+  color: #c0c0c0;
+}
+
+.c7 {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+}
+
+.c2 {
+  list-style-type: none;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c3 {
+  border-bottom: 1px solid #c0c0c0;
+}
+
+.c3:last-child {
+  border-bottom: none;
+}
+
+.c5 {
+  width: 100%;
+  background: #c0c0c0;
+  text-align: left;
+}
+
+.c5:hover {
+  background-color: #c0c0c0;
+}
+
+.c8 {
+  width: 100%;
+  text-align: left;
+}
+
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  gap: 20px;
+}
+
+.c1 {
+  width: 240px;
+}
+
+.c10 {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  min-width: 0;
+}
+
+<div>
+  <div
+    class="c0"
+  >
+    <nav
+      class="c1"
+    >
+      <ul
+        class="c2"
+      >
+        <li
+          class="c3"
+        >
+          <a
+            class="c4 c5"
+            href="/?folder="
+          >
+            <i
+              class="c6"
+            >
+              ★
+            </i>
+            <span
+              class="c7"
+            >
+              Všechny úkoly
+            </span>
+          </a>
+        </li>
+        <li
+          class="c3"
+        >
+          <a
+            class="c4 c8"
+            href="/folder/list"
+          >
+            <i
+              class="c6"
+            >
+              ✎
+            </i>
+            <span
+              class="c7"
+            >
+              Složky
+            </span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+    <div
+      class="c9 c10"
+    >
+      <div>
+        CONTENT
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`components/MenuContent should render correctly 1`] = `
+.c9 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.c6 {
+  font-family: Open Sans,Arial,sans-serif;
+  color: #222;
+  font-size: 14px;
+  line-height: 20px;
+  display: block;
+  width: 20px;
+  height: 20px;
+  line-height: 20px;
+  font-style: normal;
+  text-align: center;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.c4 {
+  font-family: Open Sans,Arial,sans-serif;
+  color: #222;
+  font-size: 14px;
+  line-height: 20px;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: auto;
+  padding: 5px 10px;
+  padding-left: 5px;
+  background: #f0f0f0;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
+.c4:hover:not(:disabled) {
+  background-color: #e0e0e0;
+}
+
+.c4:focus {
+  outline: 1px dotted #222;
+  outline-offset: -1px;
+}
+
+.c4:disabled {
+  color: #c0c0c0;
+}
+
+.c7 {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+}
+
+.c2 {
+  list-style-type: none;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c3 {
+  border-bottom: 1px solid #c0c0c0;
+}
+
+.c3:last-child {
+  border-bottom: none;
+}
+
+.c5 {
+  width: 100%;
+  background: #c0c0c0;
+  text-align: left;
+}
+
+.c5:hover {
+  background-color: #c0c0c0;
+}
+
+.c8 {
+  width: 100%;
+  text-align: left;
+}
+
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  gap: 20px;
+}
+
+.c1 {
+  width: 240px;
+}
+
+.c10 {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  min-width: 0;
+}
+
+<div>
+  <div
+    class="c0"
+  >
+    <nav
+      class="c1"
+    >
+      <ul
+        class="c2"
+      >
+        <li
+          class="c3"
+        >
+          <a
+            class="c4 c5"
+            href="/?folder="
+          >
+            <i
+              class="c6"
+            >
+              ★
+            </i>
+            <span
+              class="c7"
+            >
+              Všechny úkoly
+            </span>
+          </a>
+        </li>
+        <li
+          class="c3"
+        >
+          <a
+            class="c4 c8"
+            href="/folder/list"
+          >
+            <i
+              class="c6"
+            >
+              ✎
+            </i>
+            <span
+              class="c7"
+            >
+              Složky
+            </span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+    <div
+      class="c9 c10"
+    />
+  </div>
+</div>
+`;
