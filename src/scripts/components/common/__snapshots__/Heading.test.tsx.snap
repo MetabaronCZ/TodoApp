@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`components/common/Heading should render correctly 1`] = `
+.c0 {
+  font-family: Open Sans,Arial,sans-serif;
+  color: #222;
+  font-size: 18px;
+  line-height: 30px;
+  font-weight: normal;
+  margin: 0;
+}
+
+<div>
+  <h1
+    class="c0"
+  >
+    CONTENT
+  </h1>
+</div>
+`;
+
+exports[`components/common/Heading should render props 1`] = `
+.c0 {
+  font-family: Open Sans,Arial,sans-serif;
+  color: #222;
+  font-size: 18px;
+  line-height: 30px;
+  font-weight: normal;
+  margin: 0;
+}
+
+<div>
+  <h3
+    class="c0"
+  />
+</div>
+`;

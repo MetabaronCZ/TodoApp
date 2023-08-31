@@ -1,0 +1,92 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`components/common/Toolbar should render children 1`] = `
+.c0 {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  gap: 10px;
+  height: calc(30px + 1px);
+  border-bottom: 1px solid #c0c0c0;
+  background: #f0f0f0;
+}
+
+.c1 {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+}
+
+<div>
+  <div
+    class="c0"
+  >
+    <div>
+      <div>
+        Item 1
+      </div>
+    </div>
+    <div>
+      <div>
+        Item 2
+      </div>
+    </div>
+    <div
+      class="c1"
+    />
+    <div>
+      <div>
+        Item 3
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`components/common/Toolbar should render correctly 1`] = `
+.c0 {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  gap: 10px;
+  height: calc(30px + 1px);
+  border-bottom: 1px solid #c0c0c0;
+  background: #f0f0f0;
+}
+
+<div>
+  <div
+    class="c0"
+  >
+    <div>
+      <div>
+        CONTENT
+      </div>
+    </div>
+  </div>
+</div>
+`;
