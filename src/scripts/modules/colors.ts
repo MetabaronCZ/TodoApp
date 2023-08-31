@@ -11,3 +11,26 @@ export const colors = {
   disabled: '#c0c0c0',
 };
 export type ColorId = keyof typeof colors;
+
+const shorthandColorRegex = /^#?([a-f\d])([a-f\d])([a-f\d])$/i;
+const fullColorRegex = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i;
+
+// convert hexadecimal color string to RGB color string
+export const hexToRgb = (hexaColor: string): string | null => {
+  // convert shorthand form
+  hexaColor = hexaColor.replace(shorthandColorRegex, (m, r, g, b) => {
+    return `${r}${r}${g}${g}${b}${b}`;
+  });
+
+  // get RGB parts
+  const rgbParts = fullColorRegex.exec(hexaColor);
+
+  if (!rgbParts) {
+    return null;
+  }
+  const r = parseInt(rgbParts[1], 16);
+  const g = parseInt(rgbParts[2], 16);
+  const b = parseInt(rgbParts[3], 16);
+
+  return `rgb(${r}, ${g}, ${b})`;
+};

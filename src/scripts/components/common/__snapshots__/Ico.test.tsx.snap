@@ -1,0 +1,56 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`components/common/Ico should render correctly 1`] = `
+.c0 {
+  font-family: Open Sans,Arial,sans-serif;
+  color: #222;
+  font-size: 14px;
+  line-height: 20px;
+  display: block;
+  width: 20px;
+  height: 20px;
+  line-height: 20px;
+  font-style: normal;
+  text-align: center;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+<div>
+  <i
+    class="c0"
+  >
+    ✖
+  </i>
+</div>
+`;
+
+exports[`components/common/Ico should render with props 1`] = `
+.c0 {
+  font-family: Open Sans,Arial,sans-serif;
+  color: #222;
+  font-size: 14px;
+  line-height: 20px;
+  display: block;
+  width: 20px;
+  height: 20px;
+  line-height: 20px;
+  font-style: normal;
+  text-align: center;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+<div>
+  <i
+    class="c0"
+    style="color: rgb(204, 34, 34);"
+  >
+    ✖
+  </i>
+</div>
+`;

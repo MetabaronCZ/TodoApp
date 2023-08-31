@@ -1,0 +1,253 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`components/common/Menu should render correctly 1`] = `
+.c2 {
+  display: block;
+  width: 100%;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.c3 {
+  font-family: Open Sans,Arial,sans-serif;
+  color: #222;
+  font-size: 14px;
+  line-height: 20px;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: auto;
+  padding: 5px 10px;
+  background: #f0f0f0;
+}
+
+.c3:hover:not(:disabled) {
+  background-color: #e0e0e0;
+}
+
+.c3:focus {
+  outline: 1px dotted #222;
+  outline-offset: -1px;
+}
+
+.c3:disabled {
+  color: #c0c0c0;
+}
+
+.c5 {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+}
+
+.c0 {
+  list-style-type: none;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c1 {
+  border-bottom: 1px solid #c0c0c0;
+}
+
+.c1:last-child {
+  border-bottom: none;
+}
+
+.c4 {
+  width: 100%;
+  text-align: left;
+}
+
+<div>
+  <ul
+    class="c0"
+  >
+    <li
+      class="c1"
+    >
+      <button
+        class="c2 c3 c4"
+        type="button"
+      >
+        <span
+          class="c5"
+        >
+          CONTENT
+        </span>
+      </button>
+    </li>
+  </ul>
+</div>
+`;
+
+exports[`components/common/Menu should render menu items 1`] = `
+.c5 {
+  display: block;
+  width: 100%;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.c6 {
+  font-family: Open Sans,Arial,sans-serif;
+  color: #222;
+  font-size: 14px;
+  line-height: 20px;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: auto;
+  padding: 5px 10px;
+  background: #f0f0f0;
+}
+
+.c6:hover:not(:disabled) {
+  background-color: #e0e0e0;
+}
+
+.c6:focus {
+  outline: 1px dotted #222;
+  outline-offset: -1px;
+}
+
+.c6:disabled {
+  color: #c0c0c0;
+}
+
+.c2 {
+  font-family: Open Sans,Arial,sans-serif;
+  color: #222;
+  font-size: 14px;
+  line-height: 20px;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: auto;
+  padding: 5px 10px;
+  background: #f0f0f0;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
+.c2:hover:not(:disabled) {
+  background-color: #e0e0e0;
+}
+
+.c2:focus {
+  outline: 1px dotted #222;
+  outline-offset: -1px;
+}
+
+.c2:disabled {
+  color: #c0c0c0;
+}
+
+.c4 {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+}
+
+.c0 {
+  list-style-type: none;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c1 {
+  border-bottom: 1px solid #c0c0c0;
+}
+
+.c1:last-child {
+  border-bottom: none;
+}
+
+.c3 {
+  width: 100%;
+  text-align: left;
+}
+
+.c7 {
+  width: 100%;
+  background: #c0c0c0;
+  text-align: left;
+}
+
+.c7:hover {
+  background-color: #c0c0c0;
+}
+
+<div>
+  <ul
+    class="c0"
+  >
+    <li
+      class="c1"
+    >
+      <a
+        class="c2 c3"
+        href="/test"
+      >
+        <span
+          class="c4"
+        >
+          Item 1
+        </span>
+      </a>
+    </li>
+    <li
+      class="c1"
+    >
+      <button
+        class="c5 c6 c7"
+        type="button"
+      >
+        <span
+          class="c4"
+        >
+          Item 2
+        </span>
+      </button>
+    </li>
+  </ul>
+</div>
+`;
+
+exports[`components/common/Menu should render nothing when no children 1`] = `<div />`;
