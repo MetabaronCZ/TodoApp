@@ -3,13 +3,16 @@ import React from 'react';
 import { render } from '@testing-library/react';
 import { describe, expect, it } from '@jest/globals';
 
-import { withMockedProviders } from 'test/component';
 import { Layout } from 'components/layout/Layout';
+import { withMockedProviders } from 'test/component';
 
 describe('components/layout/Layout', () => {
   it('should render correctly', () => {
     const { container } = render(withMockedProviders(<Layout />));
     expect(container).toMatchSnapshot();
+    expect(container.querySelector('header')).toBeInTheDocument();
+    expect(container.querySelector('footer')).toBeInTheDocument();
+    expect(container.querySelector('main')).toBeInTheDocument();
   });
 
   it('should render with children', () => {
