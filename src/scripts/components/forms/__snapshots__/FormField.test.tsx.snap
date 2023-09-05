@@ -1,0 +1,444 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`components/forms/FormField should render correctly 1`] = `
+.c2 {
+  font-family: Open Sans,Arial,sans-serif;
+  color: #222;
+  font-size: 14px;
+  line-height: 20px;
+  color: #222;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c5 {
+  font-family: Open Sans,Arial,sans-serif;
+  color: #222;
+  font-size: 14px;
+  line-height: 20px;
+  display: block;
+  width: 100%;
+  padding: 5px 10px;
+  background: #fff;
+  border: none;
+  outline: none;
+}
+
+.c5:hover:not(:disabled) {
+  background-color: #fcfcfc;
+}
+
+.c5:focus {
+  outline: 1px dotted #222;
+  outline-offset: -1px;
+}
+
+.c5:disabled {
+  color: #c0c0c0;
+}
+
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 100px;
+  min-height: 30px;
+}
+
+.c3 {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+}
+
+<div>
+  <div
+    class="c0"
+  >
+    <div
+      class="c1"
+    >
+      <label
+        class="c2"
+        for="form-field-0"
+      >
+        Label:
+      </label>
+    </div>
+    <div
+      class="c3"
+    >
+      <div
+        class="c4"
+      >
+        <input
+          class="c5"
+          id="form-field-0"
+          type="text"
+          value="Content"
+        />
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`components/forms/FormField should render dropdown 1`] = `
+.c2 {
+  font-family: Open Sans,Arial,sans-serif;
+  color: #222;
+  font-size: 14px;
+  line-height: 20px;
+  color: #222;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 100px;
+  min-height: 30px;
+}
+
+.c3 {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+}
+
+<div>
+  <div
+    class="c0"
+  >
+    <div
+      class="c1"
+    >
+      <label
+        class="c2"
+        for="form-field-3"
+      >
+        Label:
+      </label>
+    </div>
+    <div
+      class="c3"
+    />
+  </div>
+</div>
+`;
+
+exports[`components/forms/FormField should render text input 1`] = `
+.c2 {
+  font-family: Open Sans,Arial,sans-serif;
+  color: #222;
+  font-size: 14px;
+  line-height: 20px;
+  color: #222;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c5 {
+  font-family: Open Sans,Arial,sans-serif;
+  color: #222;
+  font-size: 14px;
+  line-height: 20px;
+  display: block;
+  width: 100%;
+  padding: 5px 10px;
+  background: #fff;
+  border: none;
+  outline: none;
+}
+
+.c5:hover:not(:disabled) {
+  background-color: #fcfcfc;
+}
+
+.c5:focus {
+  outline: 1px dotted #222;
+  outline-offset: -1px;
+}
+
+.c5:disabled {
+  color: #c0c0c0;
+}
+
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 100px;
+  min-height: 30px;
+}
+
+.c3 {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+}
+
+<div>
+  <div
+    class="c0"
+  >
+    <div
+      class="c1"
+    >
+      <label
+        class="c2"
+        for="form-field-1"
+      >
+        Label:
+      </label>
+    </div>
+    <div
+      class="c3"
+    >
+      <div
+        class="c4"
+      >
+        <input
+          class="c5"
+          id="form-field-1"
+          type="text"
+          value="Content"
+        />
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`components/forms/FormField should render textarea 1`] = `
+.c2 {
+  font-family: Open Sans,Arial,sans-serif;
+  color: #222;
+  font-size: 14px;
+  line-height: 20px;
+  color: #222;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c5 {
+  font-family: Open Sans,Arial,sans-serif;
+  color: #222;
+  font-size: 14px;
+  line-height: 20px;
+  display: block;
+  width: 100%;
+  padding: 5px 10px;
+  background: #fff;
+  border: none;
+  outline: none;
+  min-height: 110px;
+  resize: vertical;
+}
+
+.c5:hover:not(:disabled) {
+  background-color: #fcfcfc;
+}
+
+.c5:focus {
+  outline: 1px dotted #222;
+  outline-offset: -1px;
+}
+
+.c5:disabled {
+  color: #c0c0c0;
+}
+
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 100px;
+  min-height: 30px;
+}
+
+.c3 {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+}
+
+<div>
+  <div
+    class="c0"
+  >
+    <div
+      class="c1"
+    >
+      <label
+        class="c2"
+        for="form-field-2"
+      >
+        Label:
+      </label>
+    </div>
+    <div
+      class="c3"
+    >
+      <div
+        class="c4"
+      >
+        <textarea
+          class="c5"
+          id="form-field-2"
+        >
+          Content
+        </textarea>
+      </div>
+    </div>
+  </div>
+</div>
+`;

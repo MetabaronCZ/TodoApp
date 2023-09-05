@@ -1,0 +1,46 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`components/forms/Label should render correctly 1`] = `
+.c0 {
+  font-family: Open Sans,Arial,sans-serif;
+  color: #222;
+  font-size: 14px;
+  line-height: 20px;
+  color: #222;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+<div>
+  <label
+    class="c0"
+  >
+    Label
+  </label>
+</div>
+`;
+
+exports[`components/forms/Label should render props 1`] = `
+.c0 {
+  font-family: Open Sans,Arial,sans-serif;
+  color: #222;
+  font-size: 14px;
+  line-height: 20px;
+  color: #c0c0c0;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+<div>
+  <label
+    class="c0"
+    for="ID"
+  >
+    Label
+  </label>
+</div>
+`;
