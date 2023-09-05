@@ -1,0 +1,170 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`components/forms/TextField should render props 1`] = `
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c1 {
+  font-family: Open Sans,Arial,sans-serif;
+  color: #222;
+  font-size: 14px;
+  line-height: 20px;
+  display: block;
+  width: 100%;
+  padding: 5px 10px;
+  background: #fff;
+  color: #c22;
+  border: none;
+  outline: none;
+}
+
+.c1:hover:not(:disabled) {
+  background-color: #fcfcfc;
+}
+
+.c1:focus {
+  outline: 1px dotted #222;
+  outline-offset: -1px;
+}
+
+.c1:disabled {
+  color: #c0c0c0;
+}
+
+.c2 {
+  font-family: Open Sans,Arial,sans-serif;
+  color: #222;
+  font-size: 14px;
+  line-height: 20px;
+  display: block;
+  padding: 0 10px;
+  color: #fff;
+  background: #c22;
+}
+
+<div>
+  <div
+    class="c0"
+  >
+    <input
+      class="c1"
+      disabled=""
+      maxlength="50"
+      type="text"
+      value="Content"
+    />
+    <div
+      class="c2"
+    >
+      Validation error
+    </div>
+  </div>
+</div>
+`;
+
+exports[`components/forms/TextField should render text input 1`] = `
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c1 {
+  font-family: Open Sans,Arial,sans-serif;
+  color: #222;
+  font-size: 14px;
+  line-height: 20px;
+  display: block;
+  width: 100%;
+  padding: 5px 10px;
+  background: #fff;
+  border: none;
+  outline: none;
+}
+
+.c1:hover:not(:disabled) {
+  background-color: #fcfcfc;
+}
+
+.c1:focus {
+  outline: 1px dotted #222;
+  outline-offset: -1px;
+}
+
+.c1:disabled {
+  color: #c0c0c0;
+}
+
+<div>
+  <div
+    class="c0"
+  >
+    <input
+      class="c1"
+      type="text"
+      value=""
+    />
+  </div>
+</div>
+`;
+
+exports[`components/forms/TextField should render textarea 1`] = `
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c1 {
+  font-family: Open Sans,Arial,sans-serif;
+  color: #222;
+  font-size: 14px;
+  line-height: 20px;
+  display: block;
+  width: 100%;
+  padding: 5px 10px;
+  background: #fff;
+  border: none;
+  outline: none;
+  min-height: 110px;
+  resize: vertical;
+}
+
+.c1:hover:not(:disabled) {
+  background-color: #fcfcfc;
+}
+
+.c1:focus {
+  outline: 1px dotted #222;
+  outline-offset: -1px;
+}
+
+.c1:disabled {
+  color: #c0c0c0;
+}
+
+<div>
+  <div
+    class="c0"
+  >
+    <textarea
+      class="c1"
+    />
+  </div>
+</div>
+`;
