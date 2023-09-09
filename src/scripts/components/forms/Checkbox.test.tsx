@@ -51,4 +51,19 @@ describe('components/forms/TextField', () => {
       expect(onChange).toBeCalledWith(true);
     }
   });
+
+  it('should not call onChange when disabled', () => {
+    const onChange = jest.fn();
+
+    const { container } = render(
+      withMockedProviders(<Checkbox disabled onChange={onChange} />),
+    );
+    const input = container.querySelector('input');
+    expect(input).toBeInTheDocument();
+
+    if (input) {
+      fireEvent.click(input);
+      expect(onChange).toBeCalledTimes(0);
+    }
+  });
 });

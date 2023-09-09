@@ -86,7 +86,7 @@ export const Checkbox: React.FC<Props> = ({
           type="checkbox"
           checked={checked}
           disabled={disabled}
-          onChange={check(onChange)}
+          onChange={!disabled ? check(onChange) : undefined}
         />
       </CheckMark>
 

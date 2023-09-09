@@ -1,0 +1,162 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`components/folder-list/FolderList should be selectable 1`] = `
+.c0 {
+  font-family: Open Sans,Arial,sans-serif;
+  color: #222;
+  font-size: 18px;
+  line-height: 30px;
+  font-weight: normal;
+  margin: 0;
+}
+
+.c2 {
+  list-style-type: none;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c3 {
+  border-bottom: 1px solid #c0c0c0;
+}
+
+.c3:last-child {
+  border-bottom: none;
+}
+
+.c1 {
+  margin-bottom: 1px;
+}
+
+<div>
+  <div
+    class=""
+  >
+    <h1
+      class="c0 c1"
+    >
+      Složky
+    </h1>
+    <ul
+      class="c2"
+    >
+      <li
+        class="c3"
+      />
+      <li
+        class="c3"
+      />
+      <li
+        class="c3"
+      />
+    </ul>
+  </div>
+</div>
+`;
+
+exports[`components/folder-list/FolderList should render correctly 1`] = `
+.c0 {
+  font-family: Open Sans,Arial,sans-serif;
+  color: #222;
+  font-size: 18px;
+  line-height: 30px;
+  font-weight: normal;
+  margin: 0;
+}
+
+.c2 {
+  list-style-type: none;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c3 {
+  border-bottom: 1px solid #c0c0c0;
+}
+
+.c3:last-child {
+  border-bottom: none;
+}
+
+.c1 {
+  margin-bottom: 1px;
+}
+
+<div>
+  <div
+    class=""
+  >
+    <h1
+      class="c0 c1"
+    >
+      Složky
+    </h1>
+    <ul
+      class="c2"
+    >
+      <li
+        class="c3"
+      />
+      <li
+        class="c3"
+      />
+      <li
+        class="c3"
+      />
+    </ul>
+  </div>
+</div>
+`;
+
+exports[`components/folder-list/FolderList should render empty list 1`] = `
+.c0 {
+  font-family: Open Sans,Arial,sans-serif;
+  color: #222;
+  font-size: 18px;
+  line-height: 30px;
+  font-weight: normal;
+  margin: 0;
+}
+
+.c2 {
+  font-family: Open Sans,Arial,sans-serif;
+  color: #222;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.c1 {
+  margin-bottom: 1px;
+}
+
+.c3 {
+  padding-top: 10px;
+}
+
+<div>
+  <div
+    class=""
+  >
+    <h1
+      class="c0 c1"
+    >
+      Složky
+    </h1>
+    <p
+      class="c2 c3"
+    >
+      Nebyly nalezeny žádné složky.
+    </p>
+  </div>
+</div>
+`;

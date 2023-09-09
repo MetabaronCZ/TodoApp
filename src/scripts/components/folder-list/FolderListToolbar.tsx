@@ -12,7 +12,7 @@ import { FolderSort, folderSort } from 'models/Folders';
 
 interface Props {
   readonly sort: FolderSort;
-  readonly selected: boolean;
+  readonly selected?: boolean;
   readonly disabled?: boolean;
   readonly onSort: (sort: FolderSort) => void;
   readonly onSelect: OnChange<boolean>;
@@ -21,7 +21,7 @@ interface Props {
 
 export const FolderListToolbar: React.FC<Props> = ({
   sort,
-  selected,
+  selected = false,
   disabled = false,
   onSort,
   onSelect,

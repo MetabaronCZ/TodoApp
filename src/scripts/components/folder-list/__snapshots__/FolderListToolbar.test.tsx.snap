@@ -1,0 +1,1431 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`components/folder-list/FolderListToolbar should be able to delete selected 1`] = `
+.c7 {
+  font-family: Open Sans,Arial,sans-serif;
+  color: #222;
+  font-size: 14px;
+  line-height: 20px;
+  display: block;
+  width: 20px;
+  height: 20px;
+  line-height: 20px;
+  font-style: normal;
+  text-align: center;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.c9 {
+  display: block;
+  width: 100%;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.c10 {
+  font-family: Open Sans,Arial,sans-serif;
+  color: #222;
+  font-size: 14px;
+  line-height: 20px;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: auto;
+  padding: 5px 10px;
+  padding-left: 5px;
+  background: #f0f0f0;
+}
+
+.c10:hover:not(:disabled) {
+  background-color: #e0e0e0;
+}
+
+.c10:focus {
+  outline: 1px dotted #222;
+  outline-offset: -1px;
+}
+
+.c10:disabled {
+  color: #c0c0c0;
+}
+
+.c6 {
+  font-family: Open Sans,Arial,sans-serif;
+  color: #222;
+  font-size: 14px;
+  line-height: 20px;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: auto;
+  padding: 5px 10px;
+  padding-left: 5px;
+  background: #f0f0f0;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
+.c6:hover:not(:disabled) {
+  background-color: #e0e0e0;
+}
+
+.c6:focus {
+  outline: 1px dotted #222;
+  outline-offset: -1px;
+}
+
+.c6:disabled {
+  color: #c0c0c0;
+}
+
+.c8 {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+}
+
+.c0 {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  gap: 10px;
+  height: calc(30px + 1px);
+  border-bottom: 1px solid #c0c0c0;
+  background: #f0f0f0;
+}
+
+.c5 {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+}
+
+.c4 {
+  font-family: Open Sans,Arial,sans-serif;
+  color: #222;
+  font-size: 14px;
+  line-height: 20px;
+  color: #222;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  gap: 10px;
+  height: 30px;
+}
+
+.c2 {
+  font-family: Open Sans,Arial,sans-serif;
+  color: #222;
+  font-size: 14px;
+  line-height: 20px;
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  line-height: 1;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #222;
+  color: #222;
+  background: #fff;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  cursor: pointer;
+}
+
+.c2:hover {
+  background-color: #fcfcfc;
+}
+
+.c2:focus-within {
+  outline: 1px dotted #222;
+}
+
+.c3 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+  opacity: 0;
+  outline: none;
+}
+
+<div>
+  <div
+    class="c0"
+  >
+    <div>
+      <div
+        class="c1"
+      >
+        <label
+          class="c2"
+          for="checkbox-5"
+        >
+          ✔
+          <input
+            checked=""
+            class="c3"
+            id="checkbox-5"
+            type="checkbox"
+          />
+        </label>
+        <label
+          class="c4"
+          for="checkbox-5"
+        >
+          Vybrat vše
+        </label>
+      </div>
+    </div>
+    <div
+      class="c5"
+    />
+    <div>
+      <a
+        class="c6"
+        href="/folder/create"
+      >
+        <i
+          class="c7"
+        >
+          +
+        </i>
+        <span
+          class="c8"
+        >
+          Vytvořit
+        </span>
+      </a>
+    </div>
+    <div>
+      <button
+        class="c9 c10"
+        type="button"
+      >
+        <i
+          class="c7"
+        >
+          ✖
+        </i>
+        <span
+          class="c8"
+        >
+          Smazat
+        </span>
+      </button>
+    </div>
+    <div />
+  </div>
+</div>
+`;
+
+exports[`components/folder-list/FolderListToolbar should be able to sort items 1`] = `
+.c7 {
+  font-family: Open Sans,Arial,sans-serif;
+  color: #222;
+  font-size: 14px;
+  line-height: 20px;
+  display: block;
+  width: 20px;
+  height: 20px;
+  line-height: 20px;
+  font-style: normal;
+  text-align: center;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.c6 {
+  font-family: Open Sans,Arial,sans-serif;
+  color: #222;
+  font-size: 14px;
+  line-height: 20px;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: auto;
+  padding: 5px 10px;
+  padding-left: 5px;
+  background: #f0f0f0;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
+.c6:hover:not(:disabled) {
+  background-color: #e0e0e0;
+}
+
+.c6:focus {
+  outline: 1px dotted #222;
+  outline-offset: -1px;
+}
+
+.c6:disabled {
+  color: #c0c0c0;
+}
+
+.c8 {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+}
+
+.c0 {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  gap: 10px;
+  height: calc(30px + 1px);
+  border-bottom: 1px solid #c0c0c0;
+  background: #f0f0f0;
+}
+
+.c5 {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+}
+
+.c4 {
+  font-family: Open Sans,Arial,sans-serif;
+  color: #222;
+  font-size: 14px;
+  line-height: 20px;
+  color: #222;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  gap: 10px;
+  height: 30px;
+}
+
+.c2 {
+  font-family: Open Sans,Arial,sans-serif;
+  color: #222;
+  font-size: 14px;
+  line-height: 20px;
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  line-height: 1;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #222;
+  color: #222;
+  background: #fff;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  cursor: pointer;
+}
+
+.c2:hover {
+  background-color: #fcfcfc;
+}
+
+.c2:focus-within {
+  outline: 1px dotted #222;
+}
+
+.c3 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+  opacity: 0;
+  outline: none;
+}
+
+<div>
+  <div
+    class="c0"
+  >
+    <div>
+      <div
+        class="c1"
+      >
+        <label
+          class="c2"
+          for="checkbox-3"
+        >
+          <input
+            class="c3"
+            id="checkbox-3"
+            type="checkbox"
+          />
+        </label>
+        <label
+          class="c4"
+          for="checkbox-3"
+        >
+          Vybrat vše
+        </label>
+      </div>
+    </div>
+    <div
+      class="c5"
+    />
+    <div>
+      <a
+        class="c6"
+        href="/folder/create"
+      >
+        <i
+          class="c7"
+        >
+          +
+        </i>
+        <span
+          class="c8"
+        >
+          Vytvořit
+        </span>
+      </a>
+    </div>
+    <div />
+  </div>
+</div>
+`;
+
+exports[`components/folder-list/FolderListToolbar should be able to un/select-all 1`] = `
+.c7 {
+  font-family: Open Sans,Arial,sans-serif;
+  color: #222;
+  font-size: 14px;
+  line-height: 20px;
+  display: block;
+  width: 20px;
+  height: 20px;
+  line-height: 20px;
+  font-style: normal;
+  text-align: center;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.c9 {
+  display: block;
+  width: 100%;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.c10 {
+  font-family: Open Sans,Arial,sans-serif;
+  color: #222;
+  font-size: 14px;
+  line-height: 20px;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: auto;
+  padding: 5px 10px;
+  padding-left: 5px;
+  background: #f0f0f0;
+}
+
+.c10:hover:not(:disabled) {
+  background-color: #e0e0e0;
+}
+
+.c10:focus {
+  outline: 1px dotted #222;
+  outline-offset: -1px;
+}
+
+.c10:disabled {
+  color: #c0c0c0;
+}
+
+.c6 {
+  font-family: Open Sans,Arial,sans-serif;
+  color: #222;
+  font-size: 14px;
+  line-height: 20px;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: auto;
+  padding: 5px 10px;
+  padding-left: 5px;
+  background: #f0f0f0;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
+.c6:hover:not(:disabled) {
+  background-color: #e0e0e0;
+}
+
+.c6:focus {
+  outline: 1px dotted #222;
+  outline-offset: -1px;
+}
+
+.c6:disabled {
+  color: #c0c0c0;
+}
+
+.c8 {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+}
+
+.c0 {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  gap: 10px;
+  height: calc(30px + 1px);
+  border-bottom: 1px solid #c0c0c0;
+  background: #f0f0f0;
+}
+
+.c5 {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+}
+
+.c4 {
+  font-family: Open Sans,Arial,sans-serif;
+  color: #222;
+  font-size: 14px;
+  line-height: 20px;
+  color: #222;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  gap: 10px;
+  height: 30px;
+}
+
+.c2 {
+  font-family: Open Sans,Arial,sans-serif;
+  color: #222;
+  font-size: 14px;
+  line-height: 20px;
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  line-height: 1;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #222;
+  color: #222;
+  background: #fff;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  cursor: pointer;
+}
+
+.c2:hover {
+  background-color: #fcfcfc;
+}
+
+.c2:focus-within {
+  outline: 1px dotted #222;
+}
+
+.c3 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+  opacity: 0;
+  outline: none;
+}
+
+<div>
+  <div
+    class="c0"
+  >
+    <div>
+      <div
+        class="c1"
+      >
+        <label
+          class="c2"
+          for="checkbox-1"
+        >
+          ✔
+          <input
+            checked=""
+            class="c3"
+            id="checkbox-1"
+            type="checkbox"
+          />
+        </label>
+        <label
+          class="c4"
+          for="checkbox-1"
+        >
+          Vybrat vše
+        </label>
+      </div>
+    </div>
+    <div
+      class="c5"
+    />
+    <div>
+      <a
+        class="c6"
+        href="/folder/create"
+      >
+        <i
+          class="c7"
+        >
+          +
+        </i>
+        <span
+          class="c8"
+        >
+          Vytvořit
+        </span>
+      </a>
+    </div>
+    <div>
+      <button
+        class="c9 c10"
+        type="button"
+      >
+        <i
+          class="c7"
+        >
+          ✖
+        </i>
+        <span
+          class="c8"
+        >
+          Smazat
+        </span>
+      </button>
+    </div>
+    <div />
+  </div>
+</div>
+`;
+
+exports[`components/folder-list/FolderListToolbar should not be able to sort items when disabled 1`] = `
+.c7 {
+  font-family: Open Sans,Arial,sans-serif;
+  color: #222;
+  font-size: 14px;
+  line-height: 20px;
+  display: block;
+  width: 20px;
+  height: 20px;
+  line-height: 20px;
+  font-style: normal;
+  text-align: center;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.c6 {
+  font-family: Open Sans,Arial,sans-serif;
+  color: #222;
+  font-size: 14px;
+  line-height: 20px;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: auto;
+  padding: 5px 10px;
+  padding-left: 5px;
+  background: #f0f0f0;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
+.c6:hover:not(:disabled) {
+  background-color: #e0e0e0;
+}
+
+.c6:focus {
+  outline: 1px dotted #222;
+  outline-offset: -1px;
+}
+
+.c6:disabled {
+  color: #c0c0c0;
+}
+
+.c8 {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+}
+
+.c0 {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  gap: 10px;
+  height: calc(30px + 1px);
+  border-bottom: 1px solid #c0c0c0;
+  background: #f0f0f0;
+}
+
+.c5 {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+}
+
+.c4 {
+  font-family: Open Sans,Arial,sans-serif;
+  color: #222;
+  font-size: 14px;
+  line-height: 20px;
+  color: #c0c0c0;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  gap: 10px;
+  height: 30px;
+}
+
+.c2 {
+  font-family: Open Sans,Arial,sans-serif;
+  color: #222;
+  font-size: 14px;
+  line-height: 20px;
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  line-height: 1;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #c0c0c0;
+  color: #c0c0c0;
+  background: #fff;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  cursor: pointer;
+}
+
+.c3 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+  opacity: 0;
+  outline: none;
+}
+
+<div>
+  <div
+    class="c0"
+  >
+    <div>
+      <div
+        class="c1"
+      >
+        <label
+          class="c2"
+          for="checkbox-4"
+        >
+          <input
+            class="c3"
+            disabled=""
+            id="checkbox-4"
+            type="checkbox"
+          />
+        </label>
+        <label
+          class="c4"
+          for="checkbox-4"
+        >
+          Vybrat vše
+        </label>
+      </div>
+    </div>
+    <div
+      class="c5"
+    />
+    <div>
+      <a
+        class="c6"
+        href="/folder/create"
+      >
+        <i
+          class="c7"
+        >
+          +
+        </i>
+        <span
+          class="c8"
+        >
+          Vytvořit
+        </span>
+      </a>
+    </div>
+    <div />
+  </div>
+</div>
+`;
+
+exports[`components/folder-list/FolderListToolbar should not be able to un/select-all when disabled 1`] = `
+.c7 {
+  font-family: Open Sans,Arial,sans-serif;
+  color: #222;
+  font-size: 14px;
+  line-height: 20px;
+  display: block;
+  width: 20px;
+  height: 20px;
+  line-height: 20px;
+  font-style: normal;
+  text-align: center;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.c6 {
+  font-family: Open Sans,Arial,sans-serif;
+  color: #222;
+  font-size: 14px;
+  line-height: 20px;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: auto;
+  padding: 5px 10px;
+  padding-left: 5px;
+  background: #f0f0f0;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
+.c6:hover:not(:disabled) {
+  background-color: #e0e0e0;
+}
+
+.c6:focus {
+  outline: 1px dotted #222;
+  outline-offset: -1px;
+}
+
+.c6:disabled {
+  color: #c0c0c0;
+}
+
+.c8 {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+}
+
+.c0 {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  gap: 10px;
+  height: calc(30px + 1px);
+  border-bottom: 1px solid #c0c0c0;
+  background: #f0f0f0;
+}
+
+.c5 {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+}
+
+.c4 {
+  font-family: Open Sans,Arial,sans-serif;
+  color: #222;
+  font-size: 14px;
+  line-height: 20px;
+  color: #c0c0c0;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  gap: 10px;
+  height: 30px;
+}
+
+.c2 {
+  font-family: Open Sans,Arial,sans-serif;
+  color: #222;
+  font-size: 14px;
+  line-height: 20px;
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  line-height: 1;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #c0c0c0;
+  color: #c0c0c0;
+  background: #fff;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  cursor: pointer;
+}
+
+.c3 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+  opacity: 0;
+  outline: none;
+}
+
+<div>
+  <div
+    class="c0"
+  >
+    <div>
+      <div
+        class="c1"
+      >
+        <label
+          class="c2"
+          for="checkbox-2"
+        >
+          <input
+            class="c3"
+            disabled=""
+            id="checkbox-2"
+            type="checkbox"
+          />
+        </label>
+        <label
+          class="c4"
+          for="checkbox-2"
+        >
+          Vybrat vše
+        </label>
+      </div>
+    </div>
+    <div
+      class="c5"
+    />
+    <div>
+      <a
+        class="c6"
+        href="/folder/create"
+      >
+        <i
+          class="c7"
+        >
+          +
+        </i>
+        <span
+          class="c8"
+        >
+          Vytvořit
+        </span>
+      </a>
+    </div>
+    <div />
+  </div>
+</div>
+`;
+
+exports[`components/folder-list/FolderListToolbar should render correctly 1`] = `
+.c7 {
+  font-family: Open Sans,Arial,sans-serif;
+  color: #222;
+  font-size: 14px;
+  line-height: 20px;
+  display: block;
+  width: 20px;
+  height: 20px;
+  line-height: 20px;
+  font-style: normal;
+  text-align: center;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.c6 {
+  font-family: Open Sans,Arial,sans-serif;
+  color: #222;
+  font-size: 14px;
+  line-height: 20px;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: auto;
+  padding: 5px 10px;
+  padding-left: 5px;
+  background: #f0f0f0;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
+.c6:hover:not(:disabled) {
+  background-color: #e0e0e0;
+}
+
+.c6:focus {
+  outline: 1px dotted #222;
+  outline-offset: -1px;
+}
+
+.c6:disabled {
+  color: #c0c0c0;
+}
+
+.c8 {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+}
+
+.c0 {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  gap: 10px;
+  height: calc(30px + 1px);
+  border-bottom: 1px solid #c0c0c0;
+  background: #f0f0f0;
+}
+
+.c5 {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+}
+
+.c4 {
+  font-family: Open Sans,Arial,sans-serif;
+  color: #222;
+  font-size: 14px;
+  line-height: 20px;
+  color: #222;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  gap: 10px;
+  height: 30px;
+}
+
+.c2 {
+  font-family: Open Sans,Arial,sans-serif;
+  color: #222;
+  font-size: 14px;
+  line-height: 20px;
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  line-height: 1;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #222;
+  color: #222;
+  background: #fff;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  cursor: pointer;
+}
+
+.c2:hover {
+  background-color: #fcfcfc;
+}
+
+.c2:focus-within {
+  outline: 1px dotted #222;
+}
+
+.c3 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+  opacity: 0;
+  outline: none;
+}
+
+<div>
+  <div
+    class="c0"
+  >
+    <div>
+      <div
+        class="c1"
+      >
+        <label
+          class="c2"
+          for="checkbox-0"
+        >
+          <input
+            class="c3"
+            id="checkbox-0"
+            type="checkbox"
+          />
+        </label>
+        <label
+          class="c4"
+          for="checkbox-0"
+        >
+          Vybrat vše
+        </label>
+      </div>
+    </div>
+    <div
+      class="c5"
+    />
+    <div>
+      <a
+        class="c6"
+        href="/folder/create"
+      >
+        <i
+          class="c7"
+        >
+          +
+        </i>
+        <span
+          class="c8"
+        >
+          Vytvořit
+        </span>
+      </a>
+    </div>
+    <div />
+  </div>
+</div>
+`;
