@@ -7,10 +7,11 @@ import { describe, expect, it, jest } from '@jest/globals';
 import { Menu } from 'components/common/Menu';
 import { MenuMain } from 'components/MenuMain';
 
-import { mockStore } from 'test/store';
 import { Folder } from 'models/Folder';
-import { todoFoldersSlice } from 'store/folders';
+import { mockStore } from 'test/store';
 import { withMockedProviders } from 'test/component';
+
+import { todoFoldersSlice } from 'store/folders';
 import { filterTodos } from 'store/todos/actions';
 
 jest.mock('components/common/Menu');

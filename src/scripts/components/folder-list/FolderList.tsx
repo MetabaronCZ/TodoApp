@@ -77,7 +77,7 @@ export const FolderList: React.FC = () => {
     }
   };
 
-  const onDeleteAll = (): void => {
+  const onDeleteSelected = (): void => {
     if (0 === selected.length) {
       return;
     }
@@ -98,7 +98,7 @@ export const FolderList: React.FC = () => {
         disabled={0 === pageItems.length}
         onSort={setSort}
         onSelect={onSelectAll}
-        onDelete={onDeleteAll}
+        onDelete={onDeleteSelected}
       />
       {0 === pageItems.length ? (
         <StyledParagraph>{t('folderList.empty')}</StyledParagraph>
