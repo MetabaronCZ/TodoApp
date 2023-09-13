@@ -1,0 +1,912 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`components/todo-detail/TodoFields should render correctly 1`] = `
+.c12 {
+  font-family: Open Sans,Arial,sans-serif;
+  color: #222;
+  font-size: 14px;
+  line-height: 20px;
+  display: block;
+  width: 20px;
+  height: 20px;
+  line-height: 20px;
+  font-style: normal;
+  text-align: center;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.c9 {
+  display: block;
+  width: 100%;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.c10 {
+  font-family: Open Sans,Arial,sans-serif;
+  color: #222;
+  font-size: 14px;
+  line-height: 20px;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: auto;
+  padding: 5px 10px;
+  padding-right: 5px;
+  background: #f0f0f0;
+}
+
+.c10:hover:not(:disabled) {
+  background-color: #e0e0e0;
+}
+
+.c10:focus {
+  outline: 1px dotted #222;
+  outline-offset: -1px;
+}
+
+.c10:disabled {
+  color: #c0c0c0;
+}
+
+.c11 {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+}
+
+.c8 {
+  position: relative;
+  display: inline-block;
+}
+
+.c0 {
+  list-style-type: none;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c1 {
+  border-bottom: 1px solid #c0c0c0;
+}
+
+.c1:last-child {
+  border-bottom: none;
+}
+
+.c4 {
+  font-family: Open Sans,Arial,sans-serif;
+  color: #222;
+  font-size: 14px;
+  line-height: 20px;
+  color: #222;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.c13 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  gap: 10px;
+  height: 30px;
+}
+
+.c14 {
+  font-family: Open Sans,Arial,sans-serif;
+  color: #222;
+  font-size: 14px;
+  line-height: 20px;
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  line-height: 1;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #222;
+  color: #222;
+  background: #fff;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  cursor: pointer;
+}
+
+.c14:hover {
+  background-color: #fcfcfc;
+}
+
+.c14:focus-within {
+  outline: 1px dotted #222;
+}
+
+.c15 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+  opacity: 0;
+  outline: none;
+}
+
+.c6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c7 {
+  font-family: Open Sans,Arial,sans-serif;
+  color: #222;
+  font-size: 14px;
+  line-height: 20px;
+  display: block;
+  width: 100%;
+  padding: 5px 10px;
+  background: #fff;
+  border: none;
+  outline: none;
+}
+
+.c7:hover:not(:disabled) {
+  background-color: #fcfcfc;
+}
+
+.c7:focus {
+  outline: 1px dotted #222;
+  outline-offset: -1px;
+}
+
+.c7:disabled {
+  color: #c0c0c0;
+}
+
+.c17 {
+  font-family: Open Sans,Arial,sans-serif;
+  color: #222;
+  font-size: 14px;
+  line-height: 20px;
+  display: block;
+  width: 100%;
+  padding: 5px 10px;
+  background: #fff;
+  border: none;
+  outline: none;
+  min-height: 110px;
+  resize: vertical;
+}
+
+.c17:hover:not(:disabled) {
+  background-color: #fcfcfc;
+}
+
+.c17:focus {
+  outline: 1px dotted #222;
+  outline-offset: -1px;
+}
+
+.c17:disabled {
+  color: #c0c0c0;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.c16 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  display: block;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 100px;
+  min-height: 30px;
+}
+
+.c5 {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+}
+
+<div>
+  <ul
+    class="c0"
+  >
+    <li
+      class="c1"
+    >
+      <div
+        class="c2"
+      >
+        <div
+          class="c3"
+        >
+          <label
+            class="c4"
+            for="form-field-0"
+          >
+            Název úkolu:
+          </label>
+        </div>
+        <div
+          class="c5"
+        >
+          <div
+            class="c6"
+          >
+            <input
+              class="c7"
+              id="form-field-0"
+              maxlength="80"
+              type="text"
+              value="Edited todo"
+            />
+          </div>
+        </div>
+      </div>
+    </li>
+    <li
+      class="c1"
+    >
+      <div
+        class="c2"
+      >
+        <div
+          class="c3"
+        >
+          <label
+            class="c4"
+            for="form-field-1"
+          >
+            Složka:
+          </label>
+        </div>
+        <div
+          class="c5"
+        >
+          <div
+            class="c8"
+          >
+            <button
+              class="c9 c10"
+              id="form-field-1"
+              type="button"
+            >
+              <span
+                class="c11"
+              >
+                Folder B
+              </span>
+              <i
+                class="c12"
+              >
+                ˅
+              </i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </li>
+    <li
+      class="c1"
+    >
+      <div
+        class="c2"
+      >
+        <div
+          class="c3"
+        >
+          <label
+            class="c4"
+            for="form-field-2"
+          >
+            Hotovo:
+          </label>
+        </div>
+        <div
+          class="c5"
+        >
+          <div
+            class="c13"
+          >
+            <label
+              class="c14"
+              for="form-field-2"
+            >
+              ✔
+              <input
+                checked=""
+                class="c15"
+                id="form-field-2"
+                type="checkbox"
+              />
+            </label>
+          </div>
+        </div>
+      </div>
+    </li>
+    <li
+      class="c1"
+    >
+      <div
+        class="c16"
+      >
+        <div
+          class="c3"
+        >
+          <label
+            class="c4"
+            for="form-field-3"
+          >
+            Popis úkolu:
+          </label>
+        </div>
+        <div
+          class="c5"
+        >
+          <div
+            class="c6"
+          >
+            <textarea
+              class="c17"
+              id="form-field-3"
+              maxlength="500"
+            />
+          </div>
+        </div>
+      </div>
+    </li>
+  </ul>
+</div>
+`;
+
+exports[`components/todo-detail/TodoFields should render props 1`] = `
+.c13 {
+  font-family: Open Sans,Arial,sans-serif;
+  color: #222;
+  font-size: 14px;
+  line-height: 20px;
+  display: block;
+  width: 20px;
+  height: 20px;
+  line-height: 20px;
+  font-style: normal;
+  text-align: center;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.c10 {
+  display: block;
+  width: 100%;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.c11 {
+  font-family: Open Sans,Arial,sans-serif;
+  color: #222;
+  font-size: 14px;
+  line-height: 20px;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: auto;
+  padding: 5px 10px;
+  padding-right: 5px;
+  background: #f0f0f0;
+}
+
+.c11:hover:not(:disabled) {
+  background-color: #e0e0e0;
+}
+
+.c11:focus {
+  outline: 1px dotted #222;
+  outline-offset: -1px;
+}
+
+.c11:disabled {
+  color: #c0c0c0;
+}
+
+.c12 {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+}
+
+.c9 {
+  position: relative;
+  display: inline-block;
+}
+
+.c0 {
+  opacity: 0.5;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  pointer-events: none;
+  list-style-type: none;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c1 {
+  border-bottom: 1px solid #c0c0c0;
+}
+
+.c1:last-child {
+  border-bottom: none;
+}
+
+.c4 {
+  font-family: Open Sans,Arial,sans-serif;
+  color: #222;
+  font-size: 14px;
+  line-height: 20px;
+  color: #222;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.c14 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  gap: 10px;
+  height: 30px;
+}
+
+.c15 {
+  font-family: Open Sans,Arial,sans-serif;
+  color: #222;
+  font-size: 14px;
+  line-height: 20px;
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  line-height: 1;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #222;
+  color: #222;
+  background: #fff;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  cursor: pointer;
+}
+
+.c15:hover {
+  background-color: #fcfcfc;
+}
+
+.c15:focus-within {
+  outline: 1px dotted #222;
+}
+
+.c16 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+  opacity: 0;
+  outline: none;
+}
+
+.c6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c7 {
+  font-family: Open Sans,Arial,sans-serif;
+  color: #222;
+  font-size: 14px;
+  line-height: 20px;
+  display: block;
+  width: 100%;
+  padding: 5px 10px;
+  background: #fff;
+  color: #c22;
+  border: none;
+  outline: none;
+}
+
+.c7:hover:not(:disabled) {
+  background-color: #fcfcfc;
+}
+
+.c7:focus {
+  outline: 1px dotted #222;
+  outline-offset: -1px;
+}
+
+.c7:disabled {
+  color: #c0c0c0;
+}
+
+.c18 {
+  font-family: Open Sans,Arial,sans-serif;
+  color: #222;
+  font-size: 14px;
+  line-height: 20px;
+  display: block;
+  width: 100%;
+  padding: 5px 10px;
+  background: #fff;
+  border: none;
+  outline: none;
+  min-height: 110px;
+  resize: vertical;
+}
+
+.c18:hover:not(:disabled) {
+  background-color: #fcfcfc;
+}
+
+.c18:focus {
+  outline: 1px dotted #222;
+  outline-offset: -1px;
+}
+
+.c18:disabled {
+  color: #c0c0c0;
+}
+
+.c8 {
+  font-family: Open Sans,Arial,sans-serif;
+  color: #222;
+  font-size: 14px;
+  line-height: 20px;
+  display: block;
+  padding: 0 10px;
+  color: #fff;
+  background: #c22;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.c17 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  display: block;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 100px;
+  min-height: 30px;
+}
+
+.c5 {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+}
+
+<div>
+  <ul
+    class="c0"
+  >
+    <li
+      class="c1"
+    >
+      <div
+        class="c2"
+      >
+        <div
+          class="c3"
+        >
+          <label
+            class="c4"
+            for="form-field-4"
+          >
+            Název úkolu:
+          </label>
+        </div>
+        <div
+          class="c5"
+        >
+          <div
+            class="c6"
+          >
+            <input
+              class="c7"
+              id="form-field-4"
+              maxlength="80"
+              type="text"
+              value="Edited todo"
+            />
+            <div
+              class="c8"
+            >
+              Title field error
+            </div>
+          </div>
+        </div>
+      </div>
+    </li>
+    <li
+      class="c1"
+    >
+      <div
+        class="c2"
+      >
+        <div
+          class="c3"
+        >
+          <label
+            class="c4"
+            for="form-field-5"
+          >
+            Složka:
+          </label>
+        </div>
+        <div
+          class="c5"
+        >
+          <div
+            class="c9"
+          >
+            <button
+              class="c10 c11"
+              id="form-field-5"
+              type="button"
+            >
+              <span
+                class="c12"
+              >
+                Folder B
+              </span>
+              <i
+                class="c13"
+              >
+                ˅
+              </i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </li>
+    <li
+      class="c1"
+    >
+      <div
+        class="c2"
+      >
+        <div
+          class="c3"
+        >
+          <label
+            class="c4"
+            for="form-field-6"
+          >
+            Hotovo:
+          </label>
+        </div>
+        <div
+          class="c5"
+        >
+          <div
+            class="c14"
+          >
+            <label
+              class="c15"
+              for="form-field-6"
+            >
+              ✔
+              <input
+                checked=""
+                class="c16"
+                id="form-field-6"
+                type="checkbox"
+              />
+            </label>
+          </div>
+        </div>
+      </div>
+    </li>
+    <li
+      class="c1"
+    >
+      <div
+        class="c17"
+      >
+        <div
+          class="c3"
+        >
+          <label
+            class="c4"
+            for="form-field-7"
+          >
+            Popis úkolu:
+          </label>
+        </div>
+        <div
+          class="c5"
+        >
+          <div
+            class="c6"
+          >
+            <textarea
+              class="c18"
+              id="form-field-7"
+              maxlength="500"
+            />
+          </div>
+        </div>
+      </div>
+    </li>
+  </ul>
+</div>
+`;

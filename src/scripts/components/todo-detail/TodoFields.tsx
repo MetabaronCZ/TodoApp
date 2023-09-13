@@ -12,7 +12,7 @@ import { useAppSelector } from 'store/utils';
 interface Props {
   readonly loading?: boolean;
   readonly fields: TodoData;
-  readonly errors: FormErrors<TodoData>;
+  readonly errors?: FormErrors<TodoData>;
   readonly onChange: <T extends keyof TodoData>(
     field: T,
     value: TodoData[T],
@@ -22,7 +22,7 @@ interface Props {
 export const TodoFields: React.FC<Props> = ({
   loading = false,
   fields,
-  errors,
+  errors = {},
   onChange,
 }) => {
   const { t } = useTranslation();
