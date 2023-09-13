@@ -32,7 +32,7 @@ const todos: Todo[] = [
   },
   {
     id: '1',
-    title: 'Todo A',
+    title: 'Todo B',
     description: '',
     created: 1,
     folder: '0',

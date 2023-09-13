@@ -5,45 +5,66 @@ import { Provider } from 'react-redux';
 import { act, render } from '@testing-library/react';
 import { describe, expect, it, jest } from '@jest/globals';
 
-import { FolderList } from 'components/folder-list/FolderList';
-import { FolderListItem } from 'components/folder-list/FolderListItem';
-import { FolderListToolbar } from 'components/folder-list/FolderListToolbar';
+import { TodoList } from 'components/todo-list/TodoList';
+import { TodoListItem } from 'components/todo-list/TodoListItem';
+import { TodoListToolbar } from 'components/todo-list/TodoListToolbar';
 
-import { Folder } from 'models/Folder';
+import { Todo } from 'models/Todo';
 import { client } from 'modules/client';
-import { todoFoldersSlice } from 'store/folders';
+import { todoListSlice } from 'store/todos';
 
 import { mockStore } from 'test/store';
 import { withMockedProviders } from 'test/component';
 
-const { setFolders } = todoFoldersSlice.actions;
+const { setTodos } = todoListSlice.actions;
 
-jest.mock('components/folder-list/FolderListItem');
-jest.mock('components/folder-list/FolderListToolbar');
+jest.mock('components/todo-list/TodoListItem');
+jest.mock('components/todo-list/TodoListToolbar');
 
-const testData: Folder[] = [
-  { id: 'A', title: 'Folder A' },
-  { id: 'B', title: 'Folder B' },
-  { id: 'C', title: 'Folder C' },
+const testData: Todo[] = [
+  {
+    id: 'A',
+    title: 'Todo A',
+    description: '',
+    created: 0,
+    folder: null,
+    isDone: false,
+  },
+  {
+    id: 'B',
+    title: 'Todo B',
+    description: '',
+    created: 1,
+    folder: '0',
+    isDone: true,
+  },
+  {
+    id: 'C',
+    title: 'Todo B',
+    description: '',
+    created: 2,
+    folder: null,
+    isDone: false,
+  },
 ];
 
-const getFolderList = (folders: Folder[]): JSX.Element => {
+const getTodoList = (todos: Todo[]): JSX.Element => {
   const store = mockStore();
-  store.dispatch(setFolders(folders));
+  store.dispatch(setTodos(todos));
 
   return withMockedProviders(
     <Provider store={store}>
-      <FolderList />
+      <TodoList />
     </Provider>,
   );
 };
 
-describe('components/folder-list/FolderList', () => {
+describe('components/todo-list/TodoList', () => {
   it('should render correctly', () => {
-    const listItem = jest.mocked(FolderListItem);
+    const listItem = jest.mocked(TodoListItem);
     expect(listItem).toHaveBeenCalledTimes(0);
 
-    const tree = render(getFolderList(testData));
+    const tree = render(getTodoList(testData));
     expect(tree.container).toMatchSnapshot();
 
     const { calls } = listItem.mock;
@@ -54,27 +75,26 @@ describe('components/folder-list/FolderList', () => {
   });
 
   it('should render empty list', () => {
-    const listItem = jest.mocked(FolderListItem);
-    const toolbar = jest.mocked(FolderListToolbar);
+    const listItem = jest.mocked(TodoListItem);
+    const toolbar = jest.mocked(TodoListToolbar);
     expect(listItem).toHaveBeenCalledTimes(0);
     expect(toolbar).toHaveBeenCalledTimes(0);
 
-    const tree = render(getFolderList([]));
+    const tree = render(getTodoList([]));
     expect(tree.container).toMatchSnapshot();
 
     expect(listItem).toHaveBeenCalledTimes(0);
-    expect(tree.getByText(t('folderList.empty'))).toBeInTheDocument();
+    expect(tree.getByText(t('todoList.empty'))).toBeInTheDocument();
 
     expect(toolbar).toHaveBeenCalled();
     expect(toolbar.mock.calls[0][0].disabled).toEqual(true);
   });
 
   it('should be selectable', () => {
-    const listItem = jest.mocked(FolderListItem);
-    const toolbar = jest.mocked(FolderListToolbar);
+    const listItem = jest.mocked(TodoListItem);
+    const toolbar = jest.mocked(TodoListToolbar);
 
-    render(getFolderList(testData));
-
+    render(getTodoList(testData));
     const { calls } = listItem.mock;
 
     let items = [
@@ -125,10 +145,10 @@ describe('components/folder-list/FolderList', () => {
   });
 
   it('should be able to un/select-all', () => {
-    const listItem = jest.mocked(FolderListItem);
-    const toolbar = jest.mocked(FolderListToolbar);
+    const listItem = jest.mocked(TodoListItem);
+    const toolbar = jest.mocked(TodoListToolbar);
 
-    render(getFolderList(testData));
+    render(getTodoList(testData));
     const { calls } = listItem.mock;
 
     let items = [
@@ -176,59 +196,44 @@ describe('components/folder-list/FolderList', () => {
   });
 
   it('should be sortable', () => {
-    const listItem = jest.mocked(FolderListItem);
-    const toolbar = jest.mocked(FolderListToolbar);
+    const toolbar = jest.mocked(TodoListToolbar);
 
-    render(getFolderList(testData));
+    const mockedSortTodos = jest.spyOn(client.todo, 'get');
+    expect(mockedSortTodos).toHaveBeenCalledTimes(0);
+
+    render(getTodoList(testData));
     expect(toolbar).toHaveBeenCalled();
 
     if (toolbar.mock.lastCall) {
-      expect(toolbar.mock.lastCall[0].sort).toEqual('TITLE_ASC');
+      expect(toolbar.mock.lastCall[0].sort).toEqual('CREATED_DESC');
     }
-    const { calls } = listItem.mock;
 
-    let items = [
-      calls[calls.length - 3][0],
-      calls[calls.length - 2][0],
-      calls[calls.length - 1][0],
-    ];
-    expect(items[0].item.id).toEqual('A');
-    expect(items[1].item.id).toEqual('B');
-    expect(items[2].item.id).toEqual('C');
-
-    // trigger folder sort
+    // trigger todo sort
     act(() => {
       if (toolbar.mock.lastCall) {
         toolbar.mock.lastCall[0].onSort('TITLE_DESC');
       }
     });
 
-    if (toolbar.mock.lastCall) {
-      expect(toolbar.mock.lastCall[0].sort).toEqual('TITLE_DESC');
+    expect(mockedSortTodos).toHaveBeenCalledTimes(1);
+
+    if (mockedSortTodos.mock.lastCall) {
+      expect(mockedSortTodos.mock.lastCall[0]?.sort).toEqual('TITLE_DESC');
     }
-    items = [
-      calls[calls.length - 3][0],
-      calls[calls.length - 2][0],
-      calls[calls.length - 1][0],
-    ];
-    expect(items[0].item.id).toEqual('C');
-    expect(items[1].item.id).toEqual('B');
-    expect(items[2].item.id).toEqual('A');
   });
 
   it('should be able to delete selected', () => {
-    const listItem = jest.mocked(FolderListItem);
-    const toolbar = jest.mocked(FolderListToolbar);
+    const listItem = jest.mocked(TodoListItem);
+    const toolbar = jest.mocked(TodoListToolbar);
 
     const mockedConfirm = jest.spyOn(window, 'confirm');
     mockedConfirm.mockImplementation(jest.fn(() => true));
     expect(mockedConfirm).toHaveBeenCalledTimes(0);
 
-    const mockedDeleteFolders = jest.spyOn(client.folder, 'delete');
-    expect(mockedDeleteFolders).toHaveBeenCalledTimes(0);
+    const mockedDeleteTodos = jest.spyOn(client.todo, 'delete');
+    expect(mockedDeleteTodos).toHaveBeenCalledTimes(0);
 
-    render(getFolderList(testData));
-
+    render(getTodoList(testData));
     const { calls } = listItem.mock;
 
     let items = [
@@ -262,7 +267,7 @@ describe('components/folder-list/FolderList', () => {
     });
 
     expect(mockedConfirm).toHaveBeenCalledTimes(1);
-    expect(mockedDeleteFolders).toHaveBeenCalledTimes(1);
-    expect(mockedDeleteFolders).toHaveBeenCalledWith(['A', 'B']);
+    expect(mockedDeleteTodos).toHaveBeenCalledTimes(1);
+    expect(mockedDeleteTodos).toHaveBeenCalledWith(['A', 'B']);
   });
 });

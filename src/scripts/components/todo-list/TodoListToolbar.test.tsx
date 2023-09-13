@@ -4,18 +4,18 @@ import { fireEvent, render } from '@testing-library/react';
 import { describe, expect, it, jest } from '@jest/globals';
 
 import { Dropdown } from 'components/forms/Dropdown';
-import { FolderListToolbar } from 'components/folder-list/FolderListToolbar';
+import { TodoListToolbar } from 'components/todo-list/TodoListToolbar';
 
 import { withMockedProviders } from 'test/component';
 
 jest.mock('components/forms/Dropdown');
 
-describe('components/folder-list/FolderListToolbar', () => {
+describe('components/todo-list/TodoListToolbar', () => {
   it('should render correctly', () => {
     const { container } = render(
       withMockedProviders(
-        <FolderListToolbar
-          sort="TITLE_ASC"
+        <TodoListToolbar
+          sort="CREATED_ASC"
           onSort={() => null}
           onSelect={() => null}
           onDelete={() => null}
@@ -30,7 +30,7 @@ describe('components/folder-list/FolderListToolbar', () => {
 
     const { container } = render(
       withMockedProviders(
-        <FolderListToolbar
+        <TodoListToolbar
           sort="TITLE_ASC"
           selected
           onSort={() => null}
@@ -58,7 +58,7 @@ describe('components/folder-list/FolderListToolbar', () => {
   it('should not be able to un/select-all when disabled', () => {
     const { container } = render(
       withMockedProviders(
-        <FolderListToolbar
+        <TodoListToolbar
           sort="TITLE_ASC"
           selected
           disabled
@@ -85,7 +85,7 @@ describe('components/folder-list/FolderListToolbar', () => {
 
     const { container } = render(
       withMockedProviders(
-        <FolderListToolbar
+        <TodoListToolbar
           sort="TITLE_DESC"
           onSort={onSort}
           onSelect={() => null}
@@ -112,7 +112,7 @@ describe('components/folder-list/FolderListToolbar', () => {
 
     const { container } = render(
       withMockedProviders(
-        <FolderListToolbar
+        <TodoListToolbar
           sort="TITLE_DESC"
           disabled
           onSort={() => null}
@@ -133,7 +133,7 @@ describe('components/folder-list/FolderListToolbar', () => {
 
     const tree = render(
       withMockedProviders(
-        <FolderListToolbar
+        <TodoListToolbar
           sort="TITLE_ASC"
           selected
           onSort={() => null}
@@ -157,7 +157,7 @@ describe('components/folder-list/FolderListToolbar', () => {
 
     const tree = render(
       withMockedProviders(
-        <FolderListToolbar
+        <TodoListToolbar
           sort="TITLE_ASC"
           onSort={() => null}
           onSelect={() => null}
@@ -174,7 +174,7 @@ describe('components/folder-list/FolderListToolbar', () => {
 
     const tree = render(
       withMockedProviders(
-        <FolderListToolbar
+        <TodoListToolbar
           sort="TITLE_ASC"
           selected
           disabled
