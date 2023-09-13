@@ -51,14 +51,14 @@ const ItemAction = styled.div`
 
 interface Props {
   readonly item: Todo;
-  readonly selected: boolean;
+  readonly selected?: boolean;
   readonly onDelete: OnClick;
   readonly onSelect: OnChange<boolean>;
 }
 
 export const TodoListItem: React.FC<Props> = ({
   item,
-  selected,
+  selected = false,
   onDelete,
   onSelect,
 }) => {

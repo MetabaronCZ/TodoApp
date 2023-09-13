@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`components/folder-list/FolderList should render correctly 1`] = `
+exports[`components/todo-list/TodoList should render correctly 1`] = `
 .c0 {
   font-family: Open Sans,Arial,sans-serif;
   color: #222;
@@ -40,7 +40,7 @@ exports[`components/folder-list/FolderList should render correctly 1`] = `
     <h1
       class="c0 c1"
     >
-      Složky
+      Úkoly
     </h1>
     <ul
       class="c2"
@@ -59,7 +59,7 @@ exports[`components/folder-list/FolderList should render correctly 1`] = `
 </div>
 `;
 
-exports[`components/folder-list/FolderList should render empty list 1`] = `
+exports[`components/todo-list/TodoList should render empty list 1`] = `
 .c0 {
   font-family: Open Sans,Arial,sans-serif;
   color: #222;
@@ -91,12 +91,12 @@ exports[`components/folder-list/FolderList should render empty list 1`] = `
     <h1
       class="c0 c1"
     >
-      Složky
+      Úkoly
     </h1>
     <p
       class="c2 c3"
     >
-      Nebyly nalezeny žádné složky.
+      Nebyly nalezeny žádné úkoly.
     </p>
   </div>
 </div>

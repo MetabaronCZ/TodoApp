@@ -12,7 +12,7 @@ import { TodoSort, todoSort } from 'models/Todos';
 
 interface Props {
   readonly sort: TodoSort;
-  readonly selected: boolean;
+  readonly selected?: boolean;
   readonly disabled?: boolean;
   readonly onSelect: OnChange<boolean>;
   readonly onSort: (sort: TodoSort) => void;
@@ -21,7 +21,7 @@ interface Props {
 
 export const TodoListToolbar: React.FC<Props> = ({
   sort,
-  selected,
+  selected = false,
   disabled = false,
   onSelect,
   onSort,
