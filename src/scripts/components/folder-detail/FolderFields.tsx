@@ -10,7 +10,7 @@ import { FolderData } from 'models/Folder';
 interface Props {
   readonly loading?: boolean;
   readonly fields: FolderData;
-  readonly errors: FormErrors<FolderData>;
+  readonly errors?: FormErrors<FolderData>;
   readonly onChange: <T extends keyof FolderData>(
     field: T,
     value: FolderData[T],
@@ -20,7 +20,7 @@ interface Props {
 export const FolderFields: React.FC<Props> = ({
   loading = false,
   fields,
-  errors,
+  errors = {},
   onChange,
 }) => {
   const { t } = useTranslation();

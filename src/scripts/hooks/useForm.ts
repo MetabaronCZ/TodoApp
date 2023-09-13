@@ -43,20 +43,22 @@ const submit = <T extends FormData>(
   fields: T,
   validations: FormValidations<T>,
   onSubmit?: (data: T) => void,
-): void => {
+): FormErrors<T> => {
+  const errors: FormErrors<T> = {};
   let hasErrors = false;
 
   for (const item of Object.entries(fields)) {
     const field = item[0] as keyof T;
     const value = item[1] as T[typeof field];
 
-    if (null !== validateField(validations, field, value)) {
-      hasErrors = true;
-    }
+    const error = validateField(validations, field, value);
+    errors[field] = error;
+    hasErrors = error ? true : hasErrors;
   }
   if (!hasErrors && onSubmit) {
     onSubmit(fields);
   }
+  return errors;
 };
 
 interface UseForm<T extends FormData> {
@@ -83,7 +85,8 @@ export const useForm = <T extends FormData>(
   // validate on form submit request
   useEffect(() => {
     if (submitRequest) {
-      submit(fields, validations, onSubmit);
+      const formErrors = submit(fields, validations, onSubmit);
+      setErrors(formErrors);
       setSubmitRequest(false);
     }
   }, [fields, onSubmit, submitRequest, validations]);
@@ -93,16 +96,8 @@ export const useForm = <T extends FormData>(
     errors,
     setValue: (field, value) => {
       const error = validateField(validations, field, value);
-
-      setErrors((state) => ({
-        ...state,
-        [field]: error,
-      }));
-
-      setFields((state) => ({
-        ...state,
-        [field]: value,
-      }));
+      setErrors((state) => ({ ...state, [field]: error }));
+      setFields((state) => ({ ...state, [field]: value }));
 
       if (autoSubmit) {
         setSubmitRequest(true);
