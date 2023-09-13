@@ -85,7 +85,7 @@ describe('components/folder-detail/FolderDetail', () => {
     const submitButton = tree.getByRole('button');
     expect(submitButton).toBeInTheDocument();
 
-    // trigger form submit (no title)
+    // trigger form submit (validation error)
     fireEvent.click(submitButton);
     expect(mockedFolderCreate).toBeCalledTimes(0);
 
@@ -122,7 +122,7 @@ describe('components/folder-detail/FolderDetail', () => {
       fireEvent.change(input, { target: { value: 'Edited folder' } });
     }
 
-    // trigger form submit (validation OK)
+    // trigger form submit
     fireEvent.click(submitButton);
     expect(mockedFolderEdit).toBeCalledTimes(1);
     expect(mockedFolderEdit).toBeCalledWith('0', { title: 'Edited folder' });

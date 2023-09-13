@@ -1,0 +1,1931 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`components/todo-detail/TodoDetail should prefill folder Dropdown when filtered by a folder 1`] = `
+.c3 {
+  font-family: Open Sans,Arial,sans-serif;
+  color: #222;
+  font-size: 14px;
+  line-height: 20px;
+  display: block;
+  width: 20px;
+  height: 20px;
+  line-height: 20px;
+  font-style: normal;
+  text-align: center;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.c14 {
+  display: block;
+  width: 100%;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.c15 {
+  font-family: Open Sans,Arial,sans-serif;
+  color: #222;
+  font-size: 14px;
+  line-height: 20px;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: auto;
+  padding: 5px 10px;
+  padding-right: 5px;
+  background: #f0f0f0;
+}
+
+.c15:hover:not(:disabled) {
+  background-color: #e0e0e0;
+}
+
+.c15:focus {
+  outline: 1px dotted #222;
+  outline-offset: -1px;
+}
+
+.c15:disabled {
+  color: #c0c0c0;
+}
+
+.c22 {
+  font-family: Open Sans,Arial,sans-serif;
+  color: #222;
+  font-size: 14px;
+  line-height: 20px;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: auto;
+  padding: 5px 10px;
+  padding-left: 5px;
+  background: #f0f0f0;
+}
+
+.c22:hover:not(:disabled) {
+  background-color: #e0e0e0;
+}
+
+.c22:focus {
+  outline: 1px dotted #222;
+  outline-offset: -1px;
+}
+
+.c22:disabled {
+  color: #c0c0c0;
+}
+
+.c2 {
+  font-family: Open Sans,Arial,sans-serif;
+  color: #222;
+  font-size: 14px;
+  line-height: 20px;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: auto;
+  padding: 5px 10px;
+  padding-left: 5px;
+  background: #f0f0f0;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
+.c2:hover:not(:disabled) {
+  background-color: #e0e0e0;
+}
+
+.c2:focus {
+  outline: 1px dotted #222;
+  outline-offset: -1px;
+}
+
+.c2:disabled {
+  color: #c0c0c0;
+}
+
+.c4 {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+}
+
+.c13 {
+  position: relative;
+  display: inline-block;
+}
+
+.c5 {
+  list-style-type: none;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c6 {
+  border-bottom: 1px solid #c0c0c0;
+}
+
+.c6:last-child {
+  border-bottom: none;
+}
+
+.c9 {
+  font-family: Open Sans,Arial,sans-serif;
+  color: #222;
+  font-size: 14px;
+  line-height: 20px;
+  color: #222;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.c16 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  gap: 10px;
+  height: 30px;
+}
+
+.c17 {
+  font-family: Open Sans,Arial,sans-serif;
+  color: #222;
+  font-size: 14px;
+  line-height: 20px;
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  line-height: 1;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #222;
+  color: #222;
+  background: #fff;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  cursor: pointer;
+}
+
+.c17:hover {
+  background-color: #fcfcfc;
+}
+
+.c17:focus-within {
+  outline: 1px dotted #222;
+}
+
+.c18 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+  opacity: 0;
+  outline: none;
+}
+
+.c11 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c12 {
+  font-family: Open Sans,Arial,sans-serif;
+  color: #222;
+  font-size: 14px;
+  line-height: 20px;
+  display: block;
+  width: 100%;
+  padding: 5px 10px;
+  background: #fff;
+  border: none;
+  outline: none;
+}
+
+.c12:hover:not(:disabled) {
+  background-color: #fcfcfc;
+}
+
+.c12:focus {
+  outline: 1px dotted #222;
+  outline-offset: -1px;
+}
+
+.c12:disabled {
+  color: #c0c0c0;
+}
+
+.c20 {
+  font-family: Open Sans,Arial,sans-serif;
+  color: #222;
+  font-size: 14px;
+  line-height: 20px;
+  display: block;
+  width: 100%;
+  padding: 5px 10px;
+  background: #fff;
+  border: none;
+  outline: none;
+  min-height: 110px;
+  resize: vertical;
+}
+
+.c20:hover:not(:disabled) {
+  background-color: #fcfcfc;
+}
+
+.c20:focus {
+  outline: 1px dotted #222;
+  outline-offset: -1px;
+}
+
+.c20:disabled {
+  color: #c0c0c0;
+}
+
+.c7 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.c19 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  display: block;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.c8 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 100px;
+  min-height: 30px;
+}
+
+.c10 {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+}
+
+.c0 {
+  font-family: Open Sans,Arial,sans-serif;
+  color: #222;
+  font-size: 18px;
+  line-height: 30px;
+  font-weight: normal;
+  margin: 0;
+}
+
+.c1 {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  gap: 10px;
+  height: calc(30px + 1px);
+  border-bottom: 1px solid #c0c0c0;
+  background: #f0f0f0;
+}
+
+.c21 {
+  border-top: 1px solid #c0c0c0;
+}
+
+<div>
+  <div>
+    <h1
+      class="c0"
+    >
+      Nový úkol
+    </h1>
+    <div
+      class="c1"
+    >
+      <div>
+        <a
+          class="c2"
+          href="/"
+        >
+          <i
+            class="c3"
+          >
+            ❮
+          </i>
+          <span
+            class="c4"
+          >
+            Zpět
+          </span>
+        </a>
+      </div>
+    </div>
+    <ul
+      class="c5"
+    >
+      <li
+        class="c6"
+      >
+        <div
+          class="c7"
+        >
+          <div
+            class="c8"
+          >
+            <label
+              class="c9"
+              for="form-field-8"
+            >
+              Název úkolu:
+            </label>
+          </div>
+          <div
+            class="c10"
+          >
+            <div
+              class="c11"
+            >
+              <input
+                class="c12"
+                id="form-field-8"
+                maxlength="80"
+                type="text"
+                value=""
+              />
+            </div>
+          </div>
+        </div>
+      </li>
+      <li
+        class="c6"
+      >
+        <div
+          class="c7"
+        >
+          <div
+            class="c8"
+          >
+            <label
+              class="c9"
+              for="form-field-9"
+            >
+              Složka:
+            </label>
+          </div>
+          <div
+            class="c10"
+          >
+            <div
+              class="c13"
+            >
+              <button
+                class="c14 c15"
+                id="form-field-9"
+                type="button"
+              >
+                <span
+                  class="c4"
+                >
+                  Folder C
+                </span>
+                <i
+                  class="c3"
+                >
+                  ˅
+                </i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </li>
+      <li
+        class="c6"
+      >
+        <div
+          class="c7"
+        >
+          <div
+            class="c8"
+          >
+            <label
+              class="c9"
+              for="form-field-10"
+            >
+              Hotovo:
+            </label>
+          </div>
+          <div
+            class="c10"
+          >
+            <div
+              class="c16"
+            >
+              <label
+                class="c17"
+                for="form-field-10"
+              >
+                <input
+                  class="c18"
+                  id="form-field-10"
+                  type="checkbox"
+                />
+              </label>
+            </div>
+          </div>
+        </div>
+      </li>
+      <li
+        class="c6"
+      >
+        <div
+          class="c19"
+        >
+          <div
+            class="c8"
+          >
+            <label
+              class="c9"
+              for="form-field-11"
+            >
+              Popis úkolu:
+            </label>
+          </div>
+          <div
+            class="c10"
+          >
+            <div
+              class="c11"
+            >
+              <textarea
+                class="c20"
+                id="form-field-11"
+                maxlength="500"
+              />
+            </div>
+          </div>
+        </div>
+      </li>
+    </ul>
+    <div
+      class="c21"
+    >
+      <button
+        class="c14 c22"
+        type="button"
+      >
+        <i
+          class="c3"
+        >
+          +
+        </i>
+        <span
+          class="c4"
+        >
+          Vytvořit
+        </span>
+      </button>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`components/todo-detail/TodoDetail should render fetch error 1`] = `
+.c3 {
+  font-family: Open Sans,Arial,sans-serif;
+  color: #222;
+  font-size: 14px;
+  line-height: 20px;
+  display: block;
+  width: 20px;
+  height: 20px;
+  line-height: 20px;
+  font-style: normal;
+  text-align: center;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.c2 {
+  font-family: Open Sans,Arial,sans-serif;
+  color: #222;
+  font-size: 14px;
+  line-height: 20px;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: auto;
+  padding: 5px 10px;
+  padding-left: 5px;
+  background: #f0f0f0;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
+.c2:hover:not(:disabled) {
+  background-color: #e0e0e0;
+}
+
+.c2:focus {
+  outline: 1px dotted #222;
+  outline-offset: -1px;
+}
+
+.c2:disabled {
+  color: #c0c0c0;
+}
+
+.c4 {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+}
+
+.c0 {
+  font-family: Open Sans,Arial,sans-serif;
+  color: #222;
+  font-size: 18px;
+  line-height: 30px;
+  font-weight: normal;
+  margin: 0;
+}
+
+.c5 {
+  font-family: Open Sans,Arial,sans-serif;
+  color: #222;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.c1 {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  gap: 10px;
+  height: calc(30px + 1px);
+  border-bottom: 1px solid #c0c0c0;
+  background: #f0f0f0;
+}
+
+.c6 {
+  margin-top: 10px;
+}
+
+<div>
+  <div>
+    <h1
+      class="c0"
+    >
+      Detail úkolu
+    </h1>
+    <div
+      class="c1"
+    >
+      <div>
+        <a
+          class="c2"
+          href="/"
+        >
+          <i
+            class="c3"
+          >
+            ❮
+          </i>
+          <span
+            class="c4"
+          >
+            Zpět
+          </span>
+        </a>
+      </div>
+    </div>
+    <p
+      class="c5 c6"
+    >
+      Data se nepodařilo načíst. Zkuste to prosím později.
+    </p>
+  </div>
+</div>
+`;
+
+exports[`components/todo-detail/TodoDetail should render todo create variant 1`] = `
+.c3 {
+  font-family: Open Sans,Arial,sans-serif;
+  color: #222;
+  font-size: 14px;
+  line-height: 20px;
+  display: block;
+  width: 20px;
+  height: 20px;
+  line-height: 20px;
+  font-style: normal;
+  text-align: center;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.c14 {
+  display: block;
+  width: 100%;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.c15 {
+  font-family: Open Sans,Arial,sans-serif;
+  color: #222;
+  font-size: 14px;
+  line-height: 20px;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: auto;
+  padding: 5px 10px;
+  padding-right: 5px;
+  background: #f0f0f0;
+}
+
+.c15:hover:not(:disabled) {
+  background-color: #e0e0e0;
+}
+
+.c15:focus {
+  outline: 1px dotted #222;
+  outline-offset: -1px;
+}
+
+.c15:disabled {
+  color: #c0c0c0;
+}
+
+.c22 {
+  font-family: Open Sans,Arial,sans-serif;
+  color: #222;
+  font-size: 14px;
+  line-height: 20px;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: auto;
+  padding: 5px 10px;
+  padding-left: 5px;
+  background: #f0f0f0;
+}
+
+.c22:hover:not(:disabled) {
+  background-color: #e0e0e0;
+}
+
+.c22:focus {
+  outline: 1px dotted #222;
+  outline-offset: -1px;
+}
+
+.c22:disabled {
+  color: #c0c0c0;
+}
+
+.c2 {
+  font-family: Open Sans,Arial,sans-serif;
+  color: #222;
+  font-size: 14px;
+  line-height: 20px;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: auto;
+  padding: 5px 10px;
+  padding-left: 5px;
+  background: #f0f0f0;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
+.c2:hover:not(:disabled) {
+  background-color: #e0e0e0;
+}
+
+.c2:focus {
+  outline: 1px dotted #222;
+  outline-offset: -1px;
+}
+
+.c2:disabled {
+  color: #c0c0c0;
+}
+
+.c4 {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+}
+
+.c13 {
+  position: relative;
+  display: inline-block;
+}
+
+.c5 {
+  list-style-type: none;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c6 {
+  border-bottom: 1px solid #c0c0c0;
+}
+
+.c6:last-child {
+  border-bottom: none;
+}
+
+.c9 {
+  font-family: Open Sans,Arial,sans-serif;
+  color: #222;
+  font-size: 14px;
+  line-height: 20px;
+  color: #222;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.c16 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  gap: 10px;
+  height: 30px;
+}
+
+.c17 {
+  font-family: Open Sans,Arial,sans-serif;
+  color: #222;
+  font-size: 14px;
+  line-height: 20px;
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  line-height: 1;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #222;
+  color: #222;
+  background: #fff;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  cursor: pointer;
+}
+
+.c17:hover {
+  background-color: #fcfcfc;
+}
+
+.c17:focus-within {
+  outline: 1px dotted #222;
+}
+
+.c18 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+  opacity: 0;
+  outline: none;
+}
+
+.c11 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c12 {
+  font-family: Open Sans,Arial,sans-serif;
+  color: #222;
+  font-size: 14px;
+  line-height: 20px;
+  display: block;
+  width: 100%;
+  padding: 5px 10px;
+  background: #fff;
+  border: none;
+  outline: none;
+}
+
+.c12:hover:not(:disabled) {
+  background-color: #fcfcfc;
+}
+
+.c12:focus {
+  outline: 1px dotted #222;
+  outline-offset: -1px;
+}
+
+.c12:disabled {
+  color: #c0c0c0;
+}
+
+.c20 {
+  font-family: Open Sans,Arial,sans-serif;
+  color: #222;
+  font-size: 14px;
+  line-height: 20px;
+  display: block;
+  width: 100%;
+  padding: 5px 10px;
+  background: #fff;
+  border: none;
+  outline: none;
+  min-height: 110px;
+  resize: vertical;
+}
+
+.c20:hover:not(:disabled) {
+  background-color: #fcfcfc;
+}
+
+.c20:focus {
+  outline: 1px dotted #222;
+  outline-offset: -1px;
+}
+
+.c20:disabled {
+  color: #c0c0c0;
+}
+
+.c7 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.c19 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  display: block;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.c8 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 100px;
+  min-height: 30px;
+}
+
+.c10 {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+}
+
+.c0 {
+  font-family: Open Sans,Arial,sans-serif;
+  color: #222;
+  font-size: 18px;
+  line-height: 30px;
+  font-weight: normal;
+  margin: 0;
+}
+
+.c1 {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  gap: 10px;
+  height: calc(30px + 1px);
+  border-bottom: 1px solid #c0c0c0;
+  background: #f0f0f0;
+}
+
+.c21 {
+  border-top: 1px solid #c0c0c0;
+}
+
+<div>
+  <div>
+    <h1
+      class="c0"
+    >
+      Nový úkol
+    </h1>
+    <div
+      class="c1"
+    >
+      <div>
+        <a
+          class="c2"
+          href="/"
+        >
+          <i
+            class="c3"
+          >
+            ❮
+          </i>
+          <span
+            class="c4"
+          >
+            Zpět
+          </span>
+        </a>
+      </div>
+    </div>
+    <ul
+      class="c5"
+    >
+      <li
+        class="c6"
+      >
+        <div
+          class="c7"
+        >
+          <div
+            class="c8"
+          >
+            <label
+              class="c9"
+              for="form-field-0"
+            >
+              Název úkolu:
+            </label>
+          </div>
+          <div
+            class="c10"
+          >
+            <div
+              class="c11"
+            >
+              <input
+                class="c12"
+                id="form-field-0"
+                maxlength="80"
+                type="text"
+                value=""
+              />
+            </div>
+          </div>
+        </div>
+      </li>
+      <li
+        class="c6"
+      >
+        <div
+          class="c7"
+        >
+          <div
+            class="c8"
+          >
+            <label
+              class="c9"
+              for="form-field-1"
+            >
+              Složka:
+            </label>
+          </div>
+          <div
+            class="c10"
+          >
+            <div
+              class="c13"
+            >
+              <button
+                class="c14 c15"
+                id="form-field-1"
+                type="button"
+              >
+                <span
+                  class="c4"
+                >
+                  -Vyberte složku-
+                </span>
+                <i
+                  class="c3"
+                >
+                  ˅
+                </i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </li>
+      <li
+        class="c6"
+      >
+        <div
+          class="c7"
+        >
+          <div
+            class="c8"
+          >
+            <label
+              class="c9"
+              for="form-field-2"
+            >
+              Hotovo:
+            </label>
+          </div>
+          <div
+            class="c10"
+          >
+            <div
+              class="c16"
+            >
+              <label
+                class="c17"
+                for="form-field-2"
+              >
+                <input
+                  class="c18"
+                  id="form-field-2"
+                  type="checkbox"
+                />
+              </label>
+            </div>
+          </div>
+        </div>
+      </li>
+      <li
+        class="c6"
+      >
+        <div
+          class="c19"
+        >
+          <div
+            class="c8"
+          >
+            <label
+              class="c9"
+              for="form-field-3"
+            >
+              Popis úkolu:
+            </label>
+          </div>
+          <div
+            class="c10"
+          >
+            <div
+              class="c11"
+            >
+              <textarea
+                class="c20"
+                id="form-field-3"
+                maxlength="500"
+              />
+            </div>
+          </div>
+        </div>
+      </li>
+    </ul>
+    <div
+      class="c21"
+    >
+      <button
+        class="c14 c22"
+        type="button"
+      >
+        <i
+          class="c3"
+        >
+          +
+        </i>
+        <span
+          class="c4"
+        >
+          Vytvořit
+        </span>
+      </button>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`components/todo-detail/TodoDetail should render todo detail variant 1`] = `
+.c3 {
+  font-family: Open Sans,Arial,sans-serif;
+  color: #222;
+  font-size: 14px;
+  line-height: 20px;
+  display: block;
+  width: 20px;
+  height: 20px;
+  line-height: 20px;
+  font-style: normal;
+  text-align: center;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.c14 {
+  display: block;
+  width: 100%;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.c15 {
+  font-family: Open Sans,Arial,sans-serif;
+  color: #222;
+  font-size: 14px;
+  line-height: 20px;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: auto;
+  padding: 5px 10px;
+  padding-right: 5px;
+  background: #f0f0f0;
+}
+
+.c15:hover:not(:disabled) {
+  background-color: #e0e0e0;
+}
+
+.c15:focus {
+  outline: 1px dotted #222;
+  outline-offset: -1px;
+}
+
+.c15:disabled {
+  color: #c0c0c0;
+}
+
+.c22 {
+  font-family: Open Sans,Arial,sans-serif;
+  color: #222;
+  font-size: 14px;
+  line-height: 20px;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: auto;
+  padding: 5px 10px;
+  padding-left: 5px;
+  background: #f0f0f0;
+}
+
+.c22:hover:not(:disabled) {
+  background-color: #e0e0e0;
+}
+
+.c22:focus {
+  outline: 1px dotted #222;
+  outline-offset: -1px;
+}
+
+.c22:disabled {
+  color: #c0c0c0;
+}
+
+.c2 {
+  font-family: Open Sans,Arial,sans-serif;
+  color: #222;
+  font-size: 14px;
+  line-height: 20px;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: auto;
+  padding: 5px 10px;
+  padding-left: 5px;
+  background: #f0f0f0;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
+.c2:hover:not(:disabled) {
+  background-color: #e0e0e0;
+}
+
+.c2:focus {
+  outline: 1px dotted #222;
+  outline-offset: -1px;
+}
+
+.c2:disabled {
+  color: #c0c0c0;
+}
+
+.c4 {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+}
+
+.c13 {
+  position: relative;
+  display: inline-block;
+}
+
+.c5 {
+  list-style-type: none;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c6 {
+  border-bottom: 1px solid #c0c0c0;
+}
+
+.c6:last-child {
+  border-bottom: none;
+}
+
+.c9 {
+  font-family: Open Sans,Arial,sans-serif;
+  color: #222;
+  font-size: 14px;
+  line-height: 20px;
+  color: #222;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.c16 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  gap: 10px;
+  height: 30px;
+}
+
+.c17 {
+  font-family: Open Sans,Arial,sans-serif;
+  color: #222;
+  font-size: 14px;
+  line-height: 20px;
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  line-height: 1;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #222;
+  color: #222;
+  background: #fff;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  cursor: pointer;
+}
+
+.c17:hover {
+  background-color: #fcfcfc;
+}
+
+.c17:focus-within {
+  outline: 1px dotted #222;
+}
+
+.c18 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+  opacity: 0;
+  outline: none;
+}
+
+.c11 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c12 {
+  font-family: Open Sans,Arial,sans-serif;
+  color: #222;
+  font-size: 14px;
+  line-height: 20px;
+  display: block;
+  width: 100%;
+  padding: 5px 10px;
+  background: #fff;
+  border: none;
+  outline: none;
+}
+
+.c12:hover:not(:disabled) {
+  background-color: #fcfcfc;
+}
+
+.c12:focus {
+  outline: 1px dotted #222;
+  outline-offset: -1px;
+}
+
+.c12:disabled {
+  color: #c0c0c0;
+}
+
+.c20 {
+  font-family: Open Sans,Arial,sans-serif;
+  color: #222;
+  font-size: 14px;
+  line-height: 20px;
+  display: block;
+  width: 100%;
+  padding: 5px 10px;
+  background: #fff;
+  border: none;
+  outline: none;
+  min-height: 110px;
+  resize: vertical;
+}
+
+.c20:hover:not(:disabled) {
+  background-color: #fcfcfc;
+}
+
+.c20:focus {
+  outline: 1px dotted #222;
+  outline-offset: -1px;
+}
+
+.c20:disabled {
+  color: #c0c0c0;
+}
+
+.c7 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.c19 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  display: block;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.c8 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 100px;
+  min-height: 30px;
+}
+
+.c10 {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+}
+
+.c0 {
+  font-family: Open Sans,Arial,sans-serif;
+  color: #222;
+  font-size: 18px;
+  line-height: 30px;
+  font-weight: normal;
+  margin: 0;
+}
+
+.c1 {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  gap: 10px;
+  height: calc(30px + 1px);
+  border-bottom: 1px solid #c0c0c0;
+  background: #f0f0f0;
+}
+
+.c21 {
+  border-top: 1px solid #c0c0c0;
+}
+
+<div>
+  <div>
+    <h1
+      class="c0"
+    >
+      Detail úkolu
+    </h1>
+    <div
+      class="c1"
+    >
+      <div>
+        <a
+          class="c2"
+          href="/"
+        >
+          <i
+            class="c3"
+          >
+            ❮
+          </i>
+          <span
+            class="c4"
+          >
+            Zpět
+          </span>
+        </a>
+      </div>
+    </div>
+    <ul
+      class="c5"
+    >
+      <li
+        class="c6"
+      >
+        <div
+          class="c7"
+        >
+          <div
+            class="c8"
+          >
+            <label
+              class="c9"
+              for="form-field-4"
+            >
+              Název úkolu:
+            </label>
+          </div>
+          <div
+            class="c10"
+          >
+            <div
+              class="c11"
+            >
+              <input
+                class="c12"
+                id="form-field-4"
+                maxlength="80"
+                type="text"
+                value="Edited todo"
+              />
+            </div>
+          </div>
+        </div>
+      </li>
+      <li
+        class="c6"
+      >
+        <div
+          class="c7"
+        >
+          <div
+            class="c8"
+          >
+            <label
+              class="c9"
+              for="form-field-5"
+            >
+              Složka:
+            </label>
+          </div>
+          <div
+            class="c10"
+          >
+            <div
+              class="c13"
+            >
+              <button
+                class="c14 c15"
+                id="form-field-5"
+                type="button"
+              >
+                <span
+                  class="c4"
+                >
+                  Folder B
+                </span>
+                <i
+                  class="c3"
+                >
+                  ˅
+                </i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </li>
+      <li
+        class="c6"
+      >
+        <div
+          class="c7"
+        >
+          <div
+            class="c8"
+          >
+            <label
+              class="c9"
+              for="form-field-6"
+            >
+              Hotovo:
+            </label>
+          </div>
+          <div
+            class="c10"
+          >
+            <div
+              class="c16"
+            >
+              <label
+                class="c17"
+                for="form-field-6"
+              >
+                ✔
+                <input
+                  checked=""
+                  class="c18"
+                  id="form-field-6"
+                  type="checkbox"
+                />
+              </label>
+            </div>
+          </div>
+        </div>
+      </li>
+      <li
+        class="c6"
+      >
+        <div
+          class="c19"
+        >
+          <div
+            class="c8"
+          >
+            <label
+              class="c9"
+              for="form-field-7"
+            >
+              Popis úkolu:
+            </label>
+          </div>
+          <div
+            class="c10"
+          >
+            <div
+              class="c11"
+            >
+              <textarea
+                class="c20"
+                id="form-field-7"
+                maxlength="500"
+              />
+            </div>
+          </div>
+        </div>
+      </li>
+    </ul>
+    <div
+      class="c21"
+    >
+      <button
+        class="c14 c22"
+        type="button"
+      >
+        <i
+          class="c3"
+        >
+          ✎
+        </i>
+        <span
+          class="c4"
+        >
+          Upravit
+        </span>
+      </button>
+    </div>
+  </div>
+</div>
+`;
