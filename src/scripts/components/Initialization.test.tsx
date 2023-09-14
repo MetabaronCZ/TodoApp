@@ -22,14 +22,8 @@ const renderInitialization = (children?: React.ReactNode): JSX.Element => {
 };
 
 describe('components/Initialization', () => {
-  it('should render correctly', () => {
-    const { container } = render(renderInitialization());
-    expect(container).toMatchSnapshot();
-  });
-
-  it('should render children', async () => {
+  it('should render correctly', async () => {
     const tree = render(renderInitialization(<div>CONTENT</div>));
-
     await tree.findByText('CONTENT');
     expect(tree.container).toMatchSnapshot();
   });

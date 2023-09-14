@@ -8,8 +8,15 @@ import { ButtonRaw } from 'components/button/ButtonRaw';
 
 describe('components/button/ButtonRaw', () => {
   it('should render correctly', () => {
-    const { container } = render(withMockedProviders(<ButtonRaw />));
-    expect(container).toMatchSnapshot();
+    const tree = render(
+      withMockedProviders(
+        <ButtonRaw>
+          <span>CONTENT</span>
+        </ButtonRaw>,
+      ),
+    );
+    expect(tree.container).toMatchSnapshot();
+    expect(tree.getByText('CONTENT')).toBeInTheDocument();
   });
 
   it('should render props', () => {
@@ -28,19 +35,6 @@ describe('components/button/ButtonRaw', () => {
     const { container } = render(withMockedProviders(<ButtonRaw disabled />));
     expect(container).toMatchSnapshot();
     expect(container.firstChild).toBeDisabled();
-  });
-
-  it('should render children', () => {
-    const { container } = render(
-      withMockedProviders(
-        <ButtonRaw>
-          <span>Test button</span>
-        </ButtonRaw>,
-      ),
-    );
-    expect(container).toMatchSnapshot();
-    expect(container.querySelector('span')).toBeInTheDocument();
-    expect(container.querySelector('span')?.textContent).toEqual('Test button');
   });
 
   it('should call onClick event', () => {
