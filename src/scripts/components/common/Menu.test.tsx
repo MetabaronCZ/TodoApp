@@ -54,13 +54,13 @@ describe('components/common/Menu', () => {
 
   it('should call back onClick event', () => {
     const onClick = jest.fn();
-    expect(onClick.mock.calls.length).toEqual(0);
+    expect(onClick).not.toBeCalled();
 
     const testData: MenuItem[] = [{ id: '1', title: 'Item 1', onClick }];
     const tree = render(withMockedProviders(<Menu items={testData} />));
 
     fireEvent.click(tree.getByRole('button'));
-    expect(onClick.mock.calls.length).toEqual(1);
+    expect(onClick).toBeCalledTimes(1);
     expect(onClick.mock.calls[0][0]).toEqual(undefined);
   });
 });

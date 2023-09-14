@@ -63,14 +63,14 @@ describe('store/folders', () => {
 
       const api = jest.spyOn(client.folder, 'get');
       api.mockImplementation(() => Promise.resolve(testData));
-      expect(api.mock.calls.length).toEqual(0);
+      expect(api).not.toBeCalled();
 
       const store = mockStore();
       let state = store.getState();
       expect(state.folder.items).toEqual([]);
 
       const response = await store.dispatch(fetchFolders());
-      expect(api.mock.calls.length).toEqual(1);
+      expect(api).toBeCalledTimes(1);
       expect(response.payload).toEqual(testData);
 
       state = store.getState();
@@ -110,7 +110,7 @@ describe('store/folders', () => {
 
       const api = jest.spyOn(client.folder, 'create');
       api.mockImplementation(() => Promise.resolve(responseData));
-      expect(api.mock.calls.length).toEqual(0);
+      expect(api).not.toBeCalled();
 
       const store = mockStore();
       store.dispatch(setFolders(data));
@@ -119,7 +119,7 @@ describe('store/folders', () => {
       expect(state.folder.items).toEqual(data);
 
       const response = await store.dispatch(createFolder(testData));
-      expect(api.mock.calls.length).toEqual(1);
+      expect(api).toBeCalledTimes(1);
       expect(response.payload).toEqual(responseData);
 
       state = store.getState();
@@ -143,7 +143,7 @@ describe('store/folders', () => {
 
       const api = jest.spyOn(client.folder, 'edit');
       api.mockImplementation(() => Promise.resolve());
-      expect(api.mock.calls.length).toEqual(0);
+      expect(api).not.toBeCalled();
 
       const store = mockStore();
       store.dispatch(setFolders(data));
@@ -153,7 +153,7 @@ describe('store/folders', () => {
       expect(state.folder.items).not.toEqual(result);
 
       const response = await store.dispatch(editFolder(payload));
-      expect(api.mock.calls.length).toEqual(1);
+      expect(api).toBeCalledTimes(1);
       expect(response.payload).toEqual(payload);
 
       state = store.getState();
@@ -169,7 +169,7 @@ describe('store/folders', () => {
       ];
       const api = jest.spyOn(client.folder, 'edit');
       api.mockImplementation(() => Promise.reject(errorMessage));
-      expect(api.mock.calls.length).toEqual(0);
+      expect(api).not.toBeCalled();
 
       const store = mockStore();
       store.dispatch(setFolders(data));
@@ -180,7 +180,7 @@ describe('store/folders', () => {
       await store.dispatch(
         editFolder({ id: '-1', data: { title: 'Non-existent folder' } }),
       );
-      expect(api.mock.calls.length).toEqual(1);
+      expect(api).toBeCalledTimes(1);
 
       state = store.getState();
       expect(state.folder.error).toEqual(errorMessage);
@@ -197,7 +197,7 @@ describe('store/folders', () => {
       ];
       const api = jest.spyOn(client.folder, 'delete');
       api.mockImplementation(() => Promise.resolve());
-      expect(api.mock.calls.length).toEqual(0);
+      expect(api).not.toBeCalled();
 
       const store = mockStore();
       store.dispatch(setFolders(data));
@@ -206,7 +206,7 @@ describe('store/folders', () => {
       expect(state.folder.items).toEqual(data);
 
       const response = await store.dispatch(deleteFolders(['0']));
-      expect(api.mock.calls.length).toEqual(1);
+      expect(api).toBeCalledTimes(1);
       expect(response.payload).toEqual(['0']);
 
       state = store.getState();
@@ -222,7 +222,7 @@ describe('store/folders', () => {
       ];
       const api = jest.spyOn(client.folder, 'delete');
       api.mockImplementation(() => Promise.resolve());
-      expect(api.mock.calls.length).toEqual(0);
+      expect(api).not.toBeCalled();
 
       const store = mockStore();
       store.dispatch(setFolders(data));
@@ -231,7 +231,7 @@ describe('store/folders', () => {
       expect(state.folder.items).toEqual(data);
 
       const response = await store.dispatch(deleteFolders(['0', '1']));
-      expect(api.mock.calls.length).toEqual(1);
+      expect(api).toBeCalledTimes(1);
       expect(response.payload).toEqual(['0', '1']);
 
       state = store.getState();
@@ -247,7 +247,7 @@ describe('store/folders', () => {
       ];
       const api = jest.spyOn(client.folder, 'delete');
       api.mockImplementation(() => Promise.reject(errorMessage));
-      expect(api.mock.calls.length).toEqual(0);
+      expect(api).not.toBeCalled();
 
       const store = mockStore();
       store.dispatch(setFolders(data));
@@ -256,7 +256,7 @@ describe('store/folders', () => {
       expect(state.folder.items).toEqual(data);
 
       await store.dispatch(deleteFolders(['-1']));
-      expect(api.mock.calls.length).toEqual(1);
+      expect(api).toBeCalledTimes(1);
 
       state = store.getState();
       expect(state.folder.error).toEqual(errorMessage);

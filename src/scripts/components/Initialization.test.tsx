@@ -41,13 +41,13 @@ describe('components/Initialization', () => {
     const mockedFetchFolders = jest.spyOn(client.folder, 'get');
     const mockedFetchSettings = jest.spyOn(client.settings, 'get');
 
-    expect(mockedLoader).toHaveBeenCalledTimes(0);
-    expect(mockedFetchFolders).toHaveBeenCalledTimes(0);
-    expect(mockedFetchSettings).toHaveBeenCalledTimes(0);
+    expect(mockedLoader).toBeCalledTimes(0);
+    expect(mockedFetchFolders).toBeCalledTimes(0);
+    expect(mockedFetchSettings).toBeCalledTimes(0);
 
     render(renderInitialization());
-    expect(mockedLoader).toHaveBeenCalledTimes(1);
-    expect(mockedFetchFolders).toHaveBeenCalledTimes(1);
-    expect(mockedFetchSettings).toHaveBeenCalledTimes(1);
+    expect(mockedLoader).toBeCalledTimes(1);
+    expect(mockedFetchFolders).toBeCalledTimes(1);
+    expect(mockedFetchSettings).toBeCalledTimes(1);
   });
 });

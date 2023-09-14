@@ -91,7 +91,7 @@ describe('store/todos', () => {
       };
       const api = jest.spyOn(client.todo, 'get');
       api.mockImplementation(() => Promise.resolve(fetchResponse));
-      expect(api.mock.calls.length).toEqual(0);
+      expect(api).not.toBeCalled();
 
       const store = mockStore();
       let state = store.getState();
@@ -99,7 +99,7 @@ describe('store/todos', () => {
       expect(state.todo.count).toEqual(0);
 
       const response = await store.dispatch(fetchTodos());
-      expect(api.mock.calls.length).toEqual(1);
+      expect(api).toBeCalledTimes(1);
       expect(response.payload).toEqual(fetchResult);
 
       state = store.getState();
@@ -129,11 +129,11 @@ describe('store/todos', () => {
       const testData: Todo = { ...todos[0] };
       const api = jest.spyOn(client.todo, 'getDetail');
       api.mockImplementation(() => Promise.resolve(testData));
-      expect(api.mock.calls.length).toEqual(0);
+      expect(api).not.toBeCalled();
 
       const store = mockStore();
       const response = await store.dispatch(fetchTodoDetail('ANY'));
-      expect(api.mock.calls.length).toEqual(1);
+      expect(api).toBeCalledTimes(1);
       expect(response.payload).toEqual(testData);
     });
 
@@ -143,7 +143,7 @@ describe('store/todos', () => {
 
       const store = mockStore();
       const response = await store.dispatch(fetchTodoDetail('INVALID'));
-      expect(api.mock.calls.length).toEqual(1);
+      expect(api).toBeCalledTimes(1);
       expect(response.meta.requestStatus).toEqual('rejected');
     });
   });
@@ -161,7 +161,7 @@ describe('store/todos', () => {
       };
       const api = jest.spyOn(client.todo, 'get');
       api.mockImplementation(() => Promise.resolve(fetchResponse));
-      expect(api.mock.calls.length).toEqual(0);
+      expect(api).not.toBeCalled();
 
       const store = mockStore();
       let state = store.getState();
@@ -169,7 +169,7 @@ describe('store/todos', () => {
       expect(state.todo.count).toEqual(0);
 
       const response = await store.dispatch(filterTodos(filter));
-      expect(api.mock.calls.length).toEqual(1);
+      expect(api).toBeCalledTimes(1);
       expect(api.mock.calls[0][0]?.query).toEqual(filter.query);
       expect(api.mock.calls[0][0]?.folder).toEqual(filter.folder);
       expect(response.payload).toEqual(undefined);
@@ -191,7 +191,7 @@ describe('store/todos', () => {
       };
       const api = jest.spyOn(client.todo, 'get');
       api.mockImplementation(() => Promise.resolve(fetchResponse));
-      expect(api.mock.calls.length).toEqual(0);
+      expect(api).not.toBeCalled();
 
       const store = mockStore();
       let state = store.getState();
@@ -199,7 +199,7 @@ describe('store/todos', () => {
       expect(state.todo.count).toEqual(0);
 
       const response = await store.dispatch(sortTodos('DONE_1'));
-      expect(api.mock.calls.length).toEqual(1);
+      expect(api).toBeCalledTimes(1);
       expect(api.mock.calls[0][0]?.sort).toEqual('DONE_1');
       expect(response.payload).toEqual(undefined);
 
@@ -236,8 +236,8 @@ describe('store/todos', () => {
 
       apiFetch.mockImplementation(() => Promise.resolve(refetchData));
       apiCreate.mockImplementation(() => Promise.resolve(responseData));
-      expect(apiFetch.mock.calls.length).toEqual(0);
-      expect(apiCreate.mock.calls.length).toEqual(0);
+      expect(apiFetch).not.toBeCalled();
+      expect(apiCreate).not.toBeCalled();
 
       const store = mockStore();
       let state = store.getState();
@@ -245,8 +245,8 @@ describe('store/todos', () => {
       expect(state.todo.count).toEqual(0);
 
       const response = await store.dispatch(createTodo(testData));
-      expect(apiCreate.mock.calls.length).toEqual(1);
-      expect(apiFetch.mock.calls.length).toEqual(1); // todos refetched
+      expect(apiCreate).toBeCalledTimes(1);
+      expect(apiFetch).toBeCalledTimes(1); // todos refetched
       expect(response.payload).toEqual(responseData);
 
       state = store.getState();
@@ -283,9 +283,9 @@ describe('store/todos', () => {
       apiFetch.mockImplementation(() => Promise.resolve(refetchResponse));
       apiFetchFolders.mockImplementation(() => Promise.resolve([]));
 
-      expect(apiEdit.mock.calls.length).toEqual(0);
-      expect(apiFetch.mock.calls.length).toEqual(0);
-      expect(apiFetchFolders.mock.calls.length).toEqual(0);
+      expect(apiEdit).not.toBeCalled();
+      expect(apiFetch).not.toBeCalled();
+      expect(apiFetchFolders).not.toBeCalled();
 
       const store = mockStore();
       store.dispatch(setTodos(data));
@@ -295,9 +295,9 @@ describe('store/todos', () => {
       expect(state.todo.count).toEqual(0);
 
       const response = await store.dispatch(editTodo(payload));
-      expect(apiEdit.mock.calls.length).toEqual(1);
-      expect(apiFetch.mock.calls.length).toEqual(1);
-      expect(apiFetchFolders.mock.calls.length).toEqual(1);
+      expect(apiEdit).toBeCalledTimes(1);
+      expect(apiFetch).toBeCalledTimes(1);
+      expect(apiFetchFolders).toBeCalledTimes(1);
       expect(response.payload).toEqual(payload);
 
       state = store.getState();
@@ -326,9 +326,9 @@ describe('store/todos', () => {
       );
       apiFetchFolders.mockImplementation(() => Promise.resolve([]));
 
-      expect(apiEdit.mock.calls.length).toEqual(0);
-      expect(apiFetch.mock.calls.length).toEqual(0);
-      expect(apiFetchFolders.mock.calls.length).toEqual(0);
+      expect(apiEdit).not.toBeCalled();
+      expect(apiFetch).not.toBeCalled();
+      expect(apiFetchFolders).not.toBeCalled();
 
       const store = mockStore();
       store.dispatch(setTodos(data));
@@ -338,9 +338,9 @@ describe('store/todos', () => {
       expect(state.todo.count).toEqual(0);
 
       await store.dispatch(editTodo({ id: '-1', data: testData }));
-      expect(apiEdit.mock.calls.length).toEqual(1);
-      expect(apiFetch.mock.calls.length).toEqual(0); // no todo refetch
-      expect(apiFetchFolders.mock.calls.length).toEqual(0); // no folders refetch
+      expect(apiEdit).toBeCalledTimes(1);
+      expect(apiFetch).not.toBeCalled(); // no todo refetch
+      expect(apiFetchFolders).not.toBeCalled(); // no folders refetch
 
       state = store.getState();
       expect(state.todo.error).toEqual(errorMessage);
@@ -367,9 +367,9 @@ describe('store/todos', () => {
       apiDelete.mockImplementation(() => Promise.resolve());
       apiFetchFolders.mockImplementation(() => Promise.resolve([]));
 
-      expect(apiFetch.mock.calls.length).toEqual(0);
-      expect(apiDelete.mock.calls.length).toEqual(0);
-      expect(apiFetchFolders.mock.calls.length).toEqual(0);
+      expect(apiFetch).not.toBeCalled();
+      expect(apiDelete).not.toBeCalled();
+      expect(apiFetchFolders).not.toBeCalled();
 
       const store = mockStore();
       let state = store.getState();
@@ -377,9 +377,9 @@ describe('store/todos', () => {
       expect(state.todo.count).toEqual(0);
 
       const response = await store.dispatch(deleteTodos(['0']));
-      expect(apiDelete.mock.calls.length).toEqual(1); // todo deleted
-      expect(apiFetch.mock.calls.length).toEqual(1); // todos refetched
-      expect(apiFetchFolders.mock.calls.length).toEqual(1); // folders refetched
+      expect(apiDelete).toBeCalledTimes(1); // todo deleted
+      expect(apiFetch).toBeCalledTimes(1); // todos refetched
+      expect(apiFetchFolders).toBeCalledTimes(1); // folders refetched
       expect(response.payload).toEqual(['0']);
 
       state = store.getState();
@@ -404,18 +404,18 @@ describe('store/todos', () => {
       apiDelete.mockImplementation(() => Promise.reject(errorMessage));
       apiFetchFolders.mockImplementation(() => Promise.resolve([]));
 
-      expect(apiFetch.mock.calls.length).toEqual(0);
-      expect(apiDelete.mock.calls.length).toEqual(0);
-      expect(apiFetchFolders.mock.calls.length).toEqual(0);
+      expect(apiFetch).not.toBeCalled();
+      expect(apiDelete).not.toBeCalled();
+      expect(apiFetchFolders).not.toBeCalled();
 
       const store = mockStore();
       let state = store.getState();
       expect(state.todo.items).toEqual([]);
 
       await store.dispatch(deleteTodos(['-1']));
-      expect(apiDelete.mock.calls.length).toEqual(1);
-      expect(apiFetch.mock.calls.length).toEqual(0); // no todo refetch
-      expect(apiFetchFolders.mock.calls.length).toEqual(0); // no folder refetch
+      expect(apiDelete).toBeCalledTimes(1);
+      expect(apiFetch).not.toBeCalled(); // no todo refetch
+      expect(apiFetchFolders).not.toBeCalled(); // no folder refetch
 
       state = store.getState();
       expect(state.todo.error).toEqual(errorMessage);

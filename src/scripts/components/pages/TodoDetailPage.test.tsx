@@ -48,10 +48,10 @@ const getTodoDetailPage = (): JSX.Element => {
 describe('components/pages/TodoDetailPage', () => {
   it('should show Loader', () => {
     const mocked = jest.mocked(Loader);
-    expect(mocked).toHaveBeenCalledTimes(0);
+    expect(mocked).toBeCalledTimes(0);
 
     render(getTodoDetailPage());
-    expect(mocked).toHaveBeenCalledTimes(1);
+    expect(mocked).toBeCalledTimes(1);
   });
 
   it('should render error when no ID param', async () => {
@@ -72,7 +72,7 @@ describe('components/pages/TodoDetailPage', () => {
     await tree.findByText(`TODO_DETAIL:${testId}`);
 
     expect(tree.container).toMatchSnapshot();
-    expect(mockedFetch).toHaveBeenCalledTimes(1);
+    expect(mockedFetch).toBeCalledTimes(1);
   });
 
   it('should render error on invalid ID', async () => {
@@ -87,6 +87,6 @@ describe('components/pages/TodoDetailPage', () => {
     await tree.findByText('TODO_ERROR');
 
     expect(tree.container).toMatchSnapshot();
-    expect(mockedFetch).toHaveBeenCalledTimes(1);
+    expect(mockedFetch).toBeCalledTimes(1);
   });
 });

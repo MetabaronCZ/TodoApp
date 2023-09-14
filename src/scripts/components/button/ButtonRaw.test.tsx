@@ -47,10 +47,10 @@ describe('components/button/ButtonRaw', () => {
     const onClick = jest.fn();
 
     const tree = render(withMockedProviders(<ButtonRaw onClick={onClick} />));
-    expect(onClick.mock.calls.length).toEqual(0);
+    expect(onClick).not.toBeCalled();
 
     fireEvent.click(tree.getByRole('button'));
-    expect(onClick.mock.calls.length).toEqual(1);
+    expect(onClick).toBeCalledTimes(1);
     expect(onClick.mock.calls[0][0]).toEqual(undefined);
   });
 });

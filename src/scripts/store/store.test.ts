@@ -10,11 +10,11 @@ describe('store', () => {
   describe('useAppSelector()', () => {
     it('should be an alias for useSelector', () => {
       const mocked = jest.mocked(useSelector);
-      expect(mocked.mock.calls.length).toEqual(0);
+      expect(mocked).not.toBeCalled();
 
       const cb = (state: AppState): boolean => state.settings.loading;
       useAppSelector(cb);
-      expect(mocked.mock.calls.length).toEqual(1);
+      expect(mocked).toBeCalledTimes(1);
       expect(mocked.mock.calls[0]).toEqual([cb]);
     });
   });

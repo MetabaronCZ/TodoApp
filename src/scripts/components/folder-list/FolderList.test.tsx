@@ -38,31 +38,41 @@ const getFolderList = (folders: Folder[]): JSX.Element => {
   );
 };
 
+// get component props for last "n" mocked calls
+const getItemsProps = <T extends object>(
+  component: jest.Mocked<React.FC<T>>,
+  lastCalls = 3,
+): Array<T> => {
+  const { calls } = component.mock;
+  return calls.map((call) => call[0]).slice(-lastCalls);
+};
+
 describe('components/folder-list/FolderList', () => {
   it('should render correctly', () => {
     const listItem = jest.mocked(FolderListItem);
-    expect(listItem).toHaveBeenCalledTimes(0);
+    expect(listItem).toBeCalledTimes(0);
 
     const tree = render(getFolderList(testData));
     expect(tree.container).toMatchSnapshot();
 
     const { calls } = listItem.mock;
-    expect(calls.length % 3).toEqual(0); // check item count (with re-renders)
-    expect(calls[calls.length - 3][0].item.id).toEqual('A');
-    expect(calls[calls.length - 2][0].item.id).toEqual('B');
-    expect(calls[calls.length - 1][0].item.id).toEqual('C');
+    const ids = calls.map((call) => call[0].item.id);
+    expect(ids.length % 3).toEqual(0); // check item count (with re-renders)
+    expect(ids.at(-3)).toEqual('A');
+    expect(ids.at(-2)).toEqual('B');
+    expect(ids.at(-1)).toEqual('C');
   });
 
   it('should render empty list', () => {
     const listItem = jest.mocked(FolderListItem);
     const toolbar = jest.mocked(FolderListToolbar);
-    expect(listItem).toHaveBeenCalledTimes(0);
-    expect(toolbar).toHaveBeenCalledTimes(0);
+    expect(listItem).toBeCalledTimes(0);
+    expect(toolbar).toBeCalledTimes(0);
 
     const tree = render(getFolderList([]));
     expect(tree.container).toMatchSnapshot();
 
-    expect(listItem).toHaveBeenCalledTimes(0);
+    expect(listItem).toBeCalledTimes(0);
     expect(tree.getByText(t('folderList.empty'))).toBeInTheDocument();
 
     expect(toolbar).toHaveBeenCalled();
@@ -75,13 +85,7 @@ describe('components/folder-list/FolderList', () => {
 
     render(getFolderList(testData));
 
-    const { calls } = listItem.mock;
-
-    let items = [
-      calls[calls.length - 3][0],
-      calls[calls.length - 2][0],
-      calls[calls.length - 1][0],
-    ];
+    let items = getItemsProps(listItem);
     expect(items[0].selected).toEqual(false);
     expect(items[1].selected).toEqual(false);
     expect(items[2].selected).toEqual(false);
@@ -101,11 +105,7 @@ describe('components/folder-list/FolderList', () => {
     ): void => {
       act(() => items[index].onSelect(shouldSelect));
 
-      items = [
-        calls[calls.length - 3][0],
-        calls[calls.length - 2][0],
-        calls[calls.length - 1][0],
-      ];
+      items = getItemsProps(listItem);
       expect(items[0].selected).toEqual(expectation[0]);
       expect(items[1].selected).toEqual(expectation[1]);
       expect(items[2].selected).toEqual(expectation[2]);
@@ -129,13 +129,8 @@ describe('components/folder-list/FolderList', () => {
     const toolbar = jest.mocked(FolderListToolbar);
 
     render(getFolderList(testData));
-    const { calls } = listItem.mock;
 
-    let items = [
-      calls[calls.length - 3][0],
-      calls[calls.length - 2][0],
-      calls[calls.length - 1][0],
-    ];
+    let items = getItemsProps(listItem);
     expect(items[0].selected).toEqual(false);
     expect(items[1].selected).toEqual(false);
     expect(items[2].selected).toEqual(false);
@@ -149,11 +144,7 @@ describe('components/folder-list/FolderList', () => {
       }
     });
 
-    items = [
-      calls[calls.length - 3][0],
-      calls[calls.length - 2][0],
-      calls[calls.length - 1][0],
-    ];
+    items = getItemsProps(listItem);
     expect(items[0].selected).toEqual(true);
     expect(items[1].selected).toEqual(true);
     expect(items[2].selected).toEqual(true);
@@ -165,11 +156,7 @@ describe('components/folder-list/FolderList', () => {
       }
     });
 
-    items = [
-      calls[calls.length - 3][0],
-      calls[calls.length - 2][0],
-      calls[calls.length - 1][0],
-    ];
+    items = getItemsProps(listItem);
     expect(items[0].selected).toEqual(false);
     expect(items[1].selected).toEqual(false);
     expect(items[2].selected).toEqual(false);
@@ -185,13 +172,8 @@ describe('components/folder-list/FolderList', () => {
     if (toolbar.mock.lastCall) {
       expect(toolbar.mock.lastCall[0].sort).toEqual('TITLE_ASC');
     }
-    const { calls } = listItem.mock;
 
-    let items = [
-      calls[calls.length - 3][0],
-      calls[calls.length - 2][0],
-      calls[calls.length - 1][0],
-    ];
+    let items = getItemsProps(listItem);
     expect(items[0].item.id).toEqual('A');
     expect(items[1].item.id).toEqual('B');
     expect(items[2].item.id).toEqual('C');
@@ -206,11 +188,8 @@ describe('components/folder-list/FolderList', () => {
     if (toolbar.mock.lastCall) {
       expect(toolbar.mock.lastCall[0].sort).toEqual('TITLE_DESC');
     }
-    items = [
-      calls[calls.length - 3][0],
-      calls[calls.length - 2][0],
-      calls[calls.length - 1][0],
-    ];
+
+    items = getItemsProps(listItem);
     expect(items[0].item.id).toEqual('C');
     expect(items[1].item.id).toEqual('B');
     expect(items[2].item.id).toEqual('A');
@@ -222,20 +201,14 @@ describe('components/folder-list/FolderList', () => {
 
     const mockedConfirm = jest.spyOn(window, 'confirm');
     mockedConfirm.mockImplementation(jest.fn(() => true));
-    expect(mockedConfirm).toHaveBeenCalledTimes(0);
+    expect(mockedConfirm).toBeCalledTimes(0);
 
     const mockedDeleteFolders = jest.spyOn(client.folder, 'delete');
-    expect(mockedDeleteFolders).toHaveBeenCalledTimes(0);
+    expect(mockedDeleteFolders).toBeCalledTimes(0);
 
     render(getFolderList(testData));
 
-    const { calls } = listItem.mock;
-
-    let items = [
-      calls[calls.length - 3][0],
-      calls[calls.length - 2][0],
-      calls[calls.length - 1][0],
-    ];
+    let items = getItemsProps(listItem);
 
     // select first two items
     act(() => {
@@ -243,11 +216,7 @@ describe('components/folder-list/FolderList', () => {
       items[1].onSelect(true);
     });
 
-    items = [
-      calls[calls.length - 3][0],
-      calls[calls.length - 2][0],
-      calls[calls.length - 1][0],
-    ];
+    items = getItemsProps(listItem);
     expect(items[0].selected).toEqual(true);
     expect(items[1].selected).toEqual(true);
     expect(items[2].selected).toEqual(false);
@@ -261,8 +230,8 @@ describe('components/folder-list/FolderList', () => {
       }
     });
 
-    expect(mockedConfirm).toHaveBeenCalledTimes(1);
-    expect(mockedDeleteFolders).toHaveBeenCalledTimes(1);
-    expect(mockedDeleteFolders).toHaveBeenCalledWith(['A', 'B']);
+    expect(mockedConfirm).toBeCalledTimes(1);
+    expect(mockedDeleteFolders).toBeCalledTimes(1);
+    expect(mockedDeleteFolders).toBeCalledWith(['A', 'B']);
   });
 });

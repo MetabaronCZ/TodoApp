@@ -11,23 +11,23 @@ describe('modules/logger', () => {
     it('should not be called when not on DEV', () => {
       const log = jest.spyOn(console, 'log');
       log.mockImplementation(() => null);
-      expect(log.mock.calls.length).toEqual(0);
+      expect(log).not.toBeCalled();
 
       const isDev = jest.mocked(Env.isDev);
       isDev.mockReturnValue(false);
       Logger.log('test');
-      expect(log.mock.calls.length).toEqual(0);
+      expect(log).not.toBeCalled();
     });
 
     it('should pass all arguments on DEV', () => {
       const log = jest.spyOn(console, 'log');
       log.mockImplementation(() => null);
-      expect(log.mock.calls.length).toEqual(0);
+      expect(log).not.toBeCalled();
 
       const isDev = jest.mocked(Env.isDev);
       isDev.mockReturnValue(true);
       Logger.log('test', 3, true);
-      expect(log.mock.calls.length).toEqual(1);
+      expect(log).toBeCalledTimes(1);
       expect(log.mock.calls[0]).toEqual(['test', 3, true]);
     });
   });
@@ -36,23 +36,23 @@ describe('modules/logger', () => {
     it('should not be called when not on DEV', () => {
       const error = jest.spyOn(console, 'error');
       error.mockImplementation(() => null);
-      expect(error.mock.calls.length).toEqual(0);
+      expect(error).not.toBeCalled();
 
       const isDev = jest.mocked(Env.isDev);
       isDev.mockReturnValue(false);
       Logger.error('test');
-      expect(error.mock.calls.length).toEqual(0);
+      expect(error).not.toBeCalled();
     });
 
     it('should pass all arguments on DEV', () => {
       const error = jest.spyOn(console, 'error');
       error.mockImplementation(() => null);
-      expect(error.mock.calls.length).toEqual(0);
+      expect(error).not.toBeCalled();
 
       const isDev = jest.mocked(Env.isDev);
       isDev.mockReturnValue(true);
       Logger.error('test', 3, true);
-      expect(error.mock.calls.length).toEqual(1);
+      expect(error).toBeCalledTimes(1);
       expect(error.mock.calls[0]).toEqual(['test', 3, true]);
     });
   });

@@ -33,23 +33,23 @@ describe('components/pages/HomePage', () => {
   it('should call refetch when no folder param given', async () => {
     const mockedFetch = jest.spyOn(actionsModule, 'fetchTodos');
     const mockedFilter = jest.spyOn(actionsModule, 'filterTodos');
-    expect(mockedFetch.mock.calls.length).toEqual(0);
-    expect(mockedFilter.mock.calls.length).toEqual(0);
+    expect(mockedFetch).not.toBeCalled();
+    expect(mockedFilter).not.toBeCalled();
 
     render(getHomepage());
-    expect(mockedFetch.mock.calls.length).toEqual(1);
-    expect(mockedFilter.mock.calls.length).toEqual(0);
+    expect(mockedFetch).toBeCalledTimes(1);
+    expect(mockedFilter).not.toBeCalled();
   });
 
   it('should filter items when folder param given', async () => {
     const mockedFetch = jest.spyOn(actionsModule, 'fetchTodos');
     const mockedFilter = jest.spyOn(actionsModule, 'filterTodos');
-    expect(mockedFetch.mock.calls.length).toEqual(0);
-    expect(mockedFilter.mock.calls.length).toEqual(0);
+    expect(mockedFetch).not.toBeCalled();
+    expect(mockedFilter).not.toBeCalled();
 
     render(getHomepage({ folder: 'TEST' }));
-    expect(mockedFetch.mock.calls.length).toEqual(0);
-    expect(mockedFilter.mock.calls.length).toEqual(1);
+    expect(mockedFetch).not.toBeCalled();
+    expect(mockedFilter).toBeCalledTimes(1);
     expect(mockedFilter.mock.calls[0][0].folder).toEqual('TEST');
   });
 });

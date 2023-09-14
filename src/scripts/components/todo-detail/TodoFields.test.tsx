@@ -63,8 +63,8 @@ describe('components/todo-detail/TodoFields', () => {
   it('should render props', () => {
     const itemList = jest.spyOn(ItemList, 'ItemList');
     const dropdown = jest.spyOn(Dropdown, 'Dropdown');
-    expect(itemList).toHaveBeenCalledTimes(0);
-    expect(dropdown).toHaveBeenCalledTimes(0);
+    expect(itemList).toBeCalledTimes(0);
+    expect(dropdown).toBeCalledTimes(0);
 
     const tree = render(
       getTodoFields({
@@ -74,7 +74,7 @@ describe('components/todo-detail/TodoFields', () => {
     );
     expect(tree.container).toMatchSnapshot();
 
-    expect(itemList).toHaveBeenCalledTimes(1);
+    expect(itemList).toBeCalledTimes(1);
     expect(itemList.mock.calls[0][0].loading).toEqual(true);
 
     const inputs = tree.container.querySelectorAll('input');
@@ -87,7 +87,7 @@ describe('components/todo-detail/TodoFields', () => {
     expect(isDone).toBeInTheDocument();
     expect(isDone?.checked).toEqual(true);
 
-    expect(dropdown).toHaveBeenCalledTimes(1);
+    expect(dropdown).toBeCalledTimes(1);
     expect(dropdown.mock.calls[0][0].value).toEqual('B');
 
     const description = tree.container.querySelector('textarea');
@@ -101,7 +101,7 @@ describe('components/todo-detail/TodoFields', () => {
     const onChange = jest.fn();
 
     const tree = render(getTodoFields({ onChange }));
-    expect(onChange).toHaveBeenCalledTimes(0);
+    expect(onChange).toBeCalledTimes(0);
 
     const input = tree.container.querySelector('input');
     expect(input).toBeInTheDocument();
@@ -110,7 +110,7 @@ describe('components/todo-detail/TodoFields', () => {
     if (input) {
       fireEvent.change(input, { target: { value: 'New title' } });
     }
-    expect(onChange).toHaveBeenCalledTimes(1);
-    expect(onChange).toHaveBeenCalledWith('title', 'New title');
+    expect(onChange).toBeCalledTimes(1);
+    expect(onChange).toBeCalledWith('title', 'New title');
   });
 });

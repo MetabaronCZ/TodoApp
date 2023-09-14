@@ -32,14 +32,14 @@ describe('store/settings', () => {
 
       const api = jest.spyOn(client.settings, 'get');
       api.mockImplementation(() => Promise.resolve(testData));
-      expect(api.mock.calls.length).toEqual(0);
+      expect(api).not.toBeCalled();
 
       const store = mockStore();
       let state = store.getState();
       expect(testData).not.toEqual(state.settings.data);
 
       const result = await store.dispatch(fetchSettings());
-      expect(api.mock.calls.length).toEqual(1);
+      expect(api).toBeCalledTimes(1);
       expect(result.payload).toEqual(testData);
 
       state = store.getState();
@@ -70,14 +70,14 @@ describe('store/settings', () => {
 
       const api = jest.spyOn(client.settings, 'set');
       api.mockImplementation(() => Promise.resolve());
-      expect(api.mock.calls.length).toEqual(0);
+      expect(api).not.toBeCalled();
 
       const store = mockStore();
       let state = store.getState();
       expect(testData).not.toEqual(state.settings.data);
 
       const result = await store.dispatch(updateSettings(testData));
-      expect(api.mock.calls.length).toEqual(1);
+      expect(api).toBeCalledTimes(1);
       expect(result.payload).toEqual(testData);
 
       state = store.getState();
@@ -89,13 +89,13 @@ describe('store/settings', () => {
     it('should keep settings state when no data sent', async () => {
       const api = jest.spyOn(client.settings, 'set');
       api.mockImplementation(() => Promise.resolve());
-      expect(api.mock.calls.length).toEqual(0);
+      expect(api).not.toBeCalled();
 
       const store = mockStore();
       const initialState = store.getState().settings.data;
 
       const result = await store.dispatch(updateSettings({}));
-      expect(api.mock.calls.length).toEqual(1);
+      expect(api).toBeCalledTimes(1);
       expect(result.payload).toEqual({});
 
       const state = store.getState();
