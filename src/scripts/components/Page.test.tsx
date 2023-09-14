@@ -10,14 +10,6 @@ describe('components/Page', () => {
   it('should render correctly', () => {
     expect(document.title).toEqual('');
 
-    const { container } = render(
-      withMockedProviders(<Page title="Test page" />),
-    );
-    expect(container).toMatchSnapshot();
-    expect(document.title).toEqual('Test page');
-  });
-
-  it('should render children', () => {
     const tree = render(
       withMockedProviders(
         <Page title="Test page">
@@ -27,5 +19,6 @@ describe('components/Page', () => {
     );
     expect(tree.container).toMatchSnapshot();
     expect(tree.getByText('CONTENT')).toBeInTheDocument();
+    expect(document.title).toEqual('Test page');
   });
 });

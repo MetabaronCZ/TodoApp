@@ -8,23 +8,17 @@ import { withMockedProviders } from 'test/component';
 
 describe('components/layout/Layout', () => {
   it('should render correctly', () => {
-    const { container } = render(withMockedProviders(<Layout />));
-    expect(container).toMatchSnapshot();
-    expect(container.querySelector('header')).toBeInTheDocument();
-    expect(container.querySelector('footer')).toBeInTheDocument();
-    expect(container.querySelector('main')).toBeInTheDocument();
-  });
-
-  it('should render with children', () => {
     const tree = render(
       withMockedProviders(
         <Layout>
-          <label>child</label>
+          <div>CONTENT</div>
         </Layout>,
       ),
     );
     expect(tree.container).toMatchSnapshot();
-    expect(tree.getByText('child')).toBeInTheDocument();
-    expect(tree.container.querySelector('label')).toBeInTheDocument();
+    expect(tree.container.querySelector('header')).toBeInTheDocument();
+    expect(tree.container.querySelector('footer')).toBeInTheDocument();
+    expect(tree.container.querySelector('main')).toBeInTheDocument();
+    expect(tree.getByText('CONTENT')).toBeInTheDocument();
   });
 });

@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`components/button/ButtonRaw should render children 1`] = `
+exports[`components/button/ButtonRaw should render correctly 1`] = `
 .c0 {
   display: block;
   width: 100%;
@@ -15,26 +15,9 @@ exports[`components/button/ButtonRaw should render children 1`] = `
     type="button"
   >
     <span>
-      Test button
+      CONTENT
     </span>
   </button>
-</div>
-`;
-
-exports[`components/button/ButtonRaw should render correctly 1`] = `
-.c0 {
-  display: block;
-  width: 100%;
-  border: none;
-  outline: none;
-  cursor: pointer;
-}
-
-<div>
-  <button
-    class="c0"
-    type="button"
-  />
 </div>
 `;
 

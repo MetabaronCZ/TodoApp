@@ -9,25 +9,19 @@ import { MenuContent } from 'components/MenuContent';
 import { mockStore } from 'test/store';
 import { withMockedProviders } from 'test/component';
 
-const renderMenuContent = (children?: React.ReactNode): JSX.Element => {
-  const store = mockStore();
-
-  return withMockedProviders(
-    <Provider store={store}>
-      <MenuContent>{children}</MenuContent>
-    </Provider>,
-  );
-};
-
 describe('components/MenuContent', () => {
   it('should render correctly', () => {
-    const { container } = render(renderMenuContent());
-    expect(container).toMatchSnapshot();
-  });
+    const store = mockStore();
 
-  it('should render children', () => {
-    const tree = render(renderMenuContent(<div>CONTENT</div>));
-
+    const tree = render(
+      withMockedProviders(
+        <Provider store={store}>
+          <MenuContent>
+            <div>CONTENT</div>
+          </MenuContent>
+        </Provider>,
+      ),
+    );
     expect(tree.container).toMatchSnapshot();
     expect(tree.getByText('CONTENT')).toBeInTheDocument();
   });
