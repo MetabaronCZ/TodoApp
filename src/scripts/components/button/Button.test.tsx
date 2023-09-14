@@ -20,7 +20,7 @@ describe('components/button/Button', () => {
 
     fireEvent.click(tree.getByRole('button'));
     expect(onClick).toBeCalledTimes(1);
-    expect(onClick.mock.calls[0][0]).toEqual(undefined);
+    expect(onClick).lastCalledWith();
   });
 
   it('should render link Button when href defined', () => {
@@ -47,7 +47,7 @@ describe('components/button/Button', () => {
 
     fireEvent.click(tree.getByRole('link'));
     expect(onClick).toBeCalledTimes(1);
-    expect(onClick.mock.calls[0][0]).toEqual(undefined);
+    expect(onClick).lastCalledWith();
   });
 
   it('should render props', () => {

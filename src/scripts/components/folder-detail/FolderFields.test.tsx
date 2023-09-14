@@ -40,7 +40,10 @@ describe('components/folder-detail/FolderFields', () => {
     expect(tree.container).toMatchSnapshot();
 
     expect(itemList).toBeCalledTimes(1);
-    expect(itemList.mock.calls[0][0].loading).toEqual(true);
+    expect(itemList).lastCalledWith(
+      expect.objectContaining({ loading: true }),
+      expect.anything(),
+    );
 
     const input = tree.container.querySelector('input');
     expect(input).toBeInTheDocument();

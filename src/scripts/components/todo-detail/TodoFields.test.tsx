@@ -75,7 +75,10 @@ describe('components/todo-detail/TodoFields', () => {
     expect(tree.container).toMatchSnapshot();
 
     expect(itemList).toBeCalledTimes(1);
-    expect(itemList.mock.calls[0][0].loading).toEqual(true);
+    expect(itemList).lastCalledWith(
+      expect.objectContaining({ loading: true }),
+      expect.anything(),
+    );
 
     const inputs = tree.container.querySelectorAll('input');
     expect(inputs.length).toEqual(2);
@@ -88,7 +91,10 @@ describe('components/todo-detail/TodoFields', () => {
     expect(isDone?.checked).toEqual(true);
 
     expect(dropdown).toBeCalledTimes(1);
-    expect(dropdown.mock.calls[0][0].value).toEqual('B');
+    expect(dropdown).lastCalledWith(
+      expect.objectContaining({ value: 'B' }),
+      expect.anything(),
+    );
 
     const description = tree.container.querySelector('textarea');
     expect(description).toBeInTheDocument();

@@ -15,7 +15,7 @@ describe('store', () => {
       const cb = (state: AppState): boolean => state.settings.loading;
       useAppSelector(cb);
       expect(mocked).toBeCalledTimes(1);
-      expect(mocked.mock.calls[0]).toEqual([cb]);
+      expect(mocked).lastCalledWith(cb);
     });
   });
 });

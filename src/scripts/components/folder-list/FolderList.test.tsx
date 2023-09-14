@@ -76,7 +76,10 @@ describe('components/folder-list/FolderList', () => {
     expect(tree.getByText(t('folderList.empty'))).toBeInTheDocument();
 
     expect(toolbar).toHaveBeenCalled();
-    expect(toolbar.mock.calls[0][0].disabled).toEqual(true);
+    expect(toolbar).lastCalledWith(
+      expect.objectContaining({ disabled: true }),
+      expect.anything(),
+    );
   });
 
   it('should be selectable', () => {

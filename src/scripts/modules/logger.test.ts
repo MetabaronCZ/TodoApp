@@ -28,7 +28,7 @@ describe('modules/logger', () => {
       isDev.mockReturnValue(true);
       Logger.log('test', 3, true);
       expect(log).toBeCalledTimes(1);
-      expect(log.mock.calls[0]).toEqual(['test', 3, true]);
+      expect(log).lastCalledWith('test', 3, true);
     });
   });
 
@@ -53,7 +53,7 @@ describe('modules/logger', () => {
       isDev.mockReturnValue(true);
       Logger.error('test', 3, true);
       expect(error).toBeCalledTimes(1);
-      expect(error.mock.calls[0]).toEqual(['test', 3, true]);
+      expect(error).lastCalledWith('test', 3, true);
     });
   });
 });
