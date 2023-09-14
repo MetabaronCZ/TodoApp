@@ -4,14 +4,12 @@ import { Provider } from 'react-redux';
 import { render } from '@testing-library/react';
 import { describe, expect, it, jest } from '@jest/globals';
 
-import { Loader } from 'components/common/Loader';
+import * as Loader from 'components/common/Loader';
 import { Initialization } from 'components/Initialization';
 
 import { mockStore } from 'test/store';
 import { client } from 'modules/client';
 import { withMockedProviders } from 'test/component';
-
-jest.mock('components/common/Loader');
 
 const renderInitialization = (children?: React.ReactNode): JSX.Element => {
   const store = mockStore();
@@ -37,7 +35,7 @@ describe('components/Initialization', () => {
   });
 
   it('should call initial endpoints', () => {
-    const mockedLoader = jest.mocked(Loader);
+    const mockedLoader = jest.spyOn(Loader, 'Loader');
     const mockedFetchFolders = jest.spyOn(client.folder, 'get');
     const mockedFetchSettings = jest.spyOn(client.settings, 'get');
 

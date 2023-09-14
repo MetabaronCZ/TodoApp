@@ -4,7 +4,7 @@ import { Provider } from 'react-redux';
 import { render } from '@testing-library/react';
 import { describe, expect, it, jest } from '@jest/globals';
 
-import { Menu } from 'components/common/Menu';
+import * as Menu from 'components/common/Menu';
 import { MenuMain } from 'components/MenuMain';
 
 import { Folder } from 'models/Folder';
@@ -13,8 +13,6 @@ import { withMockedProviders } from 'test/component';
 
 import { todoFoldersSlice } from 'store/folders';
 import { filterTodos } from 'store/todos/actions';
-
-jest.mock('components/common/Menu');
 
 const { setFolders } = todoFoldersSlice.actions;
 
@@ -37,7 +35,7 @@ describe('components/MenuMain', () => {
       { id: 'A', title: 'Folder A' },
       { id: 'B', title: 'Folder B' },
     ];
-    const mockedMenu = jest.mocked(Menu);
+    const mockedMenu = jest.spyOn(Menu, 'Menu');
     expect(mockedMenu).toBeCalledTimes(0);
 
     const store = mockStore();
@@ -64,7 +62,7 @@ describe('components/MenuMain', () => {
       { id: 'A', title: 'Folder A' },
       { id: 'B', title: 'Folder B' },
     ];
-    const mockedMenu = jest.mocked(Menu);
+    const mockedMenu = jest.spyOn(Menu, 'Menu');
     expect(mockedMenu).toBeCalledTimes(0);
 
     const store = mockStore();

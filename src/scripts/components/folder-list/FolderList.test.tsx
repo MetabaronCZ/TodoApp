@@ -6,8 +6,8 @@ import { act, render } from '@testing-library/react';
 import { describe, expect, it, jest } from '@jest/globals';
 
 import { FolderList } from 'components/folder-list/FolderList';
-import { FolderListItem } from 'components/folder-list/FolderListItem';
-import { FolderListToolbar } from 'components/folder-list/FolderListToolbar';
+import * as FolderListItem from 'components/folder-list/FolderListItem';
+import * as FolderListToolbar from 'components/folder-list/FolderListToolbar';
 
 import { Folder } from 'models/Folder';
 import { client } from 'modules/client';
@@ -17,9 +17,6 @@ import { mockStore } from 'test/store';
 import { withMockedProviders } from 'test/component';
 
 const { setFolders } = todoFoldersSlice.actions;
-
-jest.mock('components/folder-list/FolderListItem');
-jest.mock('components/folder-list/FolderListToolbar');
 
 const testData: Folder[] = [
   { id: 'A', title: 'Folder A' },
@@ -40,7 +37,7 @@ const getFolderList = (folders: Folder[]): JSX.Element => {
 
 // get component props for last "n" mocked calls
 const getItemsProps = <T extends object>(
-  component: jest.Mocked<React.FC<T>>,
+  component: jest.SpiedFunction<React.FC<T>>,
   lastCalls = 3,
 ): Array<T> => {
   const { calls } = component.mock;
@@ -49,7 +46,7 @@ const getItemsProps = <T extends object>(
 
 describe('components/folder-list/FolderList', () => {
   it('should render correctly', () => {
-    const listItem = jest.mocked(FolderListItem);
+    const listItem = jest.spyOn(FolderListItem, 'FolderListItem');
     expect(listItem).toBeCalledTimes(0);
 
     const tree = render(getFolderList(testData));
@@ -64,8 +61,8 @@ describe('components/folder-list/FolderList', () => {
   });
 
   it('should render empty list', () => {
-    const listItem = jest.mocked(FolderListItem);
-    const toolbar = jest.mocked(FolderListToolbar);
+    const listItem = jest.spyOn(FolderListItem, 'FolderListItem');
+    const toolbar = jest.spyOn(FolderListToolbar, 'FolderListToolbar');
     expect(listItem).toBeCalledTimes(0);
     expect(toolbar).toBeCalledTimes(0);
 
@@ -83,8 +80,8 @@ describe('components/folder-list/FolderList', () => {
   });
 
   it('should be selectable', () => {
-    const listItem = jest.mocked(FolderListItem);
-    const toolbar = jest.mocked(FolderListToolbar);
+    const listItem = jest.spyOn(FolderListItem, 'FolderListItem');
+    const toolbar = jest.spyOn(FolderListToolbar, 'FolderListToolbar');
 
     render(getFolderList(testData));
 
@@ -128,8 +125,8 @@ describe('components/folder-list/FolderList', () => {
   });
 
   it('should be able to un/select-all', () => {
-    const listItem = jest.mocked(FolderListItem);
-    const toolbar = jest.mocked(FolderListToolbar);
+    const listItem = jest.spyOn(FolderListItem, 'FolderListItem');
+    const toolbar = jest.spyOn(FolderListToolbar, 'FolderListToolbar');
 
     render(getFolderList(testData));
 
@@ -166,8 +163,8 @@ describe('components/folder-list/FolderList', () => {
   });
 
   it('should be sortable', () => {
-    const listItem = jest.mocked(FolderListItem);
-    const toolbar = jest.mocked(FolderListToolbar);
+    const listItem = jest.spyOn(FolderListItem, 'FolderListItem');
+    const toolbar = jest.spyOn(FolderListToolbar, 'FolderListToolbar');
 
     render(getFolderList(testData));
     expect(toolbar).toHaveBeenCalled();
@@ -199,8 +196,8 @@ describe('components/folder-list/FolderList', () => {
   });
 
   it('should be able to delete selected', () => {
-    const listItem = jest.mocked(FolderListItem);
-    const toolbar = jest.mocked(FolderListToolbar);
+    const listItem = jest.spyOn(FolderListItem, 'FolderListItem');
+    const toolbar = jest.spyOn(FolderListToolbar, 'FolderListToolbar');
 
     const mockedConfirm = jest.spyOn(window, 'confirm');
     mockedConfirm.mockImplementation(jest.fn(() => true));
