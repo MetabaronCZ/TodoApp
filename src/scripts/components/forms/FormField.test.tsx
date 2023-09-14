@@ -74,7 +74,7 @@ describe('components/forms/FormField', () => {
 
   it('should render dropdown', () => {
     const mockedDropdown = jest.mocked(Dropdown);
-    expect(mockedDropdown).toHaveBeenCalledTimes(0);
+    expect(mockedDropdown).toBeCalledTimes(0);
 
     const { container } = render(
       withMockedProviders(
@@ -91,7 +91,7 @@ describe('components/forms/FormField', () => {
     );
     expect(container).toMatchSnapshot();
 
-    expect(mockedDropdown).toHaveBeenCalledTimes(1);
+    expect(mockedDropdown).toBeCalledTimes(1);
     const props = mockedDropdown.mock.calls[0][0];
     expect(props.items.length).toEqual(1);
   });
@@ -154,7 +154,7 @@ describe('components/forms/FormField', () => {
   it('should handle dropdown change', () => {
     const onChange = jest.fn();
     const mockedDropdown = jest.mocked(Dropdown);
-    expect(mockedDropdown).toHaveBeenCalledTimes(0);
+    expect(mockedDropdown).toBeCalledTimes(0);
 
     render(
       withMockedProviders(
@@ -174,7 +174,7 @@ describe('components/forms/FormField', () => {
       ),
     );
     expect(onChange).toBeCalledTimes(0);
-    expect(mockedDropdown).toHaveBeenCalledTimes(1);
+    expect(mockedDropdown).toBeCalledTimes(1);
 
     // trigger Dropdown onChange
     mockedDropdown.mock.calls[0][0].onSelect('Changed');

@@ -26,11 +26,11 @@ const getSettings = (): JSX.Element => {
 describe('components/Settings', () => {
   it('should render correctly', () => {
     const mockedDropdown = jest.mocked(Dropdown);
-    expect(mockedDropdown).toHaveBeenCalledTimes(0);
+    expect(mockedDropdown).toBeCalledTimes(0);
 
     const { container } = render(getSettings());
     expect(container).toMatchSnapshot();
-    expect(mockedDropdown).toHaveBeenCalledTimes(1);
+    expect(mockedDropdown).toBeCalledTimes(1);
 
     const props = mockedDropdown.mock.calls[0][0];
     expect(props.items.length).toEqual(perPages.length);
@@ -41,18 +41,18 @@ describe('components/Settings', () => {
 
     const mockedDropdown = jest.mocked(Dropdown);
     const mockedUpdateSettings = jest.spyOn(client.settings, 'set');
-    expect(mockedDropdown).toHaveBeenCalledTimes(0);
-    expect(mockedUpdateSettings).toHaveBeenCalledTimes(0);
+    expect(mockedDropdown).toBeCalledTimes(0);
+    expect(mockedUpdateSettings).toBeCalledTimes(0);
 
     render(getSettings());
-    expect(mockedDropdown).toHaveBeenCalledTimes(1);
+    expect(mockedDropdown).toBeCalledTimes(1);
 
     act(() => {
       const props = mockedDropdown.mock.calls[0][0];
       props.onSelect(testPerPage);
     });
 
-    expect(mockedUpdateSettings).toHaveBeenCalledTimes(1);
-    expect(mockedUpdateSettings).toHaveBeenCalledWith({ perPage: testPerPage });
+    expect(mockedUpdateSettings).toBeCalledTimes(1);
+    expect(mockedUpdateSettings).toBeCalledWith({ perPage: testPerPage });
   });
 });

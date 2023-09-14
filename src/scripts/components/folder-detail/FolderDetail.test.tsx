@@ -28,7 +28,7 @@ const getFolderDetail = (data?: Folder, error?: boolean): JSX.Element => {
 describe('components/folder-detail/FolderDetail', () => {
   it('should render folder create variant', () => {
     const fields = jest.spyOn(FolderFields, 'FolderFields');
-    expect(fields).toHaveBeenCalledTimes(0);
+    expect(fields).toBeCalledTimes(0);
 
     const tree = render(getFolderDetail());
     expect(tree.container).toMatchSnapshot();
@@ -36,7 +36,7 @@ describe('components/folder-detail/FolderDetail', () => {
     expect(tree.getByText(t('page.folderCreate'))).toBeInTheDocument();
     expect(tree.getByText(t('create'))).toBeInTheDocument();
 
-    expect(fields).toHaveBeenCalledTimes(1);
+    expect(fields).toBeCalledTimes(1);
     expect(fields.mock.calls[0][0].loading).toEqual(false);
     expect(fields.mock.calls[0][0].errors).toEqual({});
     expect(fields.mock.calls[0][0].fields.title).toEqual('');
@@ -44,7 +44,7 @@ describe('components/folder-detail/FolderDetail', () => {
 
   it('should render folder detail variant', () => {
     const fields = jest.spyOn(FolderFields, 'FolderFields');
-    expect(fields).toHaveBeenCalledTimes(0);
+    expect(fields).toBeCalledTimes(0);
 
     const tree = render(getFolderDetail(testData));
     expect(tree.container).toMatchSnapshot();
@@ -52,7 +52,7 @@ describe('components/folder-detail/FolderDetail', () => {
     expect(tree.getByText(t('page.folderDetail'))).toBeInTheDocument();
     expect(tree.getByText(t('edit'))).toBeInTheDocument();
 
-    expect(fields).toHaveBeenCalledTimes(1);
+    expect(fields).toBeCalledTimes(1);
     expect(fields.mock.calls[0][0].loading).toEqual(false);
     expect(fields.mock.calls[0][0].errors).toEqual({});
     expect(fields.mock.calls[0][0].fields.title).toEqual('Test folder');
@@ -60,7 +60,7 @@ describe('components/folder-detail/FolderDetail', () => {
 
   it('should render fetch error', () => {
     const fields = jest.spyOn(FolderFields, 'FolderFields');
-    expect(fields).toHaveBeenCalledTimes(0);
+    expect(fields).toBeCalledTimes(0);
 
     const tree = render(getFolderDetail(testData, true));
     expect(tree.container).toMatchSnapshot();
@@ -69,7 +69,7 @@ describe('components/folder-detail/FolderDetail', () => {
     expect(tree.getByText(t('page.folderDetail'))).toBeInTheDocument();
     expect(tree.queryByRole('button')).not.toBeInTheDocument();
 
-    expect(fields).toHaveBeenCalledTimes(0);
+    expect(fields).toBeCalledTimes(0);
   });
 
   it('should create folder', () => {

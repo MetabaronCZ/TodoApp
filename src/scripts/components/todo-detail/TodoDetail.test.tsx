@@ -56,7 +56,7 @@ const getTodoDetail = async (
 describe('components/todo-detail/TodoDetail', () => {
   it('should render todo create variant', async () => {
     const fields = jest.spyOn(TodoFields, 'TodoFields');
-    expect(fields).toHaveBeenCalledTimes(0);
+    expect(fields).toBeCalledTimes(0);
 
     const tree = render(await getTodoDetail());
     expect(tree.container).toMatchSnapshot();
@@ -64,7 +64,7 @@ describe('components/todo-detail/TodoDetail', () => {
     expect(tree.getByText(t('page.todoCreate'))).toBeInTheDocument();
     expect(tree.getByText(t('create'))).toBeInTheDocument();
 
-    expect(fields).toHaveBeenCalledTimes(1);
+    expect(fields).toBeCalledTimes(1);
     expect(fields.mock.calls[0][0].loading).toEqual(false);
     expect(fields.mock.calls[0][0].errors).toEqual({});
     expect(fields.mock.calls[0][0].fields).toEqual({
@@ -77,7 +77,7 @@ describe('components/todo-detail/TodoDetail', () => {
 
   it('should render todo detail variant', async () => {
     const fields = jest.spyOn(TodoFields, 'TodoFields');
-    expect(fields).toHaveBeenCalledTimes(0);
+    expect(fields).toBeCalledTimes(0);
 
     const tree = render(await getTodoDetail(testData));
     expect(tree.container).toMatchSnapshot();
@@ -85,7 +85,7 @@ describe('components/todo-detail/TodoDetail', () => {
     expect(tree.getByText(t('page.todoDetail'))).toBeInTheDocument();
     expect(tree.getByText(t('edit'))).toBeInTheDocument();
 
-    expect(fields).toHaveBeenCalledTimes(1);
+    expect(fields).toBeCalledTimes(1);
     expect(fields.mock.calls[0][0].loading).toEqual(false);
     expect(fields.mock.calls[0][0].errors).toEqual({});
     expect(fields.mock.calls[0][0].fields).toEqual({
@@ -98,7 +98,7 @@ describe('components/todo-detail/TodoDetail', () => {
 
   it('should render fetch error', async () => {
     const fields = jest.spyOn(TodoFields, 'TodoFields');
-    expect(fields).toHaveBeenCalledTimes(0);
+    expect(fields).toBeCalledTimes(0);
 
     const tree = render(await getTodoDetail(testData, true));
     expect(tree.container).toMatchSnapshot();
@@ -107,17 +107,17 @@ describe('components/todo-detail/TodoDetail', () => {
     expect(tree.getByText(t('page.todoDetail'))).toBeInTheDocument();
     expect(tree.queryByRole('button')).not.toBeInTheDocument();
 
-    expect(fields).toHaveBeenCalledTimes(0);
+    expect(fields).toBeCalledTimes(0);
   });
 
   it('should prefill folder Dropdown when filtered by a folder', async () => {
     const fields = jest.spyOn(TodoFields, 'TodoFields');
-    expect(fields).toHaveBeenCalledTimes(0);
+    expect(fields).toBeCalledTimes(0);
 
     const tree = render(await getTodoDetail(undefined, false, 'C'));
     expect(tree.container).toMatchSnapshot();
 
-    expect(fields).toHaveBeenCalledTimes(1);
+    expect(fields).toBeCalledTimes(1);
     expect(fields.mock.calls[0][0].fields).toEqual({
       title: '',
       description: '',

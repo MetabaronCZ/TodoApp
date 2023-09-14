@@ -38,7 +38,7 @@ describe('components/MenuMain', () => {
       { id: 'B', title: 'Folder B' },
     ];
     const mockedMenu = jest.mocked(Menu);
-    expect(mockedMenu).toHaveBeenCalledTimes(0);
+    expect(mockedMenu).toBeCalledTimes(0);
 
     const store = mockStore();
     store.dispatch(setFolders(testData));
@@ -51,7 +51,7 @@ describe('components/MenuMain', () => {
       ),
     );
     expect(container).toMatchSnapshot();
-    expect(mockedMenu).toHaveBeenCalledTimes(1);
+    expect(mockedMenu).toBeCalledTimes(1);
 
     const props = mockedMenu.mock.calls[0][0];
     const itemdId = props.items.map((item) => item.id);
@@ -65,7 +65,7 @@ describe('components/MenuMain', () => {
       { id: 'B', title: 'Folder B' },
     ];
     const mockedMenu = jest.mocked(Menu);
-    expect(mockedMenu).toHaveBeenCalledTimes(0);
+    expect(mockedMenu).toBeCalledTimes(0);
 
     const store = mockStore();
     store.dispatch(setFolders(testData));
@@ -78,7 +78,7 @@ describe('components/MenuMain', () => {
         </Provider>,
       ),
     );
-    expect(mockedMenu).toHaveBeenCalledTimes(1);
+    expect(mockedMenu).toBeCalledTimes(1);
 
     const props = mockedMenu.mock.calls[0][0];
     const active = props.items.filter((item) => item.active);

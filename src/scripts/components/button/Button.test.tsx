@@ -13,18 +13,20 @@ describe('components/button/Button', () => {
     const onClick = jest.fn();
     const tree = render(withMockedProviders(<Button onClick={onClick} />));
     expect(tree.container).toMatchSnapshot();
-    expect(onClick.mock.calls.length).toEqual(0);
+
+    expect(onClick).not.toBeCalled();
     expect(tree.queryAllByRole('link').length).toEqual(0);
     expect(tree.queryAllByRole('button').length).toEqual(1);
 
     fireEvent.click(tree.getByRole('button'));
-    expect(onClick.mock.calls.length).toEqual(1);
+    expect(onClick).toBeCalledTimes(1);
     expect(onClick.mock.calls[0][0]).toEqual(undefined);
   });
 
   it('should render link Button when href defined', () => {
     const tree = render(withMockedProviders(<Button href="/test" />));
     expect(tree.container).toMatchSnapshot();
+
     expect(tree.queryAllByRole('link').length).toEqual(1);
     expect(tree.queryAllByRole('button').length).toEqual(0);
     expect(tree.getByRole('link')).toHaveAttribute('href', '/test');
@@ -37,13 +39,14 @@ describe('components/button/Button', () => {
       withMockedProviders(<Button href="/test" onClick={onClick} />),
     );
     expect(tree.container).toMatchSnapshot();
-    expect(onClick.mock.calls.length).toEqual(0);
+
+    expect(onClick).not.toBeCalled();
     expect(tree.queryAllByRole('link').length).toEqual(1);
     expect(tree.queryAllByRole('button').length).toEqual(0);
     expect(tree.getByRole('link')).toHaveAttribute('href', '/test');
 
     fireEvent.click(tree.getByRole('link'));
-    expect(onClick.mock.calls.length).toEqual(1);
+    expect(onClick).toBeCalledTimes(1);
     expect(onClick.mock.calls[0][0]).toEqual(undefined);
   });
 
@@ -109,7 +112,7 @@ describe('components/button/Button', () => {
     const tree = render(
       withMockedProviders(<Button onClick={onClick} disabled />),
     );
-    expect(onClick.mock.calls.length).toEqual(0);
+    expect(onClick).not.toBeCalled();
 
     expect(tree.container).toMatchSnapshot();
     expect(tree.container.firstChild).toBeDisabled();
@@ -118,7 +121,7 @@ describe('components/button/Button', () => {
     expect(button).toBeInTheDocument();
 
     fireEvent.click(button);
-    expect(onClick.mock.calls.length).toEqual(0);
+    expect(onClick).not.toBeCalled();
   });
 
   it('should render disabled state when href defined', () => {
@@ -127,7 +130,7 @@ describe('components/button/Button', () => {
     const tree = render(
       withMockedProviders(<Button href="/test" onClick={onClick} disabled />),
     );
-    expect(onClick.mock.calls.length).toEqual(0);
+    expect(onClick).not.toBeCalled();
 
     expect(tree.container).toMatchSnapshot();
     expect(tree.container.firstChild).toBeDisabled();
@@ -136,6 +139,6 @@ describe('components/button/Button', () => {
     expect(button).toBeInTheDocument();
 
     fireEvent.click(button);
-    expect(onClick.mock.calls.length).toEqual(0);
+    expect(onClick).not.toBeCalled();
   });
 });

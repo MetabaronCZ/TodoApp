@@ -26,11 +26,11 @@ describe('modules/event', () => {
       const fn = click(cb);
 
       const evt = await mockClickEvent();
-      expect(cb.mock.calls.length).toEqual(0);
+      expect(cb).not.toBeCalled();
       expect(evt.defaultPrevented).toEqual(false);
 
       fn(evt);
-      expect(cb.mock.calls.length).toEqual(1);
+      expect(cb).toBeCalledTimes(1);
       expect(cb.mock.calls[0][0]).toEqual(undefined);
       expect(evt.defaultPrevented).toEqual(true);
     });
@@ -43,10 +43,10 @@ describe('modules/event', () => {
       const fn = change(cb);
 
       const evt = await mockChangeEvent('test');
-      expect(cb.mock.calls.length).toEqual(0);
+      expect(cb).not.toBeCalled();
 
       fn(evt);
-      expect(cb.mock.calls.length).toEqual(1);
+      expect(cb).toBeCalledTimes(1);
       expect(cb.mock.calls[0][0]).toEqual('test');
     });
   });
@@ -58,10 +58,10 @@ describe('modules/event', () => {
       let fn = check(cb);
 
       let evt = await mockCheckEvent();
-      expect(cb.mock.calls.length).toEqual(0);
+      expect(cb).not.toBeCalled();
 
       fn(evt);
-      expect(cb.mock.calls.length).toEqual(1);
+      expect(cb).toBeCalledTimes(1);
       expect(cb.mock.calls[0][0]).toEqual(true);
 
       cleanup();
@@ -71,10 +71,10 @@ describe('modules/event', () => {
       fn = check(cb);
 
       evt = await mockCheckEvent(true);
-      expect(cb.mock.calls.length).toEqual(0);
+      expect(cb).not.toBeCalled();
 
       fn(evt);
-      expect(cb.mock.calls.length).toEqual(1);
+      expect(cb).toBeCalledTimes(1);
       expect(cb.mock.calls[0][0]).toEqual(false);
     });
   });
@@ -95,11 +95,11 @@ describe('modules/event', () => {
       const fn = submit(cb);
 
       const evt = await mockSubmitEvent();
-      expect(cb.mock.calls.length).toEqual(0);
+      expect(cb).not.toBeCalled();
       expect(evt.defaultPrevented).toEqual(false);
 
       fn(evt);
-      expect(cb.mock.calls.length).toEqual(1);
+      expect(cb).toBeCalledTimes(1);
       expect(cb.mock.calls[0][0]).toEqual(undefined);
       expect(evt.defaultPrevented).toEqual(true);
     });

@@ -45,14 +45,14 @@ describe('components/common/Paging', () => {
       ),
     );
     expect(tree.container).toMatchSnapshot();
-    expect(onChange.mock.calls.length).toEqual(0);
+    expect(onChange).not.toBeCalled();
 
     const buttons = tree.getAllByRole('button');
     expect(buttons[0]).toHaveAttribute('disabled');
     expect(buttons[1]).not.toHaveAttribute('disabled');
 
     fireEvent.click(buttons[1]);
-    expect(onChange.mock.calls.length).toEqual(1);
+    expect(onChange).toBeCalledTimes(1);
     expect(onChange.mock.calls[0][0]).toEqual(1);
   });
 
@@ -65,14 +65,14 @@ describe('components/common/Paging', () => {
       ),
     );
     expect(tree.container).toMatchSnapshot();
-    expect(onChange.mock.calls.length).toEqual(0);
+    expect(onChange).not.toBeCalled();
 
     const buttons = tree.getAllByRole('button');
     expect(buttons[0]).not.toHaveAttribute('disabled');
     expect(buttons[1]).toHaveAttribute('disabled');
 
     fireEvent.click(buttons[0]);
-    expect(onChange.mock.calls.length).toEqual(1);
+    expect(onChange).toBeCalledTimes(1);
     expect(onChange.mock.calls[0][0]).toEqual(1);
   });
 
@@ -85,7 +85,7 @@ describe('components/common/Paging', () => {
       ),
     );
     expect(tree.container).toMatchSnapshot();
-    expect(onChange.mock.calls.length).toEqual(0);
+    expect(onChange).not.toBeCalled();
 
     const buttons = tree.getAllByRole('button');
     expect(buttons[0]).not.toHaveAttribute('disabled');
@@ -93,7 +93,7 @@ describe('components/common/Paging', () => {
 
     fireEvent.click(buttons[0]);
     fireEvent.click(buttons[1]);
-    expect(onChange.mock.calls.length).toEqual(2);
+    expect(onChange).toBeCalledTimes(2);
     expect(onChange.mock.calls[0][0]).toEqual(0);
     expect(onChange.mock.calls[1][0]).toEqual(2);
   });

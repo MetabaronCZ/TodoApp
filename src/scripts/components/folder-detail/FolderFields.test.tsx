@@ -25,7 +25,7 @@ describe('components/folder-detail/FolderFields', () => {
 
   it('should render props', () => {
     const itemList = jest.spyOn(ItemList, 'ItemList');
-    expect(itemList).toHaveBeenCalledTimes(0);
+    expect(itemList).toBeCalledTimes(0);
 
     const tree = render(
       withMockedProviders(
@@ -39,7 +39,7 @@ describe('components/folder-detail/FolderFields', () => {
     );
     expect(tree.container).toMatchSnapshot();
 
-    expect(itemList).toHaveBeenCalledTimes(1);
+    expect(itemList).toBeCalledTimes(1);
     expect(itemList.mock.calls[0][0].loading).toEqual(true);
 
     const input = tree.container.querySelector('input');
@@ -57,7 +57,7 @@ describe('components/folder-detail/FolderFields', () => {
         <FolderFields fields={testData} onChange={onChange} />,
       ),
     );
-    expect(onChange).toHaveBeenCalledTimes(0);
+    expect(onChange).toBeCalledTimes(0);
 
     const input = tree.container.querySelector('input');
     expect(input).toBeInTheDocument();
@@ -66,7 +66,7 @@ describe('components/folder-detail/FolderFields', () => {
     if (input) {
       fireEvent.change(input, { target: { value: 'New title' } });
     }
-    expect(onChange).toHaveBeenCalledTimes(1);
-    expect(onChange).toHaveBeenCalledWith('title', 'New title');
+    expect(onChange).toBeCalledTimes(1);
+    expect(onChange).toBeCalledWith('title', 'New title');
   });
 });

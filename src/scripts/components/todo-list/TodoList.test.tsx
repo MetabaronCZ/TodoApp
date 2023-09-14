@@ -59,31 +59,41 @@ const getTodoList = (todos: Todo[]): JSX.Element => {
   );
 };
 
+// get component props for last "n" mocked calls
+const getItemsProps = <T extends object>(
+  component: jest.Mocked<React.FC<T>>,
+  lastCalls = 3,
+): Array<T> => {
+  const { calls } = component.mock;
+  return calls.map((call) => call[0]).slice(-lastCalls);
+};
+
 describe('components/todo-list/TodoList', () => {
   it('should render correctly', () => {
     const listItem = jest.mocked(TodoListItem);
-    expect(listItem).toHaveBeenCalledTimes(0);
+    expect(listItem).toBeCalledTimes(0);
 
     const tree = render(getTodoList(testData));
     expect(tree.container).toMatchSnapshot();
 
     const { calls } = listItem.mock;
-    expect(calls.length % 3).toEqual(0); // check item count (with re-renders)
-    expect(calls[calls.length - 3][0].item.id).toEqual('A');
-    expect(calls[calls.length - 2][0].item.id).toEqual('B');
-    expect(calls[calls.length - 1][0].item.id).toEqual('C');
+    const ids = calls.map((call) => call[0].item.id);
+    expect(ids.length % 3).toEqual(0); // check item count (with re-renders)
+    expect(ids.at(-3)).toEqual('A');
+    expect(ids.at(-2)).toEqual('B');
+    expect(ids.at(-1)).toEqual('C');
   });
 
   it('should render empty list', () => {
     const listItem = jest.mocked(TodoListItem);
     const toolbar = jest.mocked(TodoListToolbar);
-    expect(listItem).toHaveBeenCalledTimes(0);
-    expect(toolbar).toHaveBeenCalledTimes(0);
+    expect(listItem).toBeCalledTimes(0);
+    expect(toolbar).toBeCalledTimes(0);
 
     const tree = render(getTodoList([]));
     expect(tree.container).toMatchSnapshot();
 
-    expect(listItem).toHaveBeenCalledTimes(0);
+    expect(listItem).toBeCalledTimes(0);
     expect(tree.getByText(t('todoList.empty'))).toBeInTheDocument();
 
     expect(toolbar).toHaveBeenCalled();
@@ -95,13 +105,8 @@ describe('components/todo-list/TodoList', () => {
     const toolbar = jest.mocked(TodoListToolbar);
 
     render(getTodoList(testData));
-    const { calls } = listItem.mock;
 
-    let items = [
-      calls[calls.length - 3][0],
-      calls[calls.length - 2][0],
-      calls[calls.length - 1][0],
-    ];
+    let items = getItemsProps(listItem);
     expect(items[0].selected).toEqual(false);
     expect(items[1].selected).toEqual(false);
     expect(items[2].selected).toEqual(false);
@@ -121,11 +126,7 @@ describe('components/todo-list/TodoList', () => {
     ): void => {
       act(() => items[index].onSelect(shouldSelect));
 
-      items = [
-        calls[calls.length - 3][0],
-        calls[calls.length - 2][0],
-        calls[calls.length - 1][0],
-      ];
+      items = getItemsProps(listItem);
       expect(items[0].selected).toEqual(expectation[0]);
       expect(items[1].selected).toEqual(expectation[1]);
       expect(items[2].selected).toEqual(expectation[2]);
@@ -149,13 +150,8 @@ describe('components/todo-list/TodoList', () => {
     const toolbar = jest.mocked(TodoListToolbar);
 
     render(getTodoList(testData));
-    const { calls } = listItem.mock;
 
-    let items = [
-      calls[calls.length - 3][0],
-      calls[calls.length - 2][0],
-      calls[calls.length - 1][0],
-    ];
+    let items = getItemsProps(listItem);
     expect(items[0].selected).toEqual(false);
     expect(items[1].selected).toEqual(false);
     expect(items[2].selected).toEqual(false);
@@ -169,11 +165,7 @@ describe('components/todo-list/TodoList', () => {
       }
     });
 
-    items = [
-      calls[calls.length - 3][0],
-      calls[calls.length - 2][0],
-      calls[calls.length - 1][0],
-    ];
+    items = getItemsProps(listItem);
     expect(items[0].selected).toEqual(true);
     expect(items[1].selected).toEqual(true);
     expect(items[2].selected).toEqual(true);
@@ -185,11 +177,7 @@ describe('components/todo-list/TodoList', () => {
       }
     });
 
-    items = [
-      calls[calls.length - 3][0],
-      calls[calls.length - 2][0],
-      calls[calls.length - 1][0],
-    ];
+    items = getItemsProps(listItem);
     expect(items[0].selected).toEqual(false);
     expect(items[1].selected).toEqual(false);
     expect(items[2].selected).toEqual(false);
@@ -199,7 +187,7 @@ describe('components/todo-list/TodoList', () => {
     const toolbar = jest.mocked(TodoListToolbar);
 
     const mockedSortTodos = jest.spyOn(client.todo, 'get');
-    expect(mockedSortTodos).toHaveBeenCalledTimes(0);
+    expect(mockedSortTodos).toBeCalledTimes(0);
 
     render(getTodoList(testData));
     expect(toolbar).toHaveBeenCalled();
@@ -215,7 +203,7 @@ describe('components/todo-list/TodoList', () => {
       }
     });
 
-    expect(mockedSortTodos).toHaveBeenCalledTimes(1);
+    expect(mockedSortTodos).toBeCalledTimes(1);
 
     if (mockedSortTodos.mock.lastCall) {
       expect(mockedSortTodos.mock.lastCall[0]?.sort).toEqual('TITLE_DESC');
@@ -228,19 +216,14 @@ describe('components/todo-list/TodoList', () => {
 
     const mockedConfirm = jest.spyOn(window, 'confirm');
     mockedConfirm.mockImplementation(jest.fn(() => true));
-    expect(mockedConfirm).toHaveBeenCalledTimes(0);
+    expect(mockedConfirm).toBeCalledTimes(0);
 
     const mockedDeleteTodos = jest.spyOn(client.todo, 'delete');
-    expect(mockedDeleteTodos).toHaveBeenCalledTimes(0);
+    expect(mockedDeleteTodos).toBeCalledTimes(0);
 
     render(getTodoList(testData));
-    const { calls } = listItem.mock;
 
-    let items = [
-      calls[calls.length - 3][0],
-      calls[calls.length - 2][0],
-      calls[calls.length - 1][0],
-    ];
+    let items = getItemsProps(listItem);
 
     // select first two items
     act(() => {
@@ -248,11 +231,7 @@ describe('components/todo-list/TodoList', () => {
       items[1].onSelect(true);
     });
 
-    items = [
-      calls[calls.length - 3][0],
-      calls[calls.length - 2][0],
-      calls[calls.length - 1][0],
-    ];
+    items = getItemsProps(listItem);
     expect(items[0].selected).toEqual(true);
     expect(items[1].selected).toEqual(true);
     expect(items[2].selected).toEqual(false);
@@ -266,8 +245,8 @@ describe('components/todo-list/TodoList', () => {
       }
     });
 
-    expect(mockedConfirm).toHaveBeenCalledTimes(1);
-    expect(mockedDeleteTodos).toHaveBeenCalledTimes(1);
-    expect(mockedDeleteTodos).toHaveBeenCalledWith(['A', 'B']);
+    expect(mockedConfirm).toBeCalledTimes(1);
+    expect(mockedDeleteTodos).toBeCalledTimes(1);
+    expect(mockedDeleteTodos).toBeCalledWith(['A', 'B']);
   });
 });
