@@ -3,12 +3,10 @@ import React from 'react';
 import { fireEvent, render } from '@testing-library/react';
 import { describe, expect, it, jest } from '@jest/globals';
 
-import { Dropdown } from 'components/forms/Dropdown';
+import * as Dropdown from 'components/forms/Dropdown';
 import { FormField } from 'components/forms/FormField';
 
 import { withMockedProviders } from 'test/component';
-
-jest.mock('components/forms/Dropdown');
 
 describe('components/forms/FormField', () => {
   it('should render correctly', () => {
@@ -73,7 +71,7 @@ describe('components/forms/FormField', () => {
   });
 
   it('should render dropdown', () => {
-    const mockedDropdown = jest.mocked(Dropdown);
+    const mockedDropdown = jest.spyOn(Dropdown, 'Dropdown');
     expect(mockedDropdown).toBeCalledTimes(0);
 
     const { container } = render(
@@ -153,7 +151,8 @@ describe('components/forms/FormField', () => {
 
   it('should handle dropdown change', () => {
     const onChange = jest.fn();
-    const mockedDropdown = jest.mocked(Dropdown);
+
+    const mockedDropdown = jest.spyOn(Dropdown, 'Dropdown');
     expect(mockedDropdown).toBeCalledTimes(0);
 
     render(

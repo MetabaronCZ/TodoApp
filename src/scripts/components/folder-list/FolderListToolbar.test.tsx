@@ -1,14 +1,13 @@
 import React from 'react';
+import { t } from 'i18next';
 
 import { fireEvent, render } from '@testing-library/react';
 import { describe, expect, it, jest } from '@jest/globals';
 
-import { Dropdown } from 'components/forms/Dropdown';
+import * as Dropdown from 'components/forms/Dropdown';
 import { FolderListToolbar } from 'components/folder-list/FolderListToolbar';
 
 import { withMockedProviders } from 'test/component';
-
-jest.mock('components/forms/Dropdown');
 
 describe('components/folder-list/FolderListToolbar', () => {
   it('should render correctly', () => {
@@ -80,7 +79,7 @@ describe('components/folder-list/FolderListToolbar', () => {
   it('should be able to sort items', () => {
     const onSort = jest.fn();
 
-    const mockedDropdown = jest.mocked(Dropdown);
+    const mockedDropdown = jest.spyOn(Dropdown, 'Dropdown');
     expect(mockedDropdown).toBeCalledTimes(0);
 
     const { container } = render(
@@ -108,7 +107,7 @@ describe('components/folder-list/FolderListToolbar', () => {
   });
 
   it('should not be able to sort items when disabled', () => {
-    const mockedDropdown = jest.mocked(Dropdown);
+    const mockedDropdown = jest.spyOn(Dropdown, 'Dropdown');
 
     const { container } = render(
       withMockedProviders(
@@ -147,7 +146,9 @@ describe('components/folder-list/FolderListToolbar', () => {
     expect(tree.container).toMatchSnapshot();
     expect(onDelete).toBeCalledTimes(0);
 
-    const button = tree.getByRole('button');
+    const button = tree.getByRole('button', {
+      name: (value) => value.includes(t('delete')),
+    });
     expect(button).toBeInTheDocument();
 
     fireEvent.click(button);
@@ -168,7 +169,11 @@ describe('components/folder-list/FolderListToolbar', () => {
       ),
     );
     expect(onDelete).toBeCalledTimes(0);
-    expect(tree.queryByRole('button')).not.toBeInTheDocument();
+    expect(
+      tree.queryByRole('button', {
+        name: (value) => value.includes(t('delete')),
+      }),
+    ).not.toBeInTheDocument();
   });
 
   it('should not be able to delete when disabled', () => {
@@ -187,6 +192,10 @@ describe('components/folder-list/FolderListToolbar', () => {
       ),
     );
     expect(onDelete).toBeCalledTimes(0);
-    expect(tree.queryByRole('button')).not.toBeInTheDocument();
+    expect(
+      tree.queryByRole('button', {
+        name: (value) => value.includes(t('delete')),
+      }),
+    ).not.toBeInTheDocument();
   });
 });

@@ -41,6 +41,77 @@ exports[`components/Settings should render correctly 1`] = `
   user-select: none;
 }
 
+.c11 {
+  font-family: Open Sans,Arial,sans-serif;
+  color: #222;
+  font-size: 14px;
+  line-height: 20px;
+  display: block;
+  width: 20px;
+  height: 20px;
+  line-height: 20px;
+  font-style: normal;
+  text-align: center;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.c8 {
+  display: block;
+  width: 100%;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.c9 {
+  font-family: Open Sans,Arial,sans-serif;
+  color: #222;
+  font-size: 14px;
+  line-height: 20px;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: auto;
+  padding: 5px 10px;
+  padding-right: 5px;
+  background: #f0f0f0;
+}
+
+.c9:hover:not(:disabled) {
+  background-color: #e0e0e0;
+}
+
+.c9:focus {
+  outline: 1px dotted #222;
+  outline-offset: -1px;
+}
+
+.c9:disabled {
+  color: #c0c0c0;
+}
+
+.c10 {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+}
+
+.c7 {
+  position: relative;
+  display: inline-block;
+}
+
 .c3 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -110,7 +181,28 @@ exports[`components/Settings should render correctly 1`] = `
           </div>
           <div
             class="c6"
-          />
+          >
+            <div
+              class="c7"
+            >
+              <button
+                class="c8 c9"
+                id="form-field-0"
+                type="button"
+              >
+                <span
+                  class="c10"
+                >
+                  20
+                </span>
+                <i
+                  class="c11"
+                >
+                  ˅
+                </i>
+              </button>
+            </div>
+          </div>
         </div>
       </li>
     </ul>

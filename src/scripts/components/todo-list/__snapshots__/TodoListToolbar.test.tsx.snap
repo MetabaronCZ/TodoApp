@@ -61,6 +61,41 @@ exports[`components/todo-list/TodoListToolbar should be able to delete selected 
   color: #c0c0c0;
 }
 
+.c12 {
+  font-family: Open Sans,Arial,sans-serif;
+  color: #222;
+  font-size: 14px;
+  line-height: 20px;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: auto;
+  padding: 5px 10px;
+  padding-right: 5px;
+  background: #f0f0f0;
+}
+
+.c12:hover:not(:disabled) {
+  background-color: #e0e0e0;
+}
+
+.c12:focus {
+  outline: 1px dotted #222;
+  outline-offset: -1px;
+}
+
+.c12:disabled {
+  color: #c0c0c0;
+}
+
 .c6 {
   font-family: Open Sans,Arial,sans-serif;
   color: #222;
@@ -102,6 +137,11 @@ exports[`components/todo-list/TodoListToolbar should be able to delete selected 
   -webkit-flex: 1;
   -ms-flex: 1;
   flex: 1;
+}
+
+.c11 {
+  position: relative;
+  display: inline-block;
 }
 
 .c0 {
@@ -277,7 +317,27 @@ exports[`components/todo-list/TodoListToolbar should be able to delete selected 
         </span>
       </button>
     </div>
-    <div />
+    <div>
+      <div
+        class="c11"
+      >
+        <button
+          class="c9 c12"
+          type="button"
+        >
+          <span
+            class="c8"
+          >
+            Abecedně (A-Z)
+          </span>
+          <i
+            class="c7"
+          >
+            ˅
+          </i>
+        </button>
+      </div>
+    </div>
   </div>
 </div>
 `;
@@ -298,6 +358,49 @@ exports[`components/todo-list/TodoListToolbar should be able to sort items 1`] =
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+}
+
+.c10 {
+  display: block;
+  width: 100%;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.c11 {
+  font-family: Open Sans,Arial,sans-serif;
+  color: #222;
+  font-size: 14px;
+  line-height: 20px;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: auto;
+  padding: 5px 10px;
+  padding-right: 5px;
+  background: #f0f0f0;
+}
+
+.c11:hover:not(:disabled) {
+  background-color: #e0e0e0;
+}
+
+.c11:focus {
+  outline: 1px dotted #222;
+  outline-offset: -1px;
+}
+
+.c11:disabled {
+  color: #c0c0c0;
 }
 
 .c6 {
@@ -341,6 +444,11 @@ exports[`components/todo-list/TodoListToolbar should be able to sort items 1`] =
   -webkit-flex: 1;
   -ms-flex: 1;
   flex: 1;
+}
+
+.c9 {
+  position: relative;
+  display: inline-block;
 }
 
 .c0 {
@@ -497,7 +605,27 @@ exports[`components/todo-list/TodoListToolbar should be able to sort items 1`] =
         </span>
       </a>
     </div>
-    <div />
+    <div>
+      <div
+        class="c9"
+      >
+        <button
+          class="c10 c11"
+          type="button"
+        >
+          <span
+            class="c8"
+          >
+            Abecedně (Z-A)
+          </span>
+          <i
+            class="c7"
+          >
+            ˅
+          </i>
+        </button>
+      </div>
+    </div>
   </div>
 </div>
 `;
@@ -563,6 +691,41 @@ exports[`components/todo-list/TodoListToolbar should be able to un/select-all 1`
   color: #c0c0c0;
 }
 
+.c12 {
+  font-family: Open Sans,Arial,sans-serif;
+  color: #222;
+  font-size: 14px;
+  line-height: 20px;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: auto;
+  padding: 5px 10px;
+  padding-right: 5px;
+  background: #f0f0f0;
+}
+
+.c12:hover:not(:disabled) {
+  background-color: #e0e0e0;
+}
+
+.c12:focus {
+  outline: 1px dotted #222;
+  outline-offset: -1px;
+}
+
+.c12:disabled {
+  color: #c0c0c0;
+}
+
 .c6 {
   font-family: Open Sans,Arial,sans-serif;
   color: #222;
@@ -604,6 +767,11 @@ exports[`components/todo-list/TodoListToolbar should be able to un/select-all 1`
   -webkit-flex: 1;
   -ms-flex: 1;
   flex: 1;
+}
+
+.c11 {
+  position: relative;
+  display: inline-block;
 }
 
 .c0 {
@@ -779,7 +947,27 @@ exports[`components/todo-list/TodoListToolbar should be able to un/select-all 1`
         </span>
       </button>
     </div>
-    <div />
+    <div>
+      <div
+        class="c11"
+      >
+        <button
+          class="c9 c12"
+          type="button"
+        >
+          <span
+            class="c8"
+          >
+            Abecedně (A-Z)
+          </span>
+          <i
+            class="c7"
+          >
+            ˅
+          </i>
+        </button>
+      </div>
+    </div>
   </div>
 </div>
 `;
@@ -800,6 +988,49 @@ exports[`components/todo-list/TodoListToolbar should not be able to sort items w
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+}
+
+.c10 {
+  display: block;
+  width: 100%;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.c11 {
+  font-family: Open Sans,Arial,sans-serif;
+  color: #222;
+  font-size: 14px;
+  line-height: 20px;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: auto;
+  padding: 5px 10px;
+  padding-right: 5px;
+  background: #f0f0f0;
+}
+
+.c11:hover:not(:disabled) {
+  background-color: #e0e0e0;
+}
+
+.c11:focus {
+  outline: 1px dotted #222;
+  outline-offset: -1px;
+}
+
+.c11:disabled {
+  color: #c0c0c0;
 }
 
 .c6 {
@@ -843,6 +1074,11 @@ exports[`components/todo-list/TodoListToolbar should not be able to sort items w
   -webkit-flex: 1;
   -ms-flex: 1;
   flex: 1;
+}
+
+.c9 {
+  position: relative;
+  display: inline-block;
 }
 
 .c0 {
@@ -992,7 +1228,29 @@ exports[`components/todo-list/TodoListToolbar should not be able to sort items w
         </span>
       </a>
     </div>
-    <div />
+    <div>
+      <div
+        class="c9"
+      >
+        <button
+          class="c10 c11"
+          disabled=""
+          type="button"
+        >
+          <span
+            class="c8"
+          >
+            Abecedně (Z-A)
+          </span>
+          <i
+            class="c7"
+            style="color: rgb(192, 192, 192);"
+          >
+            ˅
+          </i>
+        </button>
+      </div>
+    </div>
   </div>
 </div>
 `;
@@ -1013,6 +1271,49 @@ exports[`components/todo-list/TodoListToolbar should not be able to un/select-al
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+}
+
+.c10 {
+  display: block;
+  width: 100%;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.c11 {
+  font-family: Open Sans,Arial,sans-serif;
+  color: #222;
+  font-size: 14px;
+  line-height: 20px;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: auto;
+  padding: 5px 10px;
+  padding-right: 5px;
+  background: #f0f0f0;
+}
+
+.c11:hover:not(:disabled) {
+  background-color: #e0e0e0;
+}
+
+.c11:focus {
+  outline: 1px dotted #222;
+  outline-offset: -1px;
+}
+
+.c11:disabled {
+  color: #c0c0c0;
 }
 
 .c6 {
@@ -1056,6 +1357,11 @@ exports[`components/todo-list/TodoListToolbar should not be able to un/select-al
   -webkit-flex: 1;
   -ms-flex: 1;
   flex: 1;
+}
+
+.c9 {
+  position: relative;
+  display: inline-block;
 }
 
 .c0 {
@@ -1205,7 +1511,29 @@ exports[`components/todo-list/TodoListToolbar should not be able to un/select-al
         </span>
       </a>
     </div>
-    <div />
+    <div>
+      <div
+        class="c9"
+      >
+        <button
+          class="c10 c11"
+          disabled=""
+          type="button"
+        >
+          <span
+            class="c8"
+          >
+            Abecedně (A-Z)
+          </span>
+          <i
+            class="c7"
+            style="color: rgb(192, 192, 192);"
+          >
+            ˅
+          </i>
+        </button>
+      </div>
+    </div>
   </div>
 </div>
 `;
@@ -1226,6 +1554,49 @@ exports[`components/todo-list/TodoListToolbar should render correctly 1`] = `
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+}
+
+.c10 {
+  display: block;
+  width: 100%;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.c11 {
+  font-family: Open Sans,Arial,sans-serif;
+  color: #222;
+  font-size: 14px;
+  line-height: 20px;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: auto;
+  padding: 5px 10px;
+  padding-right: 5px;
+  background: #f0f0f0;
+}
+
+.c11:hover:not(:disabled) {
+  background-color: #e0e0e0;
+}
+
+.c11:focus {
+  outline: 1px dotted #222;
+  outline-offset: -1px;
+}
+
+.c11:disabled {
+  color: #c0c0c0;
 }
 
 .c6 {
@@ -1269,6 +1640,11 @@ exports[`components/todo-list/TodoListToolbar should render correctly 1`] = `
   -webkit-flex: 1;
   -ms-flex: 1;
   flex: 1;
+}
+
+.c9 {
+  position: relative;
+  display: inline-block;
 }
 
 .c0 {
@@ -1425,7 +1801,27 @@ exports[`components/todo-list/TodoListToolbar should render correctly 1`] = `
         </span>
       </a>
     </div>
-    <div />
+    <div>
+      <div
+        class="c9"
+      >
+        <button
+          class="c10 c11"
+          type="button"
+        >
+          <span
+            class="c8"
+          >
+            Nejstarší
+          </span>
+          <i
+            class="c7"
+          >
+            ˅
+          </i>
+        </button>
+      </div>
+    </div>
   </div>
 </div>
 `;

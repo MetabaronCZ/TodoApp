@@ -1,6 +1,144 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`components/todo-list/TodoList should render correctly 1`] = `
+.c9 {
+  font-family: Open Sans,Arial,sans-serif;
+  color: #222;
+  font-size: 14px;
+  line-height: 20px;
+  display: block;
+  width: 20px;
+  height: 20px;
+  line-height: 20px;
+  font-style: normal;
+  text-align: center;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.c12 {
+  display: block;
+  width: 100%;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.c13 {
+  font-family: Open Sans,Arial,sans-serif;
+  color: #222;
+  font-size: 14px;
+  line-height: 20px;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: auto;
+  padding: 5px 10px;
+  padding-right: 5px;
+  background: #f0f0f0;
+}
+
+.c13:hover:not(:disabled) {
+  background-color: #e0e0e0;
+}
+
+.c13:focus {
+  outline: 1px dotted #222;
+  outline-offset: -1px;
+}
+
+.c13:disabled {
+  color: #c0c0c0;
+}
+
+.c20 {
+  font-family: Open Sans,Arial,sans-serif;
+  color: #222;
+  font-size: 14px;
+  line-height: 20px;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: auto;
+  padding: 5px 10px;
+  padding-left: 5px;
+  background: #f0f0f0;
+}
+
+.c20:hover:not(:disabled) {
+  background-color: #e0e0e0;
+}
+
+.c20:focus {
+  outline: 1px dotted #222;
+  outline-offset: -1px;
+}
+
+.c20:disabled {
+  color: #c0c0c0;
+}
+
+.c8 {
+  font-family: Open Sans,Arial,sans-serif;
+  color: #222;
+  font-size: 14px;
+  line-height: 20px;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: auto;
+  padding: 5px 10px;
+  padding-left: 5px;
+  background: #f0f0f0;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
+.c8:hover:not(:disabled) {
+  background-color: #e0e0e0;
+}
+
+.c8:focus {
+  outline: 1px dotted #222;
+  outline-offset: -1px;
+}
+
+.c8:disabled {
+  color: #c0c0c0;
+}
+
+.c10 {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+}
+
 .c0 {
   font-family: Open Sans,Arial,sans-serif;
   color: #222;
@@ -10,7 +148,7 @@ exports[`components/todo-list/TodoList should render correctly 1`] = `
   margin: 0;
 }
 
-.c2 {
+.c14 {
   list-style-type: none;
   display: -webkit-box;
   display: -webkit-flex;
@@ -21,12 +159,177 @@ exports[`components/todo-list/TodoList should render correctly 1`] = `
   flex-direction: column;
 }
 
-.c3 {
+.c15 {
   border-bottom: 1px solid #c0c0c0;
 }
 
-.c3:last-child {
+.c15:last-child {
   border-bottom: none;
+}
+
+.c6 {
+  font-family: Open Sans,Arial,sans-serif;
+  color: #222;
+  font-size: 14px;
+  line-height: 20px;
+  color: #222;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  gap: 10px;
+  height: 30px;
+}
+
+.c4 {
+  font-family: Open Sans,Arial,sans-serif;
+  color: #222;
+  font-size: 14px;
+  line-height: 20px;
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  line-height: 1;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #222;
+  color: #222;
+  background: #fff;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  cursor: pointer;
+}
+
+.c4:hover {
+  background-color: #fcfcfc;
+}
+
+.c4:focus-within {
+  outline: 1px dotted #222;
+}
+
+.c5 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+  opacity: 0;
+  outline: none;
+}
+
+.c16 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.c17 {
+  font-family: Open Sans,Arial,sans-serif;
+  color: #222;
+  font-size: 14px;
+  line-height: 20px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  padding: 5px 0;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
+.c19 {
+  font-family: Open Sans,Arial,sans-serif;
+  color: #222;
+  font-size: 14px;
+  line-height: 20px;
+  width: 20px;
+  text-align: center;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.c18 {
+  font-family: Open Sans,Arial,sans-serif;
+  color: #222;
+  font-size: 14px;
+  line-height: 20px;
+  white-space: nowrap;
+}
+
+.c2 {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  gap: 10px;
+  height: calc(30px + 1px);
+  border-bottom: 1px solid #c0c0c0;
+  background: #f0f0f0;
+}
+
+.c7 {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+}
+
+.c11 {
+  position: relative;
+  display: inline-block;
 }
 
 .c1 {
@@ -42,24 +345,440 @@ exports[`components/todo-list/TodoList should render correctly 1`] = `
     >
       Úkoly
     </h1>
-    <ul
+    <div
       class="c2"
     >
-      <li
-        class="c3"
+      <div>
+        <div
+          class="c3"
+        >
+          <label
+            class="c4"
+            for="checkbox-4"
+          >
+            <input
+              class="c5"
+              id="checkbox-4"
+              type="checkbox"
+            />
+          </label>
+          <label
+            class="c6"
+            for="checkbox-4"
+          >
+            Vybrat vše
+          </label>
+        </div>
+      </div>
+      <div
+        class="c7"
       />
+      <div>
+        <a
+          class="c8"
+          href="/todo/create"
+        >
+          <i
+            class="c9"
+          >
+            +
+          </i>
+          <span
+            class="c10"
+          >
+            Vytvořit
+          </span>
+        </a>
+      </div>
+      <div>
+        <div
+          class="c11"
+        >
+          <button
+            class="c12 c13"
+            type="button"
+          >
+            <span
+              class="c10"
+            >
+              Nejnovější
+            </span>
+            <i
+              class="c9"
+            >
+              ˅
+            </i>
+          </button>
+        </div>
+      </div>
+    </div>
+    <ul
+      class="c14"
+    >
       <li
-        class="c3"
-      />
+        class="c15"
+      >
+        <div
+          class="c16"
+        >
+          <div
+            class=""
+          >
+            <div
+              class="c3"
+            >
+              <label
+                class="c4"
+                for="checkbox-5"
+              >
+                <input
+                  class="c5"
+                  id="checkbox-5"
+                  type="checkbox"
+                />
+              </label>
+            </div>
+          </div>
+          <a
+            class="c17"
+            href="/todo/A"
+          >
+            Todo A
+          </a>
+          <div
+            class="c18"
+          >
+            1. 1. 1970
+          </div>
+          <div
+            class="c19"
+            title=""
+          >
+            <i
+              class="c9"
+            >
+              -
+            </i>
+          </div>
+          <div
+            class=""
+          >
+            <a
+              class="c8"
+              href="/todo/A"
+            >
+              <i
+                class="c9"
+              >
+                ✎
+              </i>
+              <span
+                class="c10"
+              >
+                Upravit
+              </span>
+            </a>
+          </div>
+          <div
+            class=""
+          >
+            <button
+              class="c12 c20"
+              type="button"
+            >
+              <i
+                class="c9"
+              >
+                ✖
+              </i>
+              <span
+                class="c10"
+              >
+                Smazat
+              </span>
+            </button>
+          </div>
+        </div>
+      </li>
       <li
-        class="c3"
-      />
+        class="c15"
+      >
+        <div
+          class="c16"
+        >
+          <div
+            class=""
+          >
+            <div
+              class="c3"
+            >
+              <label
+                class="c4"
+                for="checkbox-6"
+              >
+                <input
+                  class="c5"
+                  id="checkbox-6"
+                  type="checkbox"
+                />
+              </label>
+            </div>
+          </div>
+          <a
+            class="c17"
+            href="/todo/B"
+          >
+            Todo B
+          </a>
+          <div
+            class="c18"
+          >
+            1. 1. 1970
+          </div>
+          <div
+            class="c19"
+            title="Hotovo"
+          >
+            <i
+              class="c9"
+            >
+              ✔
+            </i>
+          </div>
+          <div
+            class=""
+          >
+            <a
+              class="c8"
+              href="/todo/B"
+            >
+              <i
+                class="c9"
+              >
+                ✎
+              </i>
+              <span
+                class="c10"
+              >
+                Upravit
+              </span>
+            </a>
+          </div>
+          <div
+            class=""
+          >
+            <button
+              class="c12 c20"
+              type="button"
+            >
+              <i
+                class="c9"
+              >
+                ✖
+              </i>
+              <span
+                class="c10"
+              >
+                Smazat
+              </span>
+            </button>
+          </div>
+        </div>
+      </li>
+      <li
+        class="c15"
+      >
+        <div
+          class="c16"
+        >
+          <div
+            class=""
+          >
+            <div
+              class="c3"
+            >
+              <label
+                class="c4"
+                for="checkbox-7"
+              >
+                <input
+                  class="c5"
+                  id="checkbox-7"
+                  type="checkbox"
+                />
+              </label>
+            </div>
+          </div>
+          <a
+            class="c17"
+            href="/todo/C"
+          >
+            Todo B
+          </a>
+          <div
+            class="c18"
+          >
+            1. 1. 1970
+          </div>
+          <div
+            class="c19"
+            title=""
+          >
+            <i
+              class="c9"
+            >
+              -
+            </i>
+          </div>
+          <div
+            class=""
+          >
+            <a
+              class="c8"
+              href="/todo/C"
+            >
+              <i
+                class="c9"
+              >
+                ✎
+              </i>
+              <span
+                class="c10"
+              >
+                Upravit
+              </span>
+            </a>
+          </div>
+          <div
+            class=""
+          >
+            <button
+              class="c12 c20"
+              type="button"
+            >
+              <i
+                class="c9"
+              >
+                ✖
+              </i>
+              <span
+                class="c10"
+              >
+                Smazat
+              </span>
+            </button>
+          </div>
+        </div>
+      </li>
     </ul>
   </div>
 </div>
 `;
 
 exports[`components/todo-list/TodoList should render empty list 1`] = `
+.c9 {
+  font-family: Open Sans,Arial,sans-serif;
+  color: #222;
+  font-size: 14px;
+  line-height: 20px;
+  display: block;
+  width: 20px;
+  height: 20px;
+  line-height: 20px;
+  font-style: normal;
+  text-align: center;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.c12 {
+  display: block;
+  width: 100%;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.c13 {
+  font-family: Open Sans,Arial,sans-serif;
+  color: #222;
+  font-size: 14px;
+  line-height: 20px;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: auto;
+  padding: 5px 10px;
+  padding-right: 5px;
+  background: #f0f0f0;
+}
+
+.c13:hover:not(:disabled) {
+  background-color: #e0e0e0;
+}
+
+.c13:focus {
+  outline: 1px dotted #222;
+  outline-offset: -1px;
+}
+
+.c13:disabled {
+  color: #c0c0c0;
+}
+
+.c8 {
+  font-family: Open Sans,Arial,sans-serif;
+  color: #222;
+  font-size: 14px;
+  line-height: 20px;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: auto;
+  padding: 5px 10px;
+  padding-left: 5px;
+  background: #f0f0f0;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
+.c8:hover:not(:disabled) {
+  background-color: #e0e0e0;
+}
+
+.c8:focus {
+  outline: 1px dotted #222;
+  outline-offset: -1px;
+}
+
+.c8:disabled {
+  color: #c0c0c0;
+}
+
+.c10 {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+}
+
 .c0 {
   font-family: Open Sans,Arial,sans-serif;
   color: #222;
@@ -69,18 +788,123 @@ exports[`components/todo-list/TodoList should render empty list 1`] = `
   margin: 0;
 }
 
-.c2 {
+.c14 {
   font-family: Open Sans,Arial,sans-serif;
   color: #222;
   font-size: 14px;
   line-height: 20px;
 }
 
+.c6 {
+  font-family: Open Sans,Arial,sans-serif;
+  color: #222;
+  font-size: 14px;
+  line-height: 20px;
+  color: #c0c0c0;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  gap: 10px;
+  height: 30px;
+}
+
+.c4 {
+  font-family: Open Sans,Arial,sans-serif;
+  color: #222;
+  font-size: 14px;
+  line-height: 20px;
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  line-height: 1;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #c0c0c0;
+  color: #c0c0c0;
+  background: #fff;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  cursor: pointer;
+}
+
+.c5 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+  opacity: 0;
+  outline: none;
+}
+
+.c2 {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  gap: 10px;
+  height: calc(30px + 1px);
+  border-bottom: 1px solid #c0c0c0;
+  background: #f0f0f0;
+}
+
+.c7 {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+}
+
+.c11 {
+  position: relative;
+  display: inline-block;
+}
+
 .c1 {
   margin-bottom: 1px;
 }
 
-.c3 {
+.c15 {
   padding-top: 10px;
 }
 
@@ -93,8 +917,78 @@ exports[`components/todo-list/TodoList should render empty list 1`] = `
     >
       Úkoly
     </h1>
+    <div
+      class="c2"
+    >
+      <div>
+        <div
+          class="c3"
+        >
+          <label
+            class="c4"
+            for="checkbox-9"
+          >
+            <input
+              class="c5"
+              disabled=""
+              id="checkbox-9"
+              type="checkbox"
+            />
+          </label>
+          <label
+            class="c6"
+            for="checkbox-9"
+          >
+            Vybrat vše
+          </label>
+        </div>
+      </div>
+      <div
+        class="c7"
+      />
+      <div>
+        <a
+          class="c8"
+          href="/todo/create"
+        >
+          <i
+            class="c9"
+          >
+            +
+          </i>
+          <span
+            class="c10"
+          >
+            Vytvořit
+          </span>
+        </a>
+      </div>
+      <div>
+        <div
+          class="c11"
+        >
+          <button
+            class="c12 c13"
+            disabled=""
+            type="button"
+          >
+            <span
+              class="c10"
+            >
+              Nejnovější
+            </span>
+            <i
+              class="c9"
+              style="color: rgb(192, 192, 192);"
+            >
+              ˅
+            </i>
+          </button>
+        </div>
+      </div>
+    </div>
     <p
-      class="c2 c3"
+      class="c14 c15"
     >
       Nebyly nalezeny žádné úkoly.
     </p>

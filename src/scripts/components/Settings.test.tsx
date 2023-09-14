@@ -5,14 +5,12 @@ import { act, render } from '@testing-library/react';
 import { describe, expect, it, jest } from '@jest/globals';
 
 import { Settings } from 'components/Settings';
-import { Dropdown } from 'components/forms/Dropdown';
+import * as Dropdown from 'components/forms/Dropdown';
 
 import { mockStore } from 'test/store';
 import { client } from 'modules/client';
 import { perPages } from 'models/Settings';
 import { withMockedProviders } from 'test/component';
-
-jest.mock('components/forms/Dropdown');
 
 const getSettings = (): JSX.Element => {
   const store = mockStore();
@@ -25,7 +23,7 @@ const getSettings = (): JSX.Element => {
 
 describe('components/Settings', () => {
   it('should render correctly', () => {
-    const mockedDropdown = jest.mocked(Dropdown);
+    const mockedDropdown = jest.spyOn(Dropdown, 'Dropdown');
     expect(mockedDropdown).toBeCalledTimes(0);
 
     const { container } = render(getSettings());
@@ -39,7 +37,7 @@ describe('components/Settings', () => {
   it('should auto-update settings when perPage changes', async () => {
     const testPerPage = 50;
 
-    const mockedDropdown = jest.mocked(Dropdown);
+    const mockedDropdown = jest.spyOn(Dropdown, 'Dropdown');
     const mockedUpdateSettings = jest.spyOn(client.settings, 'set');
     expect(mockedDropdown).toBeCalledTimes(0);
     expect(mockedUpdateSettings).toBeCalledTimes(0);
