@@ -53,7 +53,7 @@ describe('components/common/Paging', () => {
 
     fireEvent.click(buttons[1]);
     expect(onChange).toBeCalledTimes(1);
-    expect(onChange.mock.calls[0][0]).toEqual(1);
+    expect(onChange).lastCalledWith(1);
   });
 
   it('should render last page', () => {
@@ -73,7 +73,7 @@ describe('components/common/Paging', () => {
 
     fireEvent.click(buttons[0]);
     expect(onChange).toBeCalledTimes(1);
-    expect(onChange.mock.calls[0][0]).toEqual(1);
+    expect(onChange).lastCalledWith(1);
   });
 
   it('should render inner page', () => {
@@ -94,7 +94,7 @@ describe('components/common/Paging', () => {
     fireEvent.click(buttons[0]);
     fireEvent.click(buttons[1]);
     expect(onChange).toBeCalledTimes(2);
-    expect(onChange.mock.calls[0][0]).toEqual(0);
-    expect(onChange.mock.calls[1][0]).toEqual(2);
+    expect(onChange).nthCalledWith(1, 0);
+    expect(onChange).nthCalledWith(2, 2);
   });
 });

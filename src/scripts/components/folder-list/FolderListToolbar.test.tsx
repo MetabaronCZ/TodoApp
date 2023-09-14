@@ -122,10 +122,12 @@ describe('components/folder-list/FolderListToolbar', () => {
       ),
     );
     expect(container).toMatchSnapshot();
-    expect(mockedDropdown).toBeCalledTimes(1);
 
-    const props = mockedDropdown.mock.calls[0][0];
-    expect(props.disabled).toEqual(true);
+    expect(mockedDropdown).toBeCalledTimes(1);
+    expect(mockedDropdown).lastCalledWith(
+      expect.objectContaining({ disabled: true }),
+      expect.anything(),
+    );
   });
 
   it('should be able to delete selected', () => {

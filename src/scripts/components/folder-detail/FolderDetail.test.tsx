@@ -37,9 +37,16 @@ describe('components/folder-detail/FolderDetail', () => {
     expect(tree.getByText(t('create'))).toBeInTheDocument();
 
     expect(fields).toBeCalledTimes(1);
-    expect(fields.mock.calls[0][0].loading).toEqual(false);
-    expect(fields.mock.calls[0][0].errors).toEqual({});
-    expect(fields.mock.calls[0][0].fields.title).toEqual('');
+    expect(fields).lastCalledWith(
+      expect.objectContaining({
+        loading: false,
+        errors: {},
+        fields: {
+          title: '',
+        },
+      }),
+      expect.anything(),
+    );
   });
 
   it('should render folder detail variant', () => {
@@ -53,9 +60,16 @@ describe('components/folder-detail/FolderDetail', () => {
     expect(tree.getByText(t('edit'))).toBeInTheDocument();
 
     expect(fields).toBeCalledTimes(1);
-    expect(fields.mock.calls[0][0].loading).toEqual(false);
-    expect(fields.mock.calls[0][0].errors).toEqual({});
-    expect(fields.mock.calls[0][0].fields.title).toEqual('Test folder');
+    expect(fields).lastCalledWith(
+      expect.objectContaining({
+        loading: false,
+        errors: {},
+        fields: {
+          title: 'Test folder',
+        },
+      }),
+      expect.anything(),
+    );
   });
 
   it('should render fetch error', () => {

@@ -49,7 +49,10 @@ describe('components/pages/HomePage', () => {
 
     render(getHomepage({ folder: 'TEST' }));
     expect(mockedFetch).not.toBeCalled();
+
     expect(mockedFilter).toBeCalledTimes(1);
-    expect(mockedFilter.mock.calls[0][0].folder).toEqual('TEST');
+    expect(mockedFilter).lastCalledWith(
+      expect.objectContaining({ folder: 'TEST' }),
+    );
   });
 });

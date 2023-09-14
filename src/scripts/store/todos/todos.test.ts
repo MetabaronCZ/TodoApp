@@ -170,8 +170,12 @@ describe('store/todos', () => {
 
       const response = await store.dispatch(filterTodos(filter));
       expect(api).toBeCalledTimes(1);
-      expect(api.mock.calls[0][0]?.query).toEqual(filter.query);
-      expect(api.mock.calls[0][0]?.folder).toEqual(filter.folder);
+      expect(api).lastCalledWith(
+        expect.objectContaining({
+          query: filter.query,
+          folder: filter.folder,
+        }),
+      );
       expect(response.payload).toEqual(undefined);
 
       state = store.getState();
@@ -200,7 +204,8 @@ describe('store/todos', () => {
 
       const response = await store.dispatch(sortTodos('DONE_1'));
       expect(api).toBeCalledTimes(1);
-      expect(api.mock.calls[0][0]?.sort).toEqual('DONE_1');
+      expect(api).lastCalledWith(expect.objectContaining({ sort: 'DONE_1' }));
+
       expect(response.payload).toEqual(undefined);
 
       state = store.getState();

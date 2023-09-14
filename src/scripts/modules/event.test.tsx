@@ -31,7 +31,7 @@ describe('modules/event', () => {
 
       fn(evt);
       expect(cb).toBeCalledTimes(1);
-      expect(cb.mock.calls[0][0]).toEqual(undefined);
+      expect(cb).lastCalledWith();
       expect(evt.defaultPrevented).toEqual(true);
     });
   });
@@ -47,7 +47,7 @@ describe('modules/event', () => {
 
       fn(evt);
       expect(cb).toBeCalledTimes(1);
-      expect(cb.mock.calls[0][0]).toEqual('test');
+      expect(cb).lastCalledWith('test');
     });
   });
 
@@ -62,7 +62,7 @@ describe('modules/event', () => {
 
       fn(evt);
       expect(cb).toBeCalledTimes(1);
-      expect(cb.mock.calls[0][0]).toEqual(true);
+      expect(cb).lastCalledWith(true);
 
       cleanup();
 
@@ -75,7 +75,7 @@ describe('modules/event', () => {
 
       fn(evt);
       expect(cb).toBeCalledTimes(1);
-      expect(cb.mock.calls[0][0]).toEqual(false);
+      expect(cb).lastCalledWith(false);
     });
   });
 
@@ -100,7 +100,7 @@ describe('modules/event', () => {
 
       fn(evt);
       expect(cb).toBeCalledTimes(1);
-      expect(cb.mock.calls[0][0]).toEqual(undefined);
+      expect(cb).lastCalledWith();
       expect(evt.defaultPrevented).toEqual(true);
     });
   });

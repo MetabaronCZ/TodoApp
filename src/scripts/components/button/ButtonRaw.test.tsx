@@ -51,6 +51,6 @@ describe('components/button/ButtonRaw', () => {
 
     fireEvent.click(tree.getByRole('button'));
     expect(onClick).toBeCalledTimes(1);
-    expect(onClick.mock.calls[0][0]).toEqual(undefined);
+    expect(onClick).lastCalledWith();
   });
 });

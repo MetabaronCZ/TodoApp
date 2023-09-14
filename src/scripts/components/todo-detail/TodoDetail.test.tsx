@@ -65,14 +65,19 @@ describe('components/todo-detail/TodoDetail', () => {
     expect(tree.getByText(t('create'))).toBeInTheDocument();
 
     expect(fields).toBeCalledTimes(1);
-    expect(fields.mock.calls[0][0].loading).toEqual(false);
-    expect(fields.mock.calls[0][0].errors).toEqual({});
-    expect(fields.mock.calls[0][0].fields).toEqual({
-      title: '',
-      description: '',
-      isDone: false,
-      folder: null,
-    });
+    expect(fields).lastCalledWith(
+      expect.objectContaining({
+        loading: false,
+        errors: {},
+        fields: {
+          title: '',
+          description: '',
+          isDone: false,
+          folder: null,
+        },
+      }),
+      expect.anything(),
+    );
   });
 
   it('should render todo detail variant', async () => {
@@ -86,14 +91,19 @@ describe('components/todo-detail/TodoDetail', () => {
     expect(tree.getByText(t('edit'))).toBeInTheDocument();
 
     expect(fields).toBeCalledTimes(1);
-    expect(fields.mock.calls[0][0].loading).toEqual(false);
-    expect(fields.mock.calls[0][0].errors).toEqual({});
-    expect(fields.mock.calls[0][0].fields).toEqual({
-      title: 'Edited todo',
-      description: '',
-      isDone: true,
-      folder: 'B',
-    });
+    expect(fields).lastCalledWith(
+      expect.objectContaining({
+        loading: false,
+        errors: {},
+        fields: {
+          title: 'Edited todo',
+          description: '',
+          isDone: true,
+          folder: 'B',
+        },
+      }),
+      expect.anything(),
+    );
   });
 
   it('should render fetch error', async () => {
@@ -118,12 +128,17 @@ describe('components/todo-detail/TodoDetail', () => {
     expect(tree.container).toMatchSnapshot();
 
     expect(fields).toBeCalledTimes(1);
-    expect(fields.mock.calls[0][0].fields).toEqual({
-      title: '',
-      description: '',
-      isDone: false,
-      folder: 'C',
-    });
+    expect(fields).lastCalledWith(
+      expect.objectContaining({
+        fields: {
+          title: '',
+          description: '',
+          isDone: false,
+          folder: 'C',
+        },
+      }),
+      expect.anything(),
+    );
   });
 
   it('should create todo', async () => {
@@ -163,7 +178,10 @@ describe('components/todo-detail/TodoDetail', () => {
     expect(description?.value).toEqual('');
 
     expect(dropdown).toBeCalled();
-    expect(dropdown.mock.calls[0][0].value).toEqual('');
+    expect(dropdown).lastCalledWith(
+      expect.objectContaining({ value: '' }),
+      expect.anything(),
+    );
 
     // trigger form submit (validation error)
     fireEvent.click(submitButton);
@@ -224,7 +242,10 @@ describe('components/todo-detail/TodoDetail', () => {
     expect(description?.value).toEqual('');
 
     expect(dropdown).toBeCalled();
-    expect(dropdown.mock.calls[0][0].value).toEqual('B');
+    expect(dropdown).lastCalledWith(
+      expect.objectContaining({ value: 'B' }),
+      expect.anything(),
+    );
 
     // set todo values
     act(() => {

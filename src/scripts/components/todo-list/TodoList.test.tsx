@@ -97,7 +97,10 @@ describe('components/todo-list/TodoList', () => {
     expect(tree.getByText(t('todoList.empty'))).toBeInTheDocument();
 
     expect(toolbar).toHaveBeenCalled();
-    expect(toolbar.mock.calls[0][0].disabled).toEqual(true);
+    expect(toolbar).lastCalledWith(
+      expect.objectContaining({ disabled: true }),
+      expect.anything(),
+    );
   });
 
   it('should be selectable', () => {
