@@ -176,7 +176,7 @@ describe('store/todos', () => {
           folder: filter.folder,
         }),
       );
-      expect(response.payload).toEqual(undefined);
+      expect(response.payload).toBeUndefined();
 
       state = store.getState();
       expect(state.todo.error).toEqual(null);
@@ -206,7 +206,7 @@ describe('store/todos', () => {
       expect(api).toBeCalledTimes(1);
       expect(api).lastCalledWith(expect.objectContaining({ sort: 'DONE_1' }));
 
-      expect(response.payload).toEqual(undefined);
+      expect(response.payload).toBeUndefined();
 
       state = store.getState();
       expect(state.todo.error).toEqual(null);
