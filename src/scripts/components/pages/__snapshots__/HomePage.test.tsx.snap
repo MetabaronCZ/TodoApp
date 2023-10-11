@@ -25,7 +25,7 @@ exports[`components/pages/HomePage should render correctly 1`] = `
   user-select: none;
 }
 
-.c29 {
+.c25 {
   display: block;
   width: 100%;
   border: none;
@@ -33,7 +33,41 @@ exports[`components/pages/HomePage should render correctly 1`] = `
   cursor: pointer;
 }
 
-.c30 {
+.c26 {
+  font-family: Open Sans,Arial,sans-serif;
+  color: #222;
+  font-size: 14px;
+  line-height: 20px;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: auto;
+  padding: 5px 10px;
+  background: #f0f0f0;
+}
+
+.c26:hover:not(:disabled) {
+  background-color: #e0e0e0;
+}
+
+.c26:focus {
+  outline: 1px dotted #222;
+  outline-offset: -1px;
+}
+
+.c26:disabled {
+  color: #c0c0c0;
+}
+
+.c34 {
   font-family: Open Sans,Arial,sans-serif;
   color: #222;
   font-size: 14px;
@@ -55,16 +89,16 @@ exports[`components/pages/HomePage should render correctly 1`] = `
   background: #f0f0f0;
 }
 
-.c30:hover:not(:disabled) {
+.c34:hover:not(:disabled) {
   background-color: #e0e0e0;
 }
 
-.c30:focus {
+.c34:focus {
   outline: 1px dotted #222;
   outline-offset: -1px;
 }
 
-.c30:disabled {
+.c34:disabled {
   color: #c0c0c0;
 }
 
@@ -208,7 +242,7 @@ exports[`components/pages/HomePage should render correctly 1`] = `
   gap: 10px;
 }
 
-.c34 {
+.c38 {
   font-family: inherit;
   font-size: inherit;
   line-height: inherit;
@@ -217,17 +251,17 @@ exports[`components/pages/HomePage should render correctly 1`] = `
   color: #22c;
 }
 
-.c34:hover {
+.c38:hover {
   -webkit-text-decoration: underline;
   text-decoration: underline;
 }
 
-.c34:focus {
+.c38:focus {
   outline: 1px dotted #22c;
   outline-offset: -1px;
 }
 
-.c33 {
+.c37 {
   font-family: Open Sans,Arial,sans-serif;
   color: #222;
   font-size: 14px;
@@ -334,14 +368,14 @@ exports[`components/pages/HomePage should render correctly 1`] = `
   margin: 0;
 }
 
-.c31 {
+.c35 {
   font-family: Open Sans,Arial,sans-serif;
   color: #222;
   font-size: 14px;
   line-height: 20px;
 }
 
-.c26 {
+.c31 {
   font-family: Open Sans,Arial,sans-serif;
   color: #222;
   font-size: 14px;
@@ -353,7 +387,7 @@ exports[`components/pages/HomePage should render correctly 1`] = `
   user-select: none;
 }
 
-.c23 {
+.c28 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -369,7 +403,7 @@ exports[`components/pages/HomePage should render correctly 1`] = `
   height: 30px;
 }
 
-.c24 {
+.c29 {
   font-family: Open Sans,Arial,sans-serif;
   color: #222;
   font-size: 14px;
@@ -403,7 +437,7 @@ exports[`components/pages/HomePage should render correctly 1`] = `
   cursor: pointer;
 }
 
-.c25 {
+.c30 {
   position: absolute;
   top: 0;
   left: 0;
@@ -413,7 +447,63 @@ exports[`components/pages/HomePage should render correctly 1`] = `
   outline: none;
 }
 
+.c23 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c24 {
+  font-family: Open Sans,Arial,sans-serif;
+  color: #222;
+  font-size: 14px;
+  line-height: 20px;
+  display: block;
+  width: 100%;
+  padding: 5px 10px;
+  background: #fff;
+  border: none;
+  outline: none;
+}
+
+.c24:hover:not(:disabled) {
+  background-color: #fcfcfc;
+}
+
+.c24:focus {
+  outline: 1px dotted #222;
+  outline-offset: -1px;
+}
+
+.c24:disabled {
+  color: #c0c0c0;
+}
+
 .c22 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c22 > *:first-child {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+}
+
+.c27 {
   position: -webkit-sticky;
   position: sticky;
   top: 0;
@@ -435,13 +525,13 @@ exports[`components/pages/HomePage should render correctly 1`] = `
   background: #f0f0f0;
 }
 
-.c27 {
+.c32 {
   -webkit-flex: 1;
   -ms-flex: 1;
   flex: 1;
 }
 
-.c28 {
+.c33 {
   position: relative;
   display: inline-block;
 }
@@ -459,7 +549,7 @@ exports[`components/pages/HomePage should render correctly 1`] = `
   margin-bottom: 1px;
 }
 
-.c32 {
+.c36 {
   padding-top: 10px;
 }
 
@@ -573,26 +663,63 @@ exports[`components/pages/HomePage should render correctly 1`] = `
               >
                 Úkoly
               </h1>
-              <div
+              <form
                 class="c22"
+              >
+                <div
+                  class="c23"
+                >
+                  <input
+                    class="c24"
+                    disabled=""
+                    maxlength="100"
+                    placeholder="Hledaný výraz..."
+                    type="text"
+                    value=""
+                  />
+                </div>
+                <button
+                  class="c25 c26"
+                  type="button"
+                >
+                  <span
+                    class="c15"
+                  >
+                    Hledat
+                  </span>
+                </button>
+                <button
+                  class="c25 c26"
+                  disabled=""
+                  type="button"
+                >
+                  <span
+                    class="c15"
+                  >
+                    Zrušit
+                  </span>
+                </button>
+              </form>
+              <div
+                class="c27"
               >
                 <div>
                   <div
-                    class="c23"
+                    class="c28"
                   >
                     <label
-                      class="c24"
+                      class="c29"
                       for="checkbox-2"
                     >
                       <input
-                        class="c25"
+                        class="c30"
                         disabled=""
                         id="checkbox-2"
                         type="checkbox"
                       />
                     </label>
                     <label
-                      class="c26"
+                      class="c31"
                       for="checkbox-2"
                     >
                       Vybrat vše
@@ -600,7 +727,7 @@ exports[`components/pages/HomePage should render correctly 1`] = `
                   </div>
                 </div>
                 <div
-                  class="c27"
+                  class="c32"
                 />
                 <div>
                   <a
@@ -621,10 +748,10 @@ exports[`components/pages/HomePage should render correctly 1`] = `
                 </div>
                 <div>
                   <div
-                    class="c28"
+                    class="c33"
                   >
                     <button
-                      class="c29 c30"
+                      class="c25 c34"
                       disabled=""
                       type="button"
                     >
@@ -644,7 +771,7 @@ exports[`components/pages/HomePage should render correctly 1`] = `
                 </div>
               </div>
               <p
-                class="c31 c32"
+                class="c35 c36"
               >
                 Nebyly nalezeny žádné úkoly.
               </p>
@@ -653,14 +780,14 @@ exports[`components/pages/HomePage should render correctly 1`] = `
         </div>
       </main>
       <footer
-        class="c33"
+        class="c37"
       >
         <div
           class=""
         >
           Copyright © 2023 MetabaronCZ (
           <a
-            class="c34"
+            class="c38"
             href="https://github.com/MetabaronCZ"
             target="_blank"
           >

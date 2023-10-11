@@ -8,6 +8,7 @@ import { ItemList } from 'components/common/ItemList';
 import { Paragraph } from 'components/common/Paragraph';
 import { TodoListItem } from 'components/todo-list/TodoListItem';
 import { UpdatedContent } from 'components/common/UpdatedContent';
+import { TodoListSearch } from 'components/todo-list/TodoListSearch';
 import { TodoListToolbar } from 'components/todo-list/TodoListToolbar';
 
 import { toVU } from 'modules/theme';
@@ -98,6 +99,7 @@ export const TodoList: React.FC = () => {
   return (
     <Container $loading={loading}>
       <StyledHeading>{t('page.home')}</StyledHeading>
+      <TodoListSearch />
 
       <TodoListToolbar
         sort={filter.sort}
@@ -107,6 +109,7 @@ export const TodoList: React.FC = () => {
         onSort={sortItems}
         onDelete={onDeleteAll}
       />
+
       {0 === items.length ? (
         <StyledParagraph>{t('todoList.empty')}</StyledParagraph>
       ) : (

@@ -18,9 +18,12 @@
   "selectAll": "Vybrat vše",
   "prev": "Předchozí",
   "next": "Další",
+  "cancel": "Zrušit",
   "todoList": {
     "deleteAllConfirm": "Opravdu chcete vybrané úkoly smazat?",
     "empty": "Nebyly nalezeny žádné úkoly.",
+    "search": "Hledat",
+    "query": "Hledaný výraz...",
     "sort": {
       "TITLE_ASC": "Abecedně (A-Z)",
       "TITLE_DESC": "Abecedně (Z-A)",

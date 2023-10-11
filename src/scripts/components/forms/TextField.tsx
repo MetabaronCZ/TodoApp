@@ -61,6 +61,7 @@ interface Props {
   readonly id?: string;
   readonly className?: string;
   readonly value?: string;
+  readonly placeholder?: string;
   readonly error?: string | null;
   readonly textarea?: boolean;
   readonly disabled?: boolean;
@@ -71,7 +72,8 @@ interface Props {
 export const TextField: React.FC<Props> = ({
   id,
   className,
-  value = '',
+  value,
+  placeholder,
   error = null,
   disabled = false,
   textarea = false,
@@ -82,6 +84,7 @@ export const TextField: React.FC<Props> = ({
     id,
     className,
     value,
+    placeholder,
     maxLength,
     disabled,
     $invalid: !!error,

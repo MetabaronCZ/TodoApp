@@ -28,8 +28,8 @@ export const apiTodos = {
         // filter by query string
         if (
           query &&
-          !item.title.includes(query) &&
-          !item.description.includes(query)
+          !item.title.toLowerCase().includes(query.toLowerCase()) &&
+          !item.description.toLowerCase().includes(query.toLowerCase())
         ) {
           return false;
         }
