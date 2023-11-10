@@ -1,9 +1,12 @@
-const path = require('path');
-const ESLintPlugin = require('eslint-webpack-plugin');
-const CopyWebpackPlugin = require('copy-webpack-plugin');
-const HtmlWebPackPlugin = require('html-webpack-plugin');
-const TerserWebpackPlugin = require('terser-webpack-plugin');
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+import { Configuration } from 'webpack';
+import 'webpack-dev-server';
+
+import path from 'path';
+import ESLintPlugin from 'eslint-webpack-plugin';
+import CopyWebpackPlugin from 'copy-webpack-plugin';
+import HtmlWebPackPlugin from 'html-webpack-plugin';
+import TerserWebpackPlugin from 'terser-webpack-plugin';
+import { CleanWebpackPlugin } from 'clean-webpack-plugin';
 
 const pathSrc = './src/scripts';
 const pathStatic = './src/static';
@@ -13,7 +16,7 @@ const pathBuild = path.resolve(__dirname, 'build');
 const pathPublic = '/scripts';
 const pathModules = './node_modules';
 
-module.exports = {
+const config: Configuration = {
   entry: {
     app: `${pathSrc}/index`,
   },
@@ -87,3 +90,5 @@ module.exports = {
     ignored: /node_modules/,
   },
 };
+
+export default config;
