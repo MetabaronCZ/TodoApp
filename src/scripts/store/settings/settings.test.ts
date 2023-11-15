@@ -1,10 +1,11 @@
 import { describe, expect, it, jest } from '@jest/globals';
 
-import { client } from 'modules/client';
+import { client } from 'client';
 import { SettingsData } from 'models/Settings';
 
 import { settingsSlice } from 'store/settings';
 import { fetchSettings, updateSettings } from 'store/settings/actions';
+
 import { mockStore } from 'test/store';
 
 const { setSettings } = settingsSlice.actions;

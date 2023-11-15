@@ -1,4 +1,4 @@
-import { client } from 'modules/client';
+import { client } from 'client';
 import { Folder, FolderData } from 'models/Folder';
 
 import { createAppAsyncThunk } from 'store/utils';

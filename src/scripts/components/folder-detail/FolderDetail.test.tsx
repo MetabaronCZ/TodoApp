@@ -8,8 +8,8 @@ import { describe, expect, it, jest } from '@jest/globals';
 import { FolderDetail } from 'components/folder-detail/FolderDetail';
 import * as FolderFields from 'components/folder-detail/FolderFields';
 
+import { client } from 'client';
 import { Folder } from 'models/Folder';
-import { client } from 'modules/client';
 
 import { mockStore } from 'test/store';
 import { withMockedProviders } from 'test/component';

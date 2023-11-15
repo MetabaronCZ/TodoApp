@@ -1,10 +1,10 @@
 import { Application } from 'express';
-import { object, number } from 'yup';
+import { number, object, ObjectSchema } from 'yup';
 
 import { mockedDb } from '../db';
 import { mockApiRequest } from '../utils';
 
-const settingsDataSchema = object({
+const settingsDataSchema: ObjectSchema<{ perPage?: number }> = object({
   perPage: number(),
 });
 
@@ -21,7 +21,8 @@ export const setApiSettingsEndpoints = (app: Application): void => {
     await mockApiRequest();
 
     try {
-      await settingsDataSchema.validate(data);
+      const parsed = JSON.parse(data);
+      await settingsDataSchema.validate(parsed);
 
       mockedDb.settings = {
         ...mockedDb.settings,

@@ -9,7 +9,6 @@ export interface Client {
     readonly getDetail: (id: string) => Promise<Todo | null>;
     readonly create: (data: TodoData) => Promise<Todo>;
     readonly edit: (id: string, data: Partial<TodoData>) => Promise<void>;
-    readonly move: (id: string, folder: string) => Promise<void>;
     readonly delete: (ids: string[]) => Promise<void>;
   };
   readonly folder: {

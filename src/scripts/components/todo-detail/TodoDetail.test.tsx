@@ -9,9 +9,9 @@ import * as Dropdown from 'components/forms/Dropdown';
 import * as TodoFields from 'components/todo-detail/TodoFields';
 import { TodoDetail } from 'components/todo-detail/TodoDetail';
 
+import { client } from 'client';
 import { Todo } from 'models/Todo';
 import { Folder } from 'models/Folder';
-import { client } from 'modules/client';
 import { todoFoldersSlice } from 'store/folders';
 import { filterTodos } from 'store/todos/actions';
 

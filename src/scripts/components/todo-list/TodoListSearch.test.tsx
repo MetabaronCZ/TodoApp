@@ -7,10 +7,10 @@ import { describe, expect, it, jest } from '@jest/globals';
 
 import { TodoListSearch } from 'components/todo-list/TodoListSearch';
 
+import { client } from 'client';
+
 import { mockStore } from 'test/store';
 import { withMockedProviders } from 'test/component';
-
-import { client } from 'modules/client';
 
 const getTodoListSearch = (): JSX.Element => {
   const store = mockStore();

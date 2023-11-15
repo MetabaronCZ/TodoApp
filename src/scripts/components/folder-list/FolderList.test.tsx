@@ -9,8 +9,8 @@ import { FolderList } from 'components/folder-list/FolderList';
 import * as FolderListItem from 'components/folder-list/FolderListItem';
 import * as FolderListToolbar from 'components/folder-list/FolderListToolbar';
 
+import { client } from 'client';
 import { Folder } from 'models/Folder';
-import { client } from 'modules/client';
 import { todoFoldersSlice } from 'store/folders';
 
 import { mockStore } from 'test/store';

@@ -1,7 +1,6 @@
 import { describe, expect, it, jest } from '@jest/globals';
 
-import { mockStore } from 'test/store';
-import { client } from 'modules/client';
+import { client } from 'client';
 import { Folder, FolderData } from 'models/Folder';
 
 import { todoFoldersSlice } from 'store/folders';
@@ -11,6 +10,8 @@ import {
   editFolder,
   fetchFolders,
 } from 'store/folders/actions';
+
+import { mockStore } from 'test/store';
 
 const { setFolders } = todoFoldersSlice.actions;
 const errorMessage = 'Mocked error!';

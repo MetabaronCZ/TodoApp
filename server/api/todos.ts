@@ -13,18 +13,18 @@ import {
 } from '../utils';
 
 const createTodoDataSchema = object({
-  title: string().required(),
-  description: string().required(),
-  folder: string().nullable().required(),
-  isDone: boolean().required(),
-}).required();
+  title: string().defined(),
+  description: string().defined(),
+  folder: string().nullable().defined(),
+  isDone: boolean().defined(),
+});
 
 const editTodoDataSchema = object({
   title: string(),
   description: string(),
   folder: string().nullable(),
   isDone: boolean(),
-}).required();
+});
 
 export const setApiTodoEndpoints = (app: Application): void => {
   // get todo list
@@ -34,7 +34,7 @@ export const setApiTodoEndpoints = (app: Application): void => {
     // parse params
     const perPage = mockParseInteger(req.query.perPage) ?? 20;
     const page = mockParseInteger(req.query.page) ?? 0;
-    const folder = mockParseParam(req.query.folder);
+    const folder = mockParseParam(req.query.folder) || null;
     const query = mockParseParam(req.query.query);
     const sort = mockParseParam(req.query.sort);
 
