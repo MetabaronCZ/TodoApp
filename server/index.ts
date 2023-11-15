@@ -6,6 +6,8 @@ import { setApiFolderEndpoints } from './api/folders';
 import { setApiSettingsEndpoints } from './api/settings';
 
 const app = express();
+app.use(express.json());
+
 const port = process.env.PORT || 3001;
 
 setApiTodoEndpoints(app);

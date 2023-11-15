@@ -1,11 +1,14 @@
 import { Application } from 'express';
-import { number, object, ObjectSchema } from 'yup';
+import { mixed, object, ObjectSchema } from 'yup';
 
 import { mockedDb } from '../db';
 import { mockApiRequest } from '../utils';
 
-const settingsDataSchema: ObjectSchema<{ perPage?: number }> = object({
-  perPage: number(),
+const perPages = [20, 30, 50] as const;
+type TodoPerPage = (typeof perPages)[number];
+
+const settingsDataSchema: ObjectSchema<{ perPage?: TodoPerPage }> = object({
+  perPage: mixed<TodoPerPage>().oneOf(perPages),
 });
 
 export const setApiSettingsEndpoints = (app: Application): void => {
@@ -21,13 +24,8 @@ export const setApiSettingsEndpoints = (app: Application): void => {
     await mockApiRequest();
 
     try {
-      const parsed = JSON.parse(data);
-      await settingsDataSchema.validate(parsed);
-
-      mockedDb.settings = {
-        ...mockedDb.settings,
-        ...data,
-      };
+      const validated = await settingsDataSchema.validate(data);
+      mockedDb.settings = { ...mockedDb.settings, ...validated };
       res.json(null);
     } catch (error) {
       res.status(500).json({ error });

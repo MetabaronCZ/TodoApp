@@ -3,6 +3,7 @@ import { ObjectSchema, array, object, string } from 'yup';
 
 import { Client } from 'models/Client';
 import { Folder } from 'models/Folder';
+import { handleClientRequest } from 'client/utils';
 
 interface FetchFoldersResult {
   readonly data: Folder[];
@@ -26,20 +27,31 @@ const folderCreateSchema: ObjectSchema<CreateFolderResult> = object({
 });
 
 export const folderClient: Client['folder'] = {
-  get: async () => {
-    const response = await axios.get<FetchFoldersResult>('/api/folder');
-    const validated = await folderFetchSchema.validate(response.data);
-    return validated.data;
+  get: () => {
+    return handleClientRequest(async () => {
+      const response = await axios.get<FetchFoldersResult>('/api/folder');
+      const validated = await folderFetchSchema.validate(response.data);
+      return validated.data;
+    });
   },
-  create: async (data) => {
-    const response = await axios.post<CreateFolderResult>('/api/folder', data);
-    const validated = await folderCreateSchema.validate(response.data);
-    return validated.data;
+  create: (data) => {
+    return handleClientRequest(async () => {
+      const response = await axios.post<CreateFolderResult>(
+        '/api/folder',
+        data,
+      );
+      const validated = await folderCreateSchema.validate(response.data);
+      return validated.data;
+    });
   },
-  edit: async (data) => {
-    await axios.patch('/api/folder', data);
+  edit: (data) => {
+    return handleClientRequest(async () => {
+      await axios.patch('/api/folder', data);
+    });
   },
-  delete: async (ids) => {
-    await axios.delete(`/api/folder?ids=${ids.join('|')}`);
+  delete: (ids) => {
+    return handleClientRequest(async () => {
+      await axios.delete(`/api/folder?ids=${ids.join('|')}`);
+    });
   },
 };

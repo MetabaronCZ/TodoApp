@@ -1,5 +1,5 @@
 import { Application } from 'express';
-import { InferType, boolean, object, string } from 'yup';
+import { boolean, object, string } from 'yup';
 
 import { Todo } from 'models/Todo';
 
@@ -102,11 +102,10 @@ export const setApiTodoEndpoints = (app: Application): void => {
     await mockApiRequest();
 
     try {
-      await createTodoDataSchema.validate(data);
-      const todoData = data as InferType<typeof createTodoDataSchema>;
+      const validated = await createTodoDataSchema.validate(data);
 
       const todo: Todo = {
-        ...todoData,
+        ...validated,
         id: mockCreatedId('TODO'),
         created: Date.now(),
       };
@@ -124,11 +123,10 @@ export const setApiTodoEndpoints = (app: Application): void => {
     await mockApiRequest();
 
     try {
-      await editTodoDataSchema.validate(data);
-      const todoData = data as InferType<typeof editTodoDataSchema>;
+      const validated = await editTodoDataSchema.validate(data);
 
       mockedDb.todos = mockedDb.todos.map((item) => {
-        return id === item.id ? { ...item, ...todoData } : item;
+        return id === item.id ? { ...item, ...validated } : item;
       });
 
       res.json(null);

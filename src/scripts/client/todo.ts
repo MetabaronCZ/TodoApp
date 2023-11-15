@@ -3,6 +3,7 @@ import { ObjectSchema, array, boolean, number, object, string } from 'yup';
 
 import { Todo } from 'models/Todo';
 import { Client } from 'models/Client';
+import { handleClientRequest } from 'client/utils';
 
 interface FetchTodosResult {
   readonly data: {
@@ -43,27 +44,39 @@ const todoCreateSchema: ObjectSchema<CreateTodoResult> = object({
 });
 
 export const todoClient: Client['todo'] = {
-  get: async (data) => {
-    const response = await axios.get<FetchTodosResult>('/api/todo', {
-      params: data,
+  get: (data) => {
+    return handleClientRequest(async () => {
+      const response = await axios.get<FetchTodosResult>('/api/todo', {
+        params: data,
+      });
+      const validated = await todoFetchSchema.validate(response.data);
+      return validated.data;
     });
-    const validated = await todoFetchSchema.validate(response.data);
-    return validated.data;
   },
-  getDetail: async (id) => {
-    const response = await axios.get<FetchTodoDetailResult>(`/api/todo/${id}`);
-    const validated = await todoDetailSchema.validate(response.data);
-    return validated.data;
+  getDetail: (id) => {
+    return handleClientRequest(async () => {
+      const response = await axios.get<FetchTodoDetailResult>(
+        `/api/todo/${id}`,
+      );
+      const validated = await todoDetailSchema.validate(response.data);
+      return validated.data;
+    });
   },
-  create: async (data) => {
-    const response = await axios.post<CreateTodoResult>('/api/todo', data);
-    const validated = await todoCreateSchema.validate(response.data);
-    return validated.data;
+  create: (data) => {
+    return handleClientRequest(async () => {
+      const response = await axios.post<CreateTodoResult>('/api/todo', data);
+      const validated = await todoCreateSchema.validate(response.data);
+      return validated.data;
+    });
   },
-  edit: async (data) => {
-    await axios.patch('/api/todo', data);
+  edit: (data) => {
+    return handleClientRequest(async () => {
+      await axios.patch('/api/todo', data);
+    });
   },
-  delete: async (ids) => {
-    await axios.delete(`/api/todo?ids=${ids.join('|')}`);
+  delete: (ids) => {
+    return handleClientRequest(async () => {
+      await axios.delete(`/api/todo?ids=${ids.join('|')}`);
+    });
   },
 };
