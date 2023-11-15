@@ -1,5 +1,5 @@
 import { Application } from 'express';
-import { InferType, object, string } from 'yup';
+import { object, string } from 'yup';
 
 import { Folder } from 'models/Folder';
 
@@ -27,11 +27,10 @@ export const setApiFolderEndpoints = (app: Application): void => {
     await mockApiRequest();
 
     try {
-      await createFolderDataSchema.validate(data);
-      const folderData = data as InferType<typeof createFolderDataSchema>;
+      const validated = await createFolderDataSchema.validate(data);
 
       const folder: Folder = {
-        ...folderData,
+        ...validated,
         id: mockCreatedId('FOLDER'),
       };
       mockedDb.folders = [...mockedDb.folders, folder];
@@ -48,11 +47,10 @@ export const setApiFolderEndpoints = (app: Application): void => {
     await mockApiRequest();
 
     try {
-      await editFolderDataSchema.validate(data);
-      const folderData = data as InferType<typeof editFolderDataSchema>;
+      const validated = await editFolderDataSchema.validate(data);
 
       mockedDb.folders = mockedDb.folders.map((item) => {
-        return id === item.id ? { ...item, ...folderData } : item;
+        return id === item.id ? { ...item, ...validated } : item;
       });
 
       res.json(null);
