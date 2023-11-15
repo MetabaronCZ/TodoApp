@@ -17,7 +17,7 @@ describe('hooks/useForm()', () => {
     expect(errors.test).toBeUndefined();
   });
 
-  it('should change field value', () => {
+  it('should change field value', async () => {
     const { result } = renderHook(() => {
       return useForm({
         initialValues: {
@@ -34,7 +34,7 @@ describe('hooks/useForm()', () => {
     expect(errors.y).toBeUndefined();
 
     // trigger value change
-    act(() => setValue('x', 10));
+    await act(() => setValue('x', 10));
 
     fields = result.current.fields;
     errors = result.current.errors;
@@ -44,7 +44,7 @@ describe('hooks/useForm()', () => {
     expect(errors.y).toBeUndefined();
   });
 
-  it('should validate field on change', () => {
+  it('should validate field on change', async () => {
     const validationXFn = jest.fn((value: number) => value > 0);
     const validationYFn = jest.fn((value: number) => value > 0);
 
@@ -70,7 +70,7 @@ describe('hooks/useForm()', () => {
     expect(validationYFn).not.toBeCalled();
 
     // trigger value change
-    act(() => setValue('x', -1));
+    await act(() => setValue('x', -1));
     fields = result.current.fields;
     errors = result.current.errors;
     expect(fields.x).toEqual(-1);
@@ -82,7 +82,7 @@ describe('hooks/useForm()', () => {
     expect(validationYFn).not.toBeCalled();
 
     // correct invalid value
-    act(() => setValue('x', 100));
+    await act(() => setValue('x', 100));
     fields = result.current.fields;
     errors = result.current.errors;
     expect(fields.x).toEqual(100);
@@ -91,7 +91,7 @@ describe('hooks/useForm()', () => {
     expect(errors.y).toBeUndefined();
   });
 
-  it('should submit fields', () => {
+  it('should submit fields', async () => {
     const validationXFn = jest.fn((value: number) => value > 0);
     const validationYFn = jest.fn((value: number) => value > 0);
     const onSubmit = jest.fn();
@@ -114,7 +114,7 @@ describe('hooks/useForm()', () => {
     expect(onSubmit).not.toBeCalled();
 
     // submit data
-    act(() => result.current.submit());
+    await act(() => result.current.submit());
 
     const { fields, errors } = result.current;
     expect(fields.x).toEqual(1);
@@ -131,7 +131,7 @@ describe('hooks/useForm()', () => {
     });
   });
 
-  it('should not submit on validation error', () => {
+  it('should not submit on validation error', async () => {
     const validationXFn = jest.fn((value: number) => value > 0);
     const validationYFn = jest.fn((value: number) => value > 0);
     const onSubmit = jest.fn();
@@ -154,7 +154,7 @@ describe('hooks/useForm()', () => {
     expect(onSubmit).not.toBeCalled();
 
     // submit data
-    act(() => result.current.submit());
+    await act(() => result.current.submit());
 
     let { fields, errors } = result.current;
     expect(fields.x).toEqual(1);
@@ -167,8 +167,8 @@ describe('hooks/useForm()', () => {
     expect(onSubmit).not.toBeCalled();
 
     // correct invalid data + submit again
-    act(() => result.current.setValue('y', 2));
-    act(() => result.current.submit());
+    await act(() => result.current.setValue('y', 2));
+    await act(() => result.current.submit());
 
     fields = result.current.fields;
     errors = result.current.errors;
@@ -184,7 +184,7 @@ describe('hooks/useForm()', () => {
     });
   });
 
-  it('should auto-submit on field change', () => {
+  it('should auto-submit on field change', async () => {
     const onSubmit = jest.fn();
 
     const { result } = renderHook(() => {
@@ -199,7 +199,7 @@ describe('hooks/useForm()', () => {
     expect(onSubmit).not.toBeCalled();
 
     // change field value
-    act(() => result.current.setValue('x', 10));
+    await act(() => result.current.setValue('x', 10));
     expect(onSubmit).toBeCalledTimes(1);
     expect(onSubmit).lastCalledWith({ x: 10 });
   });

@@ -79,7 +79,7 @@ describe('components/folder-list/FolderList', () => {
     );
   });
 
-  it('should be selectable', () => {
+  it('should be selectable', async () => {
     const listItem = jest.spyOn(FolderListItem, 'FolderListItem');
     const toolbar = jest.spyOn(FolderListToolbar, 'FolderListToolbar');
 
@@ -97,13 +97,13 @@ describe('components/folder-list/FolderList', () => {
     }
     toolbar.mockClear();
 
-    const testSelectItem = (
+    const testSelectItem = async (
       index: 0 | 1 | 2,
       shouldSelect: boolean,
       expectation: [boolean, boolean, boolean],
       selectedAll: boolean,
-    ): void => {
-      act(() => items[index].onSelect(shouldSelect));
+    ): Promise<void> => {
+      await act(() => items[index].onSelect(shouldSelect));
 
       items = getItemsProps(listItem);
       expect(items[0].selected).toEqual(expectation[0]);
@@ -119,12 +119,12 @@ describe('components/folder-list/FolderList', () => {
       toolbar.mockClear();
     };
 
-    testSelectItem(1, true, [false, true, false], true); // select 2nd item
-    testSelectItem(0, true, [true, true, false], true); // select 1st item
-    testSelectItem(1, false, [true, false, false], true); // deselect 2nd item
+    await testSelectItem(1, true, [false, true, false], true); // select 2nd item
+    await testSelectItem(0, true, [true, true, false], true); // select 1st item
+    await testSelectItem(1, false, [true, false, false], true); // deselect 2nd item
   });
 
-  it('should be able to un/select-all', () => {
+  it('should be able to un/select-all', async () => {
     const listItem = jest.spyOn(FolderListItem, 'FolderListItem');
     const toolbar = jest.spyOn(FolderListToolbar, 'FolderListToolbar');
 
@@ -138,7 +138,7 @@ describe('components/folder-list/FolderList', () => {
     expect(toolbar).toHaveBeenCalled();
 
     // trigger select all
-    act(() => {
+    await act(() => {
       if (toolbar.mock.lastCall) {
         toolbar.mock.lastCall[0].onSelect(true);
       }
@@ -150,7 +150,7 @@ describe('components/folder-list/FolderList', () => {
     expect(items[2].selected).toEqual(true);
 
     // trigger deselect all
-    act(() => {
+    await act(() => {
       if (toolbar.mock.lastCall) {
         toolbar.mock.lastCall[0].onSelect(false);
       }
@@ -162,7 +162,7 @@ describe('components/folder-list/FolderList', () => {
     expect(items[2].selected).toEqual(false);
   });
 
-  it('should be sortable', () => {
+  it('should be sortable', async () => {
     const listItem = jest.spyOn(FolderListItem, 'FolderListItem');
     const toolbar = jest.spyOn(FolderListToolbar, 'FolderListToolbar');
 
@@ -179,7 +179,7 @@ describe('components/folder-list/FolderList', () => {
     expect(items[2].item.id).toEqual('C');
 
     // trigger folder sort
-    act(() => {
+    await act(() => {
       if (toolbar.mock.lastCall) {
         toolbar.mock.lastCall[0].onSort('TITLE_DESC');
       }
@@ -195,7 +195,7 @@ describe('components/folder-list/FolderList', () => {
     expect(items[2].item.id).toEqual('A');
   });
 
-  it('should be able to delete selected', () => {
+  it('should be able to delete selected', async () => {
     const listItem = jest.spyOn(FolderListItem, 'FolderListItem');
     const toolbar = jest.spyOn(FolderListToolbar, 'FolderListToolbar');
 
@@ -211,7 +211,7 @@ describe('components/folder-list/FolderList', () => {
     let items = getItemsProps(listItem);
 
     // select first two items
-    act(() => {
+    await act(() => {
       items[0].onSelect(true);
       items[1].onSelect(true);
     });
@@ -224,7 +224,7 @@ describe('components/folder-list/FolderList', () => {
     expect(toolbar).toHaveBeenCalled();
 
     // trigger toolbar onDelete
-    act(() => {
+    await act(() => {
       if (toolbar.mock.lastCall) {
         toolbar.mock.lastCall[0].onDelete();
       }

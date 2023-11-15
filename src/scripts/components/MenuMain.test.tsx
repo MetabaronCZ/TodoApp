@@ -1,8 +1,10 @@
+import axios from 'axios';
 import React from 'react';
 import { Provider } from 'react-redux';
 
+import MockAdapter from 'axios-mock-adapter';
 import { render } from '@testing-library/react';
-import { describe, expect, it, jest } from '@jest/globals';
+import { beforeEach, describe, expect, it, jest } from '@jest/globals';
 
 import * as Menu from 'components/common/Menu';
 import { MenuMain } from 'components/MenuMain';
@@ -15,6 +17,9 @@ import { todoFoldersSlice } from 'store/folders';
 import { filterTodos } from 'store/todos/actions';
 
 const { setFolders } = todoFoldersSlice.actions;
+
+const mock = new MockAdapter(axios, { onNoMatch: 'throwException' });
+beforeEach(() => mock.reset());
 
 describe('components/MenuMain', () => {
   it('should render correctly', () => {
@@ -64,6 +69,10 @@ describe('components/MenuMain', () => {
     ];
     const mockedMenu = jest.spyOn(Menu, 'Menu');
     expect(mockedMenu).toBeCalledTimes(0);
+
+    mock.onGet('/api/todo').reply(200, {
+      data: { items: [], count: 0 },
+    });
 
     const store = mockStore();
     store.dispatch(setFolders(testData));
