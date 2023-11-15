@@ -1,4 +1,4 @@
-import { client } from 'modules/client';
+import { client } from 'client';
 import { Todo, TodoData } from 'models/Todo';
 import {
   FetchTodosResponse,

@@ -7,9 +7,10 @@ import { describe, expect, it, jest } from '@jest/globals';
 import { Settings } from 'components/Settings';
 import * as Dropdown from 'components/forms/Dropdown';
 
-import { mockStore } from 'test/store';
-import { client } from 'modules/client';
+import { client } from 'client';
 import { perPages } from 'models/Settings';
+
+import { mockStore } from 'test/store';
 import { withMockedProviders } from 'test/component';
 
 const getSettings = (): JSX.Element => {

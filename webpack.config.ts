@@ -38,6 +38,12 @@ const config: Configuration = {
       writeToDisk: true,
     },
     historyApiFallback: true,
+    proxy: {
+      '/api': {
+        target: 'http://localhost:3001',
+        pathRewrite: { '^/api': '' },
+      },
+    },
   },
   module: {
     rules: [

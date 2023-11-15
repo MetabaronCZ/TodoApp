@@ -7,12 +7,12 @@ import { mockedDb } from '../db';
 import { mockApiRequest, mockCreatedId, mockParseParamArray } from '../utils';
 
 const createFolderDataSchema = object({
-  title: string().required(),
-}).required();
+  title: string().defined(),
+});
 
 const editFolderDataSchema = object({
   title: string(),
-}).required();
+});
 
 export const setApiFolderEndpoints = (app: Application): void => {
   // get folder list

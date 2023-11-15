@@ -1,4 +1,4 @@
-import { client } from 'modules/client';
+import { client } from 'client';
 import { SettingsData } from 'models/Settings';
 
 import { createAppAsyncThunk } from 'store/utils';

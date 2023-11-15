@@ -9,9 +9,10 @@ import { Loader } from 'components/common/Loader';
 import { TodoDetail } from 'components/todo-detail/TodoDetail';
 import { TodoDetailPage } from 'components/pages/TodoDetailPage';
 
+import { client } from 'client';
 import { Todo } from 'models/Todo';
+
 import { mockStore } from 'test/store';
-import { client } from 'modules/client';
 import { withMockedProviders } from 'test/component';
 
 jest.mock('components/common/Loader');

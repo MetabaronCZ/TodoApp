@@ -7,8 +7,9 @@ import { describe, expect, it, jest } from '@jest/globals';
 import * as Loader from 'components/common/Loader';
 import { Initialization } from 'components/Initialization';
 
+import { client } from 'client';
+
 import { mockStore } from 'test/store';
-import { client } from 'modules/client';
 import { withMockedProviders } from 'test/component';
 
 const renderInitialization = (children?: React.ReactNode): JSX.Element => {

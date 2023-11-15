@@ -9,8 +9,8 @@ import { TodoList } from 'components/todo-list/TodoList';
 import * as TodoListItem from 'components/todo-list/TodoListItem';
 import * as TodoListToolbar from 'components/todo-list/TodoListToolbar';
 
+import { client } from 'client';
 import { Todo } from 'models/Todo';
-import { client } from 'modules/client';
 import { todoListSlice } from 'store/todos';
 
 import { mockStore } from 'test/store';

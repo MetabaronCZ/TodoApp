@@ -1,7 +1,6 @@
 import { describe, expect, it, jest } from '@jest/globals';
 
-import { mockStore } from 'test/store';
-import { client } from 'modules/client';
+import { client } from 'client';
 import { Todo, TodoData } from 'models/Todo';
 import { FetchTodosResponse } from 'models/Todos';
 
@@ -17,6 +16,8 @@ import {
   filterTodos,
   sortTodos,
 } from 'store/todos/actions';
+
+import { mockStore } from 'test/store';
 
 const { setTodos } = todoListSlice.actions;
 const errorMessage = 'Mocked error!';
