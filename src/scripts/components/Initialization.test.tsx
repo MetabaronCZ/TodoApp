@@ -1,7 +1,7 @@
 import React from 'react';
 import { Provider } from 'react-redux';
 
-import { render } from '@testing-library/react';
+import { act, render } from '@testing-library/react';
 import { describe, expect, it, jest } from '@jest/globals';
 
 import * as Loader from 'components/common/Loader';
@@ -24,12 +24,14 @@ const renderInitialization = (children?: React.ReactNode): JSX.Element => {
 
 describe('components/Initialization', () => {
   it('should render correctly', async () => {
-    const tree = render(renderInitialization(<div>CONTENT</div>));
+    const tree = await act(() => {
+      return render(renderInitialization(<div>CONTENT</div>));
+    });
     await tree.findByText('CONTENT');
     expect(tree.container).toMatchSnapshot();
   });
 
-  it('should call initial endpoints', () => {
+  it('should call initial endpoints', async () => {
     const mockedLoader = jest.spyOn(Loader, 'Loader');
     const mockedFetchFolders = jest.spyOn(client.folder, 'get');
     const mockedFetchSettings = jest.spyOn(client.settings, 'get');
@@ -38,7 +40,7 @@ describe('components/Initialization', () => {
     expect(mockedFetchFolders).toBeCalledTimes(0);
     expect(mockedFetchSettings).toBeCalledTimes(0);
 
-    render(renderInitialization());
+    await act(() => render(renderInitialization()));
     expect(mockedLoader).toBeCalledTimes(1);
     expect(mockedFetchFolders).toBeCalledTimes(1);
     expect(mockedFetchSettings).toBeCalledTimes(1);

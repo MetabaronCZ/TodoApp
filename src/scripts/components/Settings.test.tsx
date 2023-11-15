@@ -46,7 +46,7 @@ describe('components/Settings', () => {
     render(getSettings());
     expect(mockedDropdown).toBeCalledTimes(1);
 
-    act(() => {
+    await act(() => {
       const props = mockedDropdown.mock.calls[0][0];
       props.onSelect(testPerPage);
     });

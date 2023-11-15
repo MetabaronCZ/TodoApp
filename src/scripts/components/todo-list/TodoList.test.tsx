@@ -100,7 +100,7 @@ describe('components/todo-list/TodoList', () => {
     );
   });
 
-  it('should be selectable', () => {
+  it('should be selectable', async () => {
     const listItem = jest.spyOn(TodoListItem, 'TodoListItem');
     const toolbar = jest.spyOn(TodoListToolbar, 'TodoListToolbar');
 
@@ -118,13 +118,13 @@ describe('components/todo-list/TodoList', () => {
     }
     toolbar.mockClear();
 
-    const testSelectItem = (
+    const testSelectItem = async (
       index: 0 | 1 | 2,
       shouldSelect: boolean,
       expectation: [boolean, boolean, boolean],
       selectedAll: boolean,
-    ): void => {
-      act(() => items[index].onSelect(shouldSelect));
+    ): Promise<void> => {
+      await act(() => items[index].onSelect(shouldSelect));
 
       items = getItemsProps(listItem);
       expect(items[0].selected).toEqual(expectation[0]);
@@ -140,12 +140,12 @@ describe('components/todo-list/TodoList', () => {
       toolbar.mockClear();
     };
 
-    testSelectItem(1, true, [false, true, false], true); // select 2nd item
-    testSelectItem(0, true, [true, true, false], true); // select 1st item
-    testSelectItem(1, false, [true, false, false], true); // deselect 2nd item
+    await testSelectItem(1, true, [false, true, false], true); // select 2nd item
+    await testSelectItem(0, true, [true, true, false], true); // select 1st item
+    await testSelectItem(1, false, [true, false, false], true); // deselect 2nd item
   });
 
-  it('should be able to un/select-all', () => {
+  it('should be able to un/select-all', async () => {
     const listItem = jest.spyOn(TodoListItem, 'TodoListItem');
     const toolbar = jest.spyOn(TodoListToolbar, 'TodoListToolbar');
 
@@ -159,7 +159,7 @@ describe('components/todo-list/TodoList', () => {
     expect(toolbar).toHaveBeenCalled();
 
     // trigger select all
-    act(() => {
+    await act(() => {
       if (toolbar.mock.lastCall) {
         toolbar.mock.lastCall[0].onSelect(true);
       }
@@ -171,7 +171,7 @@ describe('components/todo-list/TodoList', () => {
     expect(items[2].selected).toEqual(true);
 
     // trigger deselect all
-    act(() => {
+    await act(() => {
       if (toolbar.mock.lastCall) {
         toolbar.mock.lastCall[0].onSelect(false);
       }
@@ -183,7 +183,7 @@ describe('components/todo-list/TodoList', () => {
     expect(items[2].selected).toEqual(false);
   });
 
-  it('should be sortable', () => {
+  it('should be sortable', async () => {
     const toolbar = jest.spyOn(TodoListToolbar, 'TodoListToolbar');
 
     const mockedSortTodos = jest.spyOn(client.todo, 'get');
@@ -197,7 +197,7 @@ describe('components/todo-list/TodoList', () => {
     }
 
     // trigger todo sort
-    act(() => {
+    await act(() => {
       if (toolbar.mock.lastCall) {
         toolbar.mock.lastCall[0].onSort('TITLE_DESC');
       }
@@ -210,7 +210,7 @@ describe('components/todo-list/TodoList', () => {
     }
   });
 
-  it('should be able to delete selected', () => {
+  it('should be able to delete selected', async () => {
     const listItem = jest.spyOn(TodoListItem, 'TodoListItem');
     const toolbar = jest.spyOn(TodoListToolbar, 'TodoListToolbar');
 
@@ -226,7 +226,7 @@ describe('components/todo-list/TodoList', () => {
     let items = getItemsProps(listItem);
 
     // select first two items
-    act(() => {
+    await act(() => {
       items[0].onSelect(true);
       items[1].onSelect(true);
     });
@@ -239,7 +239,7 @@ describe('components/todo-list/TodoList', () => {
     expect(toolbar).toHaveBeenCalled();
 
     // trigger toolbar onDelete
-    act(() => {
+    await act(() => {
       if (toolbar.mock.lastCall) {
         toolbar.mock.lastCall[0].onDelete();
       }

@@ -1,3 +1,4 @@
+import axios from 'axios';
 import { ObjectSchema, mixed, object } from 'yup';
 
 import { Client } from 'models/Client';
@@ -17,17 +18,11 @@ const fetchSettingsSchema: ObjectSchema<FetchSettingsResult> = object({
 
 export const settingsClient: Client['settings'] = {
   get: async () => {
-    const response = await window
-      .fetch('/api/settings')
-      .then((result) => result.json());
-
-    const validated = await fetchSettingsSchema.validate(response);
+    const response = await axios.get<FetchSettingsResult>('/api/settings');
+    const validated = await fetchSettingsSchema.validate(response.data);
     return validated.data;
   },
   set: async (data) => {
-    await window.fetch('/api/settings', {
-      method: 'POST',
-      body: JSON.stringify(data),
-    });
+    await axios.post('/api/settings', data);
   },
 };

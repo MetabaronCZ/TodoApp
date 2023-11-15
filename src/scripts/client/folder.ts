@@ -1,3 +1,4 @@
+import axios from 'axios';
 import { ObjectSchema, array, object, string } from 'yup';
 
 import { Client } from 'models/Client';
@@ -26,34 +27,19 @@ const folderCreateSchema: ObjectSchema<CreateFolderResult> = object({
 
 export const folderClient: Client['folder'] = {
   get: async () => {
-    const response = await window
-      .fetch('/api/folder')
-      .then((result) => result.json());
-
-    const validated = await folderFetchSchema.validate(response);
+    const response = await axios.get<FetchFoldersResult>('/api/folder');
+    const validated = await folderFetchSchema.validate(response.data);
     return validated.data;
   },
   create: async (data) => {
-    const response = await window
-      .fetch('/api/folder', {
-        method: 'POST',
-        body: JSON.stringify(data),
-      })
-      .then((result) => result.json());
-
-    const validated = await folderCreateSchema.validate(response);
+    const response = await axios.post<CreateFolderResult>('/api/folder', data);
+    const validated = await folderCreateSchema.validate(response.data);
     return validated.data;
   },
   edit: async (data) => {
-    await window.fetch('/api/folder', {
-      method: 'PATCH',
-      body: JSON.stringify(data),
-    });
+    await axios.patch('/api/folder', data);
   },
   delete: async (ids) => {
-    await window.fetch('/api/folder', {
-      method: 'DELETE',
-      body: ids.join('|'),
-    });
+    await axios.delete(`/api/folder?ids=${ids.join('|')}`);
   },
 };
