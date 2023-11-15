@@ -1,11 +1,9 @@
-import axios from 'axios';
 import React from 'react';
 import { t } from 'i18next';
 import { Provider } from 'react-redux';
 
-import MockAdapter from 'axios-mock-adapter';
 import { act, fireEvent, render } from '@testing-library/react';
-import { beforeEach, describe, expect, it, jest } from '@jest/globals';
+import { describe, expect, it, jest } from '@jest/globals';
 
 import * as Dropdown from 'components/forms/Dropdown';
 import * as TodoFields from 'components/todo-detail/TodoFields';
@@ -21,9 +19,6 @@ import { mockStore } from 'test/store';
 import { withMockedProviders } from 'test/component';
 
 const { setFolders } = todoFoldersSlice.actions;
-
-const mock = new MockAdapter(axios, { onNoMatch: 'throwException' });
-beforeEach(() => mock.reset());
 
 const testFoldersData: Folder[] = [
   { id: 'A', title: 'Folder A' },
@@ -128,10 +123,6 @@ describe('components/todo-detail/TodoDetail', () => {
   it('should prefill folder Dropdown when filtered by a folder', async () => {
     const fields = jest.spyOn(TodoFields, 'TodoFields');
     expect(fields).toBeCalledTimes(0);
-
-    mock.onGet('/api/todo').reply(200, {
-      data: { items: [], count: 0 },
-    });
 
     const tree = render(await getTodoDetail(undefined, false, 'C'));
     expect(tree.container).toMatchSnapshot();
