@@ -2,7 +2,7 @@ import React from 'react';
 import { Provider } from 'react-redux';
 
 import { act, render } from '@testing-library/react';
-import { describe, expect, it, jest } from '@jest/globals';
+import { describe, expect, it, vi } from 'vitest';
 
 import { Settings } from 'components/Settings';
 import * as Dropdown from 'components/forms/Dropdown';
@@ -24,7 +24,7 @@ const getSettings = (): JSX.Element => {
 
 describe('components/Settings', () => {
   it('should render correctly', () => {
-    const mockedDropdown = jest.spyOn(Dropdown, 'Dropdown');
+    const mockedDropdown = vi.spyOn(Dropdown, 'Dropdown');
     expect(mockedDropdown).toBeCalledTimes(0);
 
     const { container } = render(getSettings());
@@ -38,8 +38,8 @@ describe('components/Settings', () => {
   it('should auto-update settings when perPage changes', async () => {
     const testPerPage = 50;
 
-    const mockedDropdown = jest.spyOn(Dropdown, 'Dropdown');
-    const mockedUpdateSettings = jest.spyOn(client.settings, 'set');
+    const mockedDropdown = vi.spyOn(Dropdown, 'Dropdown');
+    const mockedUpdateSettings = vi.spyOn(client.settings, 'set');
     expect(mockedDropdown).toBeCalledTimes(0);
     expect(mockedUpdateSettings).toBeCalledTimes(0);
 

@@ -1,6 +1,6 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`components/button/ButtonRaw should render correctly 1`] = `
+exports[`components/button/ButtonRaw > should render correctly 1`] = `
 .c0 {
   display: block;
   width: 100%;
@@ -21,7 +21,7 @@ exports[`components/button/ButtonRaw should render correctly 1`] = `
 </div>
 `;
 
-exports[`components/button/ButtonRaw should render disabled state 1`] = `
+exports[`components/button/ButtonRaw > should render disabled state 1`] = `
 .c0 {
   display: block;
   width: 100%;
@@ -39,7 +39,7 @@ exports[`components/button/ButtonRaw should render disabled state 1`] = `
 </div>
 `;
 
-exports[`components/button/ButtonRaw should render props 1`] = `
+exports[`components/button/ButtonRaw > should render props 1`] = `
 .c0 {
   display: block;
   width: 100%;

@@ -3,7 +3,7 @@ import { t } from 'i18next';
 import { Provider } from 'react-redux';
 
 import { act, render } from '@testing-library/react';
-import { describe, expect, it, jest } from '@jest/globals';
+import { MockInstance, describe, expect, it, vi } from 'vitest';
 
 import { TodoList } from 'components/todo-list/TodoList';
 import * as TodoListItem from 'components/todo-list/TodoListItem';
@@ -58,7 +58,7 @@ const getTodoList = (todos: Todo[]): JSX.Element => {
 
 // get component props for last "n" mocked calls
 const getItemsProps = <T extends object>(
-  component: jest.SpiedFunction<React.FC<T>>,
+  component: MockInstance<[props: T, context?: never], React.ReactNode>,
   lastCalls = 3,
 ): Array<T> => {
   const { calls } = component.mock;
@@ -67,7 +67,7 @@ const getItemsProps = <T extends object>(
 
 describe('components/todo-list/TodoList', () => {
   it('should render correctly', () => {
-    const listItem = jest.spyOn(TodoListItem, 'TodoListItem');
+    const listItem = vi.spyOn(TodoListItem, 'TodoListItem');
     expect(listItem).toBeCalledTimes(0);
 
     const tree = render(getTodoList(testData));
@@ -82,8 +82,8 @@ describe('components/todo-list/TodoList', () => {
   });
 
   it('should render empty list', () => {
-    const listItem = jest.spyOn(TodoListItem, 'TodoListItem');
-    const toolbar = jest.spyOn(TodoListToolbar, 'TodoListToolbar');
+    const listItem = vi.spyOn(TodoListItem, 'TodoListItem');
+    const toolbar = vi.spyOn(TodoListToolbar, 'TodoListToolbar');
     expect(listItem).toBeCalledTimes(0);
     expect(toolbar).toBeCalledTimes(0);
 
@@ -101,8 +101,8 @@ describe('components/todo-list/TodoList', () => {
   });
 
   it('should be selectable', async () => {
-    const listItem = jest.spyOn(TodoListItem, 'TodoListItem');
-    const toolbar = jest.spyOn(TodoListToolbar, 'TodoListToolbar');
+    const listItem = vi.spyOn(TodoListItem, 'TodoListItem');
+    const toolbar = vi.spyOn(TodoListToolbar, 'TodoListToolbar');
 
     render(getTodoList(testData));
 
@@ -146,8 +146,8 @@ describe('components/todo-list/TodoList', () => {
   });
 
   it('should be able to un/select-all', async () => {
-    const listItem = jest.spyOn(TodoListItem, 'TodoListItem');
-    const toolbar = jest.spyOn(TodoListToolbar, 'TodoListToolbar');
+    const listItem = vi.spyOn(TodoListItem, 'TodoListItem');
+    const toolbar = vi.spyOn(TodoListToolbar, 'TodoListToolbar');
 
     render(getTodoList(testData));
 
@@ -184,9 +184,9 @@ describe('components/todo-list/TodoList', () => {
   });
 
   it('should be sortable', async () => {
-    const toolbar = jest.spyOn(TodoListToolbar, 'TodoListToolbar');
+    const toolbar = vi.spyOn(TodoListToolbar, 'TodoListToolbar');
 
-    const mockedSortTodos = jest.spyOn(client.todo, 'get');
+    const mockedSortTodos = vi.spyOn(client.todo, 'get');
     expect(mockedSortTodos).toBeCalledTimes(0);
 
     render(getTodoList(testData));
@@ -211,14 +211,14 @@ describe('components/todo-list/TodoList', () => {
   });
 
   it('should be able to delete selected', async () => {
-    const listItem = jest.spyOn(TodoListItem, 'TodoListItem');
-    const toolbar = jest.spyOn(TodoListToolbar, 'TodoListToolbar');
+    const listItem = vi.spyOn(TodoListItem, 'TodoListItem');
+    const toolbar = vi.spyOn(TodoListToolbar, 'TodoListToolbar');
 
-    const mockedConfirm = jest.spyOn(window, 'confirm');
-    mockedConfirm.mockImplementation(jest.fn(() => true));
+    const mockedConfirm = vi.spyOn(window, 'confirm');
+    mockedConfirm.mockImplementation(vi.fn(() => true));
     expect(mockedConfirm).toBeCalledTimes(0);
 
-    const mockedDeleteTodos = jest.spyOn(client.todo, 'delete');
+    const mockedDeleteTodos = vi.spyOn(client.todo, 'delete');
     expect(mockedDeleteTodos).toBeCalledTimes(0);
 
     render(getTodoList(testData));

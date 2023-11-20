@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { fireEvent, render } from '@testing-library/react';
-import { describe, expect, it, jest } from '@jest/globals';
+import { describe, expect, it, vi } from 'vitest';
 
 import { FolderListItem } from 'components/folder-list/FolderListItem';
 
@@ -28,7 +28,7 @@ describe('components/folder-list/FolderListItem', () => {
   });
 
   it('should be selectable', () => {
-    const onSelect = jest.fn();
+    const onSelect = vi.fn();
 
     const tree = render(
       withMockedProviders(
@@ -53,7 +53,7 @@ describe('components/folder-list/FolderListItem', () => {
   });
 
   it('should be delete-able', () => {
-    const onDelete = jest.fn();
+    const onDelete = vi.fn();
 
     const tree = render(
       withMockedProviders(

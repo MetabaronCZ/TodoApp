@@ -1,6 +1,6 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`components/todo-list/TodoList should render correctly 1`] = `
+exports[`components/todo-list/TodoList > should render correctly 1`] = `
 .c15 {
   font-family: Open Sans,Arial,sans-serif;
   color: #222;
@@ -801,7 +801,7 @@ exports[`components/todo-list/TodoList should render correctly 1`] = `
 </div>
 `;
 
-exports[`components/todo-list/TodoList should render empty list 1`] = `
+exports[`components/todo-list/TodoList > should render empty list 1`] = `
 .c15 {
   font-family: Open Sans,Arial,sans-serif;
   color: #222;

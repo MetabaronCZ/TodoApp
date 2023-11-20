@@ -1,6 +1,6 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`components/MenuContent should render correctly 1`] = `
+exports[`components/MenuContent > should render correctly 1`] = `
 .c9 {
   display: -webkit-box;
   display: -webkit-flex;

@@ -1,6 +1,6 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`components/MenuMain should have correct menu items 1`] = `
+exports[`components/MenuMain > should have correct menu items 1`] = `
 .c4 {
   font-family: Open Sans,Arial,sans-serif;
   color: #222;
@@ -179,7 +179,7 @@ exports[`components/MenuMain should have correct menu items 1`] = `
 </div>
 `;
 
-exports[`components/MenuMain should render correctly 1`] = `
+exports[`components/MenuMain > should render correctly 1`] = `
 .c4 {
   font-family: Open Sans,Arial,sans-serif;
   color: #222;

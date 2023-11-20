@@ -1,6 +1,6 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`components/pages/FolderDetailPage should render Folder detail with given ID 1`] = `
+exports[`components/pages/FolderDetailPage > should render Folder detail with given ID 1`] = `
 .c8 {
   -webkit-flex: 1;
   -ms-flex: 1;
@@ -448,7 +448,7 @@ exports[`components/pages/FolderDetailPage should render Folder detail with give
 </div>
 `;
 
-exports[`components/pages/FolderDetailPage should render error when no ID param 1`] = `
+exports[`components/pages/FolderDetailPage > should render error when no ID param 1`] = `
 .c8 {
   -webkit-flex: 1;
   -ms-flex: 1;

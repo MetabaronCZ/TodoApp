@@ -1,6 +1,6 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`components/common/Menu should render correctly 1`] = `
+exports[`components/common/Menu > should render correctly 1`] = `
 .c2 {
   display: block;
   width: 100%;
@@ -95,7 +95,7 @@ exports[`components/common/Menu should render correctly 1`] = `
 </div>
 `;
 
-exports[`components/common/Menu should render menu items 1`] = `
+exports[`components/common/Menu > should render menu items 1`] = `
 .c5 {
   display: block;
   width: 100%;
@@ -250,4 +250,4 @@ exports[`components/common/Menu should render menu items 1`] = `
 </div>
 `;
 
-exports[`components/common/Menu should render nothing when no children 1`] = `<div />`;
+exports[`components/common/Menu > should render nothing when no children 1`] = `<div />`;

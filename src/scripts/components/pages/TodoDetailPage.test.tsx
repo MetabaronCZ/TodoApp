@@ -3,7 +3,7 @@ import * as Router from 'react-router';
 import { Provider } from 'react-redux';
 
 import { render } from '@testing-library/react';
-import { describe, expect, it, jest } from '@jest/globals';
+import { describe, expect, it, vi } from 'vitest';
 
 import { Loader } from 'components/common/Loader';
 import { TodoDetail } from 'components/todo-detail/TodoDetail';
@@ -15,8 +15,8 @@ import { Todo } from 'models/Todo';
 import { mockStore } from 'test/store';
 import { withMockedProviders } from 'test/component';
 
-jest.mock('components/common/Loader');
-jest.mock('components/todo-detail/TodoDetail');
+vi.mock('components/common/Loader');
+vi.mock('components/todo-detail/TodoDetail');
 
 const testData: Todo = {
   id: 'test123',
@@ -29,7 +29,7 @@ const testData: Todo = {
 const errorMessage = 'Mocked error!';
 
 // mock TodoDetail implementaion
-jest.mocked(TodoDetail).mockImplementation(({ data, fetchError }) => {
+vi.mocked(TodoDetail).mockImplementation(({ data, fetchError }) => {
   return fetchError
     ? 'TODO_ERROR'
     : data
@@ -48,7 +48,7 @@ const getTodoDetailPage = (): JSX.Element => {
 
 describe('components/pages/TodoDetailPage', () => {
   it('should show Loader', () => {
-    const mocked = jest.mocked(Loader);
+    const mocked = vi.mocked(Loader);
     expect(mocked).toBeCalledTimes(0);
 
     render(getTodoDetailPage());
@@ -63,9 +63,9 @@ describe('components/pages/TodoDetailPage', () => {
 
   it('should render Todo detail with given ID', async () => {
     const testId = testData.id;
-    jest.spyOn(Router, 'useParams').mockReturnValue({ id: testId });
+    vi.spyOn(Router, 'useParams').mockReturnValue({ id: testId });
 
-    const mockedFetch = jest
+    const mockedFetch = vi
       .spyOn(client.todo, 'getDetail')
       .mockImplementation(() => Promise.resolve(testData));
 
@@ -78,9 +78,9 @@ describe('components/pages/TodoDetailPage', () => {
 
   it('should render error on invalid ID', async () => {
     const testId = testData.id;
-    jest.spyOn(Router, 'useParams').mockReturnValue({ id: testId });
+    vi.spyOn(Router, 'useParams').mockReturnValue({ id: testId });
 
-    const mockedFetch = jest
+    const mockedFetch = vi
       .spyOn(client.todo, 'getDetail')
       .mockImplementation(() => Promise.reject(errorMessage));
 

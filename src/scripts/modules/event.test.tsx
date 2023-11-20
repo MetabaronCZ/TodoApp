@@ -1,5 +1,5 @@
 import { cleanup } from '@testing-library/react';
-import { describe, expect, it, jest } from '@jest/globals';
+import { describe, expect, it, vi } from 'vitest';
 
 import { change, check, click, submit } from 'modules/event';
 import {
@@ -22,7 +22,7 @@ describe('modules/event', () => {
     });
 
     it('should run callback function correctly', async () => {
-      const cb = jest.fn();
+      const cb = vi.fn();
       const fn = click(cb);
 
       const evt = await mockClickEvent();
@@ -39,7 +39,7 @@ describe('modules/event', () => {
   describe('change()', () => {
     it('should call back input element value', async () => {
       // check HTML input
-      const cb = jest.fn();
+      const cb = vi.fn();
       const fn = change(cb);
 
       const evt = await mockChangeEvent('test');
@@ -54,7 +54,7 @@ describe('modules/event', () => {
   describe('check()', () => {
     it('should call back checkbox :checked state', async () => {
       // checkbox unchecked
-      let cb = jest.fn();
+      let cb = vi.fn();
       let fn = check(cb);
 
       let evt = await mockCheckEvent();
@@ -67,7 +67,7 @@ describe('modules/event', () => {
       cleanup();
 
       // checkbox checked
-      cb = jest.fn();
+      cb = vi.fn();
       fn = check(cb);
 
       evt = await mockCheckEvent(true);
@@ -91,7 +91,7 @@ describe('modules/event', () => {
     });
 
     it('should run callback function correctly', async () => {
-      const cb = jest.fn();
+      const cb = vi.fn();
       const fn = submit(cb);
 
       const evt = await mockSubmitEvent();

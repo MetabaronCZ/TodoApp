@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { fireEvent, render } from '@testing-library/react';
-import { describe, expect, it, jest } from '@jest/globals';
+import { describe, expect, it, vi } from 'vitest';
 
 import * as Dropdown from 'components/forms/Dropdown';
 import { FormField } from 'components/forms/FormField';
@@ -71,7 +71,7 @@ describe('components/forms/FormField', () => {
   });
 
   it('should render dropdown', () => {
-    const mockedDropdown = jest.spyOn(Dropdown, 'Dropdown');
+    const mockedDropdown = vi.spyOn(Dropdown, 'Dropdown');
     expect(mockedDropdown).toBeCalledTimes(0);
 
     const { container } = render(
@@ -95,7 +95,7 @@ describe('components/forms/FormField', () => {
   });
 
   it('should handle text input change', () => {
-    const onChange = jest.fn();
+    const onChange = vi.fn();
 
     const { container } = render(
       withMockedProviders(
@@ -122,7 +122,7 @@ describe('components/forms/FormField', () => {
   });
 
   it('should handle textarea change', () => {
-    const onChange = jest.fn();
+    const onChange = vi.fn();
 
     const { container } = render(
       withMockedProviders(
@@ -150,9 +150,9 @@ describe('components/forms/FormField', () => {
   });
 
   it('should handle dropdown change', () => {
-    const onChange = jest.fn();
+    const onChange = vi.fn();
 
-    const mockedDropdown = jest.spyOn(Dropdown, 'Dropdown');
+    const mockedDropdown = vi.spyOn(Dropdown, 'Dropdown');
     expect(mockedDropdown).toBeCalledTimes(0);
 
     render(

@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { fireEvent, render } from '@testing-library/react';
-import { describe, expect, it, jest } from '@jest/globals';
+import { describe, expect, it, vi } from 'vitest';
 
 import { Button } from 'components/button/Button';
 
@@ -10,7 +10,7 @@ import { withMockedProviders } from 'test/component';
 
 describe('components/button/Button', () => {
   it('should render <button> Button by default', () => {
-    const onClick = jest.fn();
+    const onClick = vi.fn();
     const tree = render(withMockedProviders(<Button onClick={onClick} />));
     expect(tree.container).toMatchSnapshot();
 
@@ -33,7 +33,7 @@ describe('components/button/Button', () => {
   });
 
   it('should prefer link Button when href and onClick defined', () => {
-    const onClick = jest.fn();
+    const onClick = vi.fn();
 
     const tree = render(
       withMockedProviders(<Button href="/test" onClick={onClick} />),
@@ -107,7 +107,7 @@ describe('components/button/Button', () => {
   });
 
   it('should render disabled state when onClick defined', () => {
-    const onClick = jest.fn();
+    const onClick = vi.fn();
 
     const tree = render(
       withMockedProviders(<Button onClick={onClick} disabled />),
@@ -125,7 +125,7 @@ describe('components/button/Button', () => {
   });
 
   it('should render disabled state when href defined', () => {
-    const onClick = jest.fn();
+    const onClick = vi.fn();
 
     const tree = render(
       withMockedProviders(<Button href="/test" onClick={onClick} disabled />),

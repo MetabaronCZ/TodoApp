@@ -1,6 +1,6 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`components/todo-detail/TodoDetail should prefill folder Dropdown when filtered by a folder 1`] = `
+exports[`components/todo-detail/TodoDetail > should prefill folder Dropdown when filtered by a folder 1`] = `
 .c3 {
   font-family: Open Sans,Arial,sans-serif;
   color: #222;
@@ -493,7 +493,7 @@ exports[`components/todo-detail/TodoDetail should prefill folder Dropdown when f
                 <span
                   class="c4"
                 >
-                  Folder C
+                  -Vyberte složku-
                 </span>
                 <i
                   class="c3"
@@ -596,7 +596,7 @@ exports[`components/todo-detail/TodoDetail should prefill folder Dropdown when f
 </div>
 `;
 
-exports[`components/todo-detail/TodoDetail should render fetch error 1`] = `
+exports[`components/todo-detail/TodoDetail > should render fetch error 1`] = `
 .c3 {
   font-family: Open Sans,Arial,sans-serif;
   color: #222;
@@ -736,7 +736,7 @@ exports[`components/todo-detail/TodoDetail should render fetch error 1`] = `
 </div>
 `;
 
-exports[`components/todo-detail/TodoDetail should render todo create variant 1`] = `
+exports[`components/todo-detail/TodoDetail > should render todo create variant 1`] = `
 .c3 {
   font-family: Open Sans,Arial,sans-serif;
   color: #222;
@@ -1332,7 +1332,7 @@ exports[`components/todo-detail/TodoDetail should render todo create variant 1`]
 </div>
 `;
 
-exports[`components/todo-detail/TodoDetail should render todo detail variant 1`] = `
+exports[`components/todo-detail/TodoDetail > should render todo detail variant 1`] = `
 .c3 {
   font-family: Open Sans,Arial,sans-serif;
   color: #222;

@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { fireEvent, render } from '@testing-library/react';
-import { describe, expect, it, jest } from '@jest/globals';
+import { describe, expect, it, vi } from 'vitest';
 
 import { Dropdown, DropdownItem } from 'components/forms/Dropdown';
 import { withMockedProviders } from 'test/component';
@@ -126,7 +126,7 @@ describe('components/forms/Dropdown', () => {
   });
 
   it('should select items', () => {
-    const onSelect = jest.fn();
+    const onSelect = vi.fn();
 
     const tree = render(
       withMockedProviders(

@@ -1,6 +1,6 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`components/todo-detail/TodoFields should render correctly 1`] = `
+exports[`components/todo-detail/TodoFields > should render correctly 1`] = `
 .c12 {
   font-family: Open Sans,Arial,sans-serif;
   color: #222;
@@ -444,7 +444,7 @@ exports[`components/todo-detail/TodoFields should render correctly 1`] = `
 </div>
 `;
 
-exports[`components/todo-detail/TodoFields should render props 1`] = `
+exports[`components/todo-detail/TodoFields > should render props 1`] = `
 .c13 {
   font-family: Open Sans,Arial,sans-serif;
   color: #222;

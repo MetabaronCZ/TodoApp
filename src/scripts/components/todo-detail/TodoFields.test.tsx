@@ -2,7 +2,7 @@ import React from 'react';
 import { Provider } from 'react-redux';
 
 import { fireEvent, render } from '@testing-library/react';
-import { describe, expect, it, jest } from '@jest/globals';
+import { describe, expect, it, vi } from 'vitest';
 
 import * as Dropdown from 'components/forms/Dropdown';
 import * as ItemList from 'components/common/ItemList';
@@ -61,8 +61,8 @@ describe('components/todo-detail/TodoFields', () => {
   });
 
   it('should render props', () => {
-    const itemList = jest.spyOn(ItemList, 'ItemList');
-    const dropdown = jest.spyOn(Dropdown, 'Dropdown');
+    const itemList = vi.spyOn(ItemList, 'ItemList');
+    const dropdown = vi.spyOn(Dropdown, 'Dropdown');
     expect(itemList).toBeCalledTimes(0);
     expect(dropdown).toBeCalledTimes(0);
 
@@ -104,7 +104,7 @@ describe('components/todo-detail/TodoFields', () => {
   });
 
   it('should call onChange', () => {
-    const onChange = jest.fn();
+    const onChange = vi.fn();
 
     const tree = render(getTodoFields({ onChange }));
     expect(onChange).toBeCalledTimes(0);

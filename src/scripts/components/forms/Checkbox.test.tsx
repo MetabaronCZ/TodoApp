@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { fireEvent, render } from '@testing-library/react';
-import { describe, expect, it, jest } from '@jest/globals';
+import { describe, expect, it, vi } from 'vitest';
 
 import { Checkbox } from 'components/forms/Checkbox';
 import { withMockedProviders } from 'test/component';
@@ -37,7 +37,7 @@ describe('components/forms/TextField', () => {
   });
 
   it('should handle value change', () => {
-    const onChange = jest.fn();
+    const onChange = vi.fn();
 
     const { container } = render(
       withMockedProviders(<Checkbox onChange={onChange} />),
@@ -53,7 +53,7 @@ describe('components/forms/TextField', () => {
   });
 
   it('should not call onChange when disabled', () => {
-    const onChange = jest.fn();
+    const onChange = vi.fn();
 
     const { container } = render(
       withMockedProviders(<Checkbox disabled onChange={onChange} />),

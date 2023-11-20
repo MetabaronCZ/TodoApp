@@ -1,6 +1,6 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`components/common/Link should render correctly 1`] = `
+exports[`components/common/Link > should render correctly 1`] = `
 .c0 {
   font-family: inherit;
   font-size: inherit;
@@ -30,7 +30,7 @@ exports[`components/common/Link should render correctly 1`] = `
 </div>
 `;
 
-exports[`components/common/Link should render props 1`] = `
+exports[`components/common/Link > should render props 1`] = `
 .c0 {
   font-family: inherit;
   font-size: inherit;

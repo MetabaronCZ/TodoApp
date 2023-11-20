@@ -3,7 +3,7 @@ import * as Router from 'react-router';
 import { Provider } from 'react-redux';
 
 import { render } from '@testing-library/react';
-import { describe, expect, it, jest } from '@jest/globals';
+import { describe, expect, it, vi } from 'vitest';
 
 import { FolderDetailPage } from 'components/pages/FolderDetailPage';
 import { FolderDetail } from 'components/folder-detail/FolderDetail';
@@ -15,7 +15,7 @@ import { withMockedProviders } from 'test/component';
 
 const { setFolders } = todoFoldersSlice.actions;
 
-jest.mock('components/folder-detail/FolderDetail');
+vi.mock('components/folder-detail/FolderDetail');
 
 const testData: Folder[] = [
   { id: '0', title: 'Folder A' },
@@ -23,7 +23,7 @@ const testData: Folder[] = [
 ];
 
 // mock FolderDetail implementaion
-jest.mocked(FolderDetail).mockImplementation(({ data, fetchError }) => {
+vi.mocked(FolderDetail).mockImplementation(({ data, fetchError }) => {
   return fetchError
     ? 'FOLDER_ERROR'
     : data
@@ -48,7 +48,7 @@ describe('components/pages/FolderDetailPage', () => {
 
   it('should render Folder detail with given ID', async () => {
     const testId = testData[1].id;
-    jest.spyOn(Router, 'useParams').mockReturnValue({ id: testId });
+    vi.spyOn(Router, 'useParams').mockReturnValue({ id: testId });
 
     const store = mockStore();
     store.dispatch(setFolders(testData));

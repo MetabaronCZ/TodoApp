@@ -1,6 +1,6 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`components/common/Paging should render correctly 1`] = `
+exports[`components/common/Paging > should render correctly 1`] = `
 .c3 {
   font-family: Open Sans,Arial,sans-serif;
   color: #222;
@@ -124,7 +124,7 @@ exports[`components/common/Paging should render correctly 1`] = `
 </div>
 `;
 
-exports[`components/common/Paging should render first page 1`] = `
+exports[`components/common/Paging > should render first page 1`] = `
 .c3 {
   font-family: Open Sans,Arial,sans-serif;
   color: #222;
@@ -250,7 +250,7 @@ exports[`components/common/Paging should render first page 1`] = `
 </div>
 `;
 
-exports[`components/common/Paging should render inner page 1`] = `
+exports[`components/common/Paging > should render inner page 1`] = `
 .c3 {
   font-family: Open Sans,Arial,sans-serif;
   color: #222;
@@ -374,7 +374,7 @@ exports[`components/common/Paging should render inner page 1`] = `
 </div>
 `;
 
-exports[`components/common/Paging should render last page 1`] = `
+exports[`components/common/Paging > should render last page 1`] = `
 .c3 {
   font-family: Open Sans,Arial,sans-serif;
   color: #222;
@@ -500,7 +500,7 @@ exports[`components/common/Paging should render last page 1`] = `
 </div>
 `;
 
-exports[`components/common/Paging should render one page paging 1`] = `
+exports[`components/common/Paging > should render one page paging 1`] = `
 .c3 {
   font-family: Open Sans,Arial,sans-serif;
   color: #222;

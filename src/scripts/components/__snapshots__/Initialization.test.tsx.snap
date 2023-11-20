@@ -1,4 +1,12 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`components/Initialization > should render correctly 1`] = `
+<div>
+  <div>
+    CONTENT
+  </div>
+</div>
+`;
 
 exports[`components/Initialization should render correctly 1`] = `
 <div>

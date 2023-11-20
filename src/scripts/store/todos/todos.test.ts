@@ -1,4 +1,4 @@
-import { describe, expect, it, jest } from '@jest/globals';
+import { describe, expect, it, vi } from 'vitest';
 
 import { client } from 'client';
 import { Todo, TodoData } from 'models/Todo';
@@ -90,7 +90,7 @@ describe('store/todos', () => {
           sort: 'CREATED_DESC',
         },
       };
-      const api = jest.spyOn(client.todo, 'get');
+      const api = vi.spyOn(client.todo, 'get');
       api.mockImplementation(() => Promise.resolve(fetchResponse));
       expect(api).not.toBeCalled();
 
@@ -111,7 +111,7 @@ describe('store/todos', () => {
     });
 
     it('should set store error on API error', async () => {
-      const api = jest.spyOn(client.todo, 'get');
+      const api = vi.spyOn(client.todo, 'get');
       api.mockImplementation(() => Promise.reject(errorMessage));
 
       const store = mockStore();
@@ -128,7 +128,7 @@ describe('store/todos', () => {
   describe('fetchTodoDetail()', () => {
     it('should fetch todo detail data from API', async () => {
       const testData: Todo = { ...todos[0] };
-      const api = jest.spyOn(client.todo, 'getDetail');
+      const api = vi.spyOn(client.todo, 'getDetail');
       api.mockImplementation(() => Promise.resolve(testData));
       expect(api).not.toBeCalled();
 
@@ -139,7 +139,7 @@ describe('store/todos', () => {
     });
 
     it('should return error on invalid todo ID', async () => {
-      const api = jest.spyOn(client.todo, 'getDetail');
+      const api = vi.spyOn(client.todo, 'getDetail');
       api.mockImplementation(() => Promise.reject(errorMessage));
 
       const store = mockStore();
@@ -160,7 +160,7 @@ describe('store/todos', () => {
         folder: '10',
         query: 'q10',
       };
-      const api = jest.spyOn(client.todo, 'get');
+      const api = vi.spyOn(client.todo, 'get');
       api.mockImplementation(() => Promise.resolve(fetchResponse));
       expect(api).not.toBeCalled();
 
@@ -194,7 +194,7 @@ describe('store/todos', () => {
         items: testData,
         count: testData.length,
       };
-      const api = jest.spyOn(client.todo, 'get');
+      const api = vi.spyOn(client.todo, 'get');
       api.mockImplementation(() => Promise.resolve(fetchResponse));
       expect(api).not.toBeCalled();
 
@@ -237,8 +237,8 @@ describe('store/todos', () => {
         count: data.length + 1,
       };
 
-      const apiFetch = jest.spyOn(client.todo, 'get');
-      const apiCreate = jest.spyOn(client.todo, 'create');
+      const apiFetch = vi.spyOn(client.todo, 'get');
+      const apiCreate = vi.spyOn(client.todo, 'create');
 
       apiFetch.mockImplementation(() => Promise.resolve(refetchData));
       apiCreate.mockImplementation(() => Promise.resolve(responseData));
@@ -281,9 +281,9 @@ describe('store/todos', () => {
         count: result.length,
       };
 
-      const apiEdit = jest.spyOn(client.todo, 'edit');
-      const apiFetch = jest.spyOn(client.todo, 'get');
-      const apiFetchFolders = jest.spyOn(client.folder, 'get');
+      const apiEdit = vi.spyOn(client.todo, 'edit');
+      const apiFetch = vi.spyOn(client.todo, 'get');
+      const apiFetchFolders = vi.spyOn(client.folder, 'get');
 
       apiEdit.mockImplementation(() => Promise.resolve());
       apiFetch.mockImplementation(() => Promise.resolve(refetchResponse));
@@ -322,9 +322,9 @@ describe('store/todos', () => {
         folder: null,
         isDone: false,
       };
-      const apiEdit = jest.spyOn(client.todo, 'edit');
-      const apiFetch = jest.spyOn(client.todo, 'get');
-      const apiFetchFolders = jest.spyOn(client.folder, 'get');
+      const apiEdit = vi.spyOn(client.todo, 'edit');
+      const apiFetch = vi.spyOn(client.todo, 'get');
+      const apiFetchFolders = vi.spyOn(client.folder, 'get');
 
       apiEdit.mockImplementation(() => Promise.reject(errorMessage));
       apiFetch.mockImplementation(() =>
@@ -365,9 +365,9 @@ describe('store/todos', () => {
         count: data.length,
       };
 
-      const apiFetch = jest.spyOn(client.todo, 'get');
-      const apiDelete = jest.spyOn(client.todo, 'delete');
-      const apiFetchFolders = jest.spyOn(client.folder, 'get');
+      const apiFetch = vi.spyOn(client.todo, 'get');
+      const apiDelete = vi.spyOn(client.todo, 'delete');
+      const apiFetchFolders = vi.spyOn(client.folder, 'get');
 
       apiFetch.mockImplementation(() => Promise.resolve(refetchResponse));
       apiDelete.mockImplementation(() => Promise.resolve());
@@ -397,9 +397,9 @@ describe('store/todos', () => {
 
     it('should throw when ID invalid', async () => {
       const refetchesponse = [...todos];
-      const apiFetch = jest.spyOn(client.todo, 'get');
-      const apiDelete = jest.spyOn(client.todo, 'delete');
-      const apiFetchFolders = jest.spyOn(client.folder, 'get');
+      const apiFetch = vi.spyOn(client.todo, 'get');
+      const apiDelete = vi.spyOn(client.todo, 'delete');
+      const apiFetchFolders = vi.spyOn(client.folder, 'get');
 
       apiFetch.mockImplementation(() =>
         Promise.resolve({

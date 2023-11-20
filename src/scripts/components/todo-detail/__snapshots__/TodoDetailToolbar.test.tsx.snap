@@ -1,6 +1,6 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`components/todo-detail/TodoDetailToolbar should be disabled 1`] = `
+exports[`components/todo-detail/TodoDetailToolbar > should be disabled 1`] = `
 .c3 {
   font-family: Open Sans,Arial,sans-serif;
   color: #222;
@@ -116,7 +116,7 @@ exports[`components/todo-detail/TodoDetailToolbar should be disabled 1`] = `
 </div>
 `;
 
-exports[`components/todo-detail/TodoDetailToolbar should render correctly 1`] = `
+exports[`components/todo-detail/TodoDetailToolbar > should render correctly 1`] = `
 .c2 {
   font-family: Open Sans,Arial,sans-serif;
   color: #222;

@@ -1,6 +1,6 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`components/pages/HomePage should render correctly 1`] = `
+exports[`components/pages/HomePage > should render correctly 1`] = `
 .c8 {
   -webkit-flex: 1;
   -ms-flex: 1;

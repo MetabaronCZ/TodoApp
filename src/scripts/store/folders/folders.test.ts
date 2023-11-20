@@ -1,4 +1,4 @@
-import { describe, expect, it, jest } from '@jest/globals';
+import { describe, expect, it, vi } from 'vitest';
 
 import { client } from 'client';
 import { Folder, FolderData } from 'models/Folder';
@@ -62,7 +62,7 @@ describe('store/folders', () => {
         { id: '1', title: 'Folder B' },
       ];
 
-      const api = jest.spyOn(client.folder, 'get');
+      const api = vi.spyOn(client.folder, 'get');
       api.mockImplementation(() => Promise.resolve(testData));
       expect(api).not.toBeCalled();
 
@@ -81,8 +81,8 @@ describe('store/folders', () => {
     });
 
     it('should set store error on API error', async () => {
-      const api = jest.spyOn(client.folder, 'get');
-      api.mockImplementation(() => Promise.reject(errorMessage));
+      const api = vi.spyOn(client.folder, 'get');
+      api.mockRejectedValue(errorMessage);
 
       const store = mockStore();
       let state = store.getState();
@@ -109,7 +109,7 @@ describe('store/folders', () => {
         id: 'NEW',
       };
 
-      const api = jest.spyOn(client.folder, 'create');
+      const api = vi.spyOn(client.folder, 'create');
       api.mockImplementation(() => Promise.resolve(responseData));
       expect(api).not.toBeCalled();
 
@@ -142,7 +142,7 @@ describe('store/folders', () => {
       const payload = { id: data[1].id, data: testData };
       const result: Folder[] = [data[0], { ...data[1], ...testData }];
 
-      const api = jest.spyOn(client.folder, 'edit');
+      const api = vi.spyOn(client.folder, 'edit');
       api.mockImplementation(() => Promise.resolve());
       expect(api).not.toBeCalled();
 
@@ -168,7 +168,7 @@ describe('store/folders', () => {
         { id: '0', title: 'Folder A' },
         { id: '1', title: 'Folder B' },
       ];
-      const api = jest.spyOn(client.folder, 'edit');
+      const api = vi.spyOn(client.folder, 'edit');
       api.mockImplementation(() => Promise.reject(errorMessage));
       expect(api).not.toBeCalled();
 
@@ -196,7 +196,7 @@ describe('store/folders', () => {
         { id: '0', title: 'Folder A' },
         { id: '1', title: 'Folder B' },
       ];
-      const api = jest.spyOn(client.folder, 'delete');
+      const api = vi.spyOn(client.folder, 'delete');
       api.mockImplementation(() => Promise.resolve());
       expect(api).not.toBeCalled();
 
@@ -221,7 +221,7 @@ describe('store/folders', () => {
         { id: '0', title: 'Folder A' },
         { id: '1', title: 'Folder B' },
       ];
-      const api = jest.spyOn(client.folder, 'delete');
+      const api = vi.spyOn(client.folder, 'delete');
       api.mockImplementation(() => Promise.resolve());
       expect(api).not.toBeCalled();
 
@@ -246,7 +246,7 @@ describe('store/folders', () => {
         { id: '0', title: 'Folder A' },
         { id: '1', title: 'Folder B' },
       ];
-      const api = jest.spyOn(client.folder, 'delete');
+      const api = vi.spyOn(client.folder, 'delete');
       api.mockImplementation(() => Promise.reject(errorMessage));
       expect(api).not.toBeCalled();
 

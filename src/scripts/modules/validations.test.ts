@@ -1,5 +1,5 @@
 import { t } from 'i18next';
-import { describe, expect, it } from '@jest/globals';
+import { describe, expect, it } from 'vitest';
 
 import { getValidations } from 'modules/validations';
 

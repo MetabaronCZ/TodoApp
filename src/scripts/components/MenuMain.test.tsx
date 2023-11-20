@@ -2,7 +2,7 @@ import React from 'react';
 import { Provider } from 'react-redux';
 
 import { render } from '@testing-library/react';
-import { describe, expect, it, jest } from '@jest/globals';
+import { describe, expect, it, vi } from 'vitest';
 
 import * as Menu from 'components/common/Menu';
 import { MenuMain } from 'components/MenuMain';
@@ -35,7 +35,7 @@ describe('components/MenuMain', () => {
       { id: 'A', title: 'Folder A' },
       { id: 'B', title: 'Folder B' },
     ];
-    const mockedMenu = jest.spyOn(Menu, 'Menu');
+    const mockedMenu = vi.spyOn(Menu, 'Menu');
     expect(mockedMenu).toBeCalledTimes(0);
 
     const store = mockStore();
@@ -62,7 +62,7 @@ describe('components/MenuMain', () => {
       { id: 'A', title: 'Folder A' },
       { id: 'B', title: 'Folder B' },
     ];
-    const mockedMenu = jest.spyOn(Menu, 'Menu');
+    const mockedMenu = vi.spyOn(Menu, 'Menu');
     expect(mockedMenu).toBeCalledTimes(0);
 
     const store = mockStore();

@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { render } from '@testing-library/react';
-import { describe, expect, it } from '@jest/globals';
+import { describe, expect, it } from 'vitest';
 
 import { TodoDetailToolbar } from 'components/todo-detail/TodoDetailToolbar';
 import { withMockedProviders } from 'test/component';

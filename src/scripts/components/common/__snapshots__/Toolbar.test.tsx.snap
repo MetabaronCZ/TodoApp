@@ -1,6 +1,6 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`components/common/Toolbar should render children 1`] = `
+exports[`components/common/Toolbar > should render children 1`] = `
 .c0 {
   position: -webkit-sticky;
   position: sticky;
@@ -55,7 +55,7 @@ exports[`components/common/Toolbar should render children 1`] = `
 </div>
 `;
 
-exports[`components/common/Toolbar should render correctly 1`] = `
+exports[`components/common/Toolbar > should render correctly 1`] = `
 .c0 {
   position: -webkit-sticky;
   position: sticky;

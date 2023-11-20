@@ -3,7 +3,7 @@ import { t } from 'i18next';
 import { Provider } from 'react-redux';
 
 import { fireEvent, render } from '@testing-library/react';
-import { describe, expect, it, jest } from '@jest/globals';
+import { describe, expect, it, vi } from 'vitest';
 
 import { FolderDetail } from 'components/folder-detail/FolderDetail';
 import * as FolderFields from 'components/folder-detail/FolderFields';
@@ -27,7 +27,7 @@ const getFolderDetail = (data?: Folder, error?: boolean): JSX.Element => {
 
 describe('components/folder-detail/FolderDetail', () => {
   it('should render folder create variant', () => {
-    const fields = jest.spyOn(FolderFields, 'FolderFields');
+    const fields = vi.spyOn(FolderFields, 'FolderFields');
     expect(fields).toBeCalledTimes(0);
 
     const tree = render(getFolderDetail());
@@ -50,7 +50,7 @@ describe('components/folder-detail/FolderDetail', () => {
   });
 
   it('should render folder detail variant', () => {
-    const fields = jest.spyOn(FolderFields, 'FolderFields');
+    const fields = vi.spyOn(FolderFields, 'FolderFields');
     expect(fields).toBeCalledTimes(0);
 
     const tree = render(getFolderDetail(testData));
@@ -73,7 +73,7 @@ describe('components/folder-detail/FolderDetail', () => {
   });
 
   it('should render fetch error', () => {
-    const fields = jest.spyOn(FolderFields, 'FolderFields');
+    const fields = vi.spyOn(FolderFields, 'FolderFields');
     expect(fields).toBeCalledTimes(0);
 
     const tree = render(getFolderDetail(testData, true));
@@ -87,8 +87,8 @@ describe('components/folder-detail/FolderDetail', () => {
   });
 
   it('should create folder', () => {
-    const mockedFolderCreate = jest.spyOn(client.folder, 'create');
-    const fields = jest.spyOn(FolderFields, 'FolderFields');
+    const mockedFolderCreate = vi.spyOn(client.folder, 'create');
+    const fields = vi.spyOn(FolderFields, 'FolderFields');
 
     const tree = render(getFolderDetail());
     expect(mockedFolderCreate).toBeCalledTimes(0);
@@ -119,7 +119,7 @@ describe('components/folder-detail/FolderDetail', () => {
   });
 
   it('should edit folder', () => {
-    const mockedFolderEdit = jest.spyOn(client.folder, 'edit');
+    const mockedFolderEdit = vi.spyOn(client.folder, 'edit');
 
     const tree = render(getFolderDetail(testData));
     expect(mockedFolderEdit).toBeCalledTimes(0);

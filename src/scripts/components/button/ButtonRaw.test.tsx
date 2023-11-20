@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { fireEvent, render } from '@testing-library/react';
-import { describe, expect, it, jest } from '@jest/globals';
+import { describe, expect, it, vi } from 'vitest';
 
 import { withMockedProviders } from 'test/component';
 import { ButtonRaw } from 'components/button/ButtonRaw';
@@ -38,7 +38,7 @@ describe('components/button/ButtonRaw', () => {
   });
 
   it('should call onClick event', () => {
-    const onClick = jest.fn();
+    const onClick = vi.fn();
 
     const tree = render(withMockedProviders(<ButtonRaw onClick={onClick} />));
     expect(onClick).not.toBeCalled();
