@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { fireEvent, render } from '@testing-library/react';
-import { describe, expect, it, jest } from '@jest/globals';
+import { describe, expect, it, vi } from 'vitest';
 
 import { TextField } from 'components/forms/TextField';
 import { withMockedProviders } from 'test/component';
@@ -47,7 +47,7 @@ describe('components/forms/TextField', () => {
   });
 
   it('should handle value change', () => {
-    const onChange = jest.fn();
+    const onChange = vi.fn();
 
     const { container } = render(
       withMockedProviders(<TextField onChange={onChange} />),

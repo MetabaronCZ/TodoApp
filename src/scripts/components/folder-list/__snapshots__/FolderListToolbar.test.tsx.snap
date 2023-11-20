@@ -1,6 +1,6 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`components/folder-list/FolderListToolbar should be able to delete selected 1`] = `
+exports[`components/folder-list/FolderListToolbar > should be able to delete selected 1`] = `
 .c7 {
   font-family: Open Sans,Arial,sans-serif;
   color: #222;
@@ -342,7 +342,7 @@ exports[`components/folder-list/FolderListToolbar should be able to delete selec
 </div>
 `;
 
-exports[`components/folder-list/FolderListToolbar should be able to sort items 1`] = `
+exports[`components/folder-list/FolderListToolbar > should be able to sort items 1`] = `
 .c7 {
   font-family: Open Sans,Arial,sans-serif;
   color: #222;
@@ -630,7 +630,7 @@ exports[`components/folder-list/FolderListToolbar should be able to sort items 1
 </div>
 `;
 
-exports[`components/folder-list/FolderListToolbar should be able to un/select-all 1`] = `
+exports[`components/folder-list/FolderListToolbar > should be able to un/select-all 1`] = `
 .c7 {
   font-family: Open Sans,Arial,sans-serif;
   color: #222;
@@ -972,7 +972,7 @@ exports[`components/folder-list/FolderListToolbar should be able to un/select-al
 </div>
 `;
 
-exports[`components/folder-list/FolderListToolbar should not be able to sort items when disabled 1`] = `
+exports[`components/folder-list/FolderListToolbar > should not be able to sort items when disabled 1`] = `
 .c7 {
   font-family: Open Sans,Arial,sans-serif;
   color: #222;
@@ -1255,7 +1255,7 @@ exports[`components/folder-list/FolderListToolbar should not be able to sort ite
 </div>
 `;
 
-exports[`components/folder-list/FolderListToolbar should not be able to un/select-all when disabled 1`] = `
+exports[`components/folder-list/FolderListToolbar > should not be able to un/select-all when disabled 1`] = `
 .c7 {
   font-family: Open Sans,Arial,sans-serif;
   color: #222;
@@ -1538,7 +1538,7 @@ exports[`components/folder-list/FolderListToolbar should not be able to un/selec
 </div>
 `;
 
-exports[`components/folder-list/FolderListToolbar should render correctly 1`] = `
+exports[`components/folder-list/FolderListToolbar > should render correctly 1`] = `
 .c7 {
   font-family: Open Sans,Arial,sans-serif;
   color: #222;

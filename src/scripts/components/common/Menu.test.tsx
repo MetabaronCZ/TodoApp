@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { fireEvent, render } from '@testing-library/react';
-import { describe, expect, it, jest } from '@jest/globals';
+import { describe, expect, it, vi } from 'vitest';
 
 import { Menu, MenuItem } from 'components/common/Menu';
 
@@ -53,7 +53,7 @@ describe('components/common/Menu', () => {
   });
 
   it('should call back onClick event', () => {
-    const onClick = jest.fn();
+    const onClick = vi.fn();
     expect(onClick).not.toBeCalled();
 
     const testData: MenuItem[] = [{ id: '1', title: 'Item 1', onClick }];

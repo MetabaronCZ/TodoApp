@@ -1,4 +1,4 @@
-import { describe, expect, it, jest } from '@jest/globals';
+import { describe, expect, it, vi } from 'vitest';
 import { act, renderHook } from '@testing-library/react';
 
 import { useForm } from 'hooks/useForm';
@@ -45,8 +45,8 @@ describe('hooks/useForm()', () => {
   });
 
   it('should validate field on change', async () => {
-    const validationXFn = jest.fn((value: number) => value > 0);
-    const validationYFn = jest.fn((value: number) => value > 0);
+    const validationXFn = vi.fn((value: number) => value > 0);
+    const validationYFn = vi.fn((value: number) => value > 0);
 
     const { result } = renderHook(() => {
       return useForm({
@@ -92,9 +92,9 @@ describe('hooks/useForm()', () => {
   });
 
   it('should submit fields', async () => {
-    const validationXFn = jest.fn((value: number) => value > 0);
-    const validationYFn = jest.fn((value: number) => value > 0);
-    const onSubmit = jest.fn();
+    const validationXFn = vi.fn((value: number) => value > 0);
+    const validationYFn = vi.fn((value: number) => value > 0);
+    const onSubmit = vi.fn();
 
     const { result } = renderHook(() => {
       return useForm({
@@ -132,9 +132,9 @@ describe('hooks/useForm()', () => {
   });
 
   it('should not submit on validation error', async () => {
-    const validationXFn = jest.fn((value: number) => value > 0);
-    const validationYFn = jest.fn((value: number) => value > 0);
-    const onSubmit = jest.fn();
+    const validationXFn = vi.fn((value: number) => value > 0);
+    const validationYFn = vi.fn((value: number) => value > 0);
+    const onSubmit = vi.fn();
 
     const { result } = renderHook(() => {
       return useForm({
@@ -185,7 +185,7 @@ describe('hooks/useForm()', () => {
   });
 
   it('should auto-submit on field change', async () => {
-    const onSubmit = jest.fn();
+    const onSubmit = vi.fn();
 
     const { result } = renderHook(() => {
       return useForm({

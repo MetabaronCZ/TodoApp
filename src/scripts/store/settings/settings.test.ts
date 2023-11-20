@@ -1,4 +1,4 @@
-import { describe, expect, it, jest } from '@jest/globals';
+import { describe, expect, it, vi } from 'vitest';
 
 import { client } from 'client';
 import { SettingsData } from 'models/Settings';
@@ -31,7 +31,7 @@ describe('store/settings', () => {
     it('should fetch settings data from API', async () => {
       const testData: SettingsData = { perPage: 50 };
 
-      const api = jest.spyOn(client.settings, 'get');
+      const api = vi.spyOn(client.settings, 'get');
       api.mockImplementation(() => Promise.resolve(testData));
       expect(api).not.toBeCalled();
 
@@ -51,8 +51,8 @@ describe('store/settings', () => {
 
     it('should set store error on API error', async () => {
       const errorMessage = 'Mocked error!';
-      const api = jest.spyOn(client.settings, 'get');
-      api.mockImplementation(() => Promise.reject(errorMessage));
+      const api = vi.spyOn(client.settings, 'get');
+      api.mockRejectedValue(errorMessage);
 
       const store = mockStore();
       let state = store.getState();
@@ -69,7 +69,7 @@ describe('store/settings', () => {
     it('should update settings server data', async () => {
       const testData: SettingsData = { perPage: 50 };
 
-      const api = jest.spyOn(client.settings, 'set');
+      const api = vi.spyOn(client.settings, 'set');
       api.mockImplementation(() => Promise.resolve());
       expect(api).not.toBeCalled();
 
@@ -88,7 +88,7 @@ describe('store/settings', () => {
     });
 
     it('should keep settings state when no data sent', async () => {
-      const api = jest.spyOn(client.settings, 'set');
+      const api = vi.spyOn(client.settings, 'set');
       api.mockImplementation(() => Promise.resolve());
       expect(api).not.toBeCalled();
 
@@ -107,7 +107,7 @@ describe('store/settings', () => {
 
     it('should set store error on API error', async () => {
       const errorMessage = 'Mocked error!';
-      const api = jest.spyOn(client.settings, 'set');
+      const api = vi.spyOn(client.settings, 'set');
       api.mockImplementation(() => Promise.reject(errorMessage));
 
       const store = mockStore();

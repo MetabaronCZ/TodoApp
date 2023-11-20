@@ -1,6 +1,6 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`components/button/Button should prefer link Button when href and onClick defined 1`] = `
+exports[`components/button/Button > should prefer link Button when href and onClick defined 1`] = `
 .c0 {
   font-family: Open Sans,Arial,sans-serif;
   color: #222;
@@ -47,7 +47,7 @@ exports[`components/button/Button should prefer link Button when href and onClic
 </div>
 `;
 
-exports[`components/button/Button should render <button> Button by default 1`] = `
+exports[`components/button/Button > should render <button> Button by default 1`] = `
 .c0 {
   display: block;
   width: 100%;
@@ -100,7 +100,7 @@ exports[`components/button/Button should render <button> Button by default 1`] =
 </div>
 `;
 
-exports[`components/button/Button should render both icos 1`] = `
+exports[`components/button/Button > should render both icos 1`] = `
 .c2 {
   font-family: Open Sans,Arial,sans-serif;
   color: #222;
@@ -192,7 +192,7 @@ exports[`components/button/Button should render both icos 1`] = `
 </div>
 `;
 
-exports[`components/button/Button should render disabled state when href defined 1`] = `
+exports[`components/button/Button > should render disabled state when href defined 1`] = `
 .c0 {
   display: block;
   width: 100%;
@@ -246,7 +246,7 @@ exports[`components/button/Button should render disabled state when href defined
 </div>
 `;
 
-exports[`components/button/Button should render disabled state when onClick defined 1`] = `
+exports[`components/button/Button > should render disabled state when onClick defined 1`] = `
 .c0 {
   display: block;
   width: 100%;
@@ -300,7 +300,7 @@ exports[`components/button/Button should render disabled state when onClick defi
 </div>
 `;
 
-exports[`components/button/Button should render ico after 1`] = `
+exports[`components/button/Button > should render ico after 1`] = `
 .c3 {
   font-family: Open Sans,Arial,sans-serif;
   color: #222;
@@ -386,7 +386,7 @@ exports[`components/button/Button should render ico after 1`] = `
 </div>
 `;
 
-exports[`components/button/Button should render ico before 1`] = `
+exports[`components/button/Button > should render ico before 1`] = `
 .c2 {
   font-family: Open Sans,Arial,sans-serif;
   color: #222;
@@ -472,7 +472,7 @@ exports[`components/button/Button should render ico before 1`] = `
 </div>
 `;
 
-exports[`components/button/Button should render ico button 1`] = `
+exports[`components/button/Button > should render ico button 1`] = `
 .c2 {
   font-family: Open Sans,Arial,sans-serif;
   color: #222;
@@ -548,7 +548,7 @@ exports[`components/button/Button should render ico button 1`] = `
 </div>
 `;
 
-exports[`components/button/Button should render link Button when href defined 1`] = `
+exports[`components/button/Button > should render link Button when href defined 1`] = `
 .c0 {
   font-family: Open Sans,Arial,sans-serif;
   color: #222;
@@ -595,7 +595,7 @@ exports[`components/button/Button should render link Button when href defined 1`
 </div>
 `;
 
-exports[`components/button/Button should render props 1`] = `
+exports[`components/button/Button > should render props 1`] = `
 .c0 {
   display: block;
   width: 100%;

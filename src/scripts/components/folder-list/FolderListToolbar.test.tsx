@@ -2,7 +2,7 @@ import React from 'react';
 import { t } from 'i18next';
 
 import { fireEvent, render } from '@testing-library/react';
-import { describe, expect, it, jest } from '@jest/globals';
+import { describe, expect, it, vi } from 'vitest';
 
 import * as Dropdown from 'components/forms/Dropdown';
 import { FolderListToolbar } from 'components/folder-list/FolderListToolbar';
@@ -25,7 +25,7 @@ describe('components/folder-list/FolderListToolbar', () => {
   });
 
   it('should be able to un/select-all', () => {
-    const onSelect = jest.fn();
+    const onSelect = vi.fn();
 
     const { container } = render(
       withMockedProviders(
@@ -77,9 +77,9 @@ describe('components/folder-list/FolderListToolbar', () => {
   });
 
   it('should be able to sort items', () => {
-    const onSort = jest.fn();
+    const onSort = vi.fn();
 
-    const mockedDropdown = jest.spyOn(Dropdown, 'Dropdown');
+    const mockedDropdown = vi.spyOn(Dropdown, 'Dropdown');
     expect(mockedDropdown).toBeCalledTimes(0);
 
     const { container } = render(
@@ -107,7 +107,7 @@ describe('components/folder-list/FolderListToolbar', () => {
   });
 
   it('should not be able to sort items when disabled', () => {
-    const mockedDropdown = jest.spyOn(Dropdown, 'Dropdown');
+    const mockedDropdown = vi.spyOn(Dropdown, 'Dropdown');
 
     const { container } = render(
       withMockedProviders(
@@ -130,7 +130,7 @@ describe('components/folder-list/FolderListToolbar', () => {
   });
 
   it('should be able to delete selected', () => {
-    const onDelete = jest.fn();
+    const onDelete = vi.fn();
 
     const tree = render(
       withMockedProviders(
@@ -156,7 +156,7 @@ describe('components/folder-list/FolderListToolbar', () => {
   });
 
   it('should not be able to delete when nothing selected', () => {
-    const onDelete = jest.fn();
+    const onDelete = vi.fn();
 
     const tree = render(
       withMockedProviders(
@@ -177,7 +177,7 @@ describe('components/folder-list/FolderListToolbar', () => {
   });
 
   it('should not be able to delete when disabled', () => {
-    const onDelete = jest.fn();
+    const onDelete = vi.fn();
 
     const tree = render(
       withMockedProviders(

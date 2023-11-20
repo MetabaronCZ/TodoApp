@@ -1,6 +1,6 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`components/forms/Label should render correctly 1`] = `
+exports[`components/forms/Label > should render correctly 1`] = `
 .c0 {
   font-family: Open Sans,Arial,sans-serif;
   color: #222;
@@ -22,7 +22,7 @@ exports[`components/forms/Label should render correctly 1`] = `
 </div>
 `;
 
-exports[`components/forms/Label should render props 1`] = `
+exports[`components/forms/Label > should render props 1`] = `
 .c0 {
   font-family: Open Sans,Arial,sans-serif;
   color: #222;

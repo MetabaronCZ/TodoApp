@@ -1,6 +1,6 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`components/common/ItemList should render children 1`] = `
+exports[`components/common/ItemList > should render children 1`] = `
 .c0 {
   list-style-type: none;
   display: -webkit-box;
@@ -49,7 +49,7 @@ exports[`components/common/ItemList should render children 1`] = `
 </div>
 `;
 
-exports[`components/common/ItemList should render correctly 1`] = `
+exports[`components/common/ItemList > should render correctly 1`] = `
 .c0 {
   list-style-type: none;
   display: -webkit-box;
@@ -82,7 +82,7 @@ exports[`components/common/ItemList should render correctly 1`] = `
 </div>
 `;
 
-exports[`components/common/ItemList should render loading state 1`] = `
+exports[`components/common/ItemList > should render loading state 1`] = `
 .c0 {
   opacity: 0.5;
   -webkit-user-select: none;
@@ -121,4 +121,4 @@ exports[`components/common/ItemList should render loading state 1`] = `
 </div>
 `;
 
-exports[`components/common/ItemList should render nothing when no children 1`] = `<div />`;
+exports[`components/common/ItemList > should render nothing when no children 1`] = `<div />`;

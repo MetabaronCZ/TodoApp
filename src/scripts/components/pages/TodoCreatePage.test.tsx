@@ -2,7 +2,7 @@ import React from 'react';
 import { Provider } from 'react-redux';
 
 import { render } from '@testing-library/react';
-import { describe, expect, it } from '@jest/globals';
+import { describe, expect, it } from 'vitest';
 
 import { TodoCreatePage } from 'components/pages/TodoCreatePage';
 

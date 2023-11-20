@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { fireEvent, render } from '@testing-library/react';
-import { describe, expect, it, jest } from '@jest/globals';
+import { describe, expect, it, vi } from 'vitest';
 
 import * as ItemList from 'components/common/ItemList';
 import { FolderFields } from 'components/folder-detail/FolderFields';
@@ -24,7 +24,7 @@ describe('components/folder-detail/FolderFields', () => {
   });
 
   it('should render props', () => {
-    const itemList = jest.spyOn(ItemList, 'ItemList');
+    const itemList = vi.spyOn(ItemList, 'ItemList');
     expect(itemList).toBeCalledTimes(0);
 
     const tree = render(
@@ -53,7 +53,7 @@ describe('components/folder-detail/FolderFields', () => {
   });
 
   it('should call onChange', () => {
-    const onChange = jest.fn();
+    const onChange = vi.fn();
 
     const tree = render(
       withMockedProviders(

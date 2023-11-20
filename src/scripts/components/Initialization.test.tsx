@@ -2,7 +2,7 @@ import React from 'react';
 import { Provider } from 'react-redux';
 
 import { act, render } from '@testing-library/react';
-import { describe, expect, it, jest } from '@jest/globals';
+import { describe, expect, it, vi } from 'vitest';
 
 import * as Loader from 'components/common/Loader';
 import { Initialization } from 'components/Initialization';
@@ -32,9 +32,9 @@ describe('components/Initialization', () => {
   });
 
   it('should call initial endpoints', async () => {
-    const mockedLoader = jest.spyOn(Loader, 'Loader');
-    const mockedFetchFolders = jest.spyOn(client.folder, 'get');
-    const mockedFetchSettings = jest.spyOn(client.settings, 'get');
+    const mockedLoader = vi.spyOn(Loader, 'Loader');
+    const mockedFetchFolders = vi.spyOn(client.folder, 'get');
+    const mockedFetchSettings = vi.spyOn(client.settings, 'get');
 
     expect(mockedLoader).toBeCalledTimes(0);
     expect(mockedFetchFolders).toBeCalledTimes(0);

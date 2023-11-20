@@ -1,6 +1,6 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`components/todo-list/TodoListSearch should render correctly 1`] = `
+exports[`components/todo-list/TodoListSearch > should render correctly 1`] = `
 .c3 {
   display: block;
   width: 100%;

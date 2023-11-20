@@ -3,7 +3,7 @@ import { t } from 'i18next';
 import { Provider } from 'react-redux';
 
 import { act, fireEvent, render } from '@testing-library/react';
-import { describe, expect, it, jest } from '@jest/globals';
+import { describe, expect, it, vi } from 'vitest';
 
 import * as Dropdown from 'components/forms/Dropdown';
 import * as TodoFields from 'components/todo-detail/TodoFields';
@@ -55,7 +55,7 @@ const getTodoDetail = async (
 
 describe('components/todo-detail/TodoDetail', () => {
   it('should render todo create variant', async () => {
-    const fields = jest.spyOn(TodoFields, 'TodoFields');
+    const fields = vi.spyOn(TodoFields, 'TodoFields');
     expect(fields).toBeCalledTimes(0);
 
     const tree = render(await getTodoDetail());
@@ -81,7 +81,7 @@ describe('components/todo-detail/TodoDetail', () => {
   });
 
   it('should render todo detail variant', async () => {
-    const fields = jest.spyOn(TodoFields, 'TodoFields');
+    const fields = vi.spyOn(TodoFields, 'TodoFields');
     expect(fields).toBeCalledTimes(0);
 
     const tree = render(await getTodoDetail(testData));
@@ -107,7 +107,7 @@ describe('components/todo-detail/TodoDetail', () => {
   });
 
   it('should render fetch error', async () => {
-    const fields = jest.spyOn(TodoFields, 'TodoFields');
+    const fields = vi.spyOn(TodoFields, 'TodoFields');
     expect(fields).toBeCalledTimes(0);
 
     const tree = render(await getTodoDetail(testData, true));
@@ -121,7 +121,7 @@ describe('components/todo-detail/TodoDetail', () => {
   });
 
   it('should prefill folder Dropdown when filtered by a folder', async () => {
-    const fields = jest.spyOn(TodoFields, 'TodoFields');
+    const fields = vi.spyOn(TodoFields, 'TodoFields');
     expect(fields).toBeCalledTimes(0);
 
     const tree = render(await getTodoDetail(undefined, false, 'C'));
@@ -142,9 +142,9 @@ describe('components/todo-detail/TodoDetail', () => {
   });
 
   it('should create todo', async () => {
-    const mockedTodoCreate = jest.spyOn(client.todo, 'create');
-    const fields = jest.spyOn(TodoFields, 'TodoFields');
-    const dropdown = jest.spyOn(Dropdown, 'Dropdown');
+    const mockedTodoCreate = vi.spyOn(client.todo, 'create');
+    const fields = vi.spyOn(TodoFields, 'TodoFields');
+    const dropdown = vi.spyOn(Dropdown, 'Dropdown');
 
     const tree = render(await getTodoDetail());
     expect(mockedTodoCreate).toBeCalledTimes(0);
@@ -215,8 +215,8 @@ describe('components/todo-detail/TodoDetail', () => {
   });
 
   it('should edit todo', async () => {
-    const mockedTodoEdit = jest.spyOn(client.todo, 'edit');
-    const dropdown = jest.spyOn(Dropdown, 'Dropdown');
+    const mockedTodoEdit = vi.spyOn(client.todo, 'edit');
+    const dropdown = vi.spyOn(Dropdown, 'Dropdown');
 
     const tree = render(await getTodoDetail(testData));
     expect(mockedTodoEdit).toBeCalledTimes(0);

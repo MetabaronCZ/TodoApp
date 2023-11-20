@@ -1,14 +1,14 @@
 import React from 'react';
 
 import { fireEvent, render } from '@testing-library/react';
-import { describe, expect, it, jest } from '@jest/globals';
+import { describe, expect, it, vi } from 'vitest';
 
 import { Paging } from 'components/common/Paging';
 import { withMockedProviders } from 'test/component';
 
 describe('components/common/Paging', () => {
   it('should render correctly', () => {
-    const onChange = jest.fn();
+    const onChange = vi.fn();
 
     const tree = render(
       withMockedProviders(
@@ -21,7 +21,7 @@ describe('components/common/Paging', () => {
   });
 
   it('should render one page paging', () => {
-    const onChange = jest.fn();
+    const onChange = vi.fn();
 
     const tree = render(
       withMockedProviders(
@@ -37,7 +37,7 @@ describe('components/common/Paging', () => {
   });
 
   it('should render first page', () => {
-    const onChange = jest.fn();
+    const onChange = vi.fn();
 
     const tree = render(
       withMockedProviders(
@@ -57,7 +57,7 @@ describe('components/common/Paging', () => {
   });
 
   it('should render last page', () => {
-    const onChange = jest.fn();
+    const onChange = vi.fn();
 
     const tree = render(
       withMockedProviders(
@@ -77,7 +77,7 @@ describe('components/common/Paging', () => {
   });
 
   it('should render inner page', () => {
-    const onChange = jest.fn();
+    const onChange = vi.fn();
 
     const tree = render(
       withMockedProviders(

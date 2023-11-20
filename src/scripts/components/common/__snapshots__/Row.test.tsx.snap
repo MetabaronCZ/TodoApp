@@ -1,6 +1,6 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`components/common/Row should render correctly 1`] = `
+exports[`components/common/Row > should render correctly 1`] = `
 .c0 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -27,7 +27,7 @@ exports[`components/common/Row should render correctly 1`] = `
 </div>
 `;
 
-exports[`components/common/Row should render props 1`] = `
+exports[`components/common/Row > should render props 1`] = `
 .c0 {
   display: -webkit-box;
   display: -webkit-flex;

@@ -2,7 +2,7 @@ import React from 'react';
 import { Provider } from 'react-redux';
 
 import { render } from '@testing-library/react';
-import { describe, expect, it, jest } from '@jest/globals';
+import { describe, expect, it, vi } from 'vitest';
 
 import { HomePage } from 'components/pages/HomePage';
 
@@ -31,8 +31,8 @@ describe('components/pages/HomePage', () => {
   });
 
   it('should call refetch when no folder param given', async () => {
-    const mockedFetch = jest.spyOn(actionsModule, 'fetchTodos');
-    const mockedFilter = jest.spyOn(actionsModule, 'filterTodos');
+    const mockedFetch = vi.spyOn(actionsModule, 'fetchTodos');
+    const mockedFilter = vi.spyOn(actionsModule, 'filterTodos');
     expect(mockedFetch).not.toBeCalled();
     expect(mockedFilter).not.toBeCalled();
 
@@ -42,8 +42,8 @@ describe('components/pages/HomePage', () => {
   });
 
   it('should filter items when folder param given', async () => {
-    const mockedFetch = jest.spyOn(actionsModule, 'fetchTodos');
-    const mockedFilter = jest.spyOn(actionsModule, 'filterTodos');
+    const mockedFetch = vi.spyOn(actionsModule, 'fetchTodos');
+    const mockedFilter = vi.spyOn(actionsModule, 'filterTodos');
     expect(mockedFetch).not.toBeCalled();
     expect(mockedFilter).not.toBeCalled();
 

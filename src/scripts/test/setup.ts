@@ -1,3 +1,3 @@
+import '@testing-library/jest-dom/vitest';
 import 'jest-styled-components';
-import '@testing-library/jest-dom/jest-globals';
 import 'localization';

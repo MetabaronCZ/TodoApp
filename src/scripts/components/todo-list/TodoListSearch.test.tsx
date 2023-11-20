@@ -3,7 +3,7 @@ import { t } from 'i18next';
 import { Provider } from 'react-redux';
 
 import { fireEvent, render } from '@testing-library/react';
-import { describe, expect, it, jest } from '@jest/globals';
+import { describe, expect, it, vi } from 'vitest';
 
 import { TodoListSearch } from 'components/todo-list/TodoListSearch';
 
@@ -29,7 +29,7 @@ describe('components/todo-list/TodoListSearch', () => {
   });
 
   it('should not search todos without query', () => {
-    const mockedTodoFetch = jest.spyOn(client.todo, 'get');
+    const mockedTodoFetch = vi.spyOn(client.todo, 'get');
     const tree = render(getTodoListSearch());
 
     const input = tree.container.querySelector('input');
@@ -47,7 +47,7 @@ describe('components/todo-list/TodoListSearch', () => {
   });
 
   it('should search todos by given query', () => {
-    const mockedTodoFetch = jest.spyOn(client.todo, 'get');
+    const mockedTodoFetch = vi.spyOn(client.todo, 'get');
     const tree = render(getTodoListSearch());
 
     const input = tree.container.querySelector('input');
@@ -74,7 +74,7 @@ describe('components/todo-list/TodoListSearch', () => {
   });
 
   it('should clear query', () => {
-    const mockedTodoFetch = jest.spyOn(client.todo, 'get');
+    const mockedTodoFetch = vi.spyOn(client.todo, 'get');
     const tree = render(getTodoListSearch());
 
     const input = tree.container.querySelector('input');

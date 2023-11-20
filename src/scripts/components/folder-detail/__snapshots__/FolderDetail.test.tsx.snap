@@ -1,6 +1,6 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`components/folder-detail/FolderDetail should render fetch error 1`] = `
+exports[`components/folder-detail/FolderDetail > should render fetch error 1`] = `
 .c3 {
   font-family: Open Sans,Arial,sans-serif;
   color: #222;
@@ -140,7 +140,7 @@ exports[`components/folder-detail/FolderDetail should render fetch error 1`] = `
 </div>
 `;
 
-exports[`components/folder-detail/FolderDetail should render folder create variant 1`] = `
+exports[`components/folder-detail/FolderDetail > should render folder create variant 1`] = `
 .c3 {
   font-family: Open Sans,Arial,sans-serif;
   color: #222;
@@ -475,7 +475,7 @@ exports[`components/folder-detail/FolderDetail should render folder create varia
 </div>
 `;
 
-exports[`components/folder-detail/FolderDetail should render folder detail variant 1`] = `
+exports[`components/folder-detail/FolderDetail > should render folder detail variant 1`] = `
 .c3 {
   font-family: Open Sans,Arial,sans-serif;
   color: #222;
