@@ -7,11 +7,3 @@ exports[`components/Initialization > should render correctly 1`] = `
   </div>
 </div>
 `;
-
-exports[`components/Initialization should render correctly 1`] = `
-<div>
-  <div>
-    CONTENT
-  </div>
-</div>
-`;

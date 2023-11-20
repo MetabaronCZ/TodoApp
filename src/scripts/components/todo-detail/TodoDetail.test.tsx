@@ -2,8 +2,18 @@ import React from 'react';
 import { t } from 'i18next';
 import { Provider } from 'react-redux';
 
+import { setupServer } from 'msw/node';
+import { http, HttpResponse } from 'msw';
+import {
+  afterAll,
+  afterEach,
+  beforeAll,
+  describe,
+  expect,
+  it,
+  vi,
+} from 'vitest';
 import { act, fireEvent, render } from '@testing-library/react';
-import { describe, expect, it, vi } from 'vitest';
 
 import * as Dropdown from 'components/forms/Dropdown';
 import * as TodoFields from 'components/todo-detail/TodoFields';
@@ -34,6 +44,18 @@ const testData: Todo = {
   folder: 'B',
   created: 0,
 };
+
+const server = setupServer(
+  http.get('/api/todo', () => {
+    return HttpResponse.json({
+      data: { items: [], count: 0 },
+    });
+  }),
+);
+
+beforeAll(() => server.listen({ onUnhandledRequest: 'error' }));
+afterAll(() => server.close());
+afterEach(() => server.resetHandlers());
 
 const getTodoDetail = async (
   data?: Todo,

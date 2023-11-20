@@ -1,8 +1,18 @@
 import React from 'react';
 import { Provider } from 'react-redux';
 
+import { setupServer } from 'msw/node';
+import { http, HttpResponse } from 'msw';
 import { render } from '@testing-library/react';
-import { describe, expect, it, vi } from 'vitest';
+import {
+  afterAll,
+  afterEach,
+  beforeAll,
+  describe,
+  expect,
+  it,
+  vi,
+} from 'vitest';
 
 import * as Menu from 'components/common/Menu';
 import { MenuMain } from 'components/MenuMain';
@@ -15,6 +25,18 @@ import { todoFoldersSlice } from 'store/folders';
 import { filterTodos } from 'store/todos/actions';
 
 const { setFolders } = todoFoldersSlice.actions;
+
+const server = setupServer(
+  http.get('/api/todo', () => {
+    return HttpResponse.json({
+      data: { items: [], count: 0 },
+    });
+  }),
+);
+
+beforeAll(() => server.listen({ onUnhandledRequest: 'error' }));
+afterAll(() => server.close());
+afterEach(() => server.resetHandlers());
 
 describe('components/MenuMain', () => {
   it('should render correctly', () => {

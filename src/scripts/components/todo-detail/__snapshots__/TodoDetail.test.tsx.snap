@@ -493,7 +493,7 @@ exports[`components/todo-detail/TodoDetail > should prefill folder Dropdown when
                 <span
                   class="c4"
                 >
-                  -Vyberte složku-
+                  Folder C
                 </span>
                 <i
                   class="c3"
