@@ -1,8 +1,18 @@
 import React from 'react';
 import { Provider } from 'react-redux';
 
+import { setupServer } from 'msw/node';
+import { HttpResponse, http } from 'msw';
 import { act, render } from '@testing-library/react';
-import { describe, expect, it, vi } from 'vitest';
+import {
+  afterAll,
+  afterEach,
+  beforeAll,
+  describe,
+  expect,
+  it,
+  vi,
+} from 'vitest';
 
 import { Settings } from 'components/Settings';
 import * as Dropdown from 'components/forms/Dropdown';
@@ -12,6 +22,16 @@ import { perPages } from 'models/Settings';
 
 import { mockStore } from 'test/store';
 import { withMockedProviders } from 'test/component';
+
+const server = setupServer(
+  http.post('/api/settings', () => {
+    return HttpResponse.json();
+  }),
+);
+
+beforeAll(() => server.listen({ onUnhandledRequest: 'error' }));
+afterAll(() => server.close());
+afterEach(() => server.resetHandlers());
 
 const getSettings = (): JSX.Element => {
   const store = mockStore();

@@ -2,8 +2,19 @@ import React from 'react';
 import { t } from 'i18next';
 import { Provider } from 'react-redux';
 
+import { setupServer } from 'msw/node';
+import { HttpResponse, http } from 'msw';
 import { act, render } from '@testing-library/react';
-import { MockInstance, describe, expect, it, vi } from 'vitest';
+import {
+  MockInstance,
+  afterAll,
+  afterEach,
+  beforeAll,
+  describe,
+  expect,
+  it,
+  vi,
+} from 'vitest';
 
 import { FolderList } from 'components/folder-list/FolderList';
 import * as FolderListItem from 'components/folder-list/FolderListItem';
@@ -23,6 +34,16 @@ const testData: Folder[] = [
   { id: 'B', title: 'Folder B' },
   { id: 'C', title: 'Folder C' },
 ];
+
+const server = setupServer(
+  http.delete('/api/folder', () => {
+    return HttpResponse.json();
+  }),
+);
+
+beforeAll(() => server.listen({ onUnhandledRequest: 'error' }));
+afterAll(() => server.close());
+afterEach(() => server.resetHandlers());
 
 const getFolderList = (folders: Folder[]): JSX.Element => {
   const store = mockStore();

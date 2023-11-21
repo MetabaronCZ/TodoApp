@@ -69,9 +69,9 @@ export const todoClient: Client['todo'] = {
       return validated.data;
     });
   },
-  edit: (data) => {
+  edit: (id, data) => {
     return handleClientRequest(async () => {
-      await axios.patch('/api/todo', data);
+      await axios.patch(`/api/todo/${id}`, data);
     });
   },
   delete: (ids) => {

@@ -46,13 +46,23 @@ const testData: Todo = {
 };
 
 const server = setupServer(
+  http.get('/api/folder', () => {
+    return HttpResponse.json({
+      data: [...testFoldersData],
+    });
+  }),
   http.get('/api/todo', () => {
     return HttpResponse.json({
       data: { items: [], count: 0 },
     });
   }),
+  http.post('/api/todo', () => {
+    return HttpResponse.json();
+  }),
+  http.patch('/api/todo/*', () => {
+    return HttpResponse.json();
+  }),
 );
-
 beforeAll(() => server.listen({ onUnhandledRequest: 'error' }));
 afterAll(() => server.close());
 afterEach(() => server.resetHandlers());
@@ -226,7 +236,9 @@ describe('components/todo-detail/TodoDetail', () => {
     });
 
     // trigger form submit (validation OK)
-    fireEvent.click(submitButton);
+    await act(() => {
+      fireEvent.click(submitButton);
+    });
 
     expect(mockedTodoCreate).toBeCalledWith({
       title: 'New todo',
@@ -282,7 +294,9 @@ describe('components/todo-detail/TodoDetail', () => {
     });
 
     // trigger form submit
-    fireEvent.click(submitButton);
+    await act(() => {
+      fireEvent.click(submitButton);
+    });
 
     expect(mockedTodoEdit).toBeCalledWith('0', {
       title: 'Changed todo',

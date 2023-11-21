@@ -44,9 +44,9 @@ export const folderClient: Client['folder'] = {
       return validated.data;
     });
   },
-  edit: (data) => {
+  edit: (id, data) => {
     return handleClientRequest(async () => {
-      await axios.patch('/api/folder', data);
+      await axios.patch(`/api/folder/${id}`, data);
     });
   },
   delete: (ids) => {

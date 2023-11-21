@@ -1,14 +1,42 @@
 import React from 'react';
 import { Provider } from 'react-redux';
 
+import { setupServer } from 'msw/node';
+import { HttpResponse, http } from 'msw';
 import { render } from '@testing-library/react';
-import { describe, expect, it, vi } from 'vitest';
+import {
+  afterAll,
+  afterEach,
+  beforeAll,
+  describe,
+  expect,
+  it,
+  vi,
+} from 'vitest';
 
 import { HomePage } from 'components/pages/HomePage';
 
+import * as actionsModule from 'store/todos/actions';
+
 import { mockStore } from 'test/store';
 import { withMockedProviders } from 'test/component';
-import * as actionsModule from 'store/todos/actions';
+
+const server = setupServer(
+  http.get('/api/todo', () => {
+    return HttpResponse.json({
+      data: { items: [], count: 0 },
+    });
+  }),
+  http.get('/api/folder', () => {
+    return HttpResponse.json({
+      data: [],
+    });
+  }),
+);
+
+beforeAll(() => server.listen({ onUnhandledRequest: 'error' }));
+afterAll(() => server.close());
+afterEach(() => server.resetHandlers());
 
 const getHomepage = (searchParams?: Record<string, string>): JSX.Element => {
   const store = mockStore();
