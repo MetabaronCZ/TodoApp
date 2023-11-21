@@ -2,8 +2,19 @@ import React from 'react';
 import { t } from 'i18next';
 import { Provider } from 'react-redux';
 
+import { setupServer } from 'msw/node';
+import { HttpResponse, http } from 'msw';
 import { act, render } from '@testing-library/react';
-import { MockInstance, describe, expect, it, vi } from 'vitest';
+import {
+  MockInstance,
+  afterAll,
+  afterEach,
+  beforeAll,
+  describe,
+  expect,
+  it,
+  vi,
+} from 'vitest';
 
 import { TodoList } from 'components/todo-list/TodoList';
 import * as TodoListItem from 'components/todo-list/TodoListItem';
@@ -44,6 +55,26 @@ const testData: Todo[] = [
     isDone: false,
   },
 ];
+
+const server = setupServer(
+  http.get('/api/todo', () => {
+    return HttpResponse.json({
+      data: { items: [], count: 0 },
+    });
+  }),
+  http.get('/api/folder', () => {
+    return HttpResponse.json({
+      data: [],
+    });
+  }),
+  http.delete('/api/todo', () => {
+    return HttpResponse.json();
+  }),
+);
+
+beforeAll(() => server.listen({ onUnhandledRequest: 'error' }));
+afterAll(() => server.close());
+afterEach(() => server.resetHandlers());
 
 const getTodoList = (todos: Todo[]): JSX.Element => {
   const store = mockStore();

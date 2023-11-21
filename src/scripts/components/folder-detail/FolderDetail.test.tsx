@@ -2,8 +2,18 @@ import React from 'react';
 import { t } from 'i18next';
 import { Provider } from 'react-redux';
 
+import { setupServer } from 'msw/node';
+import { HttpResponse, http } from 'msw';
 import { fireEvent, render } from '@testing-library/react';
-import { describe, expect, it, vi } from 'vitest';
+import {
+  afterAll,
+  afterEach,
+  beforeAll,
+  describe,
+  expect,
+  it,
+  vi,
+} from 'vitest';
 
 import { FolderDetail } from 'components/folder-detail/FolderDetail';
 import * as FolderFields from 'components/folder-detail/FolderFields';
@@ -15,6 +25,19 @@ import { mockStore } from 'test/store';
 import { withMockedProviders } from 'test/component';
 
 const testData: Folder = { id: '0', title: 'Test folder' };
+
+const server = setupServer(
+  http.post('/api/folder', () => {
+    return HttpResponse.json();
+  }),
+  http.patch('/api/folder/*', () => {
+    return HttpResponse.json();
+  }),
+);
+
+beforeAll(() => server.listen({ onUnhandledRequest: 'error' }));
+afterAll(() => server.close());
+afterEach(() => server.resetHandlers());
 
 const getFolderDetail = (data?: Folder, error?: boolean): JSX.Element => {
   const store = mockStore();
