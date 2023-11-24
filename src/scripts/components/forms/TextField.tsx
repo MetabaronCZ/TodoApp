@@ -66,6 +66,7 @@ interface Props {
   readonly textarea?: boolean;
   readonly disabled?: boolean;
   readonly maxLength?: number;
+  readonly autoComplete?: string;
   readonly onChange: OnChange<string>;
 }
 
@@ -77,6 +78,7 @@ export const TextField: React.FC<Props> = ({
   error = null,
   disabled = false,
   textarea = false,
+  autoComplete,
   maxLength,
   onChange,
 }) => {
@@ -88,6 +90,7 @@ export const TextField: React.FC<Props> = ({
     maxLength,
     disabled,
     $invalid: !!error,
+    autoComplete,
     onChange: change(onChange),
   };
   return (

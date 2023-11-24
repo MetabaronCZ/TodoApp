@@ -44,6 +44,7 @@ export const TodoListSearch: React.FC = () => {
         value={query}
         placeholder={t('todoList.query')}
         disabled={loading}
+        autoComplete="off"
         maxLength={100}
         onChange={setQuery}
       />
