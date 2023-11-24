@@ -64,7 +64,7 @@ const folders: Folder[] = Array(folderCount)
   .fill(0)
   .map((_, i) => ({
     id: `${i}`,
-    title: `Složka ${i + 1}`,
+    title: `Složka ${('0' + (i + 1)).slice(-2)}`,
   }));
 
 const todos: Todo[] = Array(todoCount)
